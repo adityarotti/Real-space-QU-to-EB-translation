@@ -5,3 +5,5 @@ Specifically we carry out the following studies:
   2. Deal real space convolution kernels on the sphere which separate Stokes QU parameters into those corresponding to E and B modes respectively.
   3. We study the spatial locality of these covolution kernels and study the effects of intentionally introduing radial cutoff on the kernels. 
   4. We apply these new methods on Planck 353 GHz polarization data.
+
+<img src="https://github.com/adityarotti/Real-space-QU-to-EB-translation/blob/master/figures/353ghz-e-mode-real-space-disc8apo3.jpg" width="45%"></img> <img src="https://github.com/adityarotti/Real-space-QU-to-EB-translation/blob/master/figures/353ghz-b-mode-real-space-disc8apo3.jpg" width="45%"></img>
