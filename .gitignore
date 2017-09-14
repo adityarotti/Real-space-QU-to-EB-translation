@@ -14,4 +14,4 @@
 article_draft_version.pdf
 
 # Generated data files to ignore
-figures/*.fits
+#figures/**/*.fits
