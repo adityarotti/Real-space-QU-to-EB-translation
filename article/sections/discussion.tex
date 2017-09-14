@@ -6,12 +6,18 @@
 
 \item Studying these real space kernels reveals that its the radial part of the kernel which knows about the band limit of the experiment. Motivation for defining radially compact kernels. We have demonstrated that using the radially compact kernels does not bias the spectral information on intermediate angular scales.
 
-\item Small field experiments like BICEP, implicitly implement such radial cut offs due to limited survey area. 
+\item Small field experiments like BICEP implement such radial cut offs due to limited survey area. 
 
 
 \item Using in conjunction with FEBECOP \cite{febecop} like schemes to directly infer E and B mode maps from raw maps.
 
+\item \textit{Total convolution methods:} Since the convolution kernels can be thought of as effective beams for polarization maps, it may be possible to use total convolution methods to construct E and B mode maps.
+
+\item{Separate Q and U maps for E and B:} We have presented kernels which allow for decomposition of the total Stokes Q and U parameters to those corresponding to E and B modes. This could be potentially interesting, since one can now work with E and B modes foregrounds and their separations separately. \comment{But is there an issue with doing this in the standard method which involves going through the process of generating E and B modes ?}
+
 \item \textit{Mask leakages} can be understood as arising from improper sine quadrupole and cosine quadrupole transforms on rings with holes in them due to masking. For the global mask (no point sources), by using a radially compact kernel with some $\beta_0$, the pixels which are at a angular distance $\beta_0$ from the edges of the mask have unbiased estimates of the scalar fields E and B.
+
+
 
 \end{itemize}
 %
