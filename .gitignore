@@ -1,11 +1,17 @@
 # Stops syncing files with these extensions
+.DS_Store
 
-# codes
+# Codes development files to ignore
 *.pyc
 *.swp
 
-# latex
+# Latex generated files to ignore
 *.blg
 *.log
 *.out
 *.aux
+*.gz
+article_draft_version.pdf
+
+# Generated data files to ignore
+./figures/*.fits
