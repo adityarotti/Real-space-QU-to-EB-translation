@@ -4,14 +4,14 @@ As discussed in \sec{sec:radial_locality}, the radial kernels decay ($\propto ~ 
 
 In this section we study the effects of localizing the convolution kernels on the inferred E and B mode maps and their power spectra. We have developed a Python script to compute these local convolution over Stokes Q \& U parameters. To carry out this numerical exercise, we pre-compute the radial part of the kernels, namely the function: $f(\beta), {}_{+2}f(\beta) ~\&~ {}_{-2}f(\beta)$. We use the python routine {\textit scipy.special.lpmn} for the numerical evaluation of the associated Legendre polynomial functions required to compute the respective radial kernels following equations \eq{eq:rad_ker_queb} and \eq{eq:f2_rad_ker}. Specifically while computing the functions ${}_{+2}f(\beta) ~\&~ {}_{-2}f(\beta)$ in the vicinity of $\beta=0~\&~\pi$, we use the limiting forms of the respective functions given in \app{sec:asymptotic_f}. As the next step, for each pixel on the Healpix map we get the pixel numbers of all the neighboring pixels lying within radius of $r_{\rm cutoff}$ from the central pixel using the Healpix routine {\textit query\_disc}. We then use the {\textit pix2ang} function of Healpix to get the angular coordinates of the central $(\theta_o,\phi_o)$ and its surrounding pixels $(\theta_i,\phi_i)$, which are used to calculate the corresponding Euler angles using \eq{eq:fn_euler}. Given these inputs we evaluate the convolutions as simple Reimann sums. We repeat this procedure for each pixel on the Healpix map to yielding the resultant maps (E ,B, Q, U).
 
-\revisit{We use the CMB spectra for a fiducial cosmology and restrict our analysis on lensing induced B-mode spectra.}  For the results presented in the following sections we carry out our analysis on CMB maps at Healpix resolution of ${\rm NSIDE}=64$. In order to understand the effects of restricting the convolution to a local neighbourhood, we evaluate these convolutions on discs with progressively smaller radii surrounding the central pixel.  Specifically the non-locality parameter for a NSIDE=64 map is $\beta_o=22.5^{\circ}$. \revisit{We impose radial cutoffs of $r_{\rm cutoff}=[2\beta_0,\beta_o,0.5\beta_o,0.25\beta_o]$ with an apodization of 3 degrees having a cosine squared profiles on the edges of the discs. }We also evaluate the corresponding maps using standard Healpix routines and use these as reference maps for this exercise. Note that the Healpix evaluations are equivalent to carrying out the convolutions over the full sphere (i.e. $\beta_o=\pi$).  We compare these maps to the reference maps and their respective spectra, to quantitatively understand the effect of the imposed radial cutoff on the convolutions.
+\revisit{We use the CMB spectra for a fiducial cosmology and restrict our analysis on lensing induced B-mode spectra.}  For the results presented in the following sections we carry out our analysis on CMB maps at Healpix resolution of ${\rm NSIDE}=64$. In order to understand the effects of restricting the convolution to a local neighbourhood, we evaluate these convolutions on discs with progressively smaller radii surrounding the central pixel.  Specifically the non-locality parameter for a NSIDE=64 map is $\beta_o=22.5^{\circ}$. \revisit{We impose radial cutoffs of $r_{\rm cutoff}=[2\beta_0,\beta_o,0.5\beta_o,0.25\beta_o]$ with an apodization of 3 degrees having a cosine squared profiles on the edges of the discs. }We also evaluate the corresponding maps using standard full sky Healpix routines and use these as reference maps for this exercise. Note that the Healpix evaluations are equivalent to carrying out the convolutions over the full sphere (i.e. $\beta_o=\pi$).  We compare these maps to the reference maps and their respective spectra, to quantitatively understand the effect of the imposed radial cutoff on the convolutions.
 
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Constructing E \& B maps using local convolutions}
-
+Here we present the results of evaluating the local convolution given in \eq{eq:op_qu2eb}, to derive E \& B mode maps given maps of Stokes Q \& U. The resultant maps are depicted in \fig{fig:eb-maps-compare}. Specifically the left column depicts the reference E \& B maps derived using Healpix, the middle column depicts the E \& B mode maps derived from local convolutions restricted to $2\beta_o$ and difference between these maps is depicted in the right column. The differences between these maps are observed to be large near the polar caps, however they are significantly smaller in the band around the equator. Further note that the differences seen around the equator are dominated by large scale modes, in contrast to the polar caps where one even observes small scale fluctuations.
 %
-\begin{figure}[!h] 
+\begin{figure}[!t] 
 \centering
 \subfigure[E-mode Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/emap-healpix.pdf}}
 \subfigure[E-mode local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/emap-2beta.pdf}}
@@ -19,19 +19,28 @@ In this section we study the effects of localizing the convolution kernels on th
 \subfigure[B-mode Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/bmap-healpix.pdf}}
 \subfigure[B-mode local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/bmap-2beta.pdf}}
 \subfigure[Difference]{\includegraphics[width=0.31\columnwidth]{simulated/bmap-diff.pdf}}
-\caption{{\textit Left:} Reference E \& B mode maps derived using Healpix. {\textit Middle:} E \& B mode maps derived using $r_{\rm cutoff}=2\beta_o$. {\textit Right:} Difference between the maps shown in the left and middle columns. Note that the differences maps are primarily due to differences in the recovery of large scale modes.}
+\caption{{\textit Left:} Reference E \& B mode maps derived using Healpix. {\textit Middle:} E \& B mode maps derived using $r_{\rm cutoff}=2\beta_o$. The color scale is saturated to that of the respective reference maps. {\textit Right:} Difference between the maps shown in the left and middle columns.}
 \label{fig:eb-maps-compare}
 \end{figure}
 %
+
+Next we compute the power spectra of these local E \& B maps and compare them to the spectra derived from the reference maps. The results of this exercise are summarized in \fig{fig:eb-spectra_rad_cutoff}. We note that when the radial cutoff is set much below the non-locality parameter as in $r_{\rm cutoff}=0.25 \beta_o$, the spectra differ from the reference spectra by more the cosmic variance. However on increasing the radial cutoff to only $0.5\beta_o$, the differences at most multipoles reduce to being comparable to the cosmic variance. On further increasing the radial cutoff to $\beta_o$ and $2 \beta_o$, the difference at most multipoles further reduce to levels of 0.5 cosmic variance or in absolute terms the differences are at the level of 2\%. Also note that the improvement while transitioning from $r_{\rm cutoff}=\beta_o$ to $r_{\rm cutoff}=2 \beta_o$ are not as significant 
+as seen while increasing the $r_{\rm cutoff}$ to $\beta_o$. This is can be understood as a consequence of the rapidly decaying nature of the radial kernels we discussed in \sec{sec:radial_locality}. 
+
+At first glance, the above remarks seem to hold true only for the E mode spectra, since the errors in the B mode spectra seem to be significantly larger as seen in the middle row of \fig{fig:eb-spectra_rad_cutoff}. We understand that the higher error in the B mode spectra is primarily a combined effect of the low amplitude of the B mode spectrum as compared to the E mode spectrum and limited numerical accuracy of our simple convolution algorithm. We ran a number of tests to confirm these as reasons for the observed discrepant behaviour. We exchanged the E and B mode spectra, \revisit{(taking care to set $C_{\ell}^{TE}=0$)} and noted that the trends observed in the error plots are reversed, clearly indicating a dependence on the amplitude of the spectrum. We noted that the polar caps were particularly error prone, as seen in \fig{fig:eb-maps-compare}. We excised these error prone regions, specifically masking portions of the maps with $|b|>30^{\circ}$ to find that the errors on the B mode spectra revert to having very similar structure as that of the E mode spectra, as seen in the bottom row of \fig{fig:eb-spectra_rad_cutoff}. Finally we modified the 
 %
 \begin{figure}[!h] 
 \centering
+%\vspace{-5cm}
 \subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/ee-spectrum-radial-cutoff.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/bb-spectrum-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/bb-spectrum-radial-cutoff.pdf}}\\[-6ex]
 \subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/relative-percentage-err-ee-spectrum-radial-cutoff.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/relative-percentage-err-bb-spectrum-radial-cutoff.pdf}}
-\caption{}
-\label{fig:eq-spectra_rad_cutoff}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/relative-percentage-err-bb-spectrum-radial-cutoff.pdf}}\\[-6ex]
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/eqmask/relative-percentage-err-ee-spectrum-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/eqmask/relative-percentage-err-bb-spectrum-radial-cutoff.pdf}}
+\caption{\textit{Top:} The figures on left and right depict the E mode spectra and the B mode spectra respectively. \textit{Middle:} These figures depict the relative percentage difference between the spectra derived from full sky, locally evaluated E \& B  maps and the reference spectra. \textit{Bottom:} These figures depict the same results as shown in the middle row, except that the regions with $|b|>30^\circ$ of the maps have been masked for this analysis. 
+The colors indicate the spectra derived from imposing different radial cutoff as indicated by the legends. The gray bands indicate the cosmic variance scatter around the fiducial spectra. The dashed horizontal black lines mark the 2\% error.}
+\label{fig:eb-spectra_rad_cutoff}
 \end{figure}
 %
 %--------------------------------------------------------
