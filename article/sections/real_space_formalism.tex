@@ -1,3 +1,51 @@
+%--------------------------------------------------------
+%--------------------------------------------------------
+\section{E/B description of CMB polarization} \label{sec:pol-intro}
+%--------------------------------------------------------
+\subsection{Polarization primer}\label{sec:pol-primer}
+The CMB polarization is measured in terms of Stokes Q and U parameters. These measurements can be combined to form the complex spin 2 polarization field as follows,
+%
+\beqry \label{eq:spin-pol}
+_{\pm 2}\bar{X}(\hat{n}) &=& Q(\hat{n}) \pm i U (\hat{n}) \nonumber \\ &=& \sum_{\ell m}  {_{\pm 2}} \tilde{X}_{\ell m}  {_{\pm 2}}Y_{\ell m} (\hat{n}) \,.
+\eeqry
+%
+Since these measured quantities depend on the local coordinate system making it is cumbersome to work with them. To overcome this, one describes the CMB polarization field in terms of a scalar field denoted by $E(\hat{n}) $ and a pseudo scalar field $B(\hat{n}) $ \cite{Kamionkowski1997}. These scalar fields are related to the spin-2 polarization field $_{\pm 2}X(\hat{n})$ through the following relation,
+%
+\beq \label{eq:ebdef}
+\mathcal{E}(\hat{n}) = -\frac{1}{2} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  +  \eth^2 _{- 2}X(\hat{n}) \big] ~\,;~\mathcal{B}(\hat{n}) = -\frac{1}{2i} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  -  \eth^2 _{- 2}X(\hat{n}) \big] \,,
+\eeq
+%
+where $\eth$ and $\bar{\eth}$ denote the spin raising and lowering operators respectively. These $E$ and $B$ fields are spin-0 fields similar to the temperature anisotropies and hence their value are independent of the coordinate system definitions. The spin raising and lowering operators have the following properties \cite{goldberg67},
+%
+\beqrys \label{eq:spinopylm} 
+\eth _s Y_{lm}(\hat{n}) &=& \sqrt{(\ell-s)(\ell+s+1)} _{s+1} Y_{lm}(\hat{n}) \,, \\
+\bar{\eth} _s Y_{lm}(\hat{n}) &=& -\sqrt{(\ell+s)(\ell-s+1)} _{s-1} Y_{lm}(\hat{n}) \,, 
+\eeqrys
+%
+where $_s Y_{lm}(\hat{n}) $ denote the spin-s spherical harmonics.
+
+Using \eq{eq:ebdef} and the properties of the spin raising and lowering operators given in \eq{eq:spinopylm} it can be shown that the scalar fields $\mathcal{E}/\mathcal{B}$ are defined via the following set of equations,
+%
+\beq \label{eq:pseudo}
+\mathcal{E}(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} \sqrt{\frac{(\ell+2)!}{(\ell-2)!}} Y_{\ell m} (\hat{n}) ~\,;~ \mathcal{B}(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} \sqrt{\frac{(\ell+2)!}{(\ell-2)!}} Y_{\ell m} (\hat{n}) \,,
+\eeq
+%
+where the harmonic coefficients of  $\mathcal{E}/\mathcal{B}$ fields are related to the spin harmonic coefficients of the polarization field through the following equations,
+%
+\beq\label{eq:x2eb}
+a^{E}_{\ell m} = -\frac{1}{2} \Big[ {}_{+2}X_{\ell m} + _{-2}X_{\ell m} \Big] ~\,;~a^{B}_{\ell m} = -\frac{1}{2i} \Big[ {}_{+2}X_{\ell m} - _{-2}X_{\ell m} \Big] 
+\eeq
+%
+In the remainder of this article, we will work with the scalar $E$ and pseudo scalar $B$ fields as defined by the following expressions, 
+%
+\beq \label{eq:pseudo}
+E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n}) ~\,;~ B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
+\eeq
+%
+Note that the two set of fields $\mathcal{E}/\mathcal{B}$ and $E/B$ differ, since their spherical harmonic coefficients of expansion differ by the factor of $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$.
+
+%--------------------------------------------------------
+%--------------------------------------------------------
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
 In this section we cast the relation introduced in Sec.~\ref{sec:pol-primer} in matrix notation\footnote{While we work with the matrix and vector sizes given in terms of Healpix pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}. This representation will make transparent the derivation of the real space operators we discuss in the following sections. We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.\\
 We begin by introducing the matrices encoding the spin spherical harmonic basis vectors,

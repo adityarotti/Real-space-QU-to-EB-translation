@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}
-\contentsline {section}{\numberline {2}E/B description of CMB polarization}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Polarization primer}{2}{subsection.2.1}
+\contentsline {section}{\numberline {2}E/B description of CMB polarization}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Polarization primer}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Matrix notation}{4}{subsection.2.2}
 \contentsline {section}{\numberline {3}Real space operators}{5}{section.3}
 \contentsline {subsection}{\numberline {3.1}Evaluating E \& B fields from measured Stokes parameters Q \& U}{5}{subsection.3.1}
