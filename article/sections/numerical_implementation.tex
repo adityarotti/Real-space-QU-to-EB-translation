@@ -13,12 +13,12 @@ Here we present the results of evaluating the local convolution given in \eq{eq:
 %
 \begin{figure}[!t] 
 \centering
-\subfigure[E-mode Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/emap-healpix.pdf}}
-\subfigure[E-mode local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/emap-2beta.pdf}}
-\subfigure[Difference]{\includegraphics[width=0.31\columnwidth]{simulated/emap-diff.pdf}}
-\subfigure[B-mode Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/bmap-healpix.pdf}}
-\subfigure[B-mode local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/bmap-2beta.pdf}}
-\subfigure[Difference]{\includegraphics[width=0.31\columnwidth]{simulated/bmap-diff.pdf}}
+\subfigure[E-mode Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/qu2eb/emap-healpix.pdf}}
+\subfigure[E-mode local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/qu2eb/emap-2beta.pdf}}
+\subfigure[Difference]{\includegraphics[width=0.31\columnwidth]{simulated/qu2eb/emap-diff.pdf}}
+\subfigure[B-mode Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/qu2eb/bmap-healpix.pdf}}
+\subfigure[B-mode local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/qu2eb/bmap-2beta.pdf}}
+\subfigure[Difference]{\includegraphics[width=0.31\columnwidth]{simulated/qu2eb/bmap-diff.pdf}}
 \caption{{\textit Left:} Reference E \& B mode maps derived using Healpix. {\textit Middle:} E \& B mode maps derived using $r_{\rm cutoff}=2\beta_o$. The color scale is saturated to that of the respective reference maps. {\textit Right:} Difference between the maps shown in the left and middle columns.}
 \label{fig:eb-maps-compare}
 \end{figure}
@@ -32,12 +32,12 @@ At first glance, the above remarks seem to hold true only for the E mode spectra
 \begin{figure}[!t] 
 \centering
 %\vspace{-5cm}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/ee-spectrum-radial-cutoff.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/bb-spectrum-radial-cutoff.pdf}}\\[-6ex]
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/relative-percentage-err-ee-spectrum-radial-cutoff.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/relative-percentage-err-bb-spectrum-radial-cutoff.pdf}}\\[-6ex]
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/eqmask/relative-percentage-err-ee-spectrum-radial-cutoff.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/eqmask/relative-percentage-err-bb-spectrum-radial-cutoff.pdf}} \\[-2ex]
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2eb/ee-spectrum-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2eb/bb-spectrum-radial-cutoff.pdf}}\\[-6ex]
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2eb/relative-percentage-err-ee-spectrum-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2eb/relative-percentage-err-bb-spectrum-radial-cutoff.pdf}}\\[-6ex]
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2eb/eqmask/relative-percentage-err-ee-spectrum-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2eb/eqmask/relative-percentage-err-bb-spectrum-radial-cutoff.pdf}} \\[-2ex]
 \caption{\textit{Top:} The figures on left and right depict the E mode spectra and the B mode spectra respectively. \textit{Middle:} These figures depict the relative percentage difference between the spectra derived from full sky, locally evaluated E \& B  maps and the reference spectra. \textit{Bottom:} These figures depict the same results as shown in the middle row, except that the regions with $|b|>30^\circ$ of the maps have been masked for this analysis. 
 The colors indicate the spectra derived from imposing different radial cutoff as indicated by the legends. The gray bands indicate the cosmic variance scatter around the fiducial spectra. The dashed horizontal black lines mark the 2\% error.}
 \label{fig:eb-spectra_rad_cutoff}
@@ -47,22 +47,23 @@ We exchanged the E and B mode spectra, \revisit{(taking care to set $C_{\ell}^{T
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Separating Stokes Q \& U maps corresponding to E \& B modes of polarization}
+Here 
 %
 \begin{figure}[!h] 
 \centering
-\subfigure[E Q-map: Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/e-qmap-healpix.pdf}}
-\subfigure[E Q-map: Local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/e-qmap-2beta.pdf}}
-\subfigure[E Q-map: Difference]{\includegraphics[width=0.31\columnwidth]{simulated/e-qmap-diff.pdf}}
-\subfigure[E U-map: Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/e-umap-healpix.pdf}}
-\subfigure[E U-map: Local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/e-umap-2beta.pdf}}
-\subfigure[E U-map: Difference]{\includegraphics[width=0.31\columnwidth]{simulated/e-umap-diff.pdf}}
+\subfigure[E Q-map: Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/e-qmap-healpix.pdf}}
+\subfigure[E Q-map: Local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/e-qmap-2beta.pdf}}
+\subfigure[E Q-map: Difference]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/e-qmap-diff.pdf}}
+\subfigure[E U-map: Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/e-umap-healpix.pdf}}
+\subfigure[E U-map: Local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/e-umap-2beta.pdf}}
+\subfigure[E U-map: Difference]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/e-umap-diff.pdf}}
 
-\subfigure[B Q-map: Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/b-qmap-healpix.pdf}}
-\subfigure[B Q-map: Local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/b-qmap-2beta.pdf}}
-\subfigure[B Q-map: Difference]{\includegraphics[width=0.31\columnwidth]{simulated/b-qmap-diff.pdf}}
-\subfigure[B U-map: Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/b-umap-healpix.pdf}}
-\subfigure[B U-map: Local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/b-umap-2beta.pdf}}
-\subfigure[B U-map: Difference]{\includegraphics[width=0.31\columnwidth]{simulated/b-umap-diff.pdf}}
+\subfigure[B Q-map: Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/b-qmap-healpix.pdf}}
+\subfigure[B Q-map: Local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/b-qmap-2beta.pdf}}
+\subfigure[B Q-map: Difference]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/b-qmap-diff.pdf}}
+\subfigure[B U-map: Healpix]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/b-umap-healpix.pdf}}
+\subfigure[B U-map: Local convolution]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/b-umap-2beta.pdf}}
+\subfigure[B U-map: Difference]{\includegraphics[width=0.31\columnwidth]{simulated/qu2equbqu/b-umap-diff.pdf}}
 \caption{The top two rows depict the Stokes Q \& U maps  respectively corresponding to E mode of polarization while the bottom two rows depict  the Stokes Q \& U maps  respectively corresponding to the  B modes of polarization. \textit{Left:} Stokes Maps derived using Healpix. \textit{Middle}: Stokes maps derived using local convolution with $r_{\rm cutoff} = 2 \beta_o$. \textit{Right:} Difference between the maps derived using the two different methods.}
 \label{fig:equ-bqu-maps-compare}
 \end{figure}
@@ -71,10 +72,10 @@ We exchanged the E and B mode spectra, \revisit{(taking care to set $C_{\ell}^{T
 %
 \begin{figure}[!h] 
 \centering
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/equ-spectra-radial-cutoff.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/bqu-spectra-radial-cutoff.pdf}}\\[-5ex]
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/relative-percentage-err-equ-e-spectrum-radial-cutoff.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/relative-percentage-err-bqu-b-spectrum-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/equ-spectra-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/bqu-spectra-radial-cutoff.pdf}}\\[-5ex]
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/relative-percentage-err-equ-e-spectrum-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/relative-percentage-err-bqu-b-spectrum-radial-cutoff.pdf}}
 \caption{}
 \label{fig:equ-bqu-spectra_rad_cutoff}
 \end{figure}
