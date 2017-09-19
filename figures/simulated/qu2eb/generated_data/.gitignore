@@ -1,0 +1,9 @@
+# .gitignore sample 
+###################
+
+# ignore all files in this dir...
+*.fits
+
+# ... except for this one.
+!.gitignore
+
