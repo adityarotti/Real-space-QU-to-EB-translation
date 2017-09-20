@@ -47,7 +47,7 @@ We exchanged the E and B mode spectra, \revisit{(taking care to set $C_{\ell}^{T
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Separating Stokes Q \& U maps corresponding to E \& B modes of polarization}
-In this section we present the results of evaluating the local convolution given in \eq{eq:op_qu2equbqu}, to decompose the total Stokes Q and U parameters into those correspond to the E modes and B modes of polarization respectively. We reiterate that this procedure only relies on real space operation on the total Stokes Q and U maps and do not go through the process of constructing the E and B modes as is usually the case.
+In this section we present the results of evaluating the local convolution given in \eq{eq:op_qu2equbqu}, to decompose the total Stokes Q and U parameters into those correspond to the E modes and B modes of polarization respectively. We reiterate that this procedure uses real space operation on the total Stokes Q and U maps and does not go through the process of constructing the E and B modes as is usually the case. The resultant Stokes Q and U maps corresponding to the E mode are depicted in the first two rows while those corresponding to B modes are shown in the final two rows of \fig{fig:equ-bqu-maps-compare}. 
 %
 \begin{figure}[!t] 
 \centering
@@ -68,7 +68,9 @@ In this section we present the results of evaluating the local convolution given
 \label{fig:equ-bqu-maps-compare}
 \end{figure}
 %
+The local convolution maps depicted in this figure are computed using a radial cutoff of $r_{\rm cutoff }=2\beta_o$. Note that similar to observations of the previous section, the maps derived via local real space convolutions, suffer from having relatively higher error in the polar caps, while the differences in the  band around the equator are smaller and dominated by large scale modes.
 
+Next we compute the E and B mode spectra from the set of Stokes maps constructed using local convolutions with different $r_{\rm cutoff}$. Note that for this exercise we use the standard Healpix routines for computing the spectra from the Stokes maps. The spectra derived from these local convolution maps and their difference with respect to the reference spectra are depicted in \fig{fig:equ-bqu-spectra_rad_cutoff}. The observations are similar to that made in the previous section: the difference with respect to the reference spectra reduce on increasing the radial cutoff and reach 2\% levels at most multipoles for the maximum radial $r_{\rm cutoff} =2 \beta_o$ used in this analysis.
 %
 \begin{figure}[!t] 
 \centering
@@ -76,10 +78,25 @@ In this section we present the results of evaluating the local convolution given
 \subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/bqu-spectra-radial-cutoff.pdf}}\\[-5ex]
 \subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/relative-percentage-err-equ-e-spectrum-radial-cutoff.pdf}}
 \subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/relative-percentage-err-bqu-b-spectrum-radial-cutoff.pdf}}
-\caption{\textit{Top:} The thick lines in the figure on left depicts the E mode spectra derived from pure E Stokes Q and U parameters derived for different radial cutoffs on the convolution, the thin lines depict the B mode spectra for the residual B modes.}
+\caption{\textit{Top:} The thick lines in the figure on left depicts the E mode spectra derived from pure E Stokes Q and U maps derived using different radial cutoffs, while the thin lines depict the residual B mode power. The figure on the right depict the same except that the thick lines now depict the B mode spectra while the thin lines show the residual E mode power. \textit{Bottom:} The figure on the left and right depict the difference between the reference spectra and those derived from local convolution maps for different $r_{\rm cutoff}$ imposed on the convolution. In all the panels the color of the lines indicate the radial cutoff as indicated by the legend and the gray band marks the cosmic variance around the fiducial spectra.}
 \label{fig:equ-bqu-spectra_rad_cutoff}
 \end{figure}
 %
+In particular here we note that the B-mode residue in the Stokes Q \& U maps corresponding to E-modes is much smaller as compared to the E-mode residue in the Stokes Q \& U maps  computed for the B-modes of polarization. At all multipoles the B-mode residual power is below the lensing B-modes. The E-mode residual power at low multipoles is almost fully intact. 
+
+Motivated by these observations we also compute the Stokes Q \& U maps corresponding to B-modes of polarization by simply subtracting the Stokes Q \& U maps corresponding to E-mode from the total Stoker Q \& U maps. For completeness we also compute the Stokes Q \& U maps corresponding to E-mode in an analogous manner. We carry out a spectral study on these Stokes Q \& U maps corresponding to E \& B modes, computed using this alternate method. The results of the spectral analysis are summarized in \fig{fig:dbqu-spectra_rad_cutoff}.
+%
+\begin{figure}[!t] 
+\centering
+%\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/dequ-spectra-radial-cutoff.pdf}}
+%\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/dbqu-spectra-radial-cutoff.pdf}} \\[-5ex]
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/relative-percentage-err-equ-de-spectrum-radial-cutoff.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/qu2equbqu/relative-percentage-err-bqu-db-spectrum-radial-cutoff.pdf}}
+\caption{This figure depicts the same as the bottom panel of \fig{fig:equ-bqu-spectra_rad_cutoff}. The Stokes Q and U maps corresponding to E and B modes used in this analysis are constructed using the following relations: $\equ=\fqu-\fqu_{Local}^B$, $\bqu=\fqu-\fqu_{Local}^{E}$.}
+\label{fig:dbqu-spectra_rad_cutoff}
+\end{figure}
+%
+We observe that the the low multipole spectral behavior is not affected by this alternate construction of pure Stokes Q \& U maps. The high multipole behavior is significantly altered as can be seen by comparing \fig{fig:dbqu-spectra_rad_cutoff} with lower panels of \fig{fig:equ-bqu-spectra_rad_cutoff}. The relative percentage difference with respect to the reference spectra is seen to lie well within 2\% error for sufficiently high multipoles for all radial cutoff $r_{\rm cutoff}$.
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Multipole filtering using spatial convolutions}

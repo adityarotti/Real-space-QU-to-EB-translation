@@ -11,11 +11,11 @@
 \contentsline {section}{\numberline {4}Numerical implementation}{14}{section.4}
 \contentsline {subsection}{\numberline {4.1}Constructing E \& B maps using local convolutions}{14}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Separating Stokes Q \& U maps corresponding to E \& B modes of polarization}{17}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Multipole filtering using spatial convolutions}{17}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Application to Planck 353 Ghz polarization maps}{19}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Scaling and future prospects}{19}{subsection.4.5}
-\contentsline {section}{\numberline {5}Discussion}{21}{section.5}
-\contentsline {section}{\numberline {6}Appendix}{22}{section.6}
-\contentsline {subsection}{\numberline {6.1} Mathematical properties of spin spherical harmonics}{22}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Asymptotic forms for the functions ${}_{\pm 2}f_{\ell }(\beta )$}{22}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Convolution error}{23}{subsection.6.3}
+\contentsline {subsection}{\numberline {4.3}Multipole filtering using spatial convolutions}{19}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Application to Planck 353 Ghz polarization maps}{20}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Scaling and future prospects}{20}{subsection.4.5}
+\contentsline {section}{\numberline {5}Discussion}{22}{section.5}
+\contentsline {section}{\numberline {6}Appendix}{23}{section.6}
+\contentsline {subsection}{\numberline {6.1} Mathematical properties of spin spherical harmonics}{23}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Asymptotic forms for the functions ${}_{\pm 2}f_{\ell }(\beta )$}{23}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Convolution error}{24}{subsection.6.3}
