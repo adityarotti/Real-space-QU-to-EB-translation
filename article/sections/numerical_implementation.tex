@@ -98,7 +98,31 @@ We observe that the the low multipole spectral behavior is not affected by this 
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Multipole filtering using spatial convolutions}
-As we have seen in the previous section that recovering large scale modes using local convolutions is not possible. The small angular scales however are reliably recovered. However the local convolution methods can be used to recover competent spectra. 
-Many CMB experiments cannot access the large angle modes due to limited sky coverage. Often the large angle analysis is deal with in pixel space owing to the non-Gaussianity of the likelihood functions. With all these as motivations we study how the radial filters are modified by removing the large scale modes. We try to understand how removing large scale modes effects the locality of the E and B map estimators. We demonstrate that it is possible to get filtered maps by using the modifying the radial filter. 
+As seen in the previous sections using local convolution methods to separate E and B modes does not allow the recovery of large scale modes. However we demonstrated that these local convolution methods can be used to recover competent spectra on small angular scales. In this section we demonstrate the construction of radial kernels which achieve the desired multipole filtering. The radial filters for the desired multipole filtering can be constructed by simply controlling the $\ell_{\rm min}$ \& $\ell_{\rm max}$ arguments of the functions $f(\beta,\ell_{\rm min},\ell_{\rm max})$ and ${}_{\pm 2}f(\beta,\ell_{\rm min},\ell_{\rm max})$.
+
+Altering $\ell_{\rm max}$ would necessitate updating $\beta_o$, hence we avoid doing that. In order to ensure that we are changing only one parameter, we focus on high pass filtering, which we achieve by altering $\ell_{\rm min}$. 
+%
+\begin{figure}[!t]
+\centering
+\subfigure[]{\includegraphics[width=1.\columnwidth]{simulated/multipole_filter/f_rad_ker_fn_vary_lmin.pdf}}\\
+\subfigure[]{\includegraphics[width=0.48\columnwidth]{simulated/multipole_filter/fp2_rad_ker_fn_vary_lmin.pdf}}
+\subfigure[]{\includegraphics[width=0.48\columnwidth]{simulated/multipole_filter/fm2_rad_ker_fn_vary_lmin.pdf}}
+\caption{}
+\label{}
+\end{figure}
+%
+
+%
+\begin{figure}[!t]
+\centering
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/multipole_filter/eqmask/ee-spectrum-rteb-2beta_multipole_filtering.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/multipole_filter/eqmask/bb-spectrum-rteb-2beta_multipole_filtering.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/multipole_filter/eqmask/ee-spectrum-requ-2beta_multipole_filtering.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/multipole_filter/eqmask/bb-spectrum-rbqu-2beta_multipole_filtering.pdf}}
+\caption{}
+\label{}
+\end{figure}
+%
+
 %--------------------------------------------------------
 %--------------------------------------------------------
