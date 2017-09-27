@@ -98,20 +98,18 @@ We observe that the the low multipole spectral behavior is not affected by this 
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Multipole filtering using spatial convolutions}
-As seen in the previous sections using local convolution methods to separate E and B modes does not allow the recovery of large scale modes. However we demonstrated that these local convolution methods can be used to recover competent spectra on small angular scales. In this section we demonstrate the construction of radial kernels which achieve the desired multipole filtering. The radial filters for the desired multipole filtering can be constructed by simply controlling the $\ell_{\rm min}$ \& $\ell_{\rm max}$ arguments of the functions $f(\beta,\ell_{\rm min},\ell_{\rm max})$ and ${}_{\pm 2}f(\beta,\ell_{\rm min},\ell_{\rm max})$.
-
-Altering $\ell_{\rm max}$ would necessitate updating $\beta_o$, hence we avoid doing that. In order to ensure that we are changing only one parameter, we focus on high pass filtering, which we achieve by altering $\ell_{\rm min}$. 
-%
+ In this section we construct radial kernels which result in the desired multipole filtering, which can be achieved by simply controlling the $\ell_{\rm min}$ \& $\ell_{\rm max}$ arguments of the functions $f(\beta,\ell_{\rm min},\ell_{\rm max})$ and ${}_{\pm 2}f(\beta,\ell_{\rm min},\ell_{\rm max})$. \revisit{We reiterate that only the radial part of the convolution kernel encodes the multipole information, while the azimuthal part of the kernel is independent of multipoles. As seen in the previous sections, using local convolution methods to separate E and B modes does not allow the recovery of large scale modes. 
+ %
 \begin{figure}[!t]
 \centering
 \subfigure[]{\includegraphics[width=1.\columnwidth]{simulated/multipole_filter/f_rad_ker_fn_vary_lmin.pdf}}\\
 \subfigure[]{\includegraphics[width=0.48\columnwidth]{simulated/multipole_filter/fp2_rad_ker_fn_vary_lmin.pdf}}
 \subfigure[]{\includegraphics[width=0.48\columnwidth]{simulated/multipole_filter/fm2_rad_ker_fn_vary_lmin.pdf}}
-\caption{}
-\label{}
+\caption{This figure depicts the all the radial kernels evaluated for different multipole filters. In the filtered kernels presented here, only $\ell_{\rm min}$ has been altered while the maximum multipole is held fixed at $\ell_{\rm max}=192$. The kernels have been multiplied by a factor of the argument $\beta$ to highlight the differences in the kernel at large angular separations $\beta$.}
+\label{fig:rad_ker_multipole_filter}
 \end{figure}
 %
-
+This can be understood as occurring due to the following reason: localizing the convolution kernel by introducing a radial cut off, progressively reduces the overlap of the kernels for pixels on increasing the separation between them. The overlap begins to significantly drop when angular distances are larger than $r_{\rm cutoff}$ and reaches a null at a separation of  $2 r_{\rm cutoff}$. Owing to this overlap reduction, the pixels at large separation in the constructed maps have a reduced correlation, specifically $C(\theta > 2 r_{\rm cutoff})=0$.}  This motivates the construction of high pass filters especially while working with local convolution maps. \comment{This should results in systematically lower power on large angular scales. This is observed for E mode spectra, but not quiet for B. Why is that ?}.  
 %
 \begin{figure}[!t]
 \centering
@@ -119,10 +117,13 @@ Altering $\ell_{\rm max}$ would necessitate updating $\beta_o$, hence we avoid d
 \subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/multipole_filter/eqmask/bb-spectrum-rteb-2beta_multipole_filtering.pdf}}
 \subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/multipole_filter/eqmask/ee-spectrum-requ-2beta_multipole_filtering.pdf}}
 \subfigure[]{\includegraphics[width=0.49\columnwidth]{simulated/multipole_filter/eqmask/bb-spectrum-rbqu-2beta_multipole_filtering.pdf}}
-\caption{}
-\label{}
+\caption{The top left and right panels depict the spectra  for E and B modes respectively, where each panel shows the spectra derived from filtered E \& B maps computed using local convolutions. The bottom left and right panels depict the same for spectra derived from $[Q,U]_E$ and $[Q,U]_B$ maps computed using local convolutions. The thin dashed lines in the bottom panels depict the residual power in the orthogonal modes. The vertical gray lines mark the low multipole cut off corresponding to $\ell_{min}=64$ and $\ell_{min}=128$. All local convolution have been performed with $r_{\rm cutoff} =2 \beta_o$.}
+\label{fig:filtered_spectra}
 \end{figure}
 %
+We construct radial filters with three different low multipole cut-offs: $\ell_{\rm min} =2,64 ~ \& ~ 128$ which are depicted in \fig{fig:rad_ker_multipole_filter}. The kernels have been purposefully multiplied by a factor of the angular distance $\beta$ to highlight the differences in the radial kernels for different multipole cut-offs.
+
+We use these different radial kernels to perform local convolutions on the simulated polarization maps. We use the same radial cut off: $r_{\rm cutoff}=2\beta_o$ for all the different filters, where $\beta_o=22.5^{\circ}$. The spectra from the filtered maps so constructed are depicted in \fig{fig:filtered_spectra}. Through these results we demonstrate how we can alter the radial part of the convolution kernels to get maps with the desired multipole filtering. \comment{What do you have to say about the jump in power for the B mode spectra at the low multipole cutoff, derived from filtered B maps ?}
 
 %--------------------------------------------------------
 %--------------------------------------------------------

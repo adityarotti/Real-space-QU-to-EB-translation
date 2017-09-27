@@ -19,3 +19,4 @@
 \contentsline {subsection}{\numberline {6.1} Mathematical properties of spin spherical harmonics}{26}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Asymptotic forms for the functions ${}_{\pm 2}f_{\ell }(\beta )$}{26}{subsection.6.2}
 \contentsline {subsection}{\numberline {6.3}Convolution error}{27}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}The correlation function and radial cut offs.}{28}{subsection.6.4}
