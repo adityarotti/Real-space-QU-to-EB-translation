@@ -1,13 +1,16 @@
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Application to Planck 353 Ghz polarization maps}
+In this section we apply the local convolution estimator for E and B mode maps on Planck 353 GHz polarization data. To work with out local convolution method, we reduce the resolution of the map to $Nside=128$ using the Healpix \textit {ud\_grade} function. We use a high pass filters which retains modes in the multipole range $\ell=[50,256]$. The non-locality parameter given $\ell_{\rm max}=256$ is $\beta_o=17^{\circ}$. We estimate the local E and B mode maps by performing local convolutions for a set of radial cut-offs: $r_{\rm cutoff} = \beta_o, 0.5\beta_o, 0.25\beta_o$. We do not use any mask while carrying out this analysis. The resultant E and B mode maps are depicted in \fig{fig:353ghz-eb-maps}.
 %
 \begin{figure}[!h] 
 \centering
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-e-mode-healpix_filter_lmin50_lmax256_nside128.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-b-mode-healpix_filter_lmin50_lmax256_nside128.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-e-mode-realspace_disc15d_apo4d_lmin50_lmax256_nside128.pdf}}
-\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-b-mode-realspace_disc15d_apo4d_lmin50_lmax256_nside128.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-e-mode-healpix_filter_lmin30_lmax256_nside128.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-b-mode-healpix_filter_lmin30_lmax256_nside128.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-e-mode-realspace_disc7d_apo0d_lmin30_lmax256_nside128.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-b-mode-realspace_disc7d_apo0d_lmin30_lmax256_nside128.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-e-mode-realspace_disc7d_apo0d_lmin50_lmax256_nside128.pdf}}
+\subfigure[]{\includegraphics[width=0.49\columnwidth]{353ghz/353ghz-b-mode-realspace_disc7d_apo0d_lmin50_lmax256_nside128.pdf}}
 \caption{}
 \label{fig:353ghz-eb-maps}
 \end{figure}
