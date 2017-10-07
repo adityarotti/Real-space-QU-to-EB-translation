@@ -51,6 +51,44 @@ class real_space_queb_kernels(object):
     		gamma=np.arctan2(n,dg) ; gamma[beta==0]=0. ; gamma[abs(beta-np.pi)<1e-5]=0.
 
 		return alpha,beta,gamma,spixel
+
+	def return_euler_angles_new(self,nside,cpixel,discsize=180.,nest=False):
+		theta1,phi1=h.pix2ang(nside,cpixel,nest=nest)
+
+		v=h.pix2vec(nside,cpixel,nest=nest)
+		spixel=h.query_disc(nside,v,discsize*np.pi/180.,inclusive=True,fact=4,nest=nest)
+		theta2,phi2=h.pix2ang(nside,spixel,nest=nest)
+
+		temp_beta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
+		temp_beta[temp_beta>1.]=1. ; temp_beta[temp_beta<-1.]=-1.
+		beta=np.arccos(temp_beta)
+
+		na = np.sin(theta2)*np.sin(phi2-phi1)
+		da = np.sin(theta1)*np.cos(theta2) - np.sin(theta2)*np.cos(theta1)*np.cos(phi2-phi1)
+    		alpha=np.arctan2(na,da) ; alpha[beta==0]=0. ; alpha[abs(beta-np.pi)<1e-5]=0.
+
+		ng = np.sin(theta1)*np.sin(phi2-phi1)
+		dg = -np.sin(theta2)*np.cos(theta1) + np.sin(theta1)*np.cos(theta2)*np.cos(phi2-phi1)
+    		gamma=np.arctan2(ng,dg) ; gamma[beta==0]=0. ; gamma[abs(beta-np.pi)<1e-5]=0.
+
+		return alpha,beta,gamma,spixel
+
+
+	def return_euler_ang(self,theta1,phi1,theta2,phi2):
+
+		temp_beta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
+		#temp_beta[temp_beta>1.]=1. ; temp_beta[temp_beta<-1.]=-1.
+		beta=np.arccos(temp_beta)
+
+		na = np.sin(theta2)*np.sin(phi2-phi1)
+		da = -np.sin(theta1)*np.cos(theta2) + np.sin(theta2)*np.cos(theta1)*np.cos(phi2-phi1)
+    		alpha=np.arctan2(na,da) #; alpha[beta==0]=0. ; alpha[abs(beta-np.pi)<1e-5]=0.
+
+		ng = np.sin(theta1)*np.sin(phi2-phi1)
+		dg = np.sin(theta2)*np.cos(theta1) - np.sin(theta1)*np.cos(theta2)*np.cos(phi2-phi1)
+    		gamma=np.arctan2(ng,dg) #; gamma[beta==0]=0. ; gamma[abs(beta-np.pi)<1e-5]=0.
+
+		return alpha,beta,gamma	
 #	-----------------------------------------------------------------------------------------------------------------------------------------
 	
 #	-----------------------------------------------------------------------------------------------------------------------------------------
@@ -63,6 +101,7 @@ class real_space_queb_kernels(object):
 				for j in range(lmax-lmin+1):
 					l=j+lmin
 					norm=self.omega*((2.*l+1.)/(4.*np.pi))*((1./((l+2.)*(l+1.)*(l-1.)*l))**0.5)
+					#norm=self.omega*((1./((l+2.)*(l+1.)*(l-1.)*l))**0.5)
 					self.rad_ker[i]=self.rad_ker[i] + norm*self.pl2[l,i]
 		else:
 			print "Please provide an lmax less than maxlmax:" + str(self.maxlmax) + "or increase the maxlmax"
