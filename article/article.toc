@@ -3,8 +3,8 @@
 \contentsline {subsection}{\numberline {2.1}Polarization primer}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Matrix notation}{4}{subsection.2.2}
 \contentsline {section}{\numberline {3}Real space operators}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Evaluating E \& B fields from measured Stokes parameters Q \& U}{5}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Evaluating Stokes parameters Q \& U fields from E \& B fields}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.1}Evaluating E \& B fields from measured Stokes parameters Q \& U}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Evaluating Stokes parameters Q \& U fields from E \& B fields}{8}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Decomposing Q \& U Stokes parameters into those corresponding to E \& B modes respectively}{8}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Visualizing the convolution kernels}{10}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Quantifying the non-locality of E \& B modes}{12}{subsection.3.5}
@@ -19,4 +19,5 @@
 \contentsline {subsection}{\numberline {6.1} Mathematical properties of spin spherical harmonics}{26}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Asymptotic forms for the functions ${}_{\pm 2}f_{\ell }(\beta )$}{26}{subsection.6.2}
 \contentsline {subsection}{\numberline {6.3}Convolution error}{27}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}The correlation function and radial cut offs.}{28}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.4}Local convolution kernels using standing Healpix routines}{28}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}The correlation function and radial cut offs.}{28}{subsection.6.5}

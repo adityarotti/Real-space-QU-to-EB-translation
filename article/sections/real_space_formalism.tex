@@ -9,13 +9,13 @@ The CMB polarization is measured in terms of Stokes Q and U parameters. These me
 _{\pm 2}\bar{X}(\hat{n}) &=& Q(\hat{n}) \pm i U (\hat{n}) \nonumber \\ &=& \sum_{\ell m}  {_{\pm 2}} \tilde{X}_{\ell m}  {_{\pm 2}}Y_{\ell m} (\hat{n}) \,.
 \eeqry
 %
-Since these measured quantities depend on the local coordinate system making it is cumbersome to work with them. To overcome this, one describes the CMB polarization field in terms of a scalar field denoted by $E(\hat{n}) $ and a pseudo scalar field $B(\hat{n}) $ \cite{Kamionkowski1997}. These scalar fields are related to the spin-2 polarization field $_{\pm 2}X(\hat{n})$ through the following relation,
+Since these measured quantities depend on the local coordinate system, it is cumbersome to work with them. To overcome this, one describes the CMB polarization field in terms of a scalar field denoted by $E(\hat{n}) $ and a pseudo scalar field $B(\hat{n}) $ \cite{Kamionkowski1997}. These scalar fields are related to the spin-2 polarization field $_{\pm 2}X(\hat{n})$ via the following relations,
 %
 \beq \label{eq:ebdef}
 \mathcal{E}(\hat{n}) = -\frac{1}{2} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  +  \eth^2 _{- 2}X(\hat{n}) \big] ~\,;~\mathcal{B}(\hat{n}) = -\frac{1}{2i} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  -  \eth^2 _{- 2}X(\hat{n}) \big] \,,
 \eeq
 %
-where $\eth$ and $\bar{\eth}$ denote the spin raising and lowering operators respectively. These $E$ and $B$ fields are spin-0 fields similar to the temperature anisotropies and hence their value are independent of the coordinate system definitions. The spin raising and lowering operators have the following properties \cite{goldberg67},
+where $\eth$ and $\bar{\eth}$ denote the spin raising and lowering operators respectively. These $E$ and $B$ fields are spin-0 fields similar to the temperature anisotropies and hence their value are independent of the coordinate system definitions (except that the B-modes have an odd parity, meaning that they change sign under reflection $\hat{n} \rightarrow -\hat{n}$.). The spin raising and lowering operators have the following properties \cite{goldberg67},
 %
 \beqrys \label{eq:spinopylm} 
 \eth _s Y_{lm}(\hat{n}) &=& \sqrt{(\ell-s)(\ell+s+1)} _{s+1} Y_{lm}(\hat{n}) \,, \\
@@ -30,7 +30,7 @@ Using \eq{eq:ebdef} and the properties of the spin raising and lowering operator
 \mathcal{E}(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} \sqrt{\frac{(\ell+2)!}{(\ell-2)!}} Y_{\ell m} (\hat{n}) ~\,;~ \mathcal{B}(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} \sqrt{\frac{(\ell+2)!}{(\ell-2)!}} Y_{\ell m} (\hat{n}) \,,
 \eeq
 %
-where the harmonic coefficients of  $\mathcal{E}/\mathcal{B}$ fields are related to the spin harmonic coefficients of the polarization field through the following equations,
+where the harmonic coefficients of  $\mathcal{E}/\mathcal{B}$ fields are related to the harmonic coefficients of the spin-2 polarization field via the following equations,
 %
 \beq\label{eq:x2eb}
 a^{E}_{\ell m} = -\frac{1}{2} \Big[ {}_{+2}X_{\ell m} + _{-2}X_{\ell m} \Big] ~\,;~a^{B}_{\ell m} = -\frac{1}{2i} \Big[ {}_{+2}X_{\ell m} - _{-2}X_{\ell m} \Big] 
@@ -42,45 +42,45 @@ In the remainder of this article, we will work with the scalar $E$ and pseudo sc
 E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n}) ~\,;~ B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-Note that the two set of fields $\mathcal{E}/\mathcal{B}$ and $E/B$ differ, since their spherical harmonic coefficients of expansion differ by the factor of $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$.
-
+Note that the $[E,B]$ fields are merely filtered versions of the fields $[\mathcal{E},\mathcal{B}]$, as their spherical harmonic coefficients of expansion differ by the factor of $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$.
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
-In this section we cast the relation introduced in Sec.~\ref{sec:pol-primer} in matrix notation\footnote{While we work with the matrix and vector sizes given in terms of Healpix pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}. This representation will make transparent the derivation of the real space operators we discuss in the following sections. We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.\\
+In this section we cast the relation introduced in Sec.~\ref{sec:pol-primer} in matrix notation\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}. This representation will make transparent the derivation of the real space operators we discuss in the following sections. We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.\\
 We begin by introducing the matrices encoding the spin spherical harmonic basis vectors,
 %
 \beq
-_sB= \bmat _{+s}Y & 0 \\ 0 & _{-s}Y \emat _{2 \rm N_{\rm pix} \times 2 \rm N_{\rm alms}} \,,
+{}_{|s|}\mathcal{Y}= \bmat _{+s}Y & 0 \\ 0 & _{-s}Y \emat _{2 \rm N_{\rm pix} \times 2 \rm N_{\rm alms}} \,,
 \eeq
 %
-where $s$ denotes the spin of the basis functions. For this work we will only be working with cases $s \in [0,2]$. In this notation, each column can be mapped to a specific harmonic basis function marked by the pair of indices:$(\ell,m)$ and each row maps to a specific position on the sphere. Note that this matrix is in general not a square matrix. Generally the number of columns is determined by the scheme used to discretely represent the sphere and the number of rows is set by the number of basis functions of interest (often determined the band limit).
+where $s$ denotes the spin of the basis functions. For this work we will only be working with cases $s \in [0,2]$. In this notation, each column can be mapped to a specific harmonic basis function marked by the pair of indices:$(\ell,m)$ and each row maps to a specific position on the sphere. Note that this matrix is in general not a square matrix. The number of rows is determined by the scheme used to discretely represent the sphere and the number of columns is set by the number of basis functions of interest (often determined by the band limit).
 
-We now define the different data vectors and their representation in real and harmonic space as follows,
+We now define the different polarization data vectors and their representation in real and harmonic space as follows,
 %
 \beqrys
 \bar{S} &=& \bmat E \\ B  \emat_{2 \rm N_{\rm pix} \times 1} ~~~~;~~ \bar{X} = \bmat _{+2}X \\ _{-2}X \emat_{2 \rm N_{\rm pix} \times 1} ~~;~~\bar{P} =\fqu_{\tiny {2 \rm N_{\rm pix} \times 1}} \,, \\
 \tilde{S} &=& \bmat a^{E} \\ a^{B} \emat _{2 \rm N_{\rm alms} \times 1}  ~~; ~~ \tilde{X} = \bmat _{+2} \tilde{X} \\ _{-2} \tilde{X} \emat_{2 \rm N_{\rm alms} \times 1} \,.
 \eeqrys
 %
-The different symbols have the same meaning as that discussed in \sec{sec:pol-primer}, except that the subscript $_{\ell m}$ for the spherical harmonic coefficients of expansion is suppressed to avoid clutter in notation.
+The different symbols have the same meaning as that discussed in \sec{sec:pol-primer}, except that the subscript $_{\ell m}$ for the spherical harmonic coefficients of expansion is suppressed if favor of cleaner notation.
 
 Next we define the operators which govern the transformations between different representations of the polarization field as follows,
 %
 \beqrys
 \bar T &=& \qutox_{2 \rm N_{\rm pix} \times 2 \rm N_{\rm pix}} ~~;~~ \bar T^{-1} = \frac{1}{2} \bar T^{\dagger} \,, \\
-\tilde T &=& -\qutox_{2 \rm N_{\rm alms} \times 2 \rm N_{\rm alms}} ~~;~~ \tilde T^{-1} = \frac{1}{2} \tilde T^{\dagger} \,. 
+\tilde T &=& -\qutox_{2 \rm N_{\rm alms} \times 2 \rm N_{\rm alms}} ~~;~~ \tilde T^{-1} = \frac{1}{2} \tilde T^{\dagger} \,,
 \eeqrys
 %
-Using the data vectors and the all the operators defined in this section we now write down, in compact notation, the forward and inverse relations between different representations of the polarization field as follows,
+where we have chosen the sign conventions so as to match those used in Healpix.
+Using the data vectors and the matrix operators defined above we can now express, in compact notation, the forward and inverse relations between different representations of the polarization data vectors as follows,
 %
 \beqrys \label{eq:pol_data_relns}
 \bar{X} &=& \bar T * \bar{P} ~~;~~\bar{P} = \frac{1}{2} \bar T^{\dagger} * \bar{X} \,, \\
-\bar X &=&  {_2B} * \tilde X  ~~;~~ \tilde X ={_2B}^{\dagger} * \bar X  \,, \\
+\bar X &=&  {{}_2\mathcal{Y}} * \tilde X  ~~;~~ \tilde X ={{}_2\mathcal{Y}}^{\dagger} * \bar X  \,, \\
 \tilde{X} &=& \tilde T * \tilde{S} ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,.\\ 
-\bar S &=&  {_0B} * \tilde S ~~;~~  \tilde S =  {_0B}^{\dagger} * \bar S \,.
-%\tilde X &=&  {_2B}^{\dagger} * \bar X ~~;~~ \tilde{X} = \tilde T * \tilde{S} \,, \\
-%\bar{S} &=& {_0B}*\tilde S ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,.\\
+\bar S &=&  {{}_0\mathcal{Y}} * \tilde S ~~;~~  \tilde S =  {{}_0\mathcal{Y}}^{\dagger} * \bar S \,.
+%\tilde X &=&  {{}_2\mathcal{Y}}^{\dagger} * \bar X ~~;~~ \tilde{X} = \tilde T * \tilde{S} \,, \\
+%\bar{S} &=& {{}_0\mathcal{Y}}*\tilde S ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,.\\
 %\bar{X} &=& \bar T * \bar{P} ~~;~~ \tilde{X} = \tilde T * \tilde{S} \,, \\
 %\bar{P} &=& \frac{1}{2} \bar T^{\dagger} * \bar{X} ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,. \\
 \eeqrys
@@ -89,7 +89,7 @@ Next we introduce the harmonic space operators, which project the harmonic space
 %
 \beqrys
 \tilde O_E &=& \bmat \mathbb{1} & \mathbb{0} \\ \mathbb{0} & \mathbb{0} \emat _{2 \rm N_{\rm alms} \times 2 \rm N_{\rm alms} }   ~~;~~ \tilde S_E = \tilde O_E* \tilde S \,,\\
-\tilde O_B &=& \bmat \mathbb{0} & \mathbb{0} \\ \mathbb{0} & \mathbb{1} \emat _{2 \rm N_{\rm alms} \times 2 \rm N_{\rm alms} } ~~; ~~ \tilde S_B = \tilde O_B *\tilde S \,.
+\tilde O_B &=& \bmat \mathbb{0} & \mathbb{0} \\ \mathbb{0} & \mathbb{1} \emat _{2 \rm N_{\rm alms} \times 2 \rm N_{\rm alms} } ~~; ~~ \tilde S_B = \tilde O_B *\tilde S \,
 \eeqrys
 %
 Note that these harmonic space matrices are idempotent, orthogonal to each other and their sum is an identity matrix as can be explicitly seen via the following relations, 
@@ -100,20 +100,20 @@ Note that these harmonic space matrices are idempotent, orthogonal to each other
  \tilde O_E + \tilde O_B&=& \mathbb{1} \,.
 \eeqrys
 %
-Here it is important to note that these relations are exact in harmonic space.  \revisit{In the following sections our aim is to derive real space analogues of these harmonic space operators. }
+Note that the above relations for these harmonic space operators are exactly valid.  In the following sections we aim to derive the real space analogues of these harmonic space operators.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real space operators} \label{sec:real_space_operators}
 In this section we derive the real space operators which translate the Stokes parameters Q \& U to E \& B fields and vice versa. We also derive real space operators for directly(without first evaluating the E \& B field themselves) decomposing the Stokes  parameters Q \& U in to Stokes parameters that correspond to the E \& B fields respectively. We extensively make use of the matrix notation introduces in \sec{sec:mat_pol_intro} for these derivations.
 
-All the results are most conveniently expressed as functions of the Euler angles  $\alpha, ~\beta~\&~ \gamma$ on the sphere. Generically, the Euler angles define the rotations that transforms the local cartesian coordinate system defined at the sphere position $\hat{n}_i \equiv (\theta_i,\phi_i)$ such that it aligns with the local cartesian coordinate system at the location $\hat{n}_j \equiv (\theta_j,\phi_j)$ \cite{varshalovich}. The Euler angles can be evaluated as the following functions of the angular coordinates of the points $\hat{n}_i \equiv (\theta_i , \phi_i)$ and $\hat{n}_j \equiv (\theta_j, \phi_j)$,
+All the results are most conveniently expressed as functions of the Euler angles  $\alpha, ~\beta~\&~ \gamma$ on the sphere. Generically, the Euler angles define the rotations that transforms the local cartesian coordinate system defined at the sphere position $\hat{n}_0 \equiv (\theta_0,\phi_0)$ such that it aligns with the local cartesian coordinate system at the location $\hat{n}_i \equiv (\theta_i,\phi_i)$ \cite{varshalovich}. The Euler angles can be evaluated as the following functions of the angular coordinates of the points $\hat{n}_0 \equiv (\theta_0 , \phi_0)$ and $\hat{n}_i \equiv (\theta_i, \phi_i)$,
 %
 \beqrys \label{eq:fn_euler}
-\cos(\beta) &=& \sin(\theta_i)\sin(\theta_j) \cos(\phi_i -\phi_j) + \cos(\theta_i)\cos(\theta_j) \,,\\
-\tan(\alpha) &=& \frac{\sin(\phi_i - \phi_j) \sin(\theta_i) \sin(\theta_j)}{\cos(\theta_i) \cos(\beta) - \cos(\theta_j)} \,, \\
-\tan(\gamma) &=& \frac{\sin(\phi_i - \phi_j) \sin(\theta_i) \sin(\theta_j)}{\cos(\theta_j) \cos(\beta) - \cos(\theta_i)}\,,
+\tan{\alpha} &=& \frac{\sin{(\phi_i - \phi_0)} \sin{\theta_i}}{\sin{\theta_i}\cos{\theta_0} \cos{(\phi_i - \phi_0)} - \sin{\theta_0} \cos{\theta_i} } \,, \\
+\cos{\beta} &=& \sin{\theta_i}\sin{\theta_0} \cos{(\phi_i -\phi_0)} + \cos{\theta_i}\cos{\theta_0} \,,\\
+\tan{\gamma} &=& \frac{ - \sin{(\phi_i - \phi_0)} \sin{\theta_0}}{\sin{\theta_0}\cos{\theta_i} \cos{(\phi_i - \phi_0)} - \sin{\theta_i} \cos{\theta_0} } \,,
 \eeqrys
 %
-where $\beta$ denotes the angular distance between the two points $\hat{n}_i$ \& $\hat{n}_j$ on the sphere, while the angles $\alpha$ \& $\gamma$ define rotations which co-align the coordinate axes of the two local coordinate systems. While evaluating the above functions we follow the convention that $\beta$ lies in the domain $[0, \pi]$ and that the angles $\alpha ~\&~ \gamma$ lie in the domain $[-\pi,\pi]$. It is important to assign the proper signs to $\alpha ~\&~ \gamma$ by duly accounting for the signs of the term in the numerator and the denominator. 
+where $\alpha$ defines the rotation about the z-axis, $\beta$ defines the rotation about the new y-axis (y1-axis) after the previous rotation and $\gamma$ defines the rotation about the final z-axis (z2-axis) after carrying out the previous two rotations. These angles can be understood in more physical terms as follows: the rotation $\alpha$ is such that it aligns the x-axis of the cartesian system at location $\hat{n}_0$ along the great circle in the direction of $\hat{n}_i$.  The rotation by $\beta$ about the y2-axis parallel transports the local cartesian coordinate system from location $\hat{n}_0$ to location $\hat{n}_i$, the z-axes of the two coordinate systems are now parallel to each other. Finally the rotation by angle $\gamma$ about the z2-axis aligns the x \& y axes of the parallel transported system with those of the local cartesian system defined at $\hat{n}_i$. The simplest case is when one of the coordinates coincides with the north pole (more formally this refers to the point $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), say $\hat{n}_0=(\theta_0,\phi_0)=(0,0)$. In this case it is easy to check by substituting these coordinate values in  \eq{eq:fn_euler} that the Euler angles are: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$. While evaluating the above functions we follow the convention that $\beta$ lies in the domain $[0, \pi]$ and that the angles $\alpha ~\&~ \gamma$ lie in the domain $[-\pi,\pi]$. It is important to assign the proper signs to $\alpha ~\&~ \gamma$ by duly accounting for the signs of the term in the numerator and the denominator. \revisit{While in following section we present results in terms of these Euler angles, the local kernels surrounding any pixel can be simply evaluated using standard Healpix functions. We give the details of this procedure in \app{sec:rot_ker_healpix}}.
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Evaluating E \& B fields from measured Stokes parameters Q \& U}\label{sec:qu2eb}
@@ -121,14 +121,14 @@ In \sec{sec:pol-primer} we discussed how the scalar fields E \& B are derived fr
 We use the relations given in \revisit{\eq{eq:pol_data_relns}}, to write down an equation relating the real space vector of scalars $\bar{S}^{\dagger}=[E, B]$ to the polarization vector $\bar{P}^{\dagger}=[Q, U]$ as given below,
 %
 \beqrys
-\bar{S} &=& {_0B} *\tilde T^{-1}* {_2B^{\dagger}} *\bar T *\bar{P} = \frac{1}{2} {_0B} *\tilde T^{\dagger} {_2B^{\dagger}} *\bar T *\bar{P}   \,, \\
+\bar{S} &=& {{}_0\mathcal{Y}} *\tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}} *\bar T *\bar{P} = \frac{1}{2} {{}_0\mathcal{Y}} *\tilde T^{\dagger} {{}_2\mathcal{Y}^{\dagger}} *\bar T *\bar{P}   \,, \\
 &=&  \bar O *\bar{P} \,.
 \eeqrys
 %
 The explicit form of the real space operator $\bar O$ can be derived by contracting over all the matrix operators. This procedure of contracting over the operators is explicitly worked out in the following set of equations,
 %
 \beqrys
-\bar{O} &=& \frac{1}{2} {_0B} *\tilde T^{\dagger} *{_2B^{\dagger}} *\bar T \,, \\
+\bar{O} &=& \frac{1}{2} {{}_0\mathcal{Y}} *\tilde T^{\dagger} *{{}_2\mathcal{Y}^{\dagger}} *\bar T \,, \\
 &=& -0.5 \yzmat{i} \qutoxd \ymatc{j} \qutox   \,, \\
 &=& -0.5 \begin{bmatrix} \sum ({}_{0}Y_i ~{}_{2}Y^{T*}_j  +  {}_{0}Y_i~ {}_{-2}Y^{T*}_j) & {\rm i}  \sum ({}_{0}Y_i~ {}_{2}Y^{T*}_j - {}_{0}Y_i ~{}_{-2}Y^{T*}_j)  \\  - {\rm i} \sum  ({}_{0}Y_i {}_{2}Y^{T*}_j - {}_{0}Y_i {}_{-2}Y^{T*}_j) & \sum ({}_{0}Y_i {}_{2}Y^{T*}_j + {}_{0}Y_i {}_{-2}Y^{T*}_j)  \end{bmatrix} \,, \label{eq:qu2eb_ker_1}
 \eeqrys
@@ -165,7 +165,13 @@ The scalar fields E \& B can now be directly derived from the measured Stokes Q 
 \bmat E_i \\ B_i  \emat= -f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & \sin(2\alpha_{ij})\\  -\sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat Q_j \\ U_j  \emat \Delta \Omega\,,
 \eeq
 %
-where we have used the Einstein summation convention: repeated indices are summed over. The factor $\Delta \Omega$ accounts for the finite pixel size and is important for proper normalization. \revisit{This has an elegant interpretation: to derive the E and/or B field at any given position we need to find the cosine quadrupole transform and the sine quadrupole transform of the Stokes Q \& U parameters on circles around this position, weigh the transform by the value of the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$, $\beta$ being the radius of the circle and sum up the results with appropriate signs, to construct the respective scalar fields.}
+where we have used the Einstein summation convention: repeated indices are summed over. The factor $\Delta \Omega$ accounts for the finite pixel size and is important for proper normalization. \revisit{This has an elegant interpretation: to derive the E and/or B field at any given position we need to find the cosine quadrupole transform and the sine quadrupole transform of the Stokes Q \& U parameters on circles around this position, weigh the transform by the value of the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$, $\beta$ being the radius of the circle and sum up the results with appropriate signs, to construct the respective scalar fields.} \eq{eq:qu2eb_convolution} can be written more concisely as follows,
+%
+\beqry
+[E + iB](\hat{n}_0) &=& \left[ \sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2} (\hat{n}_0, \hat{n}_i) \right]  \circ [Q+iU](\hat{n}_i) \\
+&=& 
+\eeqry
+%
 \rfedit{While the azimuthal operations do not depend on the choice of basis functions, the radial kernel is completely determined by the choice of the basis functions. One can now think of constructing alternate basis functions which have different radial fall off.}
 %--------------------------------------------------------
 %--------------------------------------------------------
@@ -173,7 +179,7 @@ where we have used the Einstein summation convention: repeated indices are summe
 The real space operator which translates E \& B fields to Stokes parameters Q \& U is derived using a similar procedure. The inverse operator is given by the following expression,
 %
 \beqry
-\bar{P} &=& \bar{T}^{-1} *{_2B} *\tilde T *{_0B^{\dagger}}\bar{S} = \frac{1}{2} \bar{T}^{\dagger} *{_2B} *\tilde T *{_0B^{\dagger}}\bar{S}   \\
+\bar{P} &=& \bar{T}^{-1} *{{}_2\mathcal{Y}} *\tilde T *{{}_0\mathcal{Y}^{\dagger}}\bar{S} = \frac{1}{2} \bar{T}^{\dagger} *{{}_2\mathcal{Y}} *\tilde T *{{}_0\mathcal{Y}^{\dagger}}\bar{S}   \\
 &=&  \bar O^{-1} *\bar{S}
 \eeqry
 %
@@ -200,11 +206,11 @@ where again the Einstein summation convention is implied and all the symbols hav
 The Stokes Q \& U parameters can be decomposed into the scalar modes E \& B and vice verse, as seen in the previous sections. The E \& B modes are orthogonal to each other. It is possible to decompose the Stokes Q \& U parameters into those that purely contribute to E modes and those that purely contribute to the B mode of polarization. We can only measure the total Stokes parameters which is a sum of the Stokes Q \& U corresponding to the respective scalar modes.  In this section we derive the real space operators which directly decompose the total measured Stokes Q \& U parameters to Stokes parameters corresponding to the scalar fields E \& B respectively, \textit{without ever having to evaluate the E \& B modes explicitly}. Again the procedure is analogous to that discussed in \sec{sec:qu2eb}, though the algebra is a little more involved. Here we use the harmonic space E/B projection operators $\tilde O_{E/B}$, defined in \eq{eq:eb_har_proj}, to derive the respective real space operators. It can be shown that the Stokes parameters corresponding to each scalar mode are given by the following expressions,
 %
 \beqry
-\bar{P}_E &=&  [\bar T^{-1} * {_2B} *\tilde T * \tilde O_E* \tilde T^{-1}* {_2B^{\dagger}} *\bar T] *\bar{P}  \,, \\
-&=& [\frac{1}{4} \bar T^{\dagger } * {_2B} *\tilde T * \tilde O_E* \tilde T^{\dagger} * {_2B^{\dagger}} *\bar T ]*\bar{P}  \,, \nonumber \\
+\bar{P}_E &=&  [\bar T^{-1} * {{}_2\mathcal{Y}} *\tilde T * \tilde O_E* \tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}} *\bar T] *\bar{P}  \,, \\
+&=& [\frac{1}{4} \bar T^{\dagger } * {{}_2\mathcal{Y}} *\tilde T * \tilde O_E* \tilde T^{\dagger} * {{}_2\mathcal{Y}^{\dagger}} *\bar T ]*\bar{P}  \,, \nonumber \\
 &=&  \bar O_{E}*\bar{P} \,,\nonumber \\
-\bar{P}_B &=&  [\bar T^{-1}* {_2B}* \tilde T* \tilde O_B* \tilde T^{-1}* {_2B^{\dagger}}* \bar T]*\bar{P}  \,, \\
-&=& [\frac{1}{4} \bar T^{\dagger } * {_2B} *\tilde T * \tilde O_B* \tilde T^{\dagger} *{_2B^{\dagger}} *\bar T] *\bar{P}   \,, \nonumber\\
+\bar{P}_B &=&  [\bar T^{-1}* {{}_2\mathcal{Y}}* \tilde T* \tilde O_B* \tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}}* \bar T]*\bar{P}  \,, \\
+&=& [\frac{1}{4} \bar T^{\dagger } * {{}_2\mathcal{Y}} *\tilde T * \tilde O_B* \tilde T^{\dagger} *{{}_2\mathcal{Y}^{\dagger}} *\bar T] *\bar{P}   \,, \nonumber\\
 &=&  \bar O_{B}*\bar{P} \,. \nonumber
 \eeqry
 %
