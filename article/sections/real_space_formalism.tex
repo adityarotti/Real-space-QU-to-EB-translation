@@ -42,7 +42,7 @@ In the remainder of this article, we will work with the scalar $E$ and pseudo sc
 E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n}) ~\,;~ B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-Note that the $[E,B]$ fields are merely filtered versions of the fields $[\mathcal{E},\mathcal{B}]$, as their spherical harmonic coefficients of expansion differ by the factor of $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$.
+Note that the $[E,B]$ fields are merely filtered versions of the fields $[\mathcal{E},\mathcal{B}]$, as their spherical harmonic coefficients of expansion differ by the factor of $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$. We make this choice since the CMB spectra are more closely related to the fields E \& B.
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
@@ -74,7 +74,8 @@ Next we define the operators which govern the transformations between different 
 where we have chosen the sign conventions so as to match those used in Healpix.
 Using the data vectors and the matrix operators defined above we can now express, in compact notation, the forward and inverse relations between different representations of the polarization data vectors as follows,
 %
-\beqrys \label{eq:pol_data_relns}
+\begin{subequations} \label{eq:pol_data_relns}
+\beqry 
 \bar{X} &=& \bar T * \bar{P} ~~;~~\bar{P} = \frac{1}{2} \bar T^{\dagger} * \bar{X} \,, \\
 \bar X &=&  {{}_2\mathcal{Y}} * \tilde X  ~~;~~ \tilde X ={{}_2\mathcal{Y}}^{\dagger} * \bar X  \,, \\
 \tilde{X} &=& \tilde T * \tilde{S} ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,.\\ 
@@ -83,7 +84,8 @@ Using the data vectors and the matrix operators defined above we can now express
 %\bar{S} &=& {{}_0\mathcal{Y}}*\tilde S ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,.\\
 %\bar{X} &=& \bar T * \bar{P} ~~;~~ \tilde{X} = \tilde T * \tilde{S} \,, \\
 %\bar{P} &=& \frac{1}{2} \bar T^{\dagger} * \bar{X} ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,. \\
-\eeqrys
+\eeqry
+\end{subequations}
 %
 Next we introduce the harmonic space operators, which project the harmonic space data vector to E or B subspace,
 %
@@ -103,9 +105,9 @@ Note that these harmonic space matrices are idempotent, orthogonal to each other
 Note that the above relations for these harmonic space operators are exactly valid.  In the following sections we aim to derive the real space analogues of these harmonic space operators.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real space operators} \label{sec:real_space_operators}
-In this section we derive the real space operators which translate the Stokes parameters Q \& U to E \& B fields and vice versa. We also derive real space operators for directly(without first evaluating the E \& B field themselves) decomposing the Stokes  parameters Q \& U in to Stokes parameters that correspond to the E \& B fields respectively. We extensively make use of the matrix notation introduces in \sec{sec:mat_pol_intro} for these derivations.
+In this section we derive the real space operators which translate the Stokes vector \vp{}  to the vector of scalars \vs  and vice versa. We also derive real space operators for direct decomposition of the Stokes vector \vp{} in to a vector \vp{\rm E} that correspond to E-modes and another vector \vp{\rm B} that corresponds to the B-modes of polarization, such that \vp{} = \vp{\rm E} + \vp{\rm B} (without ever evaluating the E \& B fields or their spherical harmonics). For carrying out these derivations we extensively use the matrix notation introduced in \sec{sec:mat_pol_intro}.
 
-All the results are most conveniently expressed as functions of the Euler angles  $\alpha, ~\beta~\&~ \gamma$ on the sphere. Generically, the Euler angles define the rotations that transforms the local cartesian coordinate system defined at the sphere position $\hat{n}_0 \equiv (\theta_0,\phi_0)$ such that it aligns with the local cartesian coordinate system at the location $\hat{n}_i \equiv (\theta_i,\phi_i)$ \cite{varshalovich}. The Euler angles can be evaluated as the following functions of the angular coordinates of the points $\hat{n}_0 \equiv (\theta_0 , \phi_0)$ and $\hat{n}_i \equiv (\theta_i, \phi_i)$,
+\textit{Euler angles:} All the real space operators we derive are most conveniently expressed as functions of the Euler angles  $\alpha, ~\beta~\&~ \gamma$ on the sphere. Owing to this fact we begin by briefly describing the Euler angles and present a way to think about them. The local cartesian coordinate system at any point on the sphere is defined such that the z-axis points along the radial direction, the x-axis is along the vector tangent to the local longitude pointing south and the y-axis is a vector tangent to the local latitude pointing east. The Euler angles define rotations that transforms the local cartesian coordinate system defined at the location $\hat{n}_0 \equiv (\theta_0,\phi_0)$ such that it aligns with the local cartesian coordinate system at the location $\hat{n}_i \equiv (\theta_i,\phi_i)$ \cite{varshalovich}. The Euler angles can be evaluated using the following functions of the angular coordinates of the two locations $\hat{n}_0 \equiv (\theta_0 , \phi_0)$ and $\hat{n}_i \equiv (\theta_i, \phi_i)$,
 %
 \beqrys \label{eq:fn_euler}
 \tan{\alpha} &=& \frac{\sin{(\phi_i - \phi_0)} \sin{\theta_i}}{\sin{\theta_i}\cos{\theta_0} \cos{(\phi_i - \phi_0)} - \sin{\theta_0} \cos{\theta_i} } \,, \\
@@ -113,12 +115,12 @@ All the results are most conveniently expressed as functions of the Euler angles
 \tan{\gamma} &=& \frac{ - \sin{(\phi_i - \phi_0)} \sin{\theta_0}}{\sin{\theta_0}\cos{\theta_i} \cos{(\phi_i - \phi_0)} - \sin{\theta_i} \cos{\theta_0} } \,,
 \eeqrys
 %
-where $\alpha$ defines the rotation about the z-axis, $\beta$ defines the rotation about the new y-axis (y1-axis) after the previous rotation and $\gamma$ defines the rotation about the final z-axis (z2-axis) after carrying out the previous two rotations. These angles can be understood in more physical terms as follows: the rotation $\alpha$ is such that it aligns the x-axis of the cartesian system at location $\hat{n}_0$ along the great circle in the direction of $\hat{n}_i$.  The rotation by $\beta$ about the y2-axis parallel transports the local cartesian coordinate system from location $\hat{n}_0$ to location $\hat{n}_i$, the z-axes of the two coordinate systems are now parallel to each other. Finally the rotation by angle $\gamma$ about the z2-axis aligns the x \& y axes of the parallel transported system with those of the local cartesian system defined at $\hat{n}_i$. The simplest case is when one of the coordinates coincides with the north pole (more formally this refers to the point $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), say $\hat{n}_0=(\theta_0,\phi_0)=(0,0)$. In this case it is easy to check by substituting these coordinate values in  \eq{eq:fn_euler} that the Euler angles are: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$. While evaluating the above functions we follow the convention that $\beta$ lies in the domain $[0, \pi]$ and that the angles $\alpha ~\&~ \gamma$ lie in the domain $[-\pi,\pi]$. It is important to assign the proper signs to $\alpha ~\&~ \gamma$ by duly accounting for the signs of the term in the numerator and the denominator. \revisit{While in following section we present results in terms of these Euler angles, the local kernels surrounding any pixel can be simply evaluated using standard Healpix functions. We give the details of this procedure in \app{sec:rot_ker_healpix}}.
+where $\alpha$ defines the rotation about the z-axis, $\beta$ defines the rotation about the new y-axis (y1-axis) after the previous rotation and $\gamma$ defines the rotation about the final z-axis (z2-axis) after carrying out the previous two rotations. In more physical terms, these angles can be understood as follow: The rotation by $\alpha$ about the z-axis is such that it aligns the x-axis of the cartesian system at location $\hat{n}_0$ along the great circle in the direction of $\hat{n}_i$.  The rotation by $\beta$ about the y2-axis parallel transports the local cartesian coordinate system from location $\hat{n}_0$ to location $\hat{n}_i$, such that the z-axes of the two coordinate systems are parallel to each other. Finally the rotation by angle $\gamma$ about the z2-axis aligns the x \& y axes of the parallel transported system with those of the local cartesian system defined at $\hat{n}_i$. The simplest case is when one of the coordinates coincides with the north pole (more formally this refers to the point $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), say $\hat{n}_0=(\theta_0,\phi_0)=(0,0)$. In this case it is easy to check by substituting these coordinate values in  \eq{eq:fn_euler} that the Euler angles are: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$. While evaluating the above functions we follow the convention that $\beta$ lies in the domain $[0, \pi]$ and that the angles $\alpha ~\&~ \gamma$ lie in the domain $[-\pi,\pi]$. It is important to assign the proper signs to $\alpha ~\&~ \gamma$ by duly accounting for the signs of the term in the numerator and the denominator. \revisit{While in following section we present results in terms of these Euler angles, the local kernels surrounding any pixel can be simply evaluated using standard Healpix functions. We give the details of this procedure in \app{sec:rot_ker_healpix}}.
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Evaluating E \& B fields from measured Stokes parameters Q \& U}\label{sec:qu2eb}
-In \sec{sec:pol-primer} we discussed how the scalar fields E \& B are derived from the Stokes parameters Q \& U. To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 field $({}_{\pm2} \bar X)$, taking linear combinations of the resultant coefficients of expansion $({}_{\pm 2} \tilde X_{\ell m})$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. Here we derive the real space convolution kernels on the sphere which can be used to directly evaluate the scalar E \& B fields on the sphere.  
-We use the relations given in \revisit{\eq{eq:pol_data_relns}}, to write down an equation relating the real space vector of scalars $\bar{S}^{\dagger}=[E, B]$ to the polarization vector $\bar{P}^{\dagger}=[Q, U]$ as given below,
+In \sec{sec:pol-primer} we described how the scalar fields E \& B are derived from the Stokes parameters Q \& U. To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 field $({}_{\pm2} \bar X)$, taking linear combinations of the resultant coefficients of expansion $({}_{\pm 2} \tilde X_{\ell m})$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. Here we derive the real space convolution kernels on the sphere which can be used to directly evaluate the scalar E \& B fields on the sphere.  
+We use the relations given in \eq{eq:pol_data_relns}, to write down an equation relating the real space vector of scalars \vs to the polarization vector \vp{} as given below,
 %
 \beqrys
 \bar{S} &=& {{}_0\mathcal{Y}} *\tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}} *\bar T *\bar{P} = \frac{1}{2} {{}_0\mathcal{Y}} *\tilde T^{\dagger} {{}_2\mathcal{Y}^{\dagger}} *\bar T *\bar{P}   \,, \\
@@ -133,14 +135,14 @@ The explicit form of the real space operator $\bar O$ can be derived by contract
 &=& -0.5 \begin{bmatrix} \sum ({}_{0}Y_i ~{}_{2}Y^{T*}_j  +  {}_{0}Y_i~ {}_{-2}Y^{T*}_j) & {\rm i}  \sum ({}_{0}Y_i~ {}_{2}Y^{T*}_j - {}_{0}Y_i ~{}_{-2}Y^{T*}_j)  \\  - {\rm i} \sum  ({}_{0}Y_i {}_{2}Y^{T*}_j - {}_{0}Y_i {}_{-2}Y^{T*}_j) & \sum ({}_{0}Y_i {}_{2}Y^{T*}_j + {}_{0}Y_i {}_{-2}Y^{T*}_j)  \end{bmatrix} \,, \label{eq:qu2eb_ker_1}
 \eeqrys
 %
-where the symbol ${}_{0}Y_i$ is used to denote the matrix ${}_{0}Y_{\hat{n}_i \times \ell m} \equiv {}_{0}Y_{\ell m}(\hat{n}_i)$, the symbol ${}_{\pm 2}Y^{T*}_j$ is used to denote the matrix ${}_{\pm 2}Y^*_{\ell m \times \hat{n}_j} \equiv {}_{\pm 2}Y^*_{\ell m}(\hat{n}_j)$ and the summation is over the multipole indices $\ell,m$. Using the conjugation properties of the spin spherical harmonic functions it can be shown that the following relation holds true,
+where the symbol ${}_{0}Y_i$ is used to denote the sub-matrix ${}_{0}Y_{\hat{n}_i \times \ell m} \equiv {}_{0}Y_{\ell m}(\hat{n}_i)$, the symbol ${}_{\pm 2}Y^{T*}_j$ is used to denote the matrix ${}_{\pm 2}Y^*_{\ell m \times \hat{n}_j} \equiv {}_{\pm 2}Y^*_{\ell m}(\hat{n}_j)$ and the summation is over the multipole indices $\ell,m$. Using the conjugation properties of the spin spherical harmonic functions it can be shown that the following relation holds true,
 %
 \beq
  \left [\sum_{\ell m} {}_{0}Y_{\ell m}(\hat{n}_i){}_{+2}Y^*_{\ell m}(\hat{n}_j)\right]^* = \sum_{\ell m} {}_{0}Y_{\ell m}(\hat{n}_i){}_{-2}Y^*_{\ell m}(\hat{n}_j) \,.
  \eeq
  %
  where the terms on either side of the equation are those that appear in \eq{eq:qu2eb_ker_1}.
-Therefore the different parts of the real space operators  are completely specified in terms of the complex function,
+Therefore the different parts of the real space operator $\bar{O}$  are completely specified in terms of the complex function,
 %
 \beqrys
 \mathcal{M}( \hat{n}_i, \hat{n}_j)  &=& \mathcal{M}_{r} + i \mathcal{M}_{i}  \,,\nonumber \\ 
@@ -149,30 +151,33 @@ Therefore the different parts of the real space operators  are completely specif
 &=&  \Big [ \cos(2 \alpha_{ij}) - i \sin(2 \alpha_{ij} ) \Big] f(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \,, 
 \eeqrys
 %
-where we have used the property of summation over spin spherical harmonics (see \eq{eq:sum_spin_shf}) listed in Appendix \ref{sec:ylm_mathprop}. Here we first note that this function does not depend on the Euler angle $\gamma$. This function has a part which depends only on the Euler angle $\alpha$ and this part of the function has no multipole dependence.  except the factor of 2 which arises because the polarization field is a spin-2 field. The other part of the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$ depends only on the Euler angle $\beta$ and completely incorporates the multipole dependence of the function. $f(\beta,\ell_{\rm min},\ell_{\rm max})$ will be often be referred to as the radial kernel. The radial kernel is what determines the locality of the operator which translates the Stokes parameters Q \& U to the scalars E \& B.  
+where we have used the property of summation over spin spherical harmonics (see \eq{eq:sum_spin_shf}) listed in Appendix \ref{sec:ylm_mathprop}. Note that this kernel does not depend on the Euler angle $\gamma$. This local convolution kernel has a part which depends only on the Euler angle $\alpha$ which has no multipole dependence,  except the factor of 2 which arises because the polarization field is a spin-2 field. The remaining part of the kernel is specified by the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$ which depends only on the Euler angle $\beta$ and completely incorporates any multipole $\ell$ dependence of the kernel. We will refer to $f(\beta,\ell_{\rm min},\ell_{\rm max})$ as the radial part of the kernel since it only depends on the distance from the location at which the scalar fields are being evaluated. The radial part of the kernel completely determines the locality of the operator which translates the Stokes parameters Q \& U to the scalars E \& B.  
 
-Finally the real space operator can be cast in this simple form,
+On simplifying \eq{eq:qu2eb_ker_1}, the local convolution kernel can be cast in this simple form,
 %
 \beq\label{eq:op_qu2eb}
 \bar O =\bmat  -\mathcal{M}_{r} & -\mathcal{M}_{i} \\  \mathcal{M}_{i}  & -\mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} = -f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & \sin(2\alpha_{ij})\\  -\sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat \,,
 \eeq
 %
-where i,j indices map to the location $\hat{n}_i$ and $\hat{n}_j$ on the sphere. \revisit{A similar equation for real space E \& B operators was derived in \cite{Zaldarriaga2001a}, however those results are derived for the flat sky case and do not explicitly derive the radial kernel.} \comment{Maybe a discussion on this should be in the conclusions.}
+where i,j indices map to the location $\hat{n}_i$ and $\hat{n}_j$ on the sphere. \revisit{A similar equation for real space E \& B operators was derived in \cite{Zaldarriaga2001a}, however those results were derived for the flat sky case and did not explicitly derive the radial kernel.} \comment{A discussion on this should be in the conclusions.}
 
-The scalar fields E \& B can now be directly derived from the measured Stokes Q \& U parameters by evaluating the following expression,
+The scalar fields E \& B can now be directly derived from the measured Stokes Q \& U parameters by evaluating the following convolution,
 %
 \beq \label{eq:qu2eb_convolution}
-\bmat E_i \\ B_i  \emat= -f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & \sin(2\alpha_{ij})\\  -\sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat Q_j \\ U_j  \emat \Delta \Omega\,,
+\bmat E_i \\ B_i  \emat= \sum_{j=1}^{N_{\rm pix}}-f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & \sin(2\alpha_{ij})\\  -\sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat Q_j \\ U_j  \emat \Delta \Omega\,,
 \eeq
 %
-where we have used the Einstein summation convention: repeated indices are summed over. The factor $\Delta \Omega$ accounts for the finite pixel size and is important for proper normalization. \revisit{This has an elegant interpretation: to derive the E and/or B field at any given position we need to find the cosine quadrupole transform and the sine quadrupole transform of the Stokes Q \& U parameters on circles around this position, weigh the transform by the value of the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$, $\beta$ being the radius of the circle and sum up the results with appropriate signs, to construct the respective scalar fields.} \eq{eq:qu2eb_convolution} can be written more concisely as follows,
+where $\Delta \Omega$ denotes the pixel area and all the symbols have their usual meaning. 
+%\revisit{This has an elegant interpretation: to derive the E and/or B field at any given position we need to find the cosine quadrupole transform and the sine quadrupole transform of the Stokes Q \& U parameters on circles around this position, weigh the transform by the value of the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$, $\beta$ being the radius of the circle and sum up the results with appropriate signs, to construct the respective scalar fields.} 
+The above equation can be expressed more concisely as follows,
 %
-\beqry
-[E + iB](\hat{n}_0) &=& \left[ \sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2} (\hat{n}_0, \hat{n}_i) \right]  \circ [Q+iU](\hat{n}_i) \\
-&=& 
-\eeqry
+\beq \label{eq:qu2eb_simple}
+[E + iB](\hat{n}_0) = \left( \left[ -\sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2} \right]  \circ [Q+iU] \right)(\hat{n}_0)\,, 
+\eeq
 %
-\rfedit{While the azimuthal operations do not depend on the choice of basis functions, the radial kernel is completely determined by the choice of the basis functions. One can now think of constructing alternate basis functions which have different radial fall off.}
+where $\circ$ denotes a convolution and the spherical harmonic function are to be evaluated at the $(\theta,\phi)=(\beta,\alpha)$. \revisit{Note that since the kernel does not depend on the Euler angle $\gamma$, the evaluation of the E and B maps is not critically dependent on the exact alignment of the rotated x and y axis with the local x and y axis, only the z-axis needs to be exactly aligned with the local z-axis.}
+
+\rfedit{While the azimuthal operations do not depend on the choice of basis functions, the radial kernel is completely determined by the choice of the basis functions. One can now think of constructing alternate basis functions which have different radial fall off.} \comment{This is generally true for all the local kernels. So shift this line to the section where we explore different radial functions.}
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Evaluating Stokes parameters Q \& U fields from E \& B fields}\label{sec:eb2qu}
@@ -186,20 +191,27 @@ The real space operator which translates E \& B fields to Stokes parameters Q \&
 We do not provide the explicit calculations here, since the real space inverse operator can be derived by contracting over all the matrix operators using a procedure nearly identical to that discussed in the previous section. The inverse operator is given by the following expression,
 %
 \beq
-{\bar O}^{-1}=\bmat - \mathcal{M}_{r} & \mathcal{M}_{i} \\  -\mathcal{M}_{i}  & - \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} =-f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat \,,
+{\bar O}^{-1}=\bmat - \mathcal{M}_{r} & \mathcal{M}_{i} \\  -\mathcal{M}_{i}  & - \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} =-f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat \,.
 \eeq
 %
-where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}.
+%where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}.
 Note that the kernel is different by a mere change in sign on the off-diagonals of the block matrix as compared to \eq{eq:op_qu2eb}.
 We can evaluate the Stokes Q \& U parameters from the scalar E \& B  fields by evaluating the following expression,
 %
 \beq
-\bmat Q_i \\ U_i  \emat=-f(\beta_{ij})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat E_j \\ B_j  \emat \Delta\Omega \,,
+\bmat Q_i \\ U_i  \emat=\sum_{j=1}^{N_{\rm pix}}-f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat E_j \\ B_j  \emat \Delta\Omega \,,
 \eeq
 %
-where again the Einstein summation convention is implied and all the symbols have their usual meaning.
+where all the symbols have their usual meaning. The above equation can again be expressed more concisely as follows,
+%
+\beq
+[Q + iU](\hat{n}_0) = \left( \left[ -\sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2} \right]  \circ [E+iB] \right)(\hat{n}_0)\,,
+\eeq
+%
+which is to be interpreted in the same manner as \eq{eq:qu2eb_simple}. Note that the only change in the convolution kernel as compared to that in \eq{eq:qu2eb_simple} is that the spherical harmonic function $Y_{\ell 2}$ is not conjugated.
 
-\comment{How does the radial kernel reduce to unity on evaluating the the operator on to its inverse ? }
+
+\comment{How does the radial kernel reduce to unity on evaluating the the operator on to its inverse ? This will be important to understand how to define alternate radial functions.}
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Decomposing Q \& U Stokes parameters into those corresponding to E \& B modes respectively}
