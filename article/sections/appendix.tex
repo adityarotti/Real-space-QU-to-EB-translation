@@ -30,8 +30,8 @@ The spin spherical harmonic functions satisfy the following completeness relatio
 Note that the numerical validity of \eq{eq:ylmortho2} is strictly true only when the sums over the indices $(\ell, m)$ run to infinity. This is never true in practice, since the measured data invariable are band limited owing to the finite resolution of the experiments. Hence this relation is only approximately true and in more realistic scenario takes up the following function form,
 %
 \beqry
-\sum_{\ell=\ell_{\rm min}, m}^{\ell_{\rm max}}{_sY_{\ell m}}(\hat{n}_i){_sY^*_{\ell m}}(\hat{n}_j) &\approx& \delta(\hat{n}_i - \hat{n}_j) \label{eq:ylmortho2} \,, \\
-&=& \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}} {}_{s}Y^{-s}_{\ell}(\beta,\alpha) e^{-i s \gamma} \,, \nonumber
+\sum_{\ell=\ell_{\rm min}, m}^{\ell_{\rm max}}{_{s_1}Y^*_{\ell m}}(\hat{n}_i){_{s_2}Y_{\ell m}}(\hat{n}_j) &\approx& \delta(\hat{n}_i - \hat{n}_j) \label{eq:ylmortho2} \,, \\
+&=& \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}} {}_{s_2}Y^{-s_1}_{\ell}(\beta,\alpha) e^{-i s_2 \gamma} \,, \nonumber
 \eeqry
 %
 where $\alpha, \beta ~\&~ \gamma$ are the Euler angles relating the two directions $\hat{n}_i$ and $\hat{n}_j$. A specific case of this function with $(s=2, \ell_{\rm min}=2, \ell_{\rm max}=96)$ is depicted in the last two columns of \fig{fig:vis_kernel}.
