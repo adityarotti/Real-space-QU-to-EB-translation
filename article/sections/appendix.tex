@@ -24,7 +24,7 @@ where $s$ denotes the spin of the spherical harmonic coefficients. The numerical
 The spin spherical harmonic functions satisfy the following completeness relation,
 %
 \beq
-\sum_{\ell m}{_sY_{\ell m}}(\hat{n}_i){_sY^*_{\ell m}}(\hat{n}_j) = \delta(\hat{n}_i - \hat{n}_j) \label{eq:ylmortho2} \,,
+\sum_{\ell m}{_sY_{\ell m}}(\hat{n}_i){_sY^*_{\ell m}}(\hat{n}_j) = \delta(\hat{n}_i - \hat{n}_j) \label{eq:ylm_prop1} \,,
 \eeq
 %
 Note that the numerical validity of \eq{eq:ylmortho2} is strictly true only when the sums over the indices $(\ell, m)$ run to infinity. This is never true in practice, since the measured data invariable are band limited owing to the finite resolution of the experiments. Hence this relation is only approximately true and in more realistic scenario takes up the following function form,
@@ -77,4 +77,3 @@ We evaluate the E \& B maps using three different methods,  using our simple Pyt
 \subsection{Local convolution kernels using standing Healpix routines}\label{sec:rot_ker_healpix}
 Healpix uses Euler angles given in the z-y-z convention in contrast to the Euler angle definitions given in \sec{sec:euler} which are in z-y1-z2 convention. The two set of Euler angles are related by the following relations $(\alpha,\beta,\gamma)_{\rm z-y-z} = (\gamma,\beta,\alpha)_{\rm z-y1-z2}$ \cite{varshalovich}. We know the exact form of the harmonic coefficients for the kernels when they are centered around the north pole. Therefore the kernels centered around any arbitrary Healpix pixel $\hat{n}_i$ can be calculated by simply rotating these harmonic coefficients by the Euler angles $(0,\theta_i,\phi_i)_{\rm z-y-z}$ and synthesizing the kernel by evaluating the harmonic sum.
 \subsection{The correlation function and radial cut offs.}\label{sec:corrfn_rad_cutoff}
-

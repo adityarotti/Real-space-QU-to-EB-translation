@@ -52,7 +52,10 @@ class real_space_queb_kernels(object):
 
 		return alpha,beta,gamma,spixel
 
+		#This a equivalent way of getting the Euler angles.
+ 		#This method returns the beta and alpha as theta and phi when one of the pixels coincides with the north pole. 
 	def return_euler_angles_new(self,nside,cpixel,discsize=180.,nest=False):
+		'''Returns the pixel numbers and the respective Euler angles within a circle of radius discsize from the central pixel: cpixel'''
 		theta1,phi1=h.pix2ang(nside,cpixel,nest=nest)
 
 		v=h.pix2vec(nside,cpixel,nest=nest)
@@ -75,7 +78,7 @@ class real_space_queb_kernels(object):
 
 
 	def return_euler_ang(self,theta1,phi1,theta2,phi2):
-
+		'''Returns the Euler angles for a pair of spherical coordinates'''
 		temp_beta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
 		#temp_beta[temp_beta>1.]=1. ; temp_beta[temp_beta<-1.]=-1.
 		beta=np.arccos(temp_beta)
