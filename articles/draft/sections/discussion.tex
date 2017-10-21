@@ -1,0 +1,33 @@
+\section{Discussion}\label{sec:discussion}
+\begin{itemize}
+
+\item Many CMB experiments cannot access the large angle modes due to limited sky coverage. Often the large angle analysis is deal with in pixel space owing to the non-Gaussianity of the likelihood functions. With all these as motivations we study how the radial filters are modified by removing the large scale modes. We try to understand how removing large scale modes effects the locality of the E and B map estimators. We demonstrate that it is possible to get filtered maps by using the modifying the radial filter. 
+
+\item We have derived the real space kernels for translating Stokes parameters Q \& U to scalars E \& B and vice versa. We have also derived real space kernels which allow for direct separation of Stokes Q \& U parameters without having to first evaluate the scalar field E \& B.
+
+\item These kernels quantify the non-locality of the E and B fields. We have introduced the non-locatity parameter $\beta_0$ which provides a quantitative measure of the non-locality of these fields.  
+
+\item Studying these real space kernels reveals that its the radial part of the kernel which knows about the band limit of the experiment. Motivation for defining radially compact kernels. We have demonstrated that using the radially compact kernels does not bias the spectral information on intermediate angular scales.
+
+\item Small field experiments like BICEP implement such radial cut offs due to limited survey area. 
+
+
+\item Using in conjunction with FEBECOP \cite{febecop} like schemes to directly infer E and B mode maps from raw maps.
+
+\item \textit{Total convolution methods:} Since the convolution kernels can be thought of as effective beams for polarization maps, it may be possible to use total convolution methods to construct E and B mode maps.
+
+\item{Separate Q and U maps for E and B:} We have presented kernels which allow for decomposition of the total Stokes Q and U parameters to those corresponding to E and B modes. This could be potentially interesting, since one can now work with E and B modes foregrounds and their separations separately. \comment{But is there an issue with doing this in the standard method which involves going through the process of generating E and B modes ?}
+
+\item \textit{Mask leakages} can be understood as arising from improper sine quadrupole and cosine quadrupole transforms on rings with holes in them due to masking. For the global mask (no point sources), by using a radially compact kernel with some $\beta_0$, the pixels which are at a angular distance $\beta_0$ from the edges of the mask have unbiased estimates of the scalar fields E and B.
+
+\item{The difference between the spectra derived from the local convolution maps and the reference spectra follow a definite pattern and maybe it possible to model this difference and correct for it. For this purpose one will have to model the two point correlation function for the E and B fields in terms of the Stokes Q and U maps.}
+
+\item{Poor sensitivity to large scale modes as the local estimated maps do no carry information from pixel which are further away than the radial cutoff. This should cause a compromise on spectral estimates of low multipoles, which correspond to large angular scales, much larger than radial cutoff.}
+\item{Cluster polarization will be measurable with future CMB experiments. These local estimators can be used to evaluate the local scalar modes of polarization.}
+
+\item{We have not addressed the E to B leakage issue in this work.}
+
+
+\end{itemize}
+%
+%The width of the $\beta$ kernel can be used as an indicator of the width of mask apodization. One may also use the width of the $\beta$ kernel to throw away the regions of the sky close to the edges of the mask. Mask apodization techniques should fail at low Nside. The width of the $\beta$ kernel makes transparent why the E to B leakage issues are only relevant close to the edges of the mask.
