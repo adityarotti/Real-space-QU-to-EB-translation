@@ -175,7 +175,7 @@ The above equation can be expressed more concisely as follows,
 %
 \begin{subequations} \label{eq:qu2eb_simple}
 \beqry 
-[E + iB](\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}} P_{\ell}^{2}(\beta_{0j}) \right) {\Bigg( e^{-i2 \alpha_{0j}}   {}_{+2}X (\hat{n}_j) \Bigg)} \,, \label{eq:qu2eb_physical}\\
+[E + iB](\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} P_{\ell}^{2}(\beta_{0j}) \right) {\Bigg( e^{-i2 \alpha_{0j}}   {}_{+2}X (\hat{n}_j) \Bigg)} \,, \label{eq:qu2eb_physical}\\
 &=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2} \right]  \circ {}_{+2}X \right)\,, \label{eq:qu2eb_convolution} 
 \eeqry
 \end{subequations}
@@ -213,7 +213,7 @@ where all the symbols have their usual meaning. The above equation can again be 
 %
 \begin{subequations} \label{eq:eb2qu_simple}
 \beqry 
-[Q + iU](\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}} P_{\ell}^{2}(\beta_{0j}) \right)  \mathbf{\Bigg( e^{i2 \alpha_{0j}}   [E+iB](\hat{n}_j) \Bigg)} \,, \label{eq:eb2qu_physical}\\
+[Q + iU](\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}}  P_{\ell}^{2}(\beta_{0j}) \right)  \mathbf{\Bigg( e^{i2 \alpha_{0j}}   [E+iB](\hat{n}_j) \Bigg)} \,, \label{eq:eb2qu_physical}\\
 {}_{+2}X(\hat{n}_0) &=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2} \right]  \circ [E+iB] \right)\,, 
 \eeqry
 \end{subequations}
