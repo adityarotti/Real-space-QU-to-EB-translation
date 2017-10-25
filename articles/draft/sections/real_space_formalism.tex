@@ -148,12 +148,14 @@ where the symbol ${}_{0}Y_i$ is used to denote the sub-matrix ${}_{0}Y_{\hat{n}_
  where the terms on either side of the equation are those that appear in \eq{eq:qu2eb_ker_1}.
 Therefore the different parts of the real space operator $\bar{O}$  are completely specified in terms of the complex function,
 %
-\beqrys
+\begin{subequations}\label{eq:qu2eb_gen_kernel}
+\beqry
 \mathcal{M}( \hat{n}_i, \hat{n}_j)  &=& \mathcal{M}_{r} + i \mathcal{M}_{i}  \,,\nonumber \\ 
 &=&\sum_{\ell m} {{_0}Y}^*_{\ell m}(\hat n_i) {{_2}Y}_{\ell m}(\hat n_j) = \sum_{\ell} \sqrt{\frac{2\ell+1}{ 4 \pi}}{{_0Y}_{\ell 2}}(\beta_{ij},\alpha_{ij})\,,\\
 &=&  \Big [ \cos(2 \alpha_{ij}) + i \sin(2 \alpha_{ij} ) \Big]   \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} {\frac{2\ell+1}{ 4 \pi}} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}}P_{\ell 2} (\cos\beta_{ij}) \,, \label{eq:rad_ker_queb} \\
 &=&  \Big [ \cos(2 \alpha_{ij}) + i \sin(2 \alpha_{ij} ) \Big] f(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \,, 
-\eeqrys
+\eeqry
+\end{subequations}
 %
 where we have used the property of summation over spin spherical harmonics (see \eq{eq:sum_spin_shf}) listed in Appendix \ref{sec:ylm_mathprop}.  On simplifying \eq{eq:qu2eb_ker_1}, the local convolution kernel can be cast in this simple form,
 %

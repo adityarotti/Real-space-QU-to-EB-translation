@@ -10,16 +10,16 @@
 \contentsline {subsection}{\numberline {3.5}Quantifying the non-locality of E \& B modes}{15}{subsection.3.5}
 \contentsline {section}{\numberline {4}Generalized operators}{18}{section.4}
 \contentsline {subsection}{\numberline {4.1}Recovering the default E and B mode spectra}{20}{subsection.4.1}
-\contentsline {section}{\numberline {5}Numerical implementation}{21}{section.5}
-\contentsline {subsection}{\numberline {5.1}Constructing E \& B maps using local convolutions}{21}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Separating Stokes Q \& U maps corresponding to E \& B modes of polarization}{24}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Multipole filtering using spatial convolutions}{26}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Application to Planck 353 Ghz polarization maps}{29}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Scaling and future prospects}{29}{subsection.5.5}
-\contentsline {section}{\numberline {6}Discussion}{31}{section.6}
-\contentsline {section}{\numberline {7}Appendix}{33}{section.7}
-\contentsline {subsection}{\numberline {7.1} Mathematical properties of spin spherical harmonics}{33}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Asymptotic forms for the functions ${}_{\pm 2}f_{\ell }(\beta )$}{33}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Convolution error}{34}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Local convolution kernels using standing Healpix routines}{35}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}The correlation function and radial cut offs.}{35}{subsection.7.5}
+\contentsline {section}{\numberline {5}Numerical implementation}{22}{section.5}
+\contentsline {subsection}{\numberline {5.1}Constructing E \& B maps using local convolutions}{22}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Separating Stokes Q \& U maps corresponding to E \& B modes of polarization}{25}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Multipole filtering using spatial convolutions}{27}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Application to Planck 353 Ghz polarization maps}{30}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Scaling and future prospects}{30}{subsection.5.5}
+\contentsline {section}{\numberline {6}Discussion}{32}{section.6}
+\contentsline {section}{\numberline {7}Appendix}{34}{section.7}
+\contentsline {subsection}{\numberline {7.1} Mathematical properties of spin spherical harmonics}{34}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Asymptotic forms for the functions ${}_{\pm 2}f_{\ell }(\beta )$}{34}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Convolution error}{35}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Local convolution kernels using standing Healpix routines}{36}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}The correlation function and radial cut offs.}{36}{subsection.7.5}
