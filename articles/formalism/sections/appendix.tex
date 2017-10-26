@@ -1,0 +1,41 @@
+\section{Appendix}
+
+%--------------------------------------------------------
+%--------------------------------------------------------
+\subsection{ Mathematical properties of spin spherical harmonics}\label{sec:ylm_mathprop}
+The sum over $m$ index of product of two spherical harmonic functions of spin $s_1$ and $s_2$ respectively, is given by the following expression \cite{varshalovich},
+\beq \label{eq:sum_spin_shf}
+ \sum_{m}{_{s_1}Y^*_{\ell m}}(\hat{n}_i){_{s_2}Y_{\ell m}}(\hat{n}_j) = \sqrt{\frac{2\ell+1}{4 \pi}} _{s_2}Y^{-s_1}_{\ell}(\beta,\alpha) e^{- i s_2 \gamma} \,,
+\eeq
+where $\alpha, ~\beta ~\&~ \gamma$ correspond to the Euler angles that specify the rotation matrix which transforms the local cartesian coordinates defined at $\hat{n}_i$ such that it aligns with the local cartesian coordinate system at $\hat{n}_j$.
+
+The spin spherical harmonics satisfy the following orthogonality relations,
+%
+\beq
+\int  {_sY_{\ell m}}(\hat{n}){_sY^*_{\ell' m'}}(\hat{n}) d\Omega = \delta_{\ell \ell'} \delta_{\rm m m'} \,, \label{eq:ylmortho1}
+\eeq
+%
+where $s$ denotes the spin of the spherical harmonic coefficients. The numerical validity of \eq{eq:ylmortho1} is only limited by the rate at which these functions are sampled on the sphere and hence this identity can be made arbitrarily accurate by choosing a sufficiently high sampling rate.
+%While working with CMB polarization one is often dealing with spin-2 spherical harmonics. Here we derive some relation which we use while evaluating the real space projection operators,
+%\beq
+%\sum_{\ell m} {_2Y}_{\ell m}(\hat n_i) {_2Y}^*_{\ell m}(\hat n_j) = 
+%\eeq
+
+The spin spherical harmonic functions satisfy the following completeness relation,
+%
+\beq
+\sum_{\ell m}{_sY_{\ell m}}(\hat{n}_i){_sY^*_{\ell m}}(\hat{n}_j) = \delta(\hat{n}_i - \hat{n}_j) \label{eq:ylm_prop1} \,,
+\eeq
+%
+Note that the numerical validity of \eq{eq:ylmortho2} is strictly true only when the sums over the indices $(\ell, m)$ run to infinity. This is never true in practice, since the measured data invariable are band limited owing to the finite resolution of the experiments. Hence this relation is only approximately true and in more realistic scenario takes up the following function form,
+%
+\beqry
+\sum_{\ell=\ell_{\rm min}, m}^{\ell_{\rm max}}{_{s_1}Y^*_{\ell m}}(\hat{n}_i){_{s_2}Y_{\ell m}}(\hat{n}_j) &\approx& \delta(\hat{n}_i - \hat{n}_j) \label{eq:ylmortho2} \,, \\
+&=& \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}} {}_{s_2}Y^{-s_1}_{\ell}(\beta,\alpha) e^{-i s_2 \gamma} \,, \nonumber
+\eeqry
+%
+where $\alpha, \beta ~\&~ \gamma$ are the Euler angles relating the two directions $\hat{n}_i$ and $\hat{n}_j$. A specific case of this function with $(s=2, \ell_{\rm min}=2, \ell_{\rm max}=96)$ is depicted in the last two columns of \fig{fig:vis_kernel}.
+
+%--------------------------------------------------------
+\subsection{Local convolution kernels using standing Healpix routines}\label{sec:rot_ker_healpix}
+Healpix uses Euler angles given in the z-y-z convention in contrast to the Euler angle definitions given in \sec{sec:euler} which are in z-y1-z2 convention. The two set of Euler angles are related by the following relations $(\alpha,\beta,\gamma)_{\rm z-y-z} = (\gamma,\beta,\alpha)_{\rm z-y1-z2}$ \cite{varshalovich}. We know the exact form of the harmonic coefficients for the kernels when they are centered around the north pole. Therefore the kernels centered around any arbitrary Healpix pixel $\hat{n}_i$ can be calculated by simply rotating these harmonic coefficients by the Euler angles $(0,\theta_i,\phi_i)_{\rm z-y-z}$ and synthesizing the kernel by evaluating the harmonic sum.
