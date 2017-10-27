@@ -1,22 +1,28 @@
 
  
 \subsection{Visualizing the convolution kernels} \label{sec:visualize_operator}
-As seen in the previous sections, all the kernels separate into a part which depends only on the angular distance between pixels and another part that depends on the azimuthal orientation around the central pixel. The radial part of the kernels determines the non-locality of the operator. 
-We numerically compute the radial kernels: $f, _{+2}f ~\&~ _{-2}f $ by evaluating the respective multipole sums given in \eq{eq:rad_ker_queb} and \eq{eq:f2_rad_ker} in the band limit $\ell \in [=2,192]$. The resultant functions are depicted in \fig{fig:beta_kernel}. 
-%
-\begin{figure}[!hbt]
-\centering
-\includegraphics[width=0.8\columnwidth]{kernel/beta_kernel.pdf}
-\caption{The figure depicts the radial part of the convolution kernels. These radial function have been evaluated with the band limit fixed at $\ell \in [2,192]$. The vertical dashed line marks the approximate size of a NSIDE=64 Healpix pixel.}
-\label{fig:beta_kernel}
-\end{figure}
-%
-Note that the function $f(\beta)$, which forms the radial part of the real space convolution kernel that translates the Stokes parameters Q \& U to scalars E \& B, has a vanishing contribution from the location of the central pixel ($\beta \rightarrow 0$). Recall that the fields E \& B are scalar and hence expected to be immune to coordinate definitions. The locally defined Stokes parameters however necessarily depend on the coordinate definition. Therefore, this nature of the radial kernel is to be expected in order for it to satisfy the requirement of the derived quantities being coordinate independent. 
 
-The functions $_{+2}f(\beta)~\&~_{-2}f(\beta)$, both contribute to the convolution kernels which decompose the Stokes parameters into those corresponding to the respective scalar modes E \& B. $_{-2}f(\beta)$ form the radial part of the band limited delta function $I$ and hence it contributes the most at the location of the central pixel. $_{+2}f(\beta)$ again has a vanishing contribution near the central pixel and it dominantly contributes in the neighbouring regions which are approximately at least 1 pixel distance away from the central pixel.
+\textit{Evaluating the local kernels: }\revisit{Let us consider the case when one of the coordinates coincides with the north pole (more formally this refers to the point $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), say $\hat{n}_0=(\theta_0,\phi_0)=(0,0)$. In this case the Euler angles in the $z-y1-z2$ convention are simply given by: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$, where $(\theta_i,\phi_i)$ denote the coordinates of the location $\hat{n}_i$.} Since the Euler angle $\gamma=0$ when rotations are defined with respect to the pole, the respective kernels simplify to the following forms,
+%
+\begin{subequations} \label{eq:kernel_at_pole}
+\beqry
+\mathcal{M}(\hat{n}_0,\hat{n}_i) &=& \sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2}(\theta_i,\phi_i) = \sum_{\ell} {{}_{0}}a_{\ell 2} \, {{}_{0}}Y_{\ell 2}(\theta_i,\phi_i) \,,\\
+\mathcal{I}(\hat{n}_0,\hat{n}_i) &=& \sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}{{}_{-2}}Y_{\ell 2}(\theta_i,\phi_i) = \sum_{\ell} {{}_{-2}}a_{\ell 2}\, {{}_{-2}}Y_{\ell 2}(\theta_i,\phi_i) \,, \\
+\mathcal{D}(\hat{n}_0,\hat{n}_i) &=& \sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}{{}_{2}}Y_{\ell 2}(\theta_i,\phi_i) = \sum_{\ell} {{}_{2}}a_{\ell 2} \, {{}_{2}}Y_{\ell 2}(\theta_i,\phi_i) \,.
+\eeqry
+\end{subequations}
+%
+The kernels centered around any other location $\hat{n}_j = (\theta_j,\phi_j)$ are simply given by evaluating the respective spherical harmonic sums using the rotated harmonic coefficients given by,
+%
+\beq
+{}_s a_{\ell m} = D^{\ell}_{m 2}(\phi_j , \theta_j, 0) {{}_s}a_{\ell 2} \,,
+\eeq
+%
+where $D^{\ell}_{2 m}$ are the Wigner-D functions and ${{}_s}a_{\ell 2} = \sqrt{\frac{2\ell+1}{4 \pi}}$.
+These rotation operations can be carried out using inbuilt Healpix routine \textit{rotate\_alm}, while the convolution kernels can be synthesized by evaluating the respective spherical harmonic sums using the \textit{alm2map} routine.
 
-The azimuthal dependencies of the convolution kernels, are specified as functions of the Euler angles $\alpha ~\&~ \gamma$. We evaluate the real and imaginary parts of the functions $\mathcal{M}, \mathcal{D}~\&~\mathcal{I}$ by calculating the Euler angles for all the pixels surrounding the central pixel and using them in \eq{eq:op_qu2eb}, \eq{eq:fn_i} and \eq{eq:fn_d} respectively.
- %
+We compute the local convolution kernels using the procedure outlined in the discussion above. Since its not easy to imagine how the Euler angles vary as a function of position of the central pixel we depict the kernels at different locations in \fig{fig:vis_kernel}, to give a sense of how these kernels vary across the sphere.
+%
 \begin{figure}[t] \label{fig:mixing_kernel}
 \centering
 %\captionsetup[subfigure]{labelformat=empty}
@@ -55,9 +61,9 @@ The azimuthal dependencies of the convolution kernels, are specified as function
 \label{fig:vis_kernel}
  \end{figure}
 %
-\revisit{Since its not easy to imagine how the Euler angles vary as a function of position of the central pixel, we evaluate and depict the kernels at different locations, to give a sense of how these kernels vary across the sphere.} For illustration these functions are sampled at a very high Healpix resolution parameter of NSIDE=2048. All the plots have been rotated such that the pixel around which the kernels are evaluated lies in the centre marked by the back circle. The results are depicted in \fig{fig:vis_kernel}. 
+For illustration these functions are sampled at a very high Healpix resolution parameter of NSIDE=2048. All the plots have been rotated such that the central location $\hat{n}_j$ around which the kernels are computed lies in the centre marked by the back circle. 
 
-The function $\mathcal{M}$ is identical irrespective of changes in the galactic latitude and longitude of the central pixel. \st{The only contrasting locations are the poles (i.e. $|b|=90^{\circ}$), where the functions $\mathcal{M}_r$ \& $\mathcal{M}_i$ are rotated by $45^{\circ}$  as compared to the respective functions evaluated at locations where $|b|\neq 90^{\circ}$.} Also note that these functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first three rows of \fig{fig:vis_kernel}. Both these facts can be associated with the fact that this function does not depend on the Euler angle $\gamma$. \revisit{Recall that the angle $\gamma$ defines the rotation about the final z-axis which co-alligns the planar axes. Since the function $\mathcal{M}$ does not depend of this final orientation, it implies a rotational invariance of the fields constructed by convolving with this kernel.}
+The real and imaginary part of the kernel $\mathcal{M}$ are identical irrespective of changes in the galactic latitude and longitude of the central pixel. Note that these functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first three rows of \fig{fig:vis_kernel}. Both these facts can be associated with the fact that this function does not depend on the Euler angle $\gamma$. %\revisit{Recall that the angle $\gamma$ defines the rotation about the final z-axis which co-alligns the planar axes. Since the function $\mathcal{M}$ does not depend of this final orientation, it implies a rotational invariance of the fields constructed by convolving with this kernel.}
 
 The function $\mathcal{D}$ varies significantly as a function of galactic latitude of the central pixel. It varies from having a two fold symmetry at the poles to having a four fold symmetry at the equator as seen in the middle two columns of \fig{fig:vis_kernel}. This change in behavior is primarily due to the  dependence on the Euler angle $\gamma$. When the central pixel is nearly at the pole, $\gamma$ vanishes, and the azimuthal part of the function $D$ is identical to that of $\mathcal{M}$ and hence the two function look very similar as seen in the first row of \fig{fig:vis_kernel}. Also note that this function is distorted as parts of its domain pass the galactic poles.  
 
@@ -66,6 +72,22 @@ The function $\mathcal{I}$ shows similar behavior, varying with latitude, having
 We reiterate that all the function are invariant under changes in longitude of the central pixel, the latitude being held fixed as can be seen by comparing the figures in the second row (evaluated at $[b,\ell]=[87^{\circ},45^{\circ}]$) and third row (evaluated at $[b,\ell]=[87^{\circ},30^{\circ}]$) of \fig{fig:vis_kernel}, as one may have expected.
 
 \subsection{Quantifying the non-locality of E \& B modes} \label{sec:radial_locality}
+
+As seen in the previous sections, all the kernels separate into a part which depends only on the angular distance between pixels and another part that depends on the azimuthal orientation around the central pixel. The radial part of the kernels determines the non-locality of the operator. 
+We numerically compute the radial kernels: $f, _{+2}f ~\&~ _{-2}f $ by evaluating the respective multipole sums given in \eq{eq:rad_ker_queb} and \eq{eq:f2_rad_ker} in the band limit $\ell \in [=2,192]$. The resultant functions are depicted in \fig{fig:beta_kernel}. 
+%
+\begin{figure}[!hbt]
+\centering
+\includegraphics[width=0.8\columnwidth]{kernel/beta_kernel.pdf}
+\caption{The figure depicts the radial part of the convolution kernels. These radial function have been evaluated with the band limit fixed at $\ell \in [2,192]$. The vertical dashed line marks the approximate size of a NSIDE=64 Healpix pixel.}
+\label{fig:beta_kernel}
+\end{figure}
+%
+Note that the function $f(\beta)$, which forms the radial part of the real space convolution kernel that translates the Stokes parameters Q \& U to scalars E \& B, has a vanishing contribution from the location of the central pixel ($\beta \rightarrow 0$). Recall that the fields E \& B are scalar and hence expected to be immune to coordinate definitions. The locally defined Stokes parameters however necessarily depend on the coordinate definition. Therefore, this nature of the radial kernel is to be expected in order for it to satisfy the requirement of the derived quantities being coordinate independent. 
+
+The functions $_{+2}f(\beta)~\&~_{-2}f(\beta)$, both contribute to the convolution kernels which decompose the Stokes parameters into those corresponding to the respective scalar modes E \& B. $_{-2}f(\beta)$ form the radial part of the band limited delta function $I$ and hence it contributes the most at the location of the central pixel. $_{+2}f(\beta)$ again has a vanishing contribution near the central pixel and it dominantly contributes in the neighbouring regions which are approximately at least 1 pixel distance away from the central pixel.
+
+
 It is clear from previous discussions that that the non-locality of the E and B modes is determined by the radial part of the convolution kernels. To quantify this non-locality as a function of the maximum multipole accessible for analysis, we evaluate the radial part of the convolution kernel for different values of $\ell_{\rm max}$, while keeping the lowest multipole fixed at $\ell_{\rm min}=2$. 
 %
 \begin{figure}[t]

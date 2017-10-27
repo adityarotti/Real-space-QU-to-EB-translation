@@ -6,13 +6,13 @@
 The CMB polarization is measured in terms of Stokes Q and U parameters. These measurements can be combined to form the complex spin 2 polarization field as follows,
 %
 \beqry \label{eq:spin-pol}
-_{\pm 2}\bar{X}(\hat{n}) &=& Q(\hat{n}) \pm i U (\hat{n}) \nonumber \\ &=& \sum_{\ell m}  {_{\pm 2}} \tilde{X}_{\ell m}  {_{\pm 2}}Y_{\ell m} (\hat{n}) \,.
+_{\pm 2}\bar{X}(\hat{n}) &=& Q(\hat{n}) \pm i U (\hat{n}) \nonumber \\ &=& \sum_{\ell m}  {_{\pm 2}} \tilde{X}_{\ell m}  \, {_{\pm 2}}Y_{\ell m} (\hat{n}) \,.
 \eeqry
 %
 Since these measured quantities depend on the local coordinate system, it is cumbersome to work with them. To overcome this, one describes the CMB polarization field in terms of a scalar field denoted by $E(\hat{n}) $ and a pseudo scalar field $B(\hat{n}) $ \cite{Kamionkowski1997}. These scalar fields are related to the spin-2 polarization field $_{\pm 2}X(\hat{n})$ via the following relations,
 %
 \beq \label{eq:ebdef}
-\mathcal{E}(\hat{n}) = -\frac{1}{2} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  +  \eth^2 _{- 2}X(\hat{n}) \big] ~\,;~\mathcal{B}(\hat{n}) = -\frac{1}{2i} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  -  \eth^2 _{- 2}X(\hat{n}) \big] \,,
+\mathcal{E}(\hat{n}) = -\frac{1}{2} \big[ \bar{\eth}^2 _{+ 2}\bar{X}(\hat{n})  +  \eth^2 _{- 2}\bar{X}(\hat{n}) \big] ~\,;~\mathcal{B}(\hat{n}) = -\frac{1}{2i} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  -  \eth^2 _{- 2}X(\hat{n}) \big] \,,
 \eeq
 %
 where $\eth$ and $\bar{\eth}$ denote the spin raising and lowering operators respectively. These $E$ and $B$ fields are spin-0 fields similar to the temperature anisotropies and hence their value are independent of the coordinate system definitions (except that the B-modes have an odd parity, meaning that they change sign under reflection $\hat{n} \rightarrow -\hat{n}$.). The spin raising and lowering operators have the following properties \cite{goldberg67},
@@ -33,7 +33,7 @@ Using \eq{eq:ebdef} and the properties of the spin raising and lowering operator
 where the harmonic coefficients of  $\mathcal{E}/\mathcal{B}$ fields are related to the harmonic coefficients of the spin-2 polarization field via the following equations,
 %
 \beq\label{eq:x2eb}
-a^{E}_{\ell m} = -\frac{1}{2} \Big[ {}_{+2}X_{\ell m} + _{-2}X_{\ell m} \Big] ~\,;~a^{B}_{\ell m} = -\frac{1}{2i} \Big[ {}_{+2}X_{\ell m} - _{-2}X_{\ell m} \Big] 
+a^{E}_{\ell m} = -\frac{1}{2} \Big[ {}_{+2}\tilde{X}_{\ell m} + _{-2}\tilde{X}_{\ell m} \Big] ~\,;~a^{B}_{\ell m} = -\frac{1}{2i} \Big[ {}_{+2}\tilde{X}_{\ell m} - _{-2}\tilde{X}_{\ell m} \Big] 
 \eeq
 %
 In the remainder of this article, we will work with the scalar $E$ and pseudo scalar $B$ fields as defined by the following expressions, 
@@ -42,7 +42,7 @@ In the remainder of this article, we will work with the scalar $E$ and pseudo sc
 E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n}) ~\,;~ B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-Note that the $[E,B]$ fields are merely filtered versions of the fields $[\mathcal{E},\mathcal{B}]$, as their spherical harmonic coefficients of expansion differ by the factor of $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$. We make this choice since the CMB spectra are more closely related to the fields E \& B.
+Note that the $[E,B]$ fields are merely filtered versions of the fields $[\mathcal{E},\mathcal{B}]$, as their spherical harmonic coefficients of expansion differ by the factor of $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
@@ -111,16 +111,6 @@ Note that the above relations for these harmonic space operators are exactly val
 \section{Real space operators} \label{sec:real_space_operators}
 In this section we derive the real space operators which translate the Stokes vector \vp{}  to the vector of scalars \vs  and vice versa. We also derive real space operators for direct decomposition of the Stokes vector \vp{} in to a vector \vp{\rm E} that correspond to E-modes and another vector \vp{\rm B} that corresponds to the B-modes of polarization, such that \vp{} = \vp{\rm E} + \vp{\rm B} (without ever evaluating the E \& B fields or their spherical harmonics). For carrying out these derivations we extensively use the matrix notation introduced in \sec{sec:mat_pol_intro}.
 
-\textit{Euler angles:} All the real space operators we derive are most conveniently expressed as functions of the Euler angles  $\alpha, ~\beta~\&~ \gamma$ on the sphere. Owing to this fact we begin by briefly describing the Euler angles and present a way to think about them. The local cartesian coordinate system at any point on the sphere is defined such that the z-axis points along the radial direction, the x-axis is along the vector tangent to the local longitude pointing south and the y-axis is a vector tangent to the local latitude pointing east. The Euler angles define rotations that transforms the local cartesian coordinate system defined at the location $\hat{n}_0 \equiv (\theta_0,\phi_0)$ such that it aligns with the local cartesian coordinate system at the location $\hat{n}_i \equiv (\theta_i,\phi_i)$ \cite{varshalovich}. The Euler angles can be evaluated using the following functions of the angular coordinates of the two locations $\hat{n}_0 \equiv (\theta_0 , \phi_0)$ and $\hat{n}_i \equiv (\theta_i, \phi_i)$,
-%
-\beqrys \label{eq:fn_euler}
-\tan{\alpha} &=& \frac{\sin{(\phi_i - \phi_0)} \sin{\theta_i}}{\sin{\theta_i}\cos{\theta_0} \cos{(\phi_i - \phi_0)} - \sin{\theta_0} \cos{\theta_i} } \,, \\
-\cos{\beta} &=& \sin{\theta_i}\sin{\theta_0} \cos{(\phi_i -\phi_0)} + \cos{\theta_i}\cos{\theta_0} \,,\\
-\tan{\gamma} &=& \frac{ - \sin{(\phi_i - \phi_0)} \sin{\theta_0}}{\sin{\theta_0}\cos{\theta_i} \cos{(\phi_i - \phi_0)} - \sin{\theta_i} \cos{\theta_0} } \,,
-\eeqrys
-%
-where $\alpha$ defines the rotation about the z-axis, $\beta$ defines the rotation about the new y-axis (y1-axis) after the previous rotation and $\gamma$ defines the rotation about the final z-axis (z2-axis) after carrying out the previous two rotations. In more physical terms, these angles can be understood as follow: The rotation by $\alpha$ about the z-axis is such that it aligns the x-axis of the cartesian system at location $\hat{n}_0$ along the great circle in the direction of $\hat{n}_i$.  The rotation by $\beta$ about the y2-axis parallel transports the local cartesian coordinate system from location $\hat{n}_0$ to location $\hat{n}_i$, such that the z-axes of the two coordinate systems are parallel to each other. Finally the rotation by angle $\gamma$ about the z2-axis aligns the x \& y axes of the parallel transported system with those of the local cartesian system defined at $\hat{n}_i$. The simplest case is when one of the coordinates coincides with the north pole (more formally this refers to the point $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), say $\hat{n}_0=(\theta_0,\phi_0)=(0,0)$. In this case it is easy to check by substituting these coordinate values in  \eq{eq:fn_euler} that the Euler angles are: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$. While evaluating the above functions we follow the convention that $\beta$ lies in the domain $[0, \pi]$ and that the angles $\alpha ~\&~ \gamma$ lie in the domain $[-\pi,\pi]$. It is important to assign the proper signs to $\alpha ~\&~ \gamma$ by duly accounting for the signs of the term in the numerator and the denominator. \revisit{While in following section we present results in terms of these Euler angles, the local kernels surrounding any pixel can be simply evaluated using standard Healpix functions. We give the details of this procedure in \app{sec:rot_ker_healpix}}.
-%--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Evaluating E \& B fields from measured Stokes parameters Q \& U}\label{sec:qu2eb}
 In \sec{sec:pol-primer} we described how the scalar fields E \& B are derived from the Stokes parameters Q \& U. To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 field $({}_{\pm2} \bar X)$, taking linear combinations of the resultant coefficients of expansion $({}_{\pm 2} \tilde X_{\ell m})$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. Here we derive the real space convolution kernels on the sphere which can be used to directly evaluate the scalar E \& B fields on the sphere.  
@@ -178,7 +168,7 @@ The above equation can be expressed more concisely as follows,
 \begin{subequations} \label{eq:qu2eb_simple}
 \beqry 
 [E + iB](\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} P_{\ell}^{2}(\beta_{0j}) \right) {\Bigg( e^{-i2 \alpha_{0j}}   {}_{+2}X (\hat{n}_j) \Bigg)} \,, \label{eq:qu2eb_physical}\\
-&=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2} \right]  \circ {}_{+2}X \right)\,, \label{eq:qu2eb_convolution} 
+&=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2} \right]  \circ {}_{+2}X \right) = - \Bigg\lbrace \mathcal{M}^* \circ {}_{+2}X \Bigg\rbrace(\hat{n}_0)\,, \label{eq:qu2eb_convolution} 
 \eeqry
 \end{subequations}
 %
@@ -216,7 +206,7 @@ where all the symbols have their usual meaning. The above equation can again be 
 \begin{subequations} \label{eq:eb2qu_simple}
 \beqry 
 [Q + iU](\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}}  P_{\ell}^{2}(\beta_{0j}) \right)  \mathbf{\Bigg( e^{i2 \alpha_{0j}}   [E+iB](\hat{n}_j) \Bigg)} \,, \label{eq:eb2qu_physical}\\
-{}_{+2}X(\hat{n}_0) &=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2} \right]  \circ [E+iB] \right)\,, 
+{}_{+2}X(\hat{n}_0) &=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2} \right]  \circ [E+iB] \right)= - \Bigg\lbrace \mathcal{M} \circ [E + iB] \Bigg\rbrace(\hat{n}_0)\,, 
 \eeqry
 \end{subequations}
 %
