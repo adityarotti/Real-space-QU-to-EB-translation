@@ -1,16 +1,13 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}
-\contentsline {section}{\numberline {2}E/B description of CMB polarization}{4}{section.2}
+\contentsline {section}{\numberline {2}The spin-0 description of CMB polarization}{4}{section.2}
 \contentsline {subsection}{\numberline {2.1}Polarization primer}{4}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Matrix notation}{5}{subsection.2.2}
 \contentsline {section}{\numberline {3}Real space operators}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Evaluating E \& B fields from measured Stokes parameters Q \& U}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Evaluating Stokes parameters Q \& U fields from E \& B fields}{8}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Decomposing Q \& U Stokes parameters into those corresponding to E \& B modes respectively}{9}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.1}Evaluating scalar fields $E$ \& $B$ from Stokes parameters $Q$ \& $U$}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Evaluating Stokes parameters $Q$ \& $U$ from scalar fields $E$ \& $B$}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Decomposing Stokes parameters $Q$ \& $U$ into those corresponding to $E$ \& $B$ modes respectively}{9}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Visualizing the convolution kernels}{12}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Quantifying the non-locality of E \& B modes}{14}{subsection.3.5}
 \contentsline {section}{\numberline {4}Generalized operators}{17}{section.4}
 \contentsline {subsection}{\numberline {4.1}Recovering the default E and B mode spectra}{19}{subsection.4.1}
 \contentsline {section}{\numberline {5}Discussion}{21}{section.5}
-\contentsline {section}{\numberline {6}Appendix}{23}{section.6}
-\contentsline {subsection}{\numberline {6.1} Mathematical properties of spin spherical harmonics}{23}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}The flat sky limit}{23}{subsection.6.2}

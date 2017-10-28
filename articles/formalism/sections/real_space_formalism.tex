@@ -1,6 +1,6 @@
 %--------------------------------------------------------
 %--------------------------------------------------------
-\section{E/B description of CMB polarization} \label{sec:pol-intro}
+\section{The spin-0 description of CMB polarization} \label{sec:pol-intro}
 %--------------------------------------------------------
 \subsection{Polarization primer}\label{sec:pol-primer}
 The CMB polarization is measured in terms of Stokes Q and U parameters. These measurements can be combined to form the complex spin 2 polarization field as follows,
@@ -109,12 +109,12 @@ Note that these harmonic space matrices are idempotent, orthogonal to each other
 Note that the above relations for these harmonic space operators are exactly valid.  In the following sections we aim to derive the real space analogues of these harmonic space operators.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real space operators} \label{sec:real_space_operators}
-In this section we derive the real space operators which translate the Stokes vector \vp{}  to the vector of scalars \vs  and vice versa. We also derive real space operators for direct decomposition of the Stokes vector \vp{} in to a vector \vp{\rm E} that correspond to E-modes and another vector \vp{\rm B} that corresponds to the B-modes of polarization, such that \vp{} = \vp{\rm E} + \vp{\rm B} (without ever evaluating the E \& B fields or their spherical harmonics). For carrying out these derivations we extensively use the matrix notation introduced in \sec{sec:mat_pol_intro}.
-
+The vector-matrix notation introduced in  \sec{sec:mat_pol_intro} allows for concise book keeping of all the operations involved in the analysis of CMB polarization. In this section we use this notation to derive the real space operators which translate the Stokes vector \vp{}  to the vector of scalars \vs  and vice versa. This vector-matrix notation also allows us to simply derive real space operators for direct decomposition of the Stokes vector \vp{} in to a vector \vp{ E} that correspond to $E$-modes and another vector \vp{B} that corresponds to the $B$-modes of polarization, such that \vp{} = \vp{E} + \vp{B}, without ever evaluating the $E$ \& $B$ fields or their spherical harmonics. 
 %--------------------------------------------------------
-\subsection{Evaluating E \& B fields from measured Stokes parameters Q \& U}\label{sec:qu2eb}
-In \sec{sec:pol-primer} we described how the scalar fields E \& B are derived from the Stokes parameters Q \& U. To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 field $({}_{\pm2} \bar X)$, taking linear combinations of the resultant coefficients of expansion $({}_{\pm 2} \tilde X_{\ell m})$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. Here we derive the real space convolution kernels on the sphere which can be used to directly evaluate the scalar E \& B fields on the sphere.  
-We use the relations given in \eq{eq:pol_data_relns}, to write down an equation relating the real space vector of scalars \vs to the polarization vector \vp{} as given below,
+\subsection{Evaluating scalar fields $E$ \& $B$ from Stokes parameters $Q$ \& $U$}\label{sec:qu2eb}
+In \sec{sec:pol-primer} we described the standard procedure of computing the scalar fields E \& B from the Stokes parameters Q \& U. 
+%To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 fields ${}_{\pm2} \bar X$, forming specific linear combinations of the resultant coefficients of expansion ${}_{\pm 2} \tilde X_{\ell m}$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. 
+Here we derive the real space convolution kernels on the sphere, which can be used to directly evaluate the scalar fields $E$ \& $B$ on the sphere.  We use the relations given in \eq{eq:pol_data_relns}, to write down an equation relating the real space vector of scalars \vs to the Stokes polarization vector \vp{},
 %
 \beqrys
 \bar{S} &=& {{}_0\mathcal{Y}} *\tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}} *\bar T *\bar{P} = \frac{1}{2} {{}_0\mathcal{Y}} *\tilde T^{\dagger} *{{}_2\mathcal{Y}^{\dagger}} *\bar T *\bar{P}   \,, \\
@@ -126,7 +126,7 @@ The explicit form of the real space operator $\bar O$ can be derived by contract
 \beqrys
 \bar{O} &=& \frac{1}{2} {{}_0\mathcal{Y}} *\tilde T^{\dagger} *{{}_2\mathcal{Y}^{\dagger}} *\bar T \,, \\
 &=& -0.5 \yzmat{i} \qutoxd \ymatc{j} \qutox   \,, \\
-&=& -0.5 \begin{bmatrix} \sum ({}_{0}Y_i ~{}_{2}Y^{T*}_j  +  {}_{0}Y_i~ {}_{-2}Y^{T*}_j) & {\rm i}  \sum ({}_{0}Y_i~ {}_{2}Y^{T*}_j - {}_{0}Y_i ~{}_{-2}Y^{T*}_j)  \\  - {\rm i} \sum  ({}_{0}Y_i {}_{2}Y^{T*}_j - {}_{0}Y_i {}_{-2}Y^{T*}_j) & \sum ({}_{0}Y_i {}_{2}Y^{T*}_j + {}_{0}Y_i {}_{-2}Y^{T*}_j)  \end{bmatrix} \,, \label{eq:qu2eb_ker_1}
+&=& -0.5 \begin{bmatrix} \sum ({}_{0}Y_i ~{}_{2}Y^{T*}_j  +  {}_{0}Y_i~ {}_{-2}Y^{T*}_j) & {\rm i}  \sum ({}_{0}Y_i ~ {}_{2}Y^{T*}_j - {}_{0}Y_i ~{}_{-2}Y^{T*}_j)  \\  - {\rm i} \sum  ({}_{0}Y_i ~ {}_{2}Y^{T*}_j - {}_{0}Y_i~ {}_{-2}Y^{T*}_j) & \sum ({}_{0}Y_i~ {}_{2}Y^{T*}_j + {}_{0}Y_i ~{}_{-2}Y^{T*}_j)  \end{bmatrix} \,, \label{eq:qu2eb_ker_1}
 \eeqrys
 %
 where the symbol ${}_{0}Y_i$ is used to denote the sub-matrix ${}_{0}Y_{\hat{n}_i \times \ell m} \equiv {}_{0}Y_{\ell m}(\hat{n}_i)$, the symbol ${}_{\pm 2}Y^{T*}_j$ is used to denote the matrix ${}_{\pm 2}Y^*_{\ell m \times \hat{n}_j} \equiv {}_{\pm 2}Y^*_{\ell m}(\hat{n}_j)$ and the summation is over the multipole indices $\ell,m$. Using the conjugation properties of the spin spherical harmonic functions it can be shown that the following relation holds true,
@@ -135,27 +135,32 @@ where the symbol ${}_{0}Y_i$ is used to denote the sub-matrix ${}_{0}Y_{\hat{n}_
  \left [\sum_{\ell m} {}_{0}Y_{\ell m}(\hat{n}_i){}_{+2}Y^*_{\ell m}(\hat{n}_j)\right]^* = \sum_{\ell m} {}_{0}Y_{\ell m}(\hat{n}_i){}_{-2}Y^*_{\ell m}(\hat{n}_j) \,.
  \eeq
  %
- where the terms on either side of the equation are those that appear in \eq{eq:qu2eb_ker_1}.
-Therefore the different parts of the real space operator $\bar{O}$  are completely specified in terms of the complex function,
+ where the terms on either side of the equation are those that appear in \eq{eq:qu2eb_ker_1}. The $m$ sum over the product of two spherical harmonic functions with spins $s_1$ and $s_2$ respectively, is given by the following identity \cite{varshalovich},
+%
+\beq \label{eq:sum_spin_shf}
+ \sum_{m}{{}_{s_1}}Y^*_{\ell m}(\hat{n}_i){{}_{s_2}}Y_{\ell m}(\hat{n}_j) = \sqrt{\frac{2\ell+1}{4 \pi}} {{}_{s_2}}Y_{\ell \,-s_1}(\beta,\alpha) e^{- i s_2 \gamma} \,,
+\eeq
+%
+where $\alpha, ~\beta ~\&~ \gamma$ denote the Euler angles. Therefore the different parts of the real space operator $\bar{O}$  are completely specified in terms of the complex function,
 %
 \begin{subequations}\label{eq:qu2eb_gen_kernel}
 \beqry
 \mathcal{M}( \hat{n}_i, \hat{n}_j)  &=& \mathcal{M}_{r} + i \mathcal{M}_{i}  \,,\nonumber \\ 
-&=&\sum_{\ell m} {{_0}Y}^*_{\ell m}(\hat n_i) {{_2}Y}_{\ell m}(\hat n_j) = \sum_{\ell} \sqrt{\frac{2\ell+1}{ 4 \pi}}{{_0Y}_{\ell 2}}(\beta_{ij},\alpha_{ij})\,,\\
+&=&\sum_{\ell m} {{_0}Y}_{\ell m}(\hat n_i) \, {{_{-2}}Y}^*_{\ell m}(\hat n_j) = \sum_{\ell} \sqrt{\frac{2\ell+1}{ 4 \pi}}{{_0Y}_{\ell 2}}(\beta_{ij},\alpha_{ij})\,,\\
 &=&  \Big [ \cos(2 \alpha_{ij}) + i \sin(2 \alpha_{ij} ) \Big]   \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} {\frac{2\ell+1}{ 4 \pi}} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}}P_{\ell 2} (\cos\beta_{ij}) \,, \label{eq:rad_ker_queb} \\
 &=&  \Big [ \cos(2 \alpha_{ij}) + i \sin(2 \alpha_{ij} ) \Big] f(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \,, 
 \eeqry
 \end{subequations}
 %
-where we have used the property of summation over spin spherical harmonics (see \eq{eq:sum_spin_shf}) listed in Appendix \ref{sec:ylm_mathprop}.  On simplifying \eq{eq:qu2eb_ker_1}, the local convolution kernel can be cast in this simple form,
+where we have used the identity given in \eq{eq:sum_spin_shf} to simplify the product of the spherical harmonic functions.  On simplifying \eq{eq:qu2eb_ker_1}, the local convolution kernel can be cast in this simple form,
 %
 \beq\label{eq:op_qu2eb}
 \bar O =-\bmat  \mathcal{M}_{r} & \mathcal{M}_{i} \\  -\mathcal{M}_{i}  & \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} = -f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & \sin(2\alpha_{ij})\\  -\sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat \,,
 \eeq
 %
-where indices i,j map to the location $\hat{n}_i$ and $\hat{n}_j$ on the sphere. \revisit{A similar equation for real space E \& B operators was derived in \cite{Zaldarriaga2001a}, however those results were derived for the flat sky case and did not explicitly derive the radial kernel.} \comment{A discussion on this should be in the conclusions.}
+where indices i,j map to the location $\hat{n}_i$ and $\hat{n}_j$ on the sphere. \revisit{A similar equation for real space $E$ \& $B$ operators was derived in \cite{Zaldarriaga2001a}, however those results were derived for the flat sky case and did not explicitly derive the radial kernel.} \comment{A discussion on this should be in the conclusions.}
 
-The scalar fields E \& B can now be directly derived from the measured Stokes Q \& U parameters by evaluating the following convolution,
+The scalar fields $E$ \& $B$ can now be directly derived from the measured Stokes $Q$ \& $U$ parameters by evaluating the following convolution,
 %
 \beq \label{eq:qu2eb_convolution_explicit}
 \bmat E_i \\ B_i  \emat= -\Delta \Omega \sum_{j=1}^{N_{\rm pix}}f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & \sin(2\alpha_{ij})\\  -\sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat Q_j \\ U_j  \emat \,,
@@ -168,34 +173,40 @@ The above equation can be expressed more concisely as follows,
 \begin{subequations} \label{eq:qu2eb_simple}
 \beqry 
 [E + iB](\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} P_{\ell}^{2}(\beta_{0j}) \right) {\Bigg( e^{-i2 \alpha_{0j}}   {}_{+2}X (\hat{n}_j) \Bigg)} \,, \label{eq:qu2eb_physical}\\
-&=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2} \right]  \circ {}_{+2}X \right) = - \Bigg\lbrace \mathcal{M}^* \circ {}_{+2}X \Bigg\rbrace(\hat{n}_0)\,, \label{eq:qu2eb_convolution} 
+&=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2} \right]  \circ {}_{+2}X \right) \,, \\
+&=& - \Bigg\lbrace \mathcal{M}^* \circ {}_{+2}X \Bigg\rbrace(\hat{n}_0)\,, \label{eq:qu2eb_convolution} 
 \eeqry
 \end{subequations}
 %
-where $\circ$ denotes a convolution and the spherical harmonic functions denote the rotated functions such that the pole of the function coincides with the direction $\hat{n}_0$ and the reference zero for the azimuthal angle is the local longitude $\phi_0$. We know that the spin of product of functions with different spins is given by: ${}_{s_1}f {}_{s_2}g = {}_{s_1 +s_2}h$. Since $[Q + iU]$ is a field with spin +2 and the function $\exp(-i2\alpha)$ is a field with spin -2, the resultant field formed by the product of these two function has spin-0. This makes intuitive, the construction of the spin-0 E and B modes of polarization. Note that the coordinate dependence of the Stokes parameters cannot be integrated out at the location $\hat{n}_0$ where the scalar fields are to be evaluated since the azimuthal angle becomes ill-defined. This issue is averted by the fact that the radial function is formed by taking weighted linear combinations of $P_{\ell}^2$ Legendre polynomials which have vanishing contribution $(P_{\ell}^2(\beta) \propto \sin^2{\beta})$ as $\beta \rightarrow 0 ,\pi$.  \revisit{Also note that the E-modes are constructed by product of functions $(U\sin{2 \alpha}, Q\cos{2\alpha})$ which have the same parity and hence have even parity while the B-modes are constructed by multiplying functions $(Q\sin{2 \alpha}, U\cos{2\alpha})$ of opposite parity and hence have an odd parity.}
+where $\circ$ denotes a convolution and the spherical harmonic functions denote the rotated functions such that the pole of the function coincides with the direction $\hat{n}_0$ and the reference zero for the azimuthal angle is the local longitude $\phi_0$. 
 
-Note that this kernel does not depend on the Euler angle $\gamma$ \comment{Why is that and how do you understand this ? }. This local convolution kernel has a part which depends only on the Euler angle $\alpha$ which has no multipole dependence. The remaining part of the kernel is specified by the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$ which depends only on the Euler angle $\beta$ and completely incorporates the multipole $\ell$ dependence of the kernel. We will refer to $f(\beta,\ell_{\rm min},\ell_{\rm max})$ as the radial part of the kernel since it only depends on the angular distance between different locations. Its the radial part of the kernel that completely determines the locality of this operator. 
+The convolution kernel has a azimuthal part which depends only on the Euler angle $\alpha$ and has no multipole dependence and this is the primary operation which translates between the two different spin representation of CMB polarization. The radial part of the kernel is specified by the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$, it depends only on the angular separation given by the Euler angle $\beta$ and it completely incorporates the multipole $\ell$ dependence of the kernel. It is the radial part of the kernel that completely determines the locality of this operator. Note that this kernel does not depend on the Euler angle $\gamma$ \comment{Why is that and how do you understand this ? }. 
 
-\rfedit{The azimuthal operations do not depend on the choice of basis functions, and can be argued as a requirement for constructing spin-0 fields by operating on spin-2 fields. The radial kernel however is determined by the choice of the basis functions. Motivated by this observation, one can now think of working with alternate basis functions which have different radial fall off.} \comment{This is generally true for all the local kernels. So shift this line to the section where we explore different radial functions.}
+We know that the product of two functions with spins $s_1$ and $s_2$ results in a function with spin $s_1 + s_2$: ${}_{s_1 +s_2}f = {}_{s_1}g \,{}_{s_2}h$. Since $[Q + iU]$ is a field with spin +2 and the field $\exp(-i2\alpha)$ has spin -2, the resultant field formed by the product of these two function has spin-0. This makes intuitive, the construction of the spin-0 E and B modes of polarization. Note that the coordinate dependence of the Stokes parameters cannot be integrated out at the location $\hat{n}_0$ where the scalar fields are to be evaluated and at the diametrically opposite location, since the azimuthal angle $\alpha$ becomes ill-defined at these points. The convolution kernel has vanishing contribution from these points, since the radial part of the kernel is given by a weighted linear combination of $P_{\ell}^2$ Legendre polynomials which $P_{\ell}^2(\beta) \propto \sin^2{\beta} \rightarrow 0 $ as $\beta \rightarrow 0 ,\pi$.  \revisit{It is also interesting to note that the E-modes are constructed by product of functions $(U\sin{2 \alpha}, Q\cos{2\alpha})$ which have the same parity and hence have even parity while the B-modes are constructed by multiplying functions $(Q\sin{2 \alpha}, U\cos{2\alpha})$ of opposite parity and hence have an odd parity.}
+
+
+
+\rfedit{The azimuthal operations do not depend on the choice of basis functions, and could have been been argued to have the form $e^{-i2 \alpha}$ by requiring to construct a spin-0 field given some spin-2 fields. The radial part of the kernel however is determined by the choice of the basis functions. Motivated by this observation, we can think of constructing convolution kernels with different radial dependences, hence allowing control over the non-locality of the convolution kernels.} \comment{This is generally true for all the local kernels. So shift this line to the section where we explore different radial functions.}
 %--------------------------------------------------------
 %--------------------------------------------------------
-\subsection{Evaluating Stokes parameters Q \& U fields from E \& B fields}\label{sec:eb2qu}
-The real space operator which translates E \& B fields to Stokes parameters Q \& U is derived using a similar procedure. The inverse operator is given by the following expression,
+\subsection{Evaluating Stokes parameters $Q$ \& $U$ from scalar fields $E$ \& $B$}\label{sec:eb2qu}
+The real space operator which translates $E$ \& $B$ fields to Stokes parameters $Q$ \& $U$ can be derived using a similar procedure. The inverse operator is given by the following expression,
 %
+\begin{subequations}
 \beqry
-\bar{P} &=& \bar{T}^{-1} *{{}_2\mathcal{Y}} *\tilde T *{{}_0\mathcal{Y}^{\dagger}}\bar{S} = \frac{1}{2} \bar{T}^{\dagger} *{{}_2\mathcal{Y}} *\tilde T *{{}_0\mathcal{Y}^{\dagger}}\bar{S}   \\
-&=&  \bar O^{-1} *\bar{S}
+\bar{P} &=& \bar{T}^{-1} *{{}_2\mathcal{Y}} *\tilde T *{{}_0\mathcal{Y}^{\dagger}}\bar{S} = \frac{1}{2} \bar{T}^{\dagger} *{{}_2\mathcal{Y}} *\tilde T *{{}_0\mathcal{Y}^{\dagger}}\bar{S} \,,  \\
+&=&  \bar O^{-1} *\bar{S}\,.
 \eeqry
+\end{subequations}
 %
-We do not provide the explicit calculations here, since the derivation is nearly identical to that discussed in the previous section. The inverse operator is given by the following expression,
+We do not provide the explicit derivation here, since the procedure is nearly identical to that discussed in the previous section. The inverse operator is given by the following expression,
 %
 \beq
 {\bar O}^{-1}=-\bmat \mathcal{M}_{r} & -\mathcal{M}_{i} \\  \mathcal{M}_{i}  & \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} =-f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat \,.
 \eeq
 %
 %where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}.
-Note that the kernel is different by a mere change in sign on the off-diagonals of the block matrix as compared to \eq{eq:op_qu2eb}.
-We can evaluate the Stokes Q \& U parameters from the scalar E \& B  fields by evaluating the following expression,
+Note that the kernel is different by a mere change in sign on the off-diagonals of the block matrix as compared to \eq{eq:op_qu2eb}. We can evaluate the Stokes parameters  $Q$ \& $U$ from the scalar fields $E$ \& $B$ by evaluating the following expression,
 %
 \beq
 \bmat Q_i \\ U_i  \emat=-\Delta \Omega\sum_{j=1}^{N_{\rm pix}}f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat E_j \\ B_j  \emat \,,
@@ -205,15 +216,16 @@ where all the symbols have their usual meaning. The above equation can again be 
 %
 \begin{subequations} \label{eq:eb2qu_simple}
 \beqry 
-[Q + iU](\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}}  P_{\ell}^{2}(\beta_{0j}) \right)  \mathbf{\Bigg( e^{i2 \alpha_{0j}}   [E+iB](\hat{n}_j) \Bigg)} \,, \label{eq:eb2qu_physical}\\
-{}_{+2}X(\hat{n}_0) &=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2} \right]  \circ [E+iB] \right)= - \Bigg\lbrace \mathcal{M} \circ [E + iB] \Bigg\rbrace(\hat{n}_0)\,, 
+{}_{+2}\bar{X}(\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}}  P_{\ell}^{2}(\beta_{0j}) \right)  {\Bigg( e^{i2 \alpha_{0j}}   [E+iB](\hat{n}_j) \Bigg)} \,, \label{eq:eb2qu_physical}\\
+&=& - \Bigg\lbrace \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2} \right]  \circ [E+iB]  \Bigg\rbrace (\hat{n}_0) \,, \\
+&=& - \Bigg\lbrace \mathcal{M} \circ [E + iB] \Bigg\rbrace(\hat{n}_0)\,, 
 \eeqry
 \end{subequations}
 %
-which is to be interpreted in the same manner as \eq{eq:qu2eb_simple}. Note that the only change in the convolution kernel as compared to that in \eq{eq:op_qu2eb} is that the signs of the off-diagonal block matrices are reversed. Alternatively, the $Y_{\ell 2}$ functions are not conjugated. This can again be simply understood as constructing a spin-2 field by taking a product of a spin-0 field: $[E +iB]$ with a spin $+2$ field: $\exp(+i2\alpha)$. The radial dependence of the operator ${\bar O}^{-1}$  is identical to the that of ${\bar O}$ as one may have expected. In this case all the coordinate dependence in encoded in the function $\exp(+i2\alpha)$, which is ill-defined at the poles ($\beta \rightarrow 0,\pi$) and hence the radial functions have to vanish at these locations, which is the case for the same reasons discussed previously.
+which $\circ$ is to be interpreted as a convolution. The only change in the convolution kernel as compared to that in \eq{eq:qu2eb_simple} is that the $Y_{\ell 2}$ functions are not conjugated. This can again be simply understood as the construction of a spin-2 field by taking a product of a spin-0 field $[E +iB]$ with a spin $+2$ field $e^{+i2\alpha}$. The radial dependence of the operator ${\bar O}^{-1}$  is identical to the that of ${\bar O}$ as one may have expected. From the perspective of the scalar field $[E + iB]$, all the coordinate dependence of the Stokes parameters is encoded in the function $e^{+i2\alpha}$.  The radial functions again have to vanish at $\beta \rightarrow 0,\pi$ for the same reasons that the function $e^{+i2\alpha}$ is ill defined at these locations.
 %--------------------------------------------------------
 %--------------------------------------------------------
-\subsection{Decomposing Q \& U Stokes parameters into those corresponding to E \& B modes respectively}
+\subsection{Decomposing Stokes parameters $Q$ \& $U$  into those corresponding to $E$ \& $B$ modes respectively}
 The Stokes Q \& U parameters can be decomposed into the scalar modes E \& B and vice verse, as seen in the previous sections. The E \& B modes are orthogonal to each other, in the sense that their respective operators are orthogonal to each other as seen in \eq{eq:op_eb_ortho}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to E modes and another \vp{\rm B} that purely contribute to the B modes of polarization. We can only measure the total Stokes vector which is a sum of the Stokes vectors corresponding to the respective scalar modes.  In this section we derive the real space operators which directly perform this decomposition, without ever having to evaluate the E \& B modes. The derivation is similar to that discussed in \sec{sec:qu2eb}, though the algebra is a little more involved in this case. Here we use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions,
 %
 \beqry
