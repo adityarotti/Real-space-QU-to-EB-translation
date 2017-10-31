@@ -8,5 +8,5 @@
 \contentsline {subsection}{\numberline {3.4}Visualizing the convolution kernels}{9}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Quantifying the non-locality of E \& B modes}{11}{subsection.3.5}
 \contentsline {section}{\numberline {4}Generalized operators}{14}{section.4}
-\contentsline {subsection}{\numberline {4.1}Recovering the default E and B mode spectra}{16}{subsection.4.1}
-\contentsline {section}{\numberline {5}Discussion}{17}{section.5}
+\contentsline {subsection}{\numberline {4.1}Recovering the default $E$ and $B$ mode spectra}{16}{subsection.4.1}
+\contentsline {section}{\numberline {5}Discussion}{16}{section.5}

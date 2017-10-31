@@ -29,5 +29,10 @@
 
 
 \end{itemize}
+
+\comment{Move the following two paragraphs to final discuss}
+\revisit{The discussion till now gives the impression that using the localized convolution kernels is no different from from using the default kernel and altering the spherical harmonic coefficients of expansion of the relavant fields by appropriately operating on them with the  effective beam functions $g_{\ell}$. To appreciate the difference between these two, it is important to realize that in general one can make a choice of a radial function which may not have a band limited description. In such a case these two method of evaluating the relevant fields is not identical. An example of this claim is depicted in \fig{fig:example_gbeta}.\\
+Another important thing to realize is that the harmonic coefficients derived from default full sky operations get some contributions from different portions of sky. For instance evaluating the E and B fields in the vicinity of the poles is are prone to receiving significant contributions from strong foregrounds near the equator. Correcting the harmonic coefficients of expansion with the effective beam function does not cancel these non-local contribution. On the contrary by performing the convolution with the localized real space kernels, the regions which contribute to the local field evaluations are predetermined by the choice of the radial function.} 
+
 %
 %The width of the $\beta$ kernel can be used as an indicator of the width of mask apodization. One may also use the width of the $\beta$ kernel to throw away the regions of the sky close to the edges of the mask. Mask apodization techniques should fail at low Nside. The width of the $\beta$ kernel makes transparent why the E to B leakage issues are only relevant close to the edges of the mask.
