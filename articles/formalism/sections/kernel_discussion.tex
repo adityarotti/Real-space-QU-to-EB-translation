@@ -1,27 +1,6 @@
 
  
 \subsection{Visualizing the convolution kernels} \label{sec:visualize_operator}
-
-\textit{Evaluating the local kernels: }\revisit{Let us consider the case when one of the coordinates coincides with the north pole (more formally this refers to the point $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), say $\hat{n}_0=(\theta_0,\phi_0)=(0,0)$. In this case the Euler angles in the $z-y1-z2$ convention are simply given by: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$, where $(\theta_i,\phi_i)$ denote the coordinates of the location $\hat{n}_i$.} Since the Euler angle $\gamma=0$ when rotations are defined with respect to the pole, the respective kernels simplify to the following forms,
-%
-\begin{subequations} \label{eq:kernel_at_pole}
-\beqry
-\mathcal{M}(\hat{n}_0,\hat{n}_i) &=& \sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2}(\theta_i,\phi_i) = \sum_{\ell} {{}_{0}}a_{\ell 2} \, {{}_{0}}Y_{\ell 2}(\theta_i,\phi_i) \,,\\
-\mathcal{I}(\hat{n}_0,\hat{n}_i) &=& \sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}{{}_{-2}}Y_{\ell 2}(\theta_i,\phi_i) = \sum_{\ell} {{}_{-2}}a_{\ell 2}\, {{}_{-2}}Y_{\ell 2}(\theta_i,\phi_i) \,, \\
-\mathcal{D}(\hat{n}_0,\hat{n}_i) &=& \sum_{\ell} \sqrt{\frac{2 \ell+1}{4 \pi}}{{}_{2}}Y_{\ell 2}(\theta_i,\phi_i) = \sum_{\ell} {{}_{2}}a_{\ell 2} \, {{}_{2}}Y_{\ell 2}(\theta_i,\phi_i) \,.
-\eeqry
-\end{subequations}
-%
-The kernels centered around any other location $\hat{n}_j = (\theta_j,\phi_j)$ are simply given by evaluating the respective spherical harmonic sums using the rotated harmonic coefficients given by,
-%
-\beq
-{}_s a_{\ell m} = D^{\ell}_{m 2}(\phi_j , \theta_j, 0) {{}_s}a_{\ell 2} \,,
-\eeq
-%
-where $D^{\ell}_{2 m}$ are the Wigner-D functions and ${{}_s}a_{\ell 2} = \sqrt{\frac{2\ell+1}{4 \pi}}$.
-These rotation operations can be carried out using inbuilt Healpix routine \textit{rotate\_alm}, while the convolution kernels can be synthesized by evaluating the respective spherical harmonic sums using the \textit{alm2map} routine.
-
-We compute the local convolution kernels using the procedure outlined in the discussion above. Since its not easy to imagine how the Euler angles vary as a function of position of the central pixel we depict the kernels at different locations in \fig{fig:vis_kernel}, to give a sense of how these kernels vary across the sphere.
 %
 \begin{figure}[t] \label{fig:mixing_kernel}
 \centering
@@ -38,12 +17,12 @@ We compute the local convolution kernels using the procedure outlined in the dis
 \subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2ebqu_ker_i_lat87_lon45.pdf}}\hspace{-2mm}
 \subfigure{\includegraphics[width=0.16\columnwidth]{kernel/I_ker_r_lat87_lon45.pdf}}\hspace{-2mm}
 \subfigure{\includegraphics[width=0.16\columnwidth]{kernel/I_ker_i_lat87_lon45.pdf}}\\[-2ex]
-\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2eb_ker_r_lat87_lon30.pdf}}\hspace{-2mm}
-\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2eb_ker_i_lat87_lon30.pdf}}\hspace{-2mm}
-\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2ebqu_ker_r_lat87_lon30.pdf}}\hspace{-2mm}
-\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2ebqu_ker_i_lat87_lon30.pdf}}\hspace{-2mm}
-\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/I_ker_r_lat87_lon30.pdf}}\hspace{-2mm}
-\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/I_ker_i_lat87_lon30.pdf}}\\[-2ex]
+%\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2eb_ker_r_lat87_lon30.pdf}}\hspace{-2mm}
+%\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2eb_ker_i_lat87_lon30.pdf}}\hspace{-2mm}
+%\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2ebqu_ker_r_lat87_lon30.pdf}}\hspace{-2mm}
+%\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2ebqu_ker_i_lat87_lon30.pdf}}\hspace{-2mm}
+%\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/I_ker_r_lat87_lon30.pdf}}\hspace{-2mm}
+%\subfigure{\includegraphics[width=0.16\columnwidth]{kernel/I_ker_i_lat87_lon30.pdf}}\\[-2ex]
 \subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2eb_ker_r_lat80_lon30.pdf}}\hspace{-2mm}
 \subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2eb_ker_i_lat80_lon30.pdf}}\hspace{-2mm}
 \subfigure{\includegraphics[width=0.16\columnwidth]{kernel/qu2ebqu_ker_r_lat80_lon30.pdf}}\hspace{-2mm}
@@ -56,20 +35,41 @@ We compute the local convolution kernels using the procedure outlined in the dis
 \subfigure[$\mathcal{D}_i$]{\includegraphics[width=0.16\columnwidth]{kernel/qu2ebqu_ker_i_lat0_lon90.pdf}}\hspace{-2mm}
 \subfigure[$\mathcal{I}_r$]{\includegraphics[width=0.16\columnwidth]{kernel/I_ker_r_lat0_lon90.pdf}}\hspace{-2mm}
 \subfigure[$\mathcal{I}_i$]{\includegraphics[width=0.16\columnwidth]{kernel/I_ker_i_lat0_lon90.pdf}}
-\caption{This panel of figure depicts the various parts of the convolution kernel, discussed in \sec{sec:real_space_operators}. These kernels have been evaluated with the band limit: $\ell \in [2,192]$. The functions have been sampled at an NSIDE=2048 resolution for visual appeal. The size of each panel is approximately $16^{\circ} \times 16^{\circ}$ and the grid lines are marked at 2 degree separations. The black circles denotes the position of the central pixel around which the convolution kernels have been evaluated. The black star marks the location of the north galactic pole. The five rows depict the kernels at different location on the sphere and the galactic coordinates of the central pixel are specified in each panel. }
+\caption{This panel of figure depicts the various parts of the convolution kernel, discussed in \sec{sec:real_space_operators}. These kernels have been evaluated with the band limit: $\ell \in [2,192]$. The functions have been sampled at an NSIDE=2048 resolution for visual appeal. The size of each panel is approximately $16^{\circ} \times 16^{\circ}$ and the grid lines are marked at 2 degree separations. The black circles denotes the position of the central pixel around which the convolution kernels have been evaluated. The black star marks the location of the north galactic pole. The five rows depict the kernels at different location on the sphere and the galactic coordinates of the central pixel are specified in each panel. \comment{Whats the normalization?} }
 %from top to bottom rows are as follows $[b,\ell] = [0^{\circ},0^{\circ}], [87^{\circ},0^{\circ}], [87^{\circ},30^{\circ}], [80^{\circ},30^{\circ}], [0^{\circ},90^{\circ}]$.}
 \label{fig:vis_kernel}
  \end{figure}
 %
-For illustration these functions are sampled at a very high Healpix resolution parameter of NSIDE=2048. All the plots have been rotated such that the central location $\hat{n}_j$ around which the kernels are computed lies in the centre marked by the back circle. 
 
-The real and imaginary part of the kernel $\mathcal{M}$ are identical irrespective of changes in the galactic latitude and longitude of the central pixel. Note that these functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first three rows of \fig{fig:vis_kernel}. Both these facts can be associated with the fact that this function does not depend on the Euler angle $\gamma$. %\revisit{Recall that the angle $\gamma$ defines the rotation about the final z-axis which co-alligns the planar axes. Since the function $\mathcal{M}$ does not depend of this final orientation, it implies a rotational invariance of the fields constructed by convolving with this kernel.}
+\textit{Evaluating the local kernels: }\revisit{Let us consider the case when one of the coordinates coincides with the north pole $\hat{z}=(0,0)$ (this refers to the point $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$). In this case the Euler angles in the $z-y1-z2$ convention are simply given by: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$, where $(\theta_i,\phi_i)$ denote the coordinates of the location $\hat{n}_i$.} Since the Euler angle $\gamma=0$ when rotations are defined with respect to the pole, the respective kernels simplify to the following forms,
+%
+\begin{subequations}
+\beqry 
+\mathcal{M}(\hat{z},\hat{n}_i) &=&  \sum_{\ell} {{}_{0}}a_{\ell 2} \, {{}_{0}}Y_{\ell 2}(\hat{n}_i) \,;\\
+\mathcal{I}(\hat{z},\hat{n}_i) &=& \sum_{\ell} {{}_{-2}}a_{\ell 2}\, {{}_{-2}}Y_{\ell 2}(\hat{n}_i) ~~\,;~~
+\mathcal{D}(\hat{z},\hat{n}_i) =\sum_{\ell} {{}_{2}}a_{\ell 2} \, {{}_{2}}Y_{\ell 2}(\hat{n}_i) \,,
+\eeqry
+\end{subequations}
+%
+where ${}_{s}a_{\ell 2} = \sqrt{\frac{2 \ell+1}{ 4 \pi}} ~~\forall ~~ s \in [0,-2,+2]$.
+The convolution kernels centered around any other location $\hat{n}_j = (\theta_j,\phi_j)$ are simply given by evaluating the respective spherical harmonic sums: $\sum_{\ell m} {}_{s}a_{\ell m}\,{}_{s}Y_{\ell m}(\hat{n}_i)$ using the rotated harmonic coefficients given by: ${}_s a_{\ell m} = D^{\ell}_{m 2}(\phi_j , \theta_j, 0) {{}_s}a_{\ell 2}$, where $D^{\ell}_{2 m}$ are the Wigner-D functions.
+These rotation operations can be carried out using inbuilt Healpix routine \textit{rotate\_alm}, while the convolution kernels can be synthesized by evaluating the respective spherical harmonic sums using the \textit{alm2map} routine. 
+\comment{Make parallels with instrument beam analysis here ? Or is it trivial since its obvious that all convolution problems can be cast in this form.}
 
-The function $\mathcal{D}$ varies significantly as a function of galactic latitude of the central pixel. It varies from having a two fold symmetry at the poles to having a four fold symmetry at the equator as seen in the middle two columns of \fig{fig:vis_kernel}. This change in behavior is primarily due to the  dependence on the Euler angle $\gamma$. When the central pixel is nearly at the pole, $\gamma$ vanishes, and the azimuthal part of the function $D$ is identical to that of $\mathcal{M}$ and hence the two function look very similar as seen in the first row of \fig{fig:vis_kernel}. Also note that this function is distorted as parts of its domain pass the galactic poles.  
+We compute the local convolution kernels using the procedure described above. To given an intuition for how these kernels vary as a function of position of the central pixel we depict in \fig{fig:vis_kernel} the kernels at a few different locations.
+For illustration these functions are sampled at a very high Healpix resolution parameter of NSIDE=2048. All the plots have been rotated such that the central location $\hat{n}_j$ marked by the black circle are in the centre of the figure. The horizontal and vertical lines that pass through the central black circle mark the local latitude and longitude respectively.
 
-The function $\mathcal{I}$ shows similar behavior, varying with latitude, having an identical azimuthal behavior near the poles and being distorted in parts that overlap with the galactic poles. \revisit{This function, in the case of an infinite band limit reduces to a delta function at the position of the central pixel ($\lim_{\ell_{\rm max} \to \infty}: \mathcal{I}_r \rightarrow \delta(\hat{n}_0 - \hat{n}'),~ \mathcal{I}_i \rightarrow 0$), as discussed previously.  Hints of this behavior can be seen by comparing the amplitudes of the real and imaginary parts of this function near the equator, depicted in the fifth row of the last two columns of \fig{fig:vis_kernel}. However note that this function significantly deviates from this behavior at higher galactic latitudes. The real and imaginary parts of this function contribute nearly equally near the vicinity of the poles.}  We invariably work with a specific band limit, hence both the real and imaginary parts of this functions make important non-zero contributions. 
-
-We reiterate that all the function are invariant under changes in longitude of the central pixel, the latitude being held fixed as can be seen by comparing the figures in the second row (evaluated at $[b,\ell]=[87^{\circ},45^{\circ}]$) and third row (evaluated at $[b,\ell]=[87^{\circ},30^{\circ}]$) of \fig{fig:vis_kernel}, as one may have expected.
+The real and imaginary part of the kernel $\mathcal{M}$ are identical irrespective of changes in the galactic latitude and longitude of the central pixel. Note that these functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first three rows of \fig{fig:vis_kernel}. Both these facts can be associated with the fact that this function does not depend on the Euler angle $\gamma$. From \eq{eq:qu2eb_convolution_explicit} and \eq{eq:eb2qu_convolution_explicit} it is clear that $\mathcal{M}_r$ and $\mathcal{M}_i$ can be interpreted in the following ways,
+%\revisit{Recall that the angle $\gamma$ defines the rotation about the final z-axis which co-alligns the planar axes. Since the function $\mathcal{M}$ does not depend of this final orientation, it implies a rotational invariance of the fields constructed by convolving with this kernel.}
+%
+\begin{subequations}
+\beqry
+\bmat E= -\mathcal{M}_r \\ B =+\mathcal{M}_i  \emat  \leftarrow \bmat Q=\delta(\hat{n} - \hat{n}_j)\\ U=0 \emat ~~;~~ \bmat E= -\mathcal{M}_i \\ B = - \mathcal{M}_r  \emat  \leftarrow \bmat Q=0 \\ U=\delta(\hat{n} - \hat{n}_j) \emat \,,  \\
+\bmat Q= -\mathcal{M}_r \\ U = -\mathcal{M}_i  \emat  \leftarrow \bmat E=\delta(\hat{n} - \hat{n}_j)\\ B=0 \emat ~~;~~ \bmat Q= +\mathcal{M}_i \\ U = - \mathcal{M}_r  \emat  \leftarrow \bmat E=0 \\ B=\delta(\hat{n} - \hat{n}_j) \emat \,.
+\eeqry
+\end{subequations}
+%
+The kernels $\mathcal{D}$ \& $\mathcal{I}$ vary significantly as a function of galactic latitude of the central pixel as seen in the last four columns of \fig{fig:vis_kernel}. These kernels show a two fold symmetry in the vicinity of the poles and this arises due to Euler angle $\gamma \approx 0$ here and therefore $e^{i2(\alpha \pm \gamma)} \approx e^{i2\alpha}$. Note that in this region, the azimuthal profile of the real and imaginary part of these kernels  is similar to $\mathcal{M}_r$ and $\mathcal{M}_i$ respectively.  This also explains why the imaginary part of the band limited delta function $\mathcal{I}$ contributes just as much as the real part in these regions. On moving to lower latitudes, $\mathcal{D}$ quickly transitions to having a four fold symmetry while $\mathcal{I}$ transitions to being dominated by the real part and behaves more like the conventional delta function. This transition can be most easily understood in the flat sky limit where $\gamma = -\alpha$ which leads to the resultant 4 fold symmetry seen for $\mathcal{D}$ owing to $e^{i2(\alpha - \gamma)} =e^{i4\alpha}$ and $\mathcal{I}$ being dominated by the real part owing to $e^{i2(\alpha + \gamma)} =1 + i0$. Since the flat sky approximation has most validity in the proximity of the equator these limiting tendencies of the respective kernels are seen in the bottom row of \fig{fig:vis_kernel} which depict the kernels evaluated at the equator while the middle two row depict the kernels evaluated at a latitudes of $b=87^{\circ}~\&~ 80^{\circ}$ serve to indicate the rate of this transition. These kernels are invariant under changes in longitude of the central pixel, the latitude being held fixed as one may have expected.
 
 \subsection{Quantifying the non-locality of E \& B modes} \label{sec:radial_locality}
 

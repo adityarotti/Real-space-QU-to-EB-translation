@@ -138,7 +138,7 @@ where the symbol ${}_{0}Y_i$ is used to denote the sub-matrix ${}_{0}Y_{\hat{n}_
  where the terms on either side of the equation are those that appear in \eq{eq:qu2eb_ker_1}. The $m$ sum over the product of two spherical harmonic functions with spins $s_1$ and $s_2$ respectively, is given by the following identity \cite{varshalovich},
 %
 \beq \label{eq:sum_spin_shf}
- \sum_{m}{{}_{s_1}}Y^*_{\ell m}(\hat{n}_i){{}_{s_2}}Y_{\ell m}(\hat{n}_j) = \sqrt{\frac{2\ell+1}{4 \pi}} {{}_{s_2}}Y_{\ell \,-s_1}(\beta,\alpha) e^{- i s_2 \gamma} \,,
+ \sum_{m}{{}_{s_1}Y}^*_{\ell m}(\hat{n}_i)\,{{}_{s_2}Y}_{\ell m}(\hat{n}_j) = \sqrt{\frac{2\ell+1}{4 \pi}} {{}_{s_2}}Y_{\ell \,-s_1}(\beta,\alpha) e^{- i s_2 \gamma} \,,
 \eeq
 %
 where $\alpha, ~\beta ~\&~ \gamma$ denote the Euler angles. Therefore the different parts of the real space operator $\bar{O}$  are completely specified in terms of the complex function,
@@ -208,7 +208,7 @@ We do not provide the explicit derivation here, since the procedure is nearly id
 %where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}.
 Note that the kernel is different by a mere change in sign on the off-diagonals of the block matrix as compared to \eq{eq:op_qu2eb}. We can evaluate the Stokes parameters  $Q$ \& $U$ from the scalar fields $E$ \& $B$ by evaluating the following expression,
 %
-\beq
+\beq \label{eq:eb2qu_convolution_explicit}
 \bmat Q_i \\ U_i  \emat=-\Delta \Omega\sum_{j=1}^{N_{\rm pix}}f(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat E_j \\ B_j  \emat \,,
 \eeq
 %
@@ -226,7 +226,7 @@ which $\circ$ is to be interpreted as a convolution. The only change in the conv
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Decomposing Stokes parameters $Q$ \& $U$  into those corresponding to $E$ \& $B$ modes respectively}
-The Stokes Q \& U parameters can be decomposed into the scalar modes E \& B and vice verse, as seen in the previous sections. The E \& B modes are orthogonal to each other, in the sense that their respective operators are orthogonal to each other as seen in \eq{eq:op_eb_ortho}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to E modes and another \vp{\rm B} that purely contribute to the B modes of polarization. We can only measure the total Stokes vector which is a sum of the Stokes vectors corresponding to the respective scalar modes.  In this section we derive the real space operators which directly perform this decomposition, without ever having to evaluate the E \& B modes. The derivation is similar to that discussed in \sec{sec:qu2eb}, though the algebra is a little more involved in this case. Here we use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions,
+We can only measure the total Stokes vector which is a sum of the Stokes vectors corresponding to the respective scalar modes. The $E$ \& $B$ modes are orthogonal to each other, in the sense that their respective operators are orthogonal to each other as seen in \eq{eq:op_eb_ortho}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to $E$ modes and another \vp{\rm B} that purely contribute to the $B$ modes of polarization. In this section we derive the real space operators which operate on the total Stokes vector and yield this decomposition, without ever having to explicitly evaluate the scalar modes. Though the algebra is a little more involved, the derivation is similar to that discussed in \sec{sec:qu2eb}, hence we refrain from presenting the detailed calculations here, but outline the key points. We use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions,
 %
 \beqry
 \bar{P}_E &=&  [\bar T^{-1} * {{}_2\mathcal{Y}} *\tilde T * \tilde O_E* \tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}} *\bar T] *\bar{P}  \,, \\
@@ -243,44 +243,47 @@ We contract over all the matrix operators to arrive at the the real space operat
 \bar O_{E/B} = 0.5 \bmat \mathcal{I}_{r} & \mathcal{I}_{i} \\  -\mathcal{I}_{i}  & \mathcal{I}_{r} \emat \pm \bmat \mathcal{D}_{r} & \mathcal{D}_{i} \\  \mathcal{D}_{i}  & - \mathcal{D}_{r} \emat \,,\\
 \eeq
 where $\mathcal{I}_{r} ~\&~ \mathcal{D}_{r}$ and $\mathcal{I}_{i} ~\&~ \mathcal{D}_{i}$ are the real and complex parts of the following complex functions,
-\beqry
-\mathcal{I} &=& \mathcal{I}_{r} + i \mathcal{I}_{i} = \sum_{\ell m} {_{-2}Y}_{\ell m}(\hat n_i) {_{-2}Y}^*_{\ell m}(\hat n_j) \,, \nonumber \\
-\mathcal{D}  &=& \mathcal{D}_{r} + i\mathcal{D}_{i} = \sum_{\ell m} {_2Y}_{\ell m}(\hat n_i) {_{-2}Y}^*_{\ell m}(\hat n_j) \,.\nonumber
-\eeqry
 %
-These functions can be further simplified using the properties of spin spherical harmonics listed in Appendix~\ref{sec:ylm_mathprop}. Specifically it can be shown that these functions reduce to the following mathematical forms,
+\begin{subequations}
+\beqry
+\mathcal{I} &=& \mathcal{I}_{r} + i \mathcal{I}_{i} = \sum_{\ell m} {_{-2}Y}_{\ell m}(\hat n_i) {_{-2}Y}^*_{\ell m}(\hat n_j) \,, \\
+\mathcal{D}  &=& \mathcal{D}_{r} + i\mathcal{D}_{i} = \sum_{\ell m} {_2Y}_{\ell m}(\hat n_i) {_{-2}Y}^*_{\ell m}(\hat n_j) \,.
+\eeqry
+\end{subequations}
+%
+These functions can be further simplified using the identity of spin spherical harmonics given in \eq{eq:sum_spin_shf}. Specifically it can be shown that these functions reduce to the following mathematical forms,
 %
 \beqrys \label{eq:fn_i}
 \mathcal{I}(\hat{n}_i, \hat{n}_j) &=& \sum_{\ell} \sqrt{\frac{2\ell+1}{ 4 \pi}}{_{-2}Y}_{\ell2}(\beta_{ij}, \alpha_{ij}) ~ \rm{e}^{i2 \gamma_{ij}} \label{eq:healpix-compatible-i} = \mathcal{I}_r + i \mathcal{I}_i \,, \\
-\mathcal{I}_r + i \mathcal{I}_i &=& \Big [ \cos(2 \alpha_{ij} +  2\gamma_{ij}) + i \sin(2 \alpha_{ij} +  2 \gamma_{ij}) \Big]   _{-2}f(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \,,
+\mathcal{I}_r + i \mathcal{I}_i &=& \Big [ \cos(2 \alpha_{ij} +  2\gamma_{ij}) + i \sin(2 \alpha_{ij} +  2 \gamma_{ij}) \Big]   {{}_{-2}f}(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \,,
 \eeqrys
 %
 %
 \beqrys \label{eq:fn_d}
 \mathcal{D}(\hat{n}_i, \hat{n}_j) &=& \sum_{\ell} \sqrt{\frac{2\ell+1}{ 4 \pi}}{_2Y}_{\ell 2}(\beta_{ij}, \alpha_{ij}) ~ \rm{e}^{- i2 \gamma_{ij}} \label{eq:healpix-compatible-m} =\mathcal{D}_r + i \mathcal{D}_i \,, \\
-\mathcal{D}_r + i \mathcal{D}_i &=&  \Big [ \cos(2 \alpha_{ij} - 2\gamma_{ij}) + i \sin(2 \alpha_{ij} -  2 \gamma_{ij}) \Big]   _{+2}f(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \,,
+\mathcal{D}_r + i \mathcal{D}_i &=&  \Big [ \cos(2 \alpha_{ij} - 2\gamma_{ij}) + i \sin(2 \alpha_{ij} -  2 \gamma_{ij}) \Big]   {{}_{+2}f}(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \,,
 \eeqrys
 %
-where the functions,
+where the radial functions are given by,
 %
 \beq
-{}_{\pm2}f(\beta,\ell_{\rm min},\ell_{\rm max}) = \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2\ell+1}{ 4 \pi}} _{ \pm 2}{f}_{\ell}(\beta) \label{eq:f2_rad_ker}\,,
+{{}_{\pm2}f}(\beta,\ell_{\rm min},\ell_{\rm max}) = \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2\ell+1}{ 4 \pi}} {{}_{ \pm 2}f}_{\ell}(\beta) \label{eq:f2_rad_ker}\,,
 \eeq
 %
-can be expressed in terms of $P_{\ell}^2$ Legendre polynomials and are given by the following explicit mathematical forms,
+where the functions ${{}_{ \pm 2}f}_{\ell}(\beta)$ are expressed in terms of $P_{\ell}^2$ Legendre polynomials and are given by the following explicit mathematical forms,
  %
  \beqry
  _{\pm 2}f_{\ell}(\beta) &=& 2 \frac{(\ell-2)!}{(\ell+2)!}  \sqrt{\frac{2\ell +1 }{4 \pi}} \Bigg[ - P_{\ell}^{2} (\cos  \beta) \left( \frac{\ell-4}{\sin^2 \beta} + \frac{1}{2}\ell(\ell-1) \pm \frac{2 (\ell-1) \cos \beta}{\sin^2 \beta} \right) \nonumber \\ 
 &+& P_{\ell-1}^2 (\cos \beta) \left( (\ell+2) \frac{\cos \beta}{\sin^2 \beta} \pm \frac{2 (\ell+2)}{ \sin^2 \beta } \right) \Bigg] \,. \label{eq:rad_ker_quequbqu}
  \eeqry
  %
-Finally, the Stokes parameters corresponding to the respective scalar fields are given by evaluating the following expressions, 
+Finally the Stokes parameters corresponding to the respective scalar fields can be computed by evaluating the following expressions, 
  %
 \beqry \label{eq:op_qu2equbqu}
 \bmat Q_i \\ U_i  \emat_{E/B} &=& \sum_{j=1}^{N_{\rm pix}} \Bigg\lbrace {}_{-2}f(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \bmat \cos(2 \alpha_{ij} + 2\gamma_{ij}) & \sin(2\alpha_{ij} +2 \gamma_{ij}) \\  -\sin(2\alpha_{ij} +2 \gamma_{ij})  & \cos(2 \alpha_{ij} + 2 \gamma_{ij}) \emat  \bmat Q_j \\ U_j  \emat  \\ &\pm& {}_{+2}f(\beta_{ij},\ell_{\rm min},\ell_{\rm max}) \bmat \cos(2 \alpha_{ij} - 2\gamma_{ij}) &  \sin(2\alpha_{ij} - 2 \gamma_{ij}) \\  \sin(2\alpha_{ij} - 2 \gamma_{ij})  & - \cos(2 \alpha_{ij} - 2 \gamma_{ij}) \emat  \bmat Q_j \\ U_j  \emat \Bigg\rbrace 0.5 \Delta\Omega  \,, \nonumber 
 \eeqry
 %
-where all the symbols have their usual meaning. The above expression can be cast in the following simplified form,
+where all the symbols have their usual meaning. The above expression can be cast in the further simplified form,
 %
 \begin{subequations}
 \beqry
@@ -291,7 +294,8 @@ where all the symbols have their usual meaning. The above expression can be cast
 %
 where in \eq{eq:qu2equbqu_explicit_convolution} we have suppressed the explicit multipole dependence of functions $_{\pm 2}f$ for brevity and in \eq{eq:qu2equbqu_convolution} $\circ$ denotes a convolution. 
 
-It is easy to show that the operator $\mathcal{D}$ is a complex but symmetric matrix and that the operator $\mathcal{I}$ is Hermitian. The function $I$ is a band limited version of the delta function ($\lim_{\ell \rightarrow \infty} \mathcal{I} = \delta(\hat{n}_i - \hat{n}_j)$), when interpreted as a matrix operator forms a band limited version of the identity matrix. Though its non-local ($\mathcal{I} \neq 0 $ when $\hat{n}_i \neq \hat{n}_j$) owing to the band limit, for all practical purposes the operator $\mathcal{I}$ acts like an identity operator as is confirmed by the following identities it satisfies: (i) $\mathcal{I}*\mathcal{I}=\mathcal{I}$ ; (ii) $\mathcal{D}*\mathcal{I}=\mathcal{D}$. Also $\mathcal{D}^*$ is the inverse of $\mathcal{D}$ in this band limited sense: $\mathcal{D}^**\mathcal{D}=I$. Using these properties of the operators $\mathcal{I}$ and $\mathcal{D}$, one can verify that the real space operators satisfy the following identities,
+\comment{Recheck the math described below}
+The function $\mathcal{I}$ is a band limited version of the delta function ($\lim_{\ell \rightarrow \infty} \mathcal{I} = \delta(\hat{n}_i - \hat{n}_j)$). When interpreted as a matrix it is a band limited version of the identity matrix. Though it has non vanishing off diagonal elements ($\mathcal{I} \neq 0 $ when $\hat{n}_i \neq \hat{n}_j$) owing to the band limit, for all practical purposes $\mathcal{I}$ acts like an identity operator as is confirmed by the following set of identities: (i) $\mathcal{I}*\mathcal{I}=\mathcal{I}$ ; (ii) $\mathcal{D}*\mathcal{I}=\mathcal{D}$. Also $\mathcal{D}^*$ is the inverse of $\mathcal{D}$ in this band limited sense: $\mathcal{D}^**\mathcal{D}=\mathcal{I}$. It is useful to note that the operator $\mathcal{D}$ is a complex but symmetric matrix and $\mathcal{I}$ is an Hermitian operator. Using these properties of the operators $\mathcal{I}$ and $\mathcal{D}$, one can verify that the real space operators satisfy the following identities,
 %
 \begin{subequations}
 \beqry
@@ -301,4 +305,8 @@ It is easy to show that the operator $\mathcal{D}$ is a complex but symmetric ma
 \eeqry
 \end{subequations}
 %
-which are the real space analogues of \eq{eq:har_op_prop}. While testing the above stated identities one encounters terms like $\mathcal{D}*\mathcal{I}^*,\mathcal{I}^**\mathcal{I} \textrm{ and }  \mathcal{I}*\mathcal{I}^*$ which cannot be simply interpreted, but they always occur in pairs with opposite signs, hence exactly canceling each other. \revisit{Note that unlike in the harmonic case, the sum of the operators is not exactly an identity matrix. \comment{Isn't it possible to do some real space operations which doesn't care for the band limit but still returns the required decomposition into the respective scalar modes ?} This indicates the loss of information occurred from the original data due to making this transformations with some assumed band limit. If one forces the sum of the operators to be exactly an identity operator, then one compromises on the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators.}
+which are the real space analogues of \eq{eq:har_op_prop}. While testing the above stated identities one encounters terms like $\mathcal{D}*\mathcal{I}^*,\mathcal{I}^**\mathcal{I} \textrm{ and }  \mathcal{I}*\mathcal{I}^*$ which cannot be simply interpreted, but they always occur in pairs with opposite signs, hence exactly canceling each other. 
+
+Note that unlike in the harmonic case, the sum of the operators is not exactly an identity matrix. 
+%\comment{Isn't it possible to do some real space operations which doesn't care for the band limit but still returns the required decomposition into the respective scalar modes ?} 
+This non-exactness is representative of the loss of information resulting from making this transformation on the measured data with some imposed band limit. Forcing the sum of the operators to be exactly an identity matrix compromises the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators, which is exact.
