@@ -42,18 +42,19 @@ In the remainder of this article, we will work with the scalar $E$ and pseudo sc
 E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n}) ~\,;~ B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-Note that the $[E,B]$ fields are merely filtered versions of the fields $[\mathcal{E},\mathcal{B}]$, as their spherical harmonic coefficients of expansion differ by the factor of $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
+Note that the $[E,B]$ fields are merely filtered versions of the fields $[\mathcal{E},\mathcal{B}]$, as their spherical harmonic coefficients of expansion differ by the factor $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
-In this section we cast the relation introduced in Sec.~\ref{sec:pol-primer} in matrix notation\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}. This representation will make transparent the derivation of the real space operators we discuss in the following sections. We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.\\
+In this section we cast the relations introduced in Sec.~\ref{sec:pol-primer} in matrix notation\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}. This representation will make transparent the derivation of the real space operators we discuss in the following sections. We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.
+
 We begin by introducing the matrices encoding the spin spherical harmonic basis vectors,
 %
 \beq
 {}_{|s|}\mathcal{Y}= \bmat _{+s}Y & 0 \\ 0 & _{-s}Y \emat _{2 \rm N_{\rm pix} \times 2 \rm N_{\rm alms}} \,,
 \eeq
 %
-where $s$ denotes the spin of the basis functions. For this work we will only be working with cases $s \in [0,2]$. In this notation, each column can be mapped to a specific harmonic basis function marked by the pair of indices:$(\ell,m)$ and each row maps to a specific position on the sphere. Note that this matrix is in general not a square matrix. The number of rows is determined by the scheme used to discretely represent the sphere and the number of columns is set by the number of basis functions of interest (often determined by the band limit).
+where $s$ denotes the spin of the basis functions. For this work we will be working with cases $s \in [0,2]$. In this notation, each column can be mapped to a specific harmonic basis function marked by the pair of indices: $(\ell,m)$ and each row maps to a specific position on the sphere. Note that this matrix is in general not a square matrix. The number of rows is determined by the scheme used to discretely represent the sphere and the number of columns is set by the number of basis functions of interest (often determined by the band limit).
 
 We now define the different polarization data vectors and their representation in real and harmonic space as follows,
 %
