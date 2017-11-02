@@ -47,9 +47,9 @@ where $b_{\ell}$ denote the coefficients of expansion.
 %
 \begin{figure}[!t] 
 \centering
-\subfigure[\label{fig:bl_gbeta}]{\includegraphics[width=0.32\columnwidth]{Gbeta_for_different_gl_lmax1536.pdf}}
-\subfigure[\label{fig:glbl}]{\includegraphics[width=0.32\columnwidth]{gl_for_different_gbeta_lmax1536.pdf}}
-\subfigure[\label{fig:gl_bbeta}]{\includegraphics[width=0.32\columnwidth]{Bbeta_for_gl_lmax1536.pdf}}
+\subfigure[\label{fig:glbl}]{\includegraphics[width=0.48\columnwidth]{gl_for_different_gbeta_lmax1536.pdf}}\\
+\subfigure[\label{fig:bl_gbeta}]{\includegraphics[width=0.48\columnwidth]{Gbeta_for_different_gl_lmax1536.pdf}}
+\subfigure[\label{fig:gl_bbeta}]{\includegraphics[width=0.48\columnwidth]{Bbeta_for_gl_lmax1536.pdf}}
 \caption{\textit{Left:} The vertical dashed gray line depicts the approximate pixel size $\Delta_{\rm pix} = \sqrt{\frac{4 \pi}{N_{\rm pix}}}$ of a Nside=512 Healpix map. The green line depicts the default radial kernel $f(\beta)$ defined in \eq{eq:qu2eb_gen_kernel}. The blue and orange lines depict the modified radial function resulting the beam harmonics $b_{\ell}$ corresponding to Gaussian beams with fwhm=15 \& 12 arcminutes respectively. The red curve depicts an example modified radial function: $G(\beta)=\mathcal{N} \beta^n \exp{\left[ -\left( \frac{\beta-\beta0}{\sqrt{2} \sigma} \right)^s \right]}$ with parameters set to the following values $[n=1;\, \beta_0=0 ;\, \sigma = 2\Delta_{\rm pix} ;\, s=1.5]$. The black dashed curve depicts the band limited reconstruction of the modified radial function $G(\beta)$. We intentionally have plotted $\beta G(\beta)$ to clearly depict the high $\beta$ behavior of these functions. \textit{Middle: } This figure depicts the harmonic representation of the respective radial functions as indicated by the legend. The dashed curves of the corresponding color depict the inverse of the harmonic functions. \textit{Right:} This figure depicts the beam function $B(\beta)$ evaluated from interpreting the respective harmonic functions as those corresponding to an instrument beam.}
 \label{fig:example_gbeta}
 \end{figure}
