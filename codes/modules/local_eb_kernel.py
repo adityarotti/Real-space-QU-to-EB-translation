@@ -91,7 +91,50 @@ class real_space_queb_kernels(object):
 		dg = np.sin(theta2)*np.cos(theta1) - np.sin(theta1)*np.cos(theta2)*np.cos(phi2-phi1)
     		gamma=np.arctan2(ng,dg) #; gamma[beta==0]=0. ; gamma[abs(beta-np.pi)<1e-5]=0.
 
-		return alpha,beta,gamma	
+		return alpha,beta,gamma
+
+	def return_trig2alpha(self,nside,cpixel,discsize=180.,nest=False):
+		'''Returns the pixel numbers and the respective Euler angles within a circle of radius discsize from the central pixel: cpixel'''
+		theta1,phi1=h.pix2ang(nside,cpixel,nest=nest)
+
+		v=h.pix2vec(nside,cpixel,nest=nest)
+		spixel=h.query_disc(nside,v,discsize*np.pi/180.,inclusive=True,fact=4,nest=nest)
+		theta2,phi2=h.pix2ang(nside,spixel,nest=nest)
+
+		cosbeta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
+		cosbeta[spixel==cpixel]=0.
+		#cosbeta[cosbeta>1.]=1. ; cosbeta[cosbeta<-1.]=-1.
+		beta=np.arccos(cosbeta)
+
+		sinalpha=np.sin(theta2)*np.sin(phi2-phi1)/np.sqrt(1.-cosbeta*cosbeta) ; sinalpha[spixel==cpixel]=0.
+		cosalpha=(np.cos(theta2) - np.cos(theta1)*cosbeta)/(np.sin(theta1)*np.sqrt(1.-cosbeta*cosbeta)) ; cosalpha[spixel==cpixel]=0.
+
+		sin2alpha=2.*sinalpha*cosalpha
+		cos2alpha=cosalpha*cosalpha-sinalpha*sinalpha
+
+		return beta,sin2alpha,cos2alpha,cosbeta,spixel
+	
+	def return_euler_angles_new1(self,vec_cpixel,nside,intg_nside,discsize=180.,nest=False):
+		'''Returns the pixel numbers and the respective Euler angles within a circle of radius discsize from the central pixel: cpixel'''
+		theta1,phi1=h.vec2ang(vec_cpixel,nest=nest)
+		spixel=h.query_disc(intg_nside,vec_cpixel,discsize*np.pi/180.,inclusive=True,fact=4,nest=nest)
+		theta2,phi2=h.pix2ang(intg_nside,spixel,nest=nest)
+
+		temp_beta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
+		temp_beta[temp_beta>1.]=1. ; temp_beta[temp_beta<-1.]=-1.
+		beta=np.arccos(temp_beta)
+
+		na = np.sin(theta2)*np.sin(phi2-phi1)
+		da = np.sin(theta1)*np.cos(theta2) - np.sin(theta2)*np.cos(theta1)*np.cos(phi2-phi1)
+    		alpha=np.arctan2(na,da) ; alpha[beta==0]=0. ; alpha[abs(beta-np.pi)<1e-5]=0.
+
+		ng = np.sin(theta1)*np.sin(phi2-phi1)
+		dg = -np.sin(theta2)*np.cos(theta1) + np.sin(theta1)*np.cos(theta2)*np.cos(phi2-phi1)
+    		gamma=np.arctan2(ng,dg) ; gamma[beta==0]=0. ; gamma[abs(beta-np.pi)<1e-5]=0.
+
+		return alpha,beta,gamma,spixel
+
+
 #	-----------------------------------------------------------------------------------------------------------------------------------------
 	
 #	-----------------------------------------------------------------------------------------------------------------------------------------
@@ -221,7 +264,26 @@ class real_space_queb_kernels(object):
 			eb=h.reorder(eb,n2r=True)
 
 		return [np.zeros(self.npix),eb[0],eb[1]]
+	
+
+	def convert_qu2eb_new(self,tqu,intg_nside,discsize=180.,nest=False):
+		
+		tqu=h.ud_grade(tqu,intg_nside)
+	
+		if nest:
+			tqu=h.reorder(tqu,r2n=True)
+
+		eb=[np.zeros(self.npix,float),np.zeros(self.npix,float)]
+		for i in range(self.npix):
+			vec=h.pix2vec(self.nside,i)
+			alpha,beta,gamma,pix2=self.return_euler_angles_new1(vec,self.nside,intg_nside,discsize=discsize,nest=nest)
+			eb[0][i]=np.dot(-np.cos(2.*alpha)*self.fn_rad_ker(beta),tqu[1][pix2]) + np.dot(np.sin(2.*alpha)*self.fn_rad_ker(beta),tqu[2][pix2])
+			eb[1][i]=np.dot(-np.sin(2.*alpha)*self.fn_rad_ker(beta),tqu[1][pix2]) + np.dot(-np.cos(2.*alpha)*self.fn_rad_ker(beta),tqu[2][pix2])
 			
+		if nest:
+			eb=h.reorder(eb,n2r=True)
+
+		return [np.zeros(self.npix),eb[0],eb[1]]		
 	
 	def convert_eb2qu(self,teb,discsize=180.,nest=False):
 		

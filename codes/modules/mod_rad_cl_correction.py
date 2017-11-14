@@ -85,7 +85,7 @@ class mod_rad_ker(object):
 		gl=np.zeros(lmax+1,float)
 		for i in range(lmax-1):
 			l=i+2
-			norm=2.*np.pi/(((l+2)*(l+1)*l*(l-1))**0.5)
+			norm=2.*np.pi/(((l+2.)*(l+1.)*l*(l-1.))**0.5)
 			y=gbeta*self.pl2[l,:]*np.sin(self.theta)
 			integrand=interp1d(self.theta,y,kind="cubic")
 			gl[l]=intg.quadrature(integrand,0.,ulimit,rtol=rtol,tol=atol,maxiter=maxiter)[0]*norm
