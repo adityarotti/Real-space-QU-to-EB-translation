@@ -35,7 +35,7 @@ class real_space_queb_kernels(object):
 		theta1,phi1=h.pix2ang(nside,cpixel,nest=nest)
 
 		v=h.pix2vec(nside,cpixel,nest=nest)
-		spixel=h.query_disc(nside,v,discsize*np.pi/180.,inclusive=True,fact=4,nest=nest)
+		spixel=h.query_disc(nside,v,discsize*np.pi/180.,inclusive=False,fact=4,nest=nest)
 		theta2,phi2=h.pix2ang(nside,spixel,nest=nest)
 
 		temp_beta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
@@ -57,7 +57,7 @@ class real_space_queb_kernels(object):
 		theta1,phi1=h.pix2ang(nside,cpixel,nest=nest)
 
 		v=h.pix2vec(nside,cpixel,nest=nest)
-		spixel=h.query_disc(nside,v,discsize*np.pi/180.,inclusive=True,fact=4,nest=nest)
+		spixel=h.query_disc(nside,v,discsize*np.pi/180.,inclusive=False,fact=4,nest=nest)
 		theta2,phi2=h.pix2ang(nside,spixel,nest=nest)
 
 		temp_beta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
@@ -80,7 +80,7 @@ class real_space_queb_kernels(object):
 		theta1,phi1=h.pix2ang(nside,cpixel,nest=nest)
 
 		v=h.pix2vec(nside,cpixel,nest=nest)
-		spixel=h.query_disc(nside,v,discsize*np.pi/180.,inclusive=True,fact=4,nest=nest)
+		spixel=h.query_disc(nside,v,discsize*np.pi/180.,inclusive=False,fact=4,nest=nest)
 		theta2,phi2=h.pix2ang(nside,spixel,nest=nest)
 
 		cosbeta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
@@ -100,7 +100,7 @@ class real_space_queb_kernels(object):
 		'''Returns the pixel numbers and the respective Euler angles within a circle of radius discsize from the central pixel: cpixel'''
 		theta1,phi1=h.pix2ang(nside,cpixel,nest=nest)
 		vec_cpixel=h.pix2vec(nside,cpixel,nest=nest)
-		spixel=h.query_disc(intg_nside,vec_cpixel,discsize*np.pi/180.,inclusive=True,fact=4,nest=nest)
+		spixel=h.query_disc(intg_nside,vec_cpixel,discsize*np.pi/180.,inclusive=False,fact=4,nest=nest)
 		theta2,phi2=h.pix2ang(intg_nside,spixel,nest=nest)
 
 		temp_beta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
@@ -463,7 +463,7 @@ class real_space_queb_kernels(object):
 			mask=h.reorder(mask,r2n=True)
 
 		v=h.pix2vec(self.nside,0,nest=nest)
-		spixel=h.query_disc(self.nside,v,discsize*np.pi/180.,inclusive=True,fact=4,nest=nest)
+		spixel=h.query_disc(self.nside,v,discsize*np.pi/180.,inclusive=False,fact=4,nest=nest)
 		norm=float(np.size(spixel))
 
 		validpix=np.zeros(self.npix,float)
