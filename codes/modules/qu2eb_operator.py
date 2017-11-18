@@ -86,6 +86,7 @@ def convert_qu2eb_radiate_masked(q,u,theta_cutoff,theta,rad_ker,mask=[]):
 
 ###########################################################################################
 # This function is wrong. Uses the radiating kernel to do the integration.
+# Maybe useful to check where the flat sky approximation begins to fail.
 def convert_qu2eb_obsolete(q,u,theta_cutoff,theta,rad_ker):
 	fn_rad_ker=interp1d(np.cos(theta)[::-1],rad_ker[::-1],assume_sorted=True,kind="cubic",bounds_error=False,fill_value=0.0)
 	nside=h.get_nside(q) ; npix=h.nside2npix(nside) ; domega=4.*np.pi/float(npix)
