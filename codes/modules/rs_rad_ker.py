@@ -57,8 +57,8 @@ def calc_qu2queb_rad_ker(lmax,theta,pl2,lmin=2,theta_eps=1e-6):
 	else:
 		csth=np.cos(theta)
 		snth=np.sin(theta)
-		rad_ker_p2=np.zeros(np.size(theta),"double")
-		rad_ker_m2=np.zeros(np.size(theta),"double")
+		rad_ker_d=np.zeros(np.size(theta),"double")
+		rad_ker_i=np.zeros(np.size(theta),"double")
 
 		for j in range(lmax-lmin+1):
 			l=lmin+j
@@ -66,30 +66,30 @@ def calc_qu2queb_rad_ker(lmax,theta,pl2,lmin=2,theta_eps=1e-6):
 				if theta[i] >  theta_eps and abs(theta[i]-np.pi) > theta_eps:
 					c1=(((l-4.) + (2.*(l-1.)*csth[i]))/(snth[i]**2.) + 0.5*l*(l-1.))
 					c2=(csth[i] + 2.)*(l+2.)/(snth[i]**2.)
-					rad_ker_p2[i]=rad_ker_p2[i] + 2.*(-c1*pl2[l,i] + c2*pl2[l-1,i])*((2.*l+1.)/(4.*np.pi))/((l+2.)*(l+1.)*(l-1.)*l)
+					rad_ker_d[i]=rad_ker_d[i] + 2.*(-c1*pl2[l,i] + c2*pl2[l-1,i])*((2.*l+1.)/(4.*np.pi))/((l+2.)*(l+1.)*(l-1.)*l)
 
 					c1=(((l-4.) - (2.*(l-1.)*csth[i]))/(snth[i]**2.) + 0.5*l*(l-1.))
 					c2=(csth[i] - 2.)*(l+2.)/(snth[i]**2.)
-					rad_ker_m2[i]=rad_ker_m2[i] + 2.*(-c1*pl2[l,i] + c2*pl2[l-1,i])*((2.*l+1.)/(4.*np.pi))/((l+2.)*(l+1.)*(l-1.)*l)
+					rad_ker_i[i]=rad_ker_i[i] + 2.*(-c1*pl2[l,i] + c2*pl2[l-1,i])*((2.*l+1.)/(4.*np.pi))/((l+2.)*(l+1.)*(l-1.)*l)
 
 				elif theta[i] < theta_eps:
 					c1=(((l-4.) + (2.*(l-1.)*csth[i])) + 0.5*l*(l-1.)*(snth[i]**2.))
 					c2=(csth[i] + 2.)*(l-2.)
-					rad_ker_p2[i]=rad_ker_p2[i] + 0.25*(-c1 + c2)*((2.*l+1.)/(4.*np.pi))
+					rad_ker_d[i]=rad_ker_d[i] + 0.25*(-c1 + c2)*((2.*l+1.)/(4.*np.pi))
 	
 					c1=(((l-4.) - (2.*(l-1.)*csth[i])) + 0.5*l*(l-1.)*(snth[i]**2.))
 					c2=(csth[i] - 2.)*(l-2.)
-					rad_ker_m2[i]=rad_ker_m2[i] + 0.25*(-c1 + c2)*((2.*l+1.)/(4.*np.pi))
+					rad_ker_i[i]=rad_ker_i[i] + 0.25*(-c1 + c2)*((2.*l+1.)/(4.*np.pi))
 
 				elif abs(theta[i]-np.pi) < theta_eps:
 					c1=(((l-4.) + (2.*(l-1.)*csth[i])) + 0.5*l*(l-1.)*(snth[i]**2.))*((-1.)**float(l))
 					c2=((csth[i] + 2.)*(l-2.))*((-1.)**float(l-1))
-					rad_ker_p2[i]=rad_ker_p2[i] + 0.25*(-c1 + c2)*((2.*l+1.)/(4.*np.pi))
+					rad_ker_d[i]=rad_ker_d[i] + 0.25*(-c1 + c2)*((2.*l+1.)/(4.*np.pi))
 	
 					c1=(((l-4.) - (2.*(l-1.)*csth[i])) + 0.5*l*(l-1.)*(snth[i]**2.))*((-1.)**float(l))
 					c2=((csth[i] - 2.)*(l-2.))*((-1.)**float(l-1))
-					rad_ker_m2[i]=rad_ker_m2[i] + 0.25*(-c1 + c2)*((2.*l+1.)/(4.*np.pi))
-	return rad_ker_p2,rad_ker_m2
+					rad_ker_i[i]=rad_ker_i[i] + 0.25*(-c1 + c2)*((2.*l+1.)/(4.*np.pi))
+	return rad_ker_i,rad_ker_d
 
 
 def get_gl_from_gbeta(theta,rad_ker,pl2,theta_cutoff,lmax,rtol=1e-8,atol=1e-8,maxiter=5000):
