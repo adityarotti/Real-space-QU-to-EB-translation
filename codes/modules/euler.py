@@ -22,6 +22,7 @@ def return_spix_euler_angles(nside,cpix,discsize=np.pi,inclusive=False,fact=4):
 	theta0,phi0=h.pix2ang(nside,cpix)
 	v=h.pix2vec(nside,cpix)
 	spix=h.query_disc(nside,v,discsize,inclusive=inclusive,fact=fact)
+	spix=np.delete(spix,np.where(spix==cpix)[0][0])
 	theta1,phi1=h.pix2ang(nside,spix)
 
 	cosbeta=np.sin(theta0)*np.sin(theta1)*np.cos(phi1-phi0)+np.cos(theta0)*np.cos(theta1) 
@@ -67,11 +68,11 @@ def fn_s2euler_alpha_gamma(nside,cpix,discsize=np.pi,inclusive=False,fact=4):
 	c2g=cosgamma*cosgamma - singamma*singamma
 
 	c2apg=c2a*c2g - s2a*s2g
-	s2apg=s2a*c2g + c2a*s2g
 	c2amg=c2a*c2g + s2a*s2g
+	s2apg=s2a*c2g + c2a*s2g
 	s2amg=s2a*c2g - c2a*s2g
 	
-	return cosbeta,c2apg,s2apg,c2amg,s2amg,spix
+	return cosbeta,c2amg,s2amg,c2apg,s2apg,spix
 
 def fn_s2euler_alpha(nside,cpix,discsize=np.pi,inclusive=False,fact=4):
 	'''Returns the pixel numbers and the respective functions of Euler angles within a circle of radius discsize from the central pixel: cpix'''
