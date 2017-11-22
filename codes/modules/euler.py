@@ -57,10 +57,10 @@ def fn_s2euler_alpha_gamma(nside,cpix,discsize=np.pi,inclusive=False,fact=4):
 	
 	cosbeta=np.sin(theta0)*np.sin(theta1)*np.cos(phi1-phi0)+np.cos(theta0)*np.cos(theta1)
 
-	sinalpha=np.where(abs(cosbeta)<1.,np.sin(theta1)*np.sin(phi0-phi1)/np.sqrt(1.-cosbeta*cosbeta),0.)
+	sinalpha=np.where(abs(cosbeta)<1.,-np.sin(theta1)*np.sin(phi0-phi1)/np.sqrt(1.-cosbeta*cosbeta),0.)
 	cosalpha=np.where(abs(cosbeta)<1.,(np.cos(theta1) - np.cos(theta0)*cosbeta)/(np.sin(theta0)*np.sqrt(1.-cosbeta*cosbeta)),0)
 	singamma=np.where(abs(cosbeta)<1.,-np.sin(theta0)*np.sin(phi0-phi1)/np.sqrt(1.-cosbeta*cosbeta),0.)
-	cosgamma=np.where(abs(cosbeta)<1.,-(np.cos(theta0) - np.cos(theta1)*cosbeta)/(np.sin(theta1)*np.sqrt(1.-cosbeta*cosbeta)),0)
+	cosgamma=np.where(abs(cosbeta)<1.,(np.cos(theta0) - np.cos(theta1)*cosbeta)/(np.sin(theta1)*np.sqrt(1.-cosbeta*cosbeta)),0)
 
 	s2a=2.*sinalpha*cosalpha
 	c2a=cosalpha*cosalpha - sinalpha*sinalpha
@@ -84,7 +84,7 @@ def fn_s2euler_alpha(nside,cpix,discsize=np.pi,inclusive=False,fact=4):
 	theta1,phi1=h.pix2ang(nside,spix)
 	
 	cosbeta=np.sin(theta0)*np.sin(theta1)*np.cos(phi1-phi0)+np.cos(theta0)*np.cos(theta1)
-	sinalpha=np.where(abs(cosbeta)<1.,np.sin(theta1)*np.sin(phi0-phi1)/np.sqrt(1.-cosbeta*cosbeta),0.)
+	sinalpha=np.where(abs(cosbeta)<1.,-np.sin(theta1)*np.sin(phi0-phi1)/np.sqrt(1.-cosbeta*cosbeta),0.)
 	cosalpha=np.where(abs(cosbeta)<1.,(np.cos(theta1) - np.cos(theta0)*cosbeta)/(np.sin(theta0)*np.sqrt(1.-cosbeta*cosbeta)),0)
 	
 	sin2alpha=2.*sinalpha*cosalpha
