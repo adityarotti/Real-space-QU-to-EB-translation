@@ -159,9 +159,9 @@ where we have used the identity given in \eq{eq:sum_spin_shf} to simplify the pr
 \bar O =-\bmat  \mathcal{M}_{r} & \mathcal{M}_{i} \\  -\mathcal{M}_{i}  & \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} = -{{}_{\mm}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{qe}) & \sin(2\alpha_{qe})\\  -\sin(2 \alpha_{qe})  & \cos(2 \alpha_{qe}) \emat \,.
 \eeq
 %
-Specifically note that $\alpha_{qe}, ~\beta_{qe} ~\&~ \gamma_{qe}$ denote the Euler angles which rotate the local cartesian system at the location $\hat{n}_q$ where the Stokes field is measured to the cartesian system at the location $\hat{n}_e$ where the scalar fields are evaluated: $\hat{n}_q \xrightarrow{\mathcal{R}(\alpha_{qe},\beta_{qe},\gamma_{qe})} \hat{n}_e$. The Euler angles for the inverse rotation are given by the Euler angles $\alpha_{eq}=-\gamma_{qe}$, $\beta_{eq} = -\beta_{qe}$ and  $\gamma_{eq} =-\alpha_{qe}$\cite{varshalovich}. Since the real space kernels will only depend on the cosine of the Euler angle $\beta$, they are immune to its change of sign. However the ordering of indices  on the Euler angle $\alpha$ and $\gamma$  is important and leads to two different interpretations of the real space kernels.
+Specifically note that $\alpha_{qe}, ~\beta_{qe} ~\&~ \gamma_{qe}$ denote the Euler angles which rotate the local cartesian system at the location $\hat{n}_q$ where the Stokes field is measured to the cartesian system at the location $\hat{n}_e$ where the scalar fields are evaluated: $\hat{n}_q \xrightarrow{\mathcal{R}(\alpha_{qe},\beta_{qe},\gamma_{qe})} \hat{n}_e$. The Euler angles for the inverse rotations are given by the Euler angles $\alpha_{eq}=-\gamma_{qe}$, $\beta_{eq} = -\beta_{qe}$ and  $\gamma_{eq} =-\alpha_{qe}$\cite{varshalovich}. Since the kernels only depend on the cosine of the Euler angle $\beta$, they are immune to the change in its sign. More importantly, the ordering of indices  on the Euler angle $\alpha$ and $\gamma$  is important and leads to two different interpretations of the real space kernels.
 
-\textit{Convolution:} Now working from the position of the pixel ``e'' where the scalar modes need to be evaluated, the Euler angles to the surrounding pixels are: $\alpha_{eq}, \beta_{eq},\gamma_{eq}$. One can now think of the value of scalar fields $E$ \& $B$ at the central pixel ``e" as resulting from the convolution over the measured Stokes $Q$ \& $U$ parameters in the surrounding pixels ``q''. This convolution is defined in terms of the Euler angle $\gamma_{eq}$ and is given by the following equation,
+\textit{Convolution:} Working from the frame of the pixel ``e'' where the scalar modes need to be evaluated, the Euler angles to the surrounding pixels are: $\alpha_{eq}, \beta_{eq},\gamma_{eq}$. In terms of these Euler angles, the value of scalar fields $E$ \& $B$ at the central pixel ``e" can be evaluated by convolving over the measured Stokes $Q$ \& $U$ parameters in the surrounding pixels marked by indices ``q''. Specifically, the convolution is fully defined in terms of the Euler angles $\beta_{eq}~ \& ~\gamma_{eq}$ and is given by the following equation,
 %
 \beq \label{eq:qu2eb_convolution_explicit}
 \bmat E_e \\ B_e  \emat =- \sum_{q=1}^{N_{\rm pix}}{{}_{\mm}f}(\beta_{eq},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \gamma_{eq}) & -\sin(2\gamma_{eq})\\  \sin(2 \gamma_{eq})  & \cos(2 \gamma_{eq}) \emat  \bmat Q_q \\ U_q  \emat \Delta \Omega\,,
@@ -169,26 +169,35 @@ Specifically note that $\alpha_{qe}, ~\beta_{qe} ~\&~ \gamma_{qe}$ denote the Eu
 %
 where $\Delta \Omega$ denotes the pixel area and all the symbols have their usual meaning. 
 %\revisit{This has an elegant interpretation: to derive the E and/or B field at any given position we need to find the cosine quadrupole transform and the sine quadrupole transform of the Stokes Q \& U parameters on circles around this position, weigh the transform by the value of the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$, $\beta$ being the radius of the circle and sum up the results with appropriate signs, to construct the respective scalar fields.} 
-The above equation can be expressed more concisely as follows,
+When written in terms of the complex spin-0 field $[E + iB]$ and the spin-2 field ${}_{+2}X$, the above equation can be expressed more concisely as follows,
 %
-\begin{subequations} \label{eq:qu2eb_simple}
+\begin{subequations} \label{q:qu2eb_convolution_concise}
 \beqry 
-[E + iB](\hat{n}_e) &=& - \Delta \Omega \sum_{q=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} P_{\ell}^{2}(\beta_{eq}) \right) {\Bigg( e^{i2 \gamma_{eq}}   {}_{+2}X (\hat{n}_q) \Bigg)} \,, \label{eq:qu2eb_physical}\\
-&=& - \left( \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2}(\beta,\gamma) \right]  \circ {}_{+2}X \right) \,, \\
-&=& - \Bigg\lbrace \mathcal{M}^* \circ {}_{+2}X \Bigg\rbrace(\hat{n}_0)\,, \label{eq:qu2eb_convolution} 
+%[E + iB](\hat{n}_e) &=& - \Delta \Omega \sum_{q=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} P_{\ell}^{2}(\beta_{eq}) \right) {\Bigg( e^{i2 \gamma_{eq}}   {}_{+2}X (\hat{n}_q) \Bigg)} \,, \label{eq:qu2eb_physical}\\
+[E + iB](\hat{n}_e) &=& \Bigg\lbrace \left[ - \Delta \Omega \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2}(\beta_{eq},\gamma_{eq}) \right]  \circ {}_{+2}X \Bigg\rbrace(\hat{n}_e) \,, \\
+&=& \Bigg\lbrace \mathcal{M}_{Beam} \circ {}_{+2}X \Bigg\rbrace(\hat{n}_e)\,, \label{eq:qu2eb_convolution} 
 \eeqry
 \end{subequations}
 %
-where $\circ$ denotes a convolution and the spherical harmonic functions denote the rotated functions such that the pole of the function coincides with the direction $\hat{n}_e$. %and the reference zero for the azimuthal angle is the local longitude $\phi_0$. 
+where $\circ$ denotes the convolution and the spherical harmonic functions denote the rotated functions such that the pole of the function coincides with the direction $\hat{n}_e$. %and the reference zero for the azimuthal angle is the local longitude $\phi_0$. 
 
-\textit{Radiating:} Working from the position ``q'' where the Stokes parameters are known, the Euler angles to the surrounding pixels are: $\alpha_{qe}, \beta_{qe},\gamma_{qe}$. The E \& B mode maps resulting from the Stokes Q \& U parameters specified at location $\hat{n}_q$ is given by the following expression,
+\textit{Radiating:} On the contrary, while working from the frame of the pixel ``q'', the Euler angles to the surrounding pixels are: $\alpha_{qe}, \beta_{qe},\gamma_{qe}$. The E \& B mode maps resulting from the Stokes Q \& U parameters specified at location $\hat{n}_q$ is given by the following expression,
 %
-\beq \label{eq:qu2eb_radiation_explicit}
-\bmat E_e \\ B_e  \emat_q =- {{}_{\mm}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{qe}) & \sin(2\alpha_{qe})\\  -\sin(2 \alpha_{qe})  & \cos(2 \alpha_{qe}) \emat  \bmat Q_q \\ U_q  \emat \Delta \Omega \,, 
+\beq  \label{eq:qu2eb_radiation_explicit}
+\bmat E_e \\ B_e  \emat_{q} =- {{}_{\mm}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{q e}) & \sin(2\alpha_{q e})\\  -\sin(2 \alpha_{q e})  & \cos(2 \alpha_{q e}) \emat  \bmat Q_{q} \\ U_{q}  \emat \Delta \Omega \,.
 \eeq
 %
-and the total map of E \& B modes can be simply evaluated by summing over the contribution from the Stokes parameters at each location $\hat{n}_q$ : $\bar{S} = \sum_{q=1}^{N_{\rm pix}} \bar{S}_q$.
-%$\bmat E_e \\ B_e  \emat = \sum_{q=1}^{N_{\rm pix}} \bmat E_e \\ B_e  \emat_q$.
+The total map of E \& B modes can be simply evaluated by summing over the contribution from the Stokes parameters at each location $\hat{n}_q$ : $\bar{S} = \sum_{q=1}^{N_{\rm pix}} \bar{S}_q$. The above expression can again be cast in a more concise form as follows,
+%
+\begin{subequations} \label{eq:qu2eb_radiation_concise}
+\beqry 
+\left[E + iB\right] &=& -\Delta \Omega  \sum_{q=1}^{N_{\rm pix}} \Big[ {}_{+2}X(\hat{n}_{q}) e^{-i2\alpha_{q e}} \Big]  {{}_{\mm}f}(\beta_{q e}) \,, \\
+&=&    \sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace {}_{+2}X(\hat{n}_{q}) \cdot \left[ - \Delta \Omega \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2}(\beta_{qe},\alpha_{qe}) \right] \Bigg\rbrace \,, \\
+&=& \sum_{q=1}^{N_{\rm pix}} {}_{+2}X(\hat{n}_{q}) \cdot  \mathcal{M}_{Green}(\hat{n}_{q}) \,,
+\eeqry
+\end{subequations}
+%
+where ``$\cdot$'' denotes a simple scalar multiplication. \revisit{$\mathcal{M}_{Green}(\hat{n}_{q})$ is response of the real space operator $\bar{O}$ when operated on a Stokes field: $\delta(\hat{n}-\hat{n}_q) + i \delta(\hat{n}-\hat{n}_q)$, it can be thought of as the Green's function of the real space operator.} \comment{Is this interpretation correct ? Is the complex delta function a spin 2 function ?}
 
 The convolution kernel has a azimuthal part which depends only on the Euler angle $\alpha$ and has no multipole dependence and this is the primary operation which translates between the two different spin representation of CMB polarization. The radial part of the kernel is specified by the function $f(\beta,\ell_{\rm min},\ell_{\rm max})$, it depends only on the angular separation given by the Euler angle $\beta$ and it completely incorporates the multipole $\ell$ dependence of the kernel. It is the radial part of the kernel that completely determines the locality of this operator. Note that this kernel does not depend on the Euler angle $\gamma$ \comment{Why is that and how do you understand this ? }. 
 
@@ -205,14 +214,13 @@ The real space operator which translates $E$ \& $B$ fields to Stokes parameters 
 \eeqry
 \end{subequations}
 %
-We do not provide the explicit derivation here, since the procedure is nearly identical to that discussed in the previous section. The inverse operator is given by the following expression,
+We do not provide the explicit derivation here, since the procedure is identical to that discussed in the previous section. The inverse operator is given by the following expression,
 %
 \beq
-{\bar O}^{-1}=-\bmat \mathcal{M}_{r} & -\mathcal{M}_{i} \\  \mathcal{M}_{i}  & \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} =-{{}_{\mm}f}(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat \,.
+{\bar O}^{-1}=-\bmat \mathcal{M}_{r} & -\mathcal{M}_{i} \\  \mathcal{M}_{i}  & \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} =-{{}_{\mm}f}(\beta_{eq},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{eq}) & -\sin(2\alpha_{eq})\\  \sin(2 \alpha_{eq})  & \cos(2 \alpha_{eq}) \emat \,.
 \eeq
 %
-%where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}.
-Note that the kernel is different by a mere change in sign on the off-diagonals of the block matrix as compared to \eq{eq:op_qu2eb}. We can evaluate the Stokes parameters  $Q$ \& $U$ from the scalar fields $E$ \& $B$ by evaluating the following expression,
+where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}. Note that the kernel in the above equation differs from the one in \eq{eq:op_qu2eb} by a change in sign on the off-diagonals of the block matrix and the pixel indexing is reversed $ e \leftrightarrow q$. We can evaluate the Stokes parameters  $Q$ \& $U$ from the scalar fields $E$ \& $B$ by evaluating the following expression,
 %
 \beq \label{eq:eb2qu_convolution_explicit}
 \bmat Q_i \\ U_i  \emat=-\Delta \Omega\sum_{j=1}^{N_{\rm pix}} {{}_{\mm}f}(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat E_j \\ B_j  \emat \,,
