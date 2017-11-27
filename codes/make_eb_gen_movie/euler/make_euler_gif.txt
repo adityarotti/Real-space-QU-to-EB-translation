@@ -1,0 +1,8 @@
+# This creates a gif animation playing forward
+convert -quality 99 -density 150 ./euler/*.jpg -set delay 30  -loop 0 forward.gif
+
+# This creates a gif animation playing backwards
+convert -quality 99 -density 150 ./euler/*.jpg -set delay 30 -reverse -loop 0 reverse.gif
+
+# This joins the forward and backward playing gif animations which runs in a loop
+convert forward.gif reverse.gif euler_fb.gif

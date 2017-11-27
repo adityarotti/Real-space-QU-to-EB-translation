@@ -80,8 +80,8 @@ def convert_qu2eb_radiate_masked(q,u,theta_cutoff,theta,rad_ker,mask=[]):
 		cosbeta,cos2alpha,sin2alpha,spix=euler.fn_s2euler_alpha(nside,i,theta_cutoff,inclusive=False,fact=4)
 		gbeta=fn_rad_ker(cosbeta)
 		cafb=cos2alpha*gbeta ; safb=sin2alpha*gbeta
-		e[spix] = e[spix] + (-q[i]*cafb - u[i]*safb)*domega
-		b[spix] = b[spix] + ( q[i]*safb - u[i]*cafb)*domega
+		e[spix] = e[spix] + (-q[i]*cafb + u[i]*safb)*domega
+		b[spix] = b[spix] + (-q[i]*safb - u[i]*cafb)*domega
 	return [np.zeros(npix),e,b]
 
 ###########################################################################################
