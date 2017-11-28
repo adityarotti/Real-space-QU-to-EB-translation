@@ -17,8 +17,8 @@ def convert_eb2qu_integrate(e,b,theta_cutoff,theta,rad_ker):
 		cosbeta,cos2alpha,sin2alpha,spix=euler.fn_s2euler_alpha(nside,i,theta_cutoff,inclusive=False,fact=4)
 		gbeta=fn_rad_ker(cosbeta)
 		cafb=cos2alpha*gbeta ; safb=sin2alpha*gbeta
-		q[i] = (np.dot(-cafb,e[spix]) + np.dot( safb,b[spix]))*domega
-		u[i] = (np.dot(-safb,e[spix]) + np.dot(-cafb,b[spix]))*domega
+		q[i] = (np.dot(-cafb,e[spix]) + np.dot(-safb,b[spix]))*domega
+		u[i] = (np.dot( safb,e[spix]) + np.dot(-cafb,b[spix]))*domega
 	return [np.zeros(npix),q,u]
 
 
@@ -41,8 +41,8 @@ def convert_eb2qu_integrate_masked(e,b,theta_cutoff,theta,rad_ker,mask=[]):
 		cosbeta,cos2alpha,sin2alpha,spix=euler.fn_s2euler_alpha(nside,i,theta_cutoff,inclusive=False,fact=4)
 		gbeta=fn_rad_ker(cosbeta)
 		cafb=cos2alpha*gbeta ; safb=sin2alpha*gbeta
-		q[i] = (np.dot(-cafb,e[spix]) + np.dot( safb,b[spix]))*domega
-		u[i] = (np.dot(-safb,e[spix]) + np.dot(-cafb,b[spix]))*domega
+		q[i] = (np.dot(-cafb,e[spix]) + np.dot(-safb,b[spix]))*domega
+		u[i] = (np.dot( safb,e[spix]) + np.dot(-cafb,b[spix]))*domega
 	return [np.zeros(npix),q,u]
 
 

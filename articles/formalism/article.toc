@@ -1,12 +1,11 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {section}{\numberline {2}Polarization primer}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Matrix notation}{3}{subsection.2.1}
-\contentsline {section}{\numberline {3}Real space operators}{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}Evaluating scalar fields $E$ \& $B$ from Stokes parameters $Q$ \& $U$}{5}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Evaluating Stokes parameters $Q$ \& $U$ from scalar fields $E$ \& $B$}{8}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Decomposing Stokes parameters $Q$ \& $U$ into those corresponding to $E$ \& $B$ modes respectively}{9}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Visualizing the convolution kernels}{11}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Quantifying the non-locality of E \& B modes}{13}{subsection.3.5}
-\contentsline {section}{\numberline {4}Generalized operators}{14}{section.4}
+\contentsline {section}{\numberline {3}Real space operators}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Evaluating scalar fields $E$ \& $B$ from Stokes parameters $Q$ \& $U$}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Evaluating Stokes parameters $Q$ \& $U$ from scalar fields $E$ \& $B$}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Decomposing Stokes parameters $Q$ \& $U$ into those corresponding to $E$ \& $B$ modes respectively}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Visualizing the convolution kernels}{12}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Quantifying the non-locality of E \& B modes}{14}{subsection.3.5}
+\contentsline {section}{\numberline {4}Generalized operators}{17}{section.4}
 \contentsline {subsection}{\numberline {4.1}Recovering the default $E$ and $B$ mode spectra}{18}{subsection.4.1}
-\contentsline {section}{\numberline {5}Discussion}{18}{section.5}
