@@ -27,27 +27,73 @@ def return_euler_angles(nside,cpix,discsize=np.pi,inclusive=False,fact=4):
 
 	return beta,alpha,gamma,spix
 
-def convert_qu2_equ_bqu(q,u,theta_cutoff,theta,rad_ker_i,rad_ker_d):
-	fn_rad_ker_i=interp1d(theta,rad_ker_i,assume_sorted=True,kind="cubic",bounds_error=False,fill_value=0.0)
+def convert_qu2_equ_bqu_integrate(q,u,theta_cutoff,theta,rad_ker_d,cq=[],cu=[],mask=[]):
+	'''Pass alias corrected TQU map to this routine.'''
+	'''The delta function should act like an identity operator, but it does not on the Healpix pixelization'''
+	'''The delta term is thought to operate on the corrected TQU to return true TQU, but thats not the case as it returns TQU with error of order iter+1 order \n
+	where iter refers to the number of correction terms added to the tqu maps passed to this routine.'''
 	fn_rad_ker_d=interp1d(theta,rad_ker_d,assume_sorted=True,kind="cubic",bounds_error=False,fill_value=0.0)
 	nside=h.get_nside(q) ; npix=h.nside2npix(nside) ; domega=4.*np.pi/float(npix)
 
-	equ=[np.zeros(npix,"double"),np.zeros(npix,"double")]
-	bqu=[np.zeros(npix,"double"),np.zeros(npix,"double")]
+	if np.size(mask)==0:
+		pix_list=np.arange(npix)
+	else:
+		pix_list=np.nonzero(mask)[0]
+
+
+	dqu=[np.zeros(npix,"double"),np.zeros(npix,"double")]
 	
-	for i in range(npix):
-		beta,alpha,gamma,spix=return_euler_angles(nside,i,theta_cutoff,inclusive=True,fact=4)
-		Ir=np.cos(2.*(alpha+gamma))*fn_rad_ker_i(beta)
-		Ii=np.sin(2.*(alpha+gamma))*fn_rad_ker_i(beta)
-		Dr=np.cos(2.*(alpha-gamma))*fn_rad_ker_d(beta)
-		Di=np.sin(2.*(alpha-gamma))*fn_rad_ker_d(beta)
+	if np.size(cq)!=0 and np.size(cu)!=0:
+		for i in pix_list:
+			beta,alpha,gamma,spix=return_euler_angles(nside,i,theta_cutoff,inclusive=True,fact=4)
+			Dr=np.cos(2.*(alpha-gamma))*fn_rad_ker_d(beta)
+			Di=np.sin(2.*(alpha-gamma))*fn_rad_ker_d(beta)
 
-		equ[0][i]=(np.dot(Ir+Dr,q[spix]) + np.dot(Ii-Di,u[spix]))*domega*0.5
-		equ[1][i]=(np.dot(-Ii-Di,q[spix]) + np.dot(Ir-Dr,u[spix]))*domega*0.5
+			dqu[0][i]=(np.dot(+Dr,cq[spix]) + np.dot(-Di,cu[spix]))*domega
+			dqu[1][i]=(np.dot(-Di,cq[spix]) + np.dot(-Dr,cu[spix]))*domega
+	else:
+		for i in pix_list:
+			beta,alpha,gamma,spix=return_euler_angles(nside,i,theta_cutoff,inclusive=True,fact=4)
+			Dr=np.cos(2.*(alpha-gamma))*fn_rad_ker_d(beta)
+			Di=np.sin(2.*(alpha-gamma))*fn_rad_ker_d(beta)
 
-		bqu[0][i]=(np.dot(Ir-Dr,q[spix]) + np.dot(Ii+Di,u[spix]))*domega*0.5
-		bqu[1][i]=(np.dot(-Ii+Di,q[spix]) + np.dot(Ir+Dr,u[spix]))*domega*0.5
+			dqu[0][i]=(np.dot(+Dr,q[spix]) + np.dot(-Di,u[spix]))*domega
+			dqu[1][i]=(np.dot(-Di,q[spix]) + np.dot(-Dr,u[spix]))*domega
 
-	return [np.zeros(npix),equ[0],equ[1]],[np.zeros(npix),bqu[0],bqu[1]]
+
+	return [np.zeros(npix),(q+dqu[0])*0.5,(u+dqu[1])*0.5],[np.zeros(npix),(q-dqu[0])*0.5,(u-dqu[1])*0.5]
 			
+def convert_qu2_equ_bqu_radiate(q,u,theta_cutoff,theta,rad_ker_d,cq=[],cu=[],mask=[]):
+	'''Pass alias corrected TQU map to this routine.'''
+	'''The delta function should act like an identity operator, but it does not on the Healpix pixelization'''
+	'''The delta term is thought to operate on the corrected TQU to return true TQU, but thats not the case as it returns TQU with error of order iter+1 order \n
+	where iter refers to the number of correction terms added to the tqu maps passed to this routine.'''
+	fn_rad_ker_d=interp1d(theta,rad_ker_d,assume_sorted=True,kind="cubic",bounds_error=False,fill_value=0.0)
+	nside=h.get_nside(q) ; npix=h.nside2npix(nside) ; domega=4.*np.pi/float(npix)
+
+	if np.size(mask)==0:
+		pix_list=np.arange(npix)
+	else:
+		pix_list=np.nonzero(mask)[0]
+
+
+	dqu=[np.zeros(npix,"double"),np.zeros(npix,"double")]
 	
+	if np.size(cq)!=0 and np.size(cu)!=0:
+		for i in pix_list:
+			beta,alpha,gamma,spix=return_euler_angles(nside,i,theta_cutoff,inclusive=True,fact=4)
+			Dr=np.cos(2.*(alpha-gamma))*fn_rad_ker_d(beta)
+			Di=np.sin(2.*(alpha-gamma))*fn_rad_ker_d(beta)
+
+			dqu[0][spix]=dqu[0][spix] + ( cq[i]*Dr - cu[i]*Di)*domega
+			dqu[1][spix]=dqu[1][spix] + (-cq[i]*Di - cu[i]*Dr)*domega
+	else:
+		for i in pix_list:
+			beta,alpha,gamma,spix=return_euler_angles(nside,i,theta_cutoff,inclusive=True,fact=4)
+			Dr=np.cos(2.*(alpha-gamma))*fn_rad_ker_d(beta)
+			Di=np.sin(2.*(alpha-gamma))*fn_rad_ker_d(beta)
+
+			dqu[0][spix]=dqu[0][spix] + ( q[i]*Dr - u[i]*Di)*domega
+			dqu[1][spix]=dqu[1][spix] + (-q[i]*Di - u[i]*Dr)*domega
+
+	return [np.zeros(npix),(q+dqu[0])*0.5,(u+dqu[1])*0.5],[np.zeros(npix),(q-dqu[0])*0.5,(u-dqu[1])*0.5]
