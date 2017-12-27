@@ -3,32 +3,9 @@ import numpy as np
 import euler as euler
 from scipy.interpolate import interp1d
 
-def return_euler_angles(nside,cpix,discsize=np.pi,inclusive=False,fact=4):
-	'''
-	This Euler angles function works for the qu2_equ_bqu function.
-	The set of function here, match Healpix results to numerical accuracy.
-	'''
-	theta1,phi1=h.pix2ang(nside,cpix)
-	v=h.pix2vec(nside,cpix)
-	spix=h.query_disc(nside,v,discsize,inclusive=inclusive,fact=fact)
-	theta2,phi2=h.pix2ang(nside,spix)
-
-	cosbeta=np.sin(theta1)*np.sin(theta2)*np.cos(phi2-phi1)+np.cos(theta1)*np.cos(theta2) 
-	cosbeta[cosbeta>1.]=1. ; cosbeta[cosbeta<-1.]=-1.
-	beta=np.arccos(cosbeta)
-
-	n = np.sin(theta1)*np.sin(theta2)*np.sin(phi1-phi2)
-
-    	da = np.cos(theta1)*cosbeta - np.cos(theta2)
-    	alpha=np.arctan2(n,da) ; alpha[beta==0]=0. ; alpha[abs(beta-np.pi)<1e-5]=0.
-
-	dg = np.cos(theta2)*cosbeta - np.cos(theta1)
-    	gamma=np.arctan2(n,dg) ; gamma[beta==0]=0. ; gamma[abs(beta-np.pi)<1e-5]=0.
-
-	return beta,alpha,gamma,spix
-
+# Convolution method to convolve with a band limited delta function
 def delta_convolve(q,u,theta_cutoff,theta,rad_ker_i,mask=[]):
-	fn_rad_ker_i=interp1d(theta,rad_ker_i,assume_sorted=True,kind="cubic",bounds_error=False,fill_value=0.0)
+	fn_rad_ker_i=interp1d(np.cos(theta)[::-1],rad_ker_i[::-1],assume_sorted=True,kind="cubic",bounds_error=False,fill_value=0.0)
 	nside=h.get_nside(q) ; npix=h.nside2npix(nside) ; domega=4.*np.pi/float(npix)
 
 	hq=np.zeros(npix,"double")
@@ -41,12 +18,13 @@ def delta_convolve(q,u,theta_cutoff,theta,rad_ker_i,mask=[]):
 
 		
 	for i in pix_list:
-		beta,alpha,gamma,spix=return_euler_angles(nside,i,theta_cutoff,inclusive=True,fact=4)
-		Ir=np.cos(2.*(alpha+gamma))*fn_rad_ker_i(beta)
-		Ii=np.sin(2.*(alpha+gamma))*fn_rad_ker_i(beta)
+		cosbeta,c2apg,s2apg,spix=euler.fn_euler_trig2_alpha_plus_gamma(nside,i,theta_cutoff,inclusive=True,fact=4)
+		gbeta=fn_rad_ker_i(cosbeta)
+		Ir=c2apg*gbeta
+		Ii=s2apg*gbeta
 
-		hq[i]=(np.dot( Ir,q[spix]) + np.dot(Ii,u[spix]))*domega
-		hu[i]=(np.dot(-Ii,q[spix]) + np.dot(Ir,u[spix]))*domega
+		hq[i]=(np.dot(Ir,q[spix]) + np.dot(-Ii,u[spix]))*domega
+		hu[i]=(np.dot(Ii,q[spix]) + np.dot( Ir,u[spix]))*domega
 
 	return hq,hu
 
@@ -59,8 +37,9 @@ def correct_aliasing_convolve(tq,tu,theta_cutoff,theta,rad_ker_i,iter=3,mask=[])
 
 	return [np.zeros(npix),tq-cq,tu-cu]
 
+# Radiation method to convolve with a band limited delta function
 def delta_radiate(q,u,theta_cutoff,theta,rad_ker_i,mask=[]):
-	fn_rad_ker_i=interp1d(theta,rad_ker_i,assume_sorted=True,kind="cubic",bounds_error=False,fill_value=0.0)
+	fn_rad_ker_i=interp1d(np.cos(theta)[::-1],rad_ker_i[::-1],assume_sorted=True,kind="cubic",bounds_error=False,fill_value=0.0)
 	nside=h.get_nside(q) ; npix=h.nside2npix(nside) ; domega=4.*np.pi/float(npix)
 
 	hq=np.zeros(npix,"double")
@@ -73,12 +52,13 @@ def delta_radiate(q,u,theta_cutoff,theta,rad_ker_i,mask=[]):
 
 		
 	for i in pix_list:
-		beta,alpha,gamma,spix=return_euler_angles(nside,i,theta_cutoff,inclusive=True,fact=4)
-		Ir=np.cos(2.*(alpha+gamma))*fn_rad_ker_i(beta)
-		Ii=np.sin(2.*(alpha+gamma))*fn_rad_ker_i(beta)
+		cosbeta,c2apg,s2apg,spix=euler.fn_euler_trig2_alpha_plus_gamma(nside,i,theta_cutoff,inclusive=True,fact=4)
+		gbeta=fn_rad_ker_i(cosbeta)
+		Ir=c2apg*gbeta
+		Ii=s2apg*gbeta
 
-		hq[spix]=hq[spix] + (q[i]*Ir - u[i]*Ii)*domega
-		hu[spix]=hu[spix] + (q[i]*Ii + u[i]*Ir)*domega
+		hq[spix]=hq[spix] + ( q[i]*Ir + u[i]*Ii)*domega
+		hu[spix]=hu[spix] + (-q[i]*Ii + u[i]*Ir)*domega
 
 	return hq,hu
 			
