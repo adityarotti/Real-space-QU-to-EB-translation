@@ -3,19 +3,35 @@
 %\section{The spin-0 description of CMB polarization} \label{sec:pol-intro}
 %--------------------------------------------------------
 \section{Polarization primer}\label{sec:pol-primer}
-The CMB polarization is measured in terms of Stokes Q and U parameters. These measurements can be combined to form the complex spin 2 polarization field as follows,
+The CMB polarization is measured in terms of Stokes Q and U parameters. The Stokes Q is defined as the linear polarization measured along local cartesian axes ($+$ along the x-axis and $-$ along the y-axis) while Stokes U is defined as the linear polarization measured along the cartesian axes rotated by $45^{\circ}$ ($+$ along x-axis and $-$ along the y-axis in the counter-clockwise rotated system). Clearly the definitions of Stokes parameters depend on the choice of the coordinate system and it can be shown that the measurement made in two different coordinate systems rotated by an angle $\phi$ are related by the following equation,
 %
-\beqry \label{eq:spin-pol}
-_{\pm 2}\bar{X}(\hat{n}) &=& Q(\hat{n}) \pm i U (\hat{n}) \nonumber \\ &=& \sum_{\ell m}  {_{\pm 2}} \tilde{X}_{\ell m}  \, {_{\pm 2}}Y_{\ell m} (\hat{n}) \,.
-\eeqry
+\beq \label{eq:qu-rot}
+\fqu' = \begin{bmatrix} \cos{2 \psi} &  \sin{2 \psi} \\ -\sin{2\psi} & \cos{2 \psi} \end{bmatrix} \fqu \,,
+\eeq
 %
-Since these measured quantities depend on the local coordinate system, it is cumbersome to work with them. To overcome this, one describes the CMB polarization field in terms of a scalar field denoted by $E(\hat{n}) $ and a pseudo scalar field $B(\hat{n}) $ \cite{Kamionkowski1997}. These scalar fields are related to the spin-2 polarization field $_{\pm 2}X(\hat{n})$ via the following relations,
+which one can simply checked by verifying that $Q' \rightarrow U$ and $U' \rightarrow -Q$ when the coordinate systems are rotated by $45^\circ$ in the counter-clockwise sense. 
+
+Following the notation of \cite{Zaldarriaga1997}, fields which transform as,
+%
+\beq
+{}_{s}f' = e^{-is\psi} {}_{s}f \,,
+\eeq
+%
+under right handed rotations of the local coordinate system are termed spin-s fields. The Stokes parameters can be combined to define the complex fields,
+%
+\beq \label{eq:spin-pol}
+_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n}) \,, %\nonumber \\ &=& \sum_{\ell m}  {_{\pm 2}} \tilde{X}_{\ell m}  \, {_{\pm 2}}Y_{\ell m} (\hat{n}) \,.
+\eeq
+%
+which under rotation of the local tangent plane coordinate system by an angle $\psi$ at any point on the sphere transform as: $_{\pm 2}X' = e^{\mp i2\psi} {_{\pm 2}X}$, which follows directly from \eq{eq:qu-rot}. Hence the quantities $_{\pm2}X$ behave as spin${\pm2}$ respectively.
+
+The Stokes parameters being coordinate dependent quantities, it is cumbersome to work with them. It is possible to define spin raising ($\eth$) and spin lowering $(\bar{\eth})$ operators on the sphere \cite{goldberg67}.  These operators are such that when the spin raising operator acts on a spin-s field $_{s}f$ results in a fields with spin-$(s+1)$: $(\eth _{s}f)' = e^{-i(s+1)\psi}(\eth _{s}f)$ and similarly when a spin lowering operator acts on the field results in a field with spin-$(s-1)$: $(\bar{\eth} _{s}f)' = e^{-i(s-1)\psi}(\bar{\eth} _{s}f)$. This challenge is overcome by describing the CMB polarization field in terms of coordinate independent scalar fields denoted by $E(\hat{n}) $ and a pseudo scalar field $B(\hat{n}) $ \cite{Kamionkowski1997}. These scalar fields are constructed from the spin-2 polarization fields $_{\pm 2}X(\hat{n})$ via the following mathematical operations,
 %
 \beq \label{eq:ebdef}
 \mathcal{E}(\hat{n}) = -\frac{1}{2} \big[ \bar{\eth}^2 _{+ 2}\bar{X}(\hat{n})  +  \eth^2 _{- 2}\bar{X}(\hat{n}) \big] ~\,;~\mathcal{B}(\hat{n}) = -\frac{1}{2i} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  -  \eth^2 _{- 2}X(\hat{n}) \big] \,,
 \eeq
 %
-where $\eth$ and $\bar{\eth}$ denote the spin raising and lowering operators respectively. These $E$ and $B$ fields are spin-0 fields similar to the temperature anisotropies and hence their value are independent of the coordinate system definitions (except that the B-modes have an odd parity, meaning that they change sign under reflection $\hat{n} \rightarrow -\hat{n}$.). The spin raising and lowering operators have the following properties \cite{goldberg67},
+where $\eth$ and $\bar{\eth}$ denote the spin raising and lowering operators respectively. These $\mathcal{E}$ and $\mathcal{B}$ fields are spin-0 fields similar to the temperature anisotropies and hence their value are independent of the coordinate system definitions (except that the B-modes have an odd parity, meaning that they change sign under reflection $\hat{n} \rightarrow -\hat{n}$.). The spin raising and lowering operators have the following properties \cite{goldberg67},
 %
 \beqrys \label{eq:spinopylm} 
 \eth _s Y_{lm}(\hat{n}) &=& \sqrt{(\ell-s)(\ell+s+1)} _{s+1} Y_{lm}(\hat{n}) \,, \\
@@ -123,11 +139,16 @@ All the real space operators we derive are most conveniently expressed as functi
 
 \textit{Euler angles:}  We define the local cartesian coordinate system at any point on the sphere such that the z-axis points along the radial direction, the x-axis is along the vector tangent to the local longitude pointing south and the y-axis is a vector tangent to the local latitude pointing east as shown in \fig{fig:euler_angles}. The Euler angles $\alpha ,\beta ~\&~ \gamma$ define rotation operations that transforms the local cartesian coordinate system defined at the location $\hat{n}_0 \equiv (\theta_0,\phi_0)$ such that it aligns with the local cartesian coordinate system at the location $\hat{n}_i \equiv (\theta_i,\phi_i)$ \cite{varshalovich}. 
 
-For this work, we believe it is convenient to work in the z-y1-z2 convention, therefore all future references to Euler angles are to be assumed to be given in this convention. \footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y1-z2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y1-z2}$ \cite{varshalovich}.}
+For this work, it is convenient to think in the z-y1-z2 convention therefore all future references to Euler angles are in this convention. \footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y1-z2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y1-z2}$ \cite{varshalovich}.}
 In the z-y1-z2 convention, $\alpha$ defines the rotation about the z-axis, $\beta$ defines the rotation about the new y-axis (y1-axis) after the previous rotation and $\gamma$ defines the rotation about the final z-axis (z2-axis) after carrying out the previous two rotations. In more \revisit{physical terms}, these angles can be understood as follows: The rotation by $\alpha$ about the z-axis is such that it aligns the x-axis of the cartesian system at location $\hat{n}_0$ along the great circle in the direction of $\hat{n}_i$.  The rotation by $\beta$ about the y2-axis parallel transports the local cartesian coordinate system from location $\hat{n}_0$ to location $\hat{n}_i$, such that the z-axes of the two coordinate systems are parallel to each other. Finally the rotation by angle $\gamma$ about the z2-axis aligns the x \& y axes of the parallel transported system with those of the local cartesian system defined at $\hat{n}_i$. The different Euler angles and the corresponding rotations are depicted in \fig{fig:euler_angles}.
 
 The simplest scenario is when one of the coordinates coincides with the north pole $\hat{n}_0=(\theta_0,\phi_0)=(0,0)$ (the local cartesian system at this point being defined with an arbitrary convention set by choosing $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), in which case it is easy to see that rotations by Euler angles: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$ will align the cartesian system at $\hat{n}_0$ with that defined at position $\hat{n}_i$. 
 %--------------------------------------------------------
+\subsection{A heuristic argument for constructing spin-0 $E$ and $B$ fields}\label{sec:qu2eb_heuristic}
+
+
+%--------------------------------------------------------
+
 \subsection{Evaluating scalar fields $E$ \& $B$ from Stokes parameters $Q$ \& $U$}\label{sec:qu2eb}
 In \sec{sec:pol-primer} we described the standard procedure of computing the scalar fields E \& B from the Stokes parameters Q \& U. 
 %To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 fields ${}_{\pm2} \bar X$, forming specific linear combinations of the resultant coefficients of expansion ${}_{\pm 2} \tilde X_{\ell m}$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. 
@@ -152,7 +173,7 @@ where the symbol ${}_{0}Y_e$ is used to denote the sub-matrix ${}_{0}Y_{\hat{n}_
  \left [\sum_{\ell m} {}_{0}Y_{\ell m}(\hat{n}_e){}_{+2}Y^*_{\ell m}(\hat{n}_q)\right]^* = \sum_{\ell m} {}_{0}Y_{\ell m}(\hat{n}_e){}_{-2}Y^*_{\ell m}(\hat{n}_q) \,.
  \eeq
  %
- where the terms on either side of the equation are those that appear in \eq{eq:qu2eb_ker_1}. Note that each sub-matrix in \eq{eq:qu2eb_ker_1} is formed by some linear combination of a complex number and its conjugate. The $m$ sum over the product of two spherical harmonic functions with spins $s_1$ and $s_2$ respectively, is given by the following identity \cite{varshalovich},
+ where the terms on either side of the equation are those that appear in \eq{eq:qu2eb_ker_1}. Note that each sub-matrix in \eq{eq:qu2eb_ker_1} is formed by some linear combination of a complex number and its conjugate and is hence real. The $m$ sum over the product of two spherical harmonic functions with spins $s_1$ and $s_2$ respectively, is given by the following identity \cite{varshalovich},
 %
 \beq \label{eq:sum_spin_shf}
  \sum_{m}{{}_{s_1}Y}^*_{\ell m}(\hat{n}_i)\,{{}_{s_2}Y}_{\ell m}(\hat{n}_j) = \sqrt{\frac{2\ell+1}{4 \pi}} {{}_{s_2}}Y_{\ell \,-s_1}(\beta_{ij},\alpha_{ij}) e^{- i s_2 \gamma_{ij}} \,,
@@ -175,7 +196,7 @@ where we have used the identity given in \eq{eq:sum_spin_shf} to simplify the pr
 \bar O =-\bmat  \mathcal{M}_{r} & \mathcal{M}_{i} \\  -\mathcal{M}_{i}  & \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} = -{{}_{\mm}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{qe}) & \sin(2\alpha_{qe})\\  -\sin(2 \alpha_{qe})  & \cos(2 \alpha_{qe}) \emat \,.
 \eeq
 %
-Specifically note that $\alpha_{qe}, ~\beta_{qe} ~\&~ \gamma_{qe}$ denote the Euler angles which rotate the local cartesian system at the location $\hat{n}_q$ where the Stokes field is measured to the cartesian system at the location $\hat{n}_e$ where the scalar fields are evaluated: $\hat{n}_q \xrightarrow{\mathcal{R}(\alpha_{qe},\beta_{qe},\gamma_{qe})} \hat{n}_e$. The Euler angles for the inverse rotations are given by the Euler angles $\alpha_{eq}=-\gamma_{qe}$, $\beta_{eq} = -\beta_{qe}$ and  $\gamma_{eq} =-\alpha_{qe}$\cite{varshalovich}. Since the kernels only depend on the cosine of the Euler angle $\beta$, they are immune to the change in its sign. More importantly, the ordering of indices  on the Euler angle $\alpha$ and $\gamma$  is important and leads to two different interpretations of the real space kernels.
+Specifically note that $\alpha_{qe}, ~\beta_{qe} ~\&~ \gamma_{qe}$ denote the Euler angles which rotate the local cartesian system at the location $\hat{n}_q$ where the Stokes field is measured to the cartesian system at the location $\hat{n}_e$ where the scalar fields are evaluated: $\hat{n}_q \xrightarrow{\mathcal{R}(\alpha_{qe},\beta_{qe},\gamma_{qe})} \hat{n}_e$. The Euler angles for the inverse rotations are given by the Euler angles $\alpha_{eq}=-\gamma_{qe}$, $\beta_{eq} = -\beta_{qe}$ and  $\gamma_{eq} =-\alpha_{qe}$\cite{varshalovich}. Since the kernel only depends on the cosine of the Euler angle $\beta$, it is immune to changes in its sign. More importantly, the ordering of indices  on the Euler angle $\alpha$ and $\gamma$  is important and leads to two different interpretations of the real space kernels.
 
 \textit{Convolution:} Working from the frame of the pixel ``e'' where the scalar modes need to be evaluated, the Euler angles to the surrounding pixels are: $\alpha_{eq}, \beta_{eq},\gamma_{eq}$. In terms of these Euler angles, the value of scalar fields $E$ \& $B$ at the central pixel ``e" can be evaluated by convolving over the measured Stokes $Q$ \& $U$ parameters in the surrounding pixels marked by indices ``q''. Specifically, the convolution is fully defined in terms of the Euler angles $\beta_{eq}~ \& ~\gamma_{eq}$ and is given by the following equation,
 %
@@ -207,7 +228,7 @@ where $\circ$ denotes the convolution and the spherical harmonic functions denot
 \textit{Radiating:} On the contrary, while working from the frame of the pixel ``q'', the Euler angles to the surrounding pixels are: $\alpha_{qe}, \beta_{qe},\gamma_{qe}$. The E \& B mode maps resulting from the Stokes Q \& U parameters specified at the location $\hat{n}_q$ is given by the following expression,
 %
 \beq  \label{eq:qu2eb_radiation_explicit}
-\bmat E_e \\ B_e  \emat_{q} =- {{}_{\mm}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{q e}) & \sin(2\alpha_{q e})\\  -\sin(2 \alpha_{q e})  & \cos(2 \alpha_{q e}) \emat  \bmat Q_{q} \\ U_{q}  \emat \Delta \Omega \,.
+\bar{S}_q = \bmat E_e \\ B_e  \emat_{q} =- {{}_{\mm}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{q e}) & \sin(2\alpha_{q e})\\  -\sin(2 \alpha_{q e})  & \cos(2 \alpha_{q e}) \emat  \bmat Q_{q} \\ U_{q}  \emat \Delta \Omega \,.
 \eeq
 %
 The total map of E \& B modes can be simply evaluated by summing over the contribution from the Stokes parameters at each location $\hat{n}_q$ : $\bar{S} = \sum_{q=1}^{N_{\rm pix}} \bar{S}_q$. The above expression can again be cast in a more concise form as follows,

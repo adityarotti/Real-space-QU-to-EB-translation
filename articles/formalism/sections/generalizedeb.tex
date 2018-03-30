@@ -18,7 +18,7 @@ where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic represe
 \eeqry
 \end{subequations}
 %
-where we have used the primed notation  to distinguish these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. Note that for an arbitrary choice of $\tilde{\mathcal{G}}$ only one of the operators in \eq{eq:gen_qu2eb} is well defined, since $\tilde{\mathcal{G}}^{-1}$ may be ill defined. If we require both the forward and inverse operators to be well defined, then we are constrained in choosing $\tilde{\mathcal{G}}$ such that it has a valid  inverse. The radial part of these generalized convolution kernels is given by the following expressions,
+where we have used the primed notation  to distinguish these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. Note that for an arbitrary choice of $\tilde{\mathcal{G}}$ only one of the operators in \eq{eq:gen_qu2eb} is well defined, since $\tilde{\mathcal{G}}^{-1}$ may be ill defined. If we require both the forward and inverse operators to be well defined, then we are constrained in choosing $\tilde{\mathcal{G}}$ such that it has a valid  inverse. As we will see this will be an important criteria to recover the standard CMB spectra. The radial part of these generalized convolution kernels is given by the following expressions,
 %
 \begin{subequations}
 \beqry
@@ -35,20 +35,22 @@ While defining these generalized operators, it seems more natural to choose the 
 g_{\ell} = 2 \pi \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} \int _{0}^{\pi} G(\beta) P_{\ell}^{2}(\cos{\beta}) d\cos{\beta} \,. \label{eq:gb2bl}
 \eeq
 %
-Here it is important to note that the radial function $G(\beta)$ has to be chosen such that it vanishes at $\beta=0$ and $\beta=\pi$. 
+To ensure that the resultant field is a spin-0 field, it is important to note that the radial function $G(\beta)$ has to be necessarily chosen such that it vanishes at $\beta=0$ and $\beta=\pi$. 
 %One way to understand this is that the associated Legendre polynomials $P_{\ell}^2 \propto \sin^2{\beta}$ vanish at these values of the abscissa and hence cannot be used to describe functions which don't have this property.  Another way to understand this requirements is that at these locations the coordinate dependence of the Stokes parameters cannot be integrated out, since the azimuthal angle is ill defined and hence the convolution kernel needs to have vanishing contribution from these locations. \revisit{The normalization of these functions is not critically important, since any choice defines a convention. It is important to ensure consistency with the convention once a choice has been made.} \comment{find a better location for this}
+
+An arbirtrary $G(\beta)$ for which $g_{\ell} \neq 1$ can be equivalently thought in terms of the standard E and B mode fields being convolved with some circularly symmetric instrument beam. 
 Note that in contrast to the radial function $G(\beta)$ an instrumental beam function appropriately normalized has the property $B(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. We clarify that the $B(\beta)$ refers to the effective beam acting to smooth the scalar $E$ \& $B$ mode maps. A circularly symmetric beam $B(\beta)$ defined at the pole can be expressed in the Legendre polynomial $P_{\ell}^0$ basis as follows,
 %
 \beq
 B(\beta) = \sum_{\ell=0}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} b_{\ell} P_{\ell}^{0} (\cos{\beta})\,,
 \eeq
 %
-where $b_{\ell}$ denote the coefficients of expansion.
+where $b_{\ell}$ denote the coefficients of expansion. \comment{Note that one can directly get E and B mode maps resulting from convolution with a non-circular beam by chosing the function $g_{\ell}$ to have some m dependence.}
 %
 \begin{figure}[!t] 
 \centering
-\subfigure[\label{fig:glbl}]{\includegraphics[width=0.48\columnwidth]{gl_for_different_gbeta_lmax1536.pdf}}\\
 \subfigure[\label{fig:bl_gbeta}]{\includegraphics[width=0.48\columnwidth]{Gbeta_for_different_gl_lmax1536.pdf}}
+\subfigure[\label{fig:glbl}]{\includegraphics[width=0.48\columnwidth]{gl_for_different_gbeta_lmax1536.pdf}}
 \subfigure[\label{fig:gl_bbeta}]{\includegraphics[width=0.48\columnwidth]{Bbeta_for_gl_lmax1536.pdf}}
 \caption{\textit{Left:} The vertical dashed gray line depicts the approximate pixel size $\Delta_{\rm pix} = \sqrt{\frac{4 \pi}{N_{\rm pix}}}$ of a Nside=512 Healpix map. The green line depicts the default radial kernel $f(\beta)$ defined in \eq{eq:qu2eb_gen_kernel}. The blue and orange lines depict the modified radial function resulting the beam harmonics $b_{\ell}$ corresponding to Gaussian beams with fwhm=15 \& 12 arcminutes respectively. The red curve depicts an example modified radial function: $G(\beta)=\mathcal{N} \beta^n \exp{\left[ -\left( \frac{\beta-\beta0}{\sqrt{2} \sigma} \right)^s \right]}$ with parameters set to the following values $[n=1;\, \beta_0=0 ;\, \sigma = 2\Delta_{\rm pix} ;\, s=1.5]$. The black dashed curve depicts the band limited reconstruction of the modified radial function $G(\beta)$. We intentionally have plotted $\beta G(\beta)$ to clearly depict the high $\beta$ behavior of these functions. \textit{Middle: } This figure depicts the harmonic representation of the respective radial functions as indicated by the legend. The dashed curves of the corresponding color depict the inverse of the harmonic functions. \textit{Right:} This figure depicts the beam function $B(\beta)$ evaluated from interpreting the respective harmonic functions as those corresponding to an instrument beam.}
 \label{fig:example_gbeta}
@@ -81,7 +83,7 @@ The generalized convolution kernels defined in the previous section, when operat
 \bar{S}' = \bar{O}' * \bar{P}
 \eeq
 %
-which are not the standard $E$ and $B$ modes maps. Since the the harmonic representation $g_{\ell}$ of the radial function $G(\beta)$ can be simply interpreted as the harmonic coefficients of some beam,  the spectra of the scalar fields $E'$ and $B'$ are related to the spectra of the standard $E$ and $B$ fields via the following relation, 
+which as we show are mere filtered version of he standard $E$ and $B$ modes maps. The harmonic representation $g_{\ell}$ of the radial function $G(\beta)$ can be simply interpreted as the harmonic coefficients of some azimuthally symmetric beam $B(\beta) = \sum_{\ell} \frac{2 \ell+1}{4 \pi} g_{\ell} P^0_{\ell}(\cos{\beta})$. The spectra of the scalar fields $E'$ and $B'$ derived using the real space operators constructed using an arbitrary radial function $G(\beta)$ are related to the spectra of the standard $E$ and $B$ fields via the following relation, 
  %
  \begin{subequations}
  \beqry
@@ -90,7 +92,7 @@ C_{\ell}^{TE,TB}  &=&  C_{\ell}^{TE',TB'} / g_{\ell}\,,
  \eeqry
  \end{subequations}
  %
- where $C_{\ell}$ denotes the angular power spectra and $T$ refers to the temperature anisotropy map. Therefore the standard $E$ and $B$ mode spectra can be recovered from the modified fields $E'$ and $B'$ and their accurate recovery only relies on the inverse of the harmonic functions $1/g_{\ell}$ being well behaved, which can be ensured by making a suitable choice for the radial function $G(\beta)$.
+ where $C_{\ell}$ denotes the angular power spectra and $T$ refers to the temperature anisotropy map. Therefore the standard $E$ and $B$ mode spectra can be recovered from the modified fields $E'$ and $B'$ and their accurate recovery only relies on the inverse of the harmonic functions $1/g_{\ell}$ being well behaved, which can be ensured by making a suitable choice for the radial function $G(\beta)$. Examples of various forms of $G(\beta)$, its harmonic representation $g_{\ell}$ (and its inverse $1/g_{\ell}$ ) and the corresponding beam $B(\beta)$ are depicted in \fig{fig:example_gbeta}.
 %One direct application of this freedom in choosing the radial kernel is that one can mitigate the issue of leakage of power from $E$ to $B$.  By constructing a radial function which tapers to zero at sufficiently small radii one can clearly discard pixels which are affected by masking. 
 %--------------------------------------------------------
 %--------------------------------------------------------
