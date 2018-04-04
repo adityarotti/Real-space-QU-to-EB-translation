@@ -23,42 +23,49 @@ under right handed rotations of the local coordinate system are termed spin-s fi
 _{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n}) \,, %\nonumber \\ &=& \sum_{\ell m}  {_{\pm 2}} \tilde{X}_{\ell m}  \, {_{\pm 2}}Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-which under rotation of the local tangent plane coordinate system by an angle $\psi$ at any point on the sphere transform as: $_{\pm 2}X' = e^{\mp i2\psi} {_{\pm 2}X}$, which follows directly from \eq{eq:qu-rot}. Hence the quantities $_{\pm2}X$ behave as spin${\pm2}$ respectively.
+which under rotation of the local tangent plane coordinate system by an angle $\psi$ at any point on the sphere transform as: $_{\pm 2}X' = e^{\mp i2\psi} {_{\pm 2}X}$, which follows directly from \eq{eq:qu-rot}. Therefore the quantities $_{\pm2}X$ are spin${\pm2}$ fields respectively.
 
-The Stokes parameters being coordinate dependent quantities, it is cumbersome to work with them. It is possible to define spin raising ($\eth$) and spin lowering $(\bar{\eth})$ operators on the sphere \cite{goldberg67}.  These operators are such that when the spin raising operator acts on a spin-s field $_{s}f$ results in a fields with spin-$(s+1)$: $(\eth _{s}f)' = e^{-i(s+1)\psi}(\eth _{s}f)$ and similarly when a spin lowering operator acts on the field results in a field with spin-$(s-1)$: $(\bar{\eth} _{s}f)' = e^{-i(s-1)\psi}(\bar{\eth} _{s}f)$. This challenge is overcome by describing the CMB polarization field in terms of coordinate independent scalar fields denoted by $E(\hat{n}) $ and a pseudo scalar field $B(\hat{n}) $ \cite{Kamionkowski1997}. These scalar fields are constructed from the spin-2 polarization fields $_{\pm 2}X(\hat{n})$ via the following mathematical operations,
+The Stokes parameters being coordinate dependent quantities it is inconvenient to work with them. It is possible to define spin raising ($\eth$) operator on the sphere which when operated on a field of spin-s $_{s}f$ results in a fields with spin-$(s+1)$: $(\eth _{s}f)' = e^{-i(s+1)\psi}(\eth _{s}f)$ and similarly one can define a spin lowering $(\bar{\eth})$ operators such that $(\bar{\eth} _{s}f)' = e^{-i(s-1)\psi}(\bar{\eth} _{s}f)$\cite{goldberg67}. One can now construct a complex spin-0 scalar by applying the spin raising and lowering operators on the spin-2 fields ${_{\pm 2}X}$ as follows,
 %
-\beq \label{eq:ebdef}
-\mathcal{E}(\hat{n}) = -\frac{1}{2} \big[ \bar{\eth}^2 _{+ 2}\bar{X}(\hat{n})  +  \eth^2 _{- 2}\bar{X}(\hat{n}) \big] ~\,;~\mathcal{B}(\hat{n}) = -\frac{1}{2i} \big[ \bar{\eth}^2 _{+ 2}X(\hat{n})  -  \eth^2 _{- 2}X(\hat{n}) \big] \,,
-\eeq
+\begin{subequations}\label{eq:ebdef}
+\beqry
+\mathcal{E}(\hat{n}) + i \mathcal{B}(\hat{n}) &=& -\bar{\eth}^2 _{+ 2}\bar{X}(\hat{n}) \,,\\
+\mathcal{E}(\hat{n}) - i \mathcal{B}(\hat{n}) &=& -{\eth}^2 _{-2}\bar{X}(\hat{n}) \,,
+\eeqry
+\end{subequations}
 %
-where $\eth$ and $\bar{\eth}$ denote the spin raising and lowering operators respectively. These $\mathcal{E}$ and $\mathcal{B}$ fields are spin-0 fields similar to the temperature anisotropies and hence their value are independent of the coordinate system definitions (except that the B-modes have an odd parity, meaning that they change sign under reflection $\hat{n} \rightarrow -\hat{n}$.). The spin raising and lowering operators have the following properties \cite{goldberg67},
+which by the virtue of being scalars are independent of coordinate definitions. %The real part of this complex spin-0 scalar field corresponds to the E-mode while the imaginary part to the B-modes \cite{Kamionkowski1997}. 
+
+The complex field $_{\pm 2}X$ defined on the sphere can be decomposed in spin spherical harmonic functions: ${}_{\pm 2}X(\hat{n}) = \sum_{\ell m} {}_{\pm 2} X_{\ell m} {}_{\pm 2}Y_{\ell m}(\hat{n})$. On applying the spin raising and lowering operators on the spin spherical harmonic functions leads to the following identities\cite{goldberg67},
 %
-\beqrys \label{eq:spinopylm} 
+\begin{subequations}\label{eq:spinopylm} 
+\beqry
 \eth _s Y_{lm}(\hat{n}) &=& \sqrt{(\ell-s)(\ell+s+1)} _{s+1} Y_{lm}(\hat{n}) \,, \\
 \bar{\eth} _s Y_{lm}(\hat{n}) &=& -\sqrt{(\ell+s)(\ell-s+1)} _{s-1} Y_{lm}(\hat{n}) \,, 
-\eeqrys
+\eeqry
+\end{subequations}
 %
 where $_s Y_{lm}(\hat{n}) $ denote the spin-s spherical harmonics.
 
-Using \eq{eq:ebdef} and the properties of the spin raising and lowering operators given in \eq{eq:spinopylm} it can be shown that the scalar fields $\mathcal{E}/\mathcal{B}$ are defined via the following set of equations,
+Using \eq{eq:ebdef}, the spin spherical harmonic decomposition of ${}_{\pm2}X$ and the identities given in \eq{eq:spinopylm} it can be shown that the scalar fields $\mathcal{E}/\mathcal{B}$ are given by the following equations,
 %
 \beq \label{eq:pseudo}
 \mathcal{E}(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} \sqrt{\frac{(\ell+2)!}{(\ell-2)!}} Y_{\ell m} (\hat{n}) ~\,;~ \mathcal{B}(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} \sqrt{\frac{(\ell+2)!}{(\ell-2)!}} Y_{\ell m} (\hat{n}) \,,
 \eeq
 %
-where the harmonic coefficients of  $\mathcal{E}/\mathcal{B}$ fields are related to the harmonic coefficients of the spin-2 polarization field via the following equations,
+where the harmonic coefficients $a^{E}_{\ell m}$  \& $a^{B}_{\ell m}$ are related to the harmonic coefficients of the spin-2 polarization field via the following equations,
 %
 \beq\label{eq:x2eb}
-a^{E}_{\ell m} = -\frac{1}{2} \Big[ {}_{+2}\tilde{X}_{\ell m} + {}_{-2}\tilde{X}_{\ell m} \Big] ~\,;~a^{B}_{\ell m} = -\frac{1}{2i} \Big[ {}_{+2}\tilde{X}_{\ell m} - {}_{-2}\tilde{X}_{\ell m} \Big] 
+a^{E}_{\ell m} = -\frac{1}{2} \Big[ {}_{+2}\tilde{X}_{\ell m} + {}_{-2}\tilde{X}_{\ell m} \Big] ~\,;~a^{B}_{\ell m} = -\frac{1}{2i} \Big[ {}_{+2}\tilde{X}_{\ell m} - {}_{-2}\tilde{X}_{\ell m} \Big] \,.
 \eeq
 %
-In the remainder of this article, we will work with the scalar $E$ and pseudo scalar $B$ fields as defined by the following expressions, 
+In the remainder of this article, we will work with the scalar $E$ and pseudo scalar $B$ fields as defined by the following equations, 
 %
 \beq \label{eq:realeb}
 E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n}) ~\,;~ B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-Note that the $[E,B]$ fields are merely filtered versions of the fields $[\mathcal{E},\mathcal{B}]$, as their spherical harmonic coefficients of expansion differ by the factor $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
+Note that these $E/B$ fields are merely filtered versions of $\mathcal{E}/\mathcal{B}$ as their spherical harmonic coefficients of expansion are related by the factor $\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
@@ -79,7 +86,7 @@ We now define the different polarization data vectors and their representation i
 \tilde{S} &=& \bmat a^{E} \\ a^{B} \emat _{2 \rm N_{\rm alms} \times 1}  ~~; ~~ \tilde{X} = \bmat _{+2} \tilde{X} \\ _{-2} \tilde{X} \emat_{2 \rm N_{\rm alms} \times 1} \,.
 \eeqrys
 %
-The different symbols have the same meaning as that discussed in \sec{sec:pol-primer}, except that the subscript $_{\ell m}$ for the spherical harmonic coefficients of expansion is suppressed if favor of cleaner notation.
+The different symbols have the same meaning as that discussed in \sec{sec:pol-primer}, except that the subscript $_{\ell m}$ for the spherical harmonic coefficients of expansion is suppressed in favor of cleaner notation.
 
 Next we define the operators which govern the transformations between different representations of the polarization field as follows,
 %
@@ -104,7 +111,7 @@ Using the data vectors and the matrix operators defined above we can now express
 \eeqry
 \end{subequations}
 %
-Next we introduce the harmonic space operators, which project the harmonic space data vector to E or B subspace,
+Finally we introduce the harmonic space operators, which project the harmonic space data vector to E or B subspace,
 %
 \begin{subequations} \label{eq:har_eb_op}
 \beqry
@@ -127,7 +134,7 @@ Note that the above relations for these harmonic space operators are exactly val
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real space operators} \label{sec:real_space_operators}
 The vector-matrix notation introduced in  \sec{sec:mat_pol_intro} allows for concise book keeping of all the operations involved in the analysis of CMB polarization. In this section we use this notation to derive the real space operators which translate the Stokes vector \vp{}  to the vector of scalars \vs  and vice versa. This vector-matrix notation also allows us to simply derive real space operators for direct decomposition of the Stokes vector \vp{} in to a vector \vp{ E} that correspond to $E$-modes and another vector \vp{B} that corresponds to the $B$-modes of polarization, such that \vp{} = \vp{E} + \vp{B}, without ever evaluating the $E$ \& $B$ fields or their spherical harmonics. 
-All the real space operators we derive are most conveniently expressed as functions of the Euler angles  $\alpha, ~\beta~\&~ \gamma$ on the sphere. Owing to this, we begin with a brief discussion on Euler angles and present visual method to think about them.
+All the real space operators we derive are most conveniently expressed as functions of the Euler angles  $\alpha, ~\beta~\&~ \gamma$ on the sphere. Owing to this, we begin with a brief discussion on Euler angles and \revisit{present a visual method to think about them.}
 %
 \begin{figure}[!hbt]
 \centering
@@ -137,18 +144,16 @@ All the real space operators we derive are most conveniently expressed as functi
 \end{figure}
 %
 
-\textit{Euler angles:}  We define the local cartesian coordinate system at any point on the sphere such that the z-axis points along the radial direction, the x-axis is along the vector tangent to the local longitude pointing south and the y-axis is a vector tangent to the local latitude pointing east as shown in \fig{fig:euler_angles}. The Euler angles $\alpha ,\beta ~\&~ \gamma$ define rotation operations that transforms the local cartesian coordinate system defined at the location $\hat{n}_0 \equiv (\theta_0,\phi_0)$ such that it aligns with the local cartesian coordinate system at the location $\hat{n}_i \equiv (\theta_i,\phi_i)$ \cite{varshalovich}. 
+\textit{Euler angles:}  We define the local cartesian coordinate system at any point on the sphere such that the z-axis points along the radial direction, the x-axis is along the vector tangent to the local longitude pointing south and the y-axis is a vector tangent to the local latitude pointing east as shown in \fig{fig:euler_angles}. The Euler angles $\alpha ,\beta ~\&~ \gamma$ define rotation operations that transforms the local cartesian coordinate system defined at the location $\hat{n}_q \equiv (\theta_q,\phi_q)$ such that it aligns with the local cartesian coordinate system at the location $\hat{n}_e \equiv (\theta_e,\phi_e)$ \cite{varshalovich}. 
 
-For this work, it is convenient to think in the z-y1-z2 convention therefore all future references to Euler angles are in this convention. \footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y1-z2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y1-z2}$ \cite{varshalovich}.}
-In the z-y1-z2 convention, $\alpha$ defines the rotation about the z-axis, $\beta$ defines the rotation about the new y-axis (y1-axis) after the previous rotation and $\gamma$ defines the rotation about the final z-axis (z2-axis) after carrying out the previous two rotations. In more \revisit{physical terms}, these angles can be understood as follows: The rotation by $\alpha$ about the z-axis is such that it aligns the x-axis of the cartesian system at location $\hat{n}_0$ along the great circle in the direction of $\hat{n}_i$.  The rotation by $\beta$ about the y2-axis parallel transports the local cartesian coordinate system from location $\hat{n}_0$ to location $\hat{n}_i$, such that the z-axes of the two coordinate systems are parallel to each other. Finally the rotation by angle $\gamma$ about the z2-axis aligns the x \& y axes of the parallel transported system with those of the local cartesian system defined at $\hat{n}_i$. The different Euler angles and the corresponding rotations are depicted in \fig{fig:euler_angles}.
+For this work, it is convenient to think in the z-y1-z2 convention therefore all future references to Euler angles are in this convention\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y1-z2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y1-z2}$ \cite{varshalovich}.}.
+In the z-y1-z2 convention, $\alpha$ defines the rotation about the z-axis, $\beta$ defines the rotation about the new y-axis (y1-axis) after the previous rotation and $\gamma$ defines the rotation about the final z-axis (z2-axis) after carrying out the previous two rotations. These angles can be understood as follows: The rotation by $\alpha$ about the original z-axis is such that it aligns the x-axis of the cartesian system at location $\hat{n}_q$ along the great circle in the direction \revisit{of shortest arc length} towards $\hat{n}_e$.  The rotation by $\beta$ about the y2-axis parallel transports the local cartesian coordinate system from location $\hat{n}_q$ to location $\hat{n}_e$, such that the z-axes of the two coordinate systems are parallel to each other. Finally the rotation by angle $\gamma$ about the z2-axis aligns the x \& y axes of the parallel transported system with those of the local cartesian system defined at $\hat{n}_e$. The different Euler angles and the corresponding rotations are schematically represented in \fig{fig:euler_angles}.
 
-The simplest scenario is when one of the coordinates coincides with the north pole $\hat{n}_0=(\theta_0,\phi_0)=(0,0)$ (the local cartesian system at this point being defined with an arbitrary convention set by choosing $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), in which case it is easy to see that rotations by Euler angles: $(\alpha,\beta,\gamma) =(\phi_i,\theta_i,0)$ will align the cartesian system at $\hat{n}_0$ with that defined at position $\hat{n}_i$. 
-%--------------------------------------------------------
-\subsection{A heuristic argument for constructing spin-0 $E$ and $B$ fields}\label{sec:qu2eb_heuristic}
-
-
+The simplest scenario is when one of the coordinates coincides with the north pole $\hat{n}_q=(\theta_q,\phi_q)=(0,0)$ (the local cartesian system at this point being defined with an arbitrary convention set by choosing $\theta_0 \rightarrow 0$ while moving along the longitude $\phi_0=0$), in which case it is easy to see that rotations by Euler angles: $(\alpha,\beta,\gamma) =(\phi_e,\theta_e,0)$ will align the cartesian system at $\hat{n}_q$ with that defined at position $\hat{n}_e$. 
 %--------------------------------------------------------
 
+
+%--------------------------------------------------------
 \subsection{Evaluating scalar fields $E$ \& $B$ from Stokes parameters $Q$ \& $U$}\label{sec:qu2eb}
 In \sec{sec:pol-primer} we described the standard procedure of computing the scalar fields E \& B from the Stokes parameters Q \& U. 
 %To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 fields ${}_{\pm2} \bar X$, forming specific linear combinations of the resultant coefficients of expansion ${}_{\pm 2} \tilde X_{\ell m}$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. 
@@ -222,7 +227,7 @@ where $\circ$ denotes the convolution and the spherical harmonic functions denot
 \centering
 \includegraphics[width=0.5\columnwidth]{radiation_convolution.pdf}
 \caption{The local cartesian coordinate are only drawn on the red circle, representative of the coordinate dependence of the Stokes parameters. The coordinates are not drawn on the blue circle representing the fact that the value of the scalar field does not depend of the coordinate definition. The value of the scalar field at the specific location `e' can be evaluated by summing over the contribution from all the Stokes parameters on the red circle (sphere). The convolutions are performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$. Alternatively, if centered on `q' then one can compute the contribution from the Stokes parameter at this specific location to all the point on the blue circle(sphere). The contribution across the sky from the Stokes parameter at the location `q'  is given by a function of the Euler angle $\alpha_{eq}$. In the flat sky limit, since $\gamma=-\alpha$ there is no difference between the radiating and convolving kernels.}
-\label{fig:euler_angles}
+\label{fig:planar_euler_angles}
 \end{figure}
 %
 \textit{Radiating:} On the contrary, while working from the frame of the pixel ``q'', the Euler angles to the surrounding pixels are: $\alpha_{qe}, \beta_{qe},\gamma_{qe}$. The E \& B mode maps resulting from the Stokes Q \& U parameters specified at the location $\hat{n}_q$ is given by the following expression,
