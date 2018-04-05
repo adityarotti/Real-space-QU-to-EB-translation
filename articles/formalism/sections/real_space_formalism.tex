@@ -226,15 +226,15 @@ The total map of E \& B modes can be simply evaluated by summing over the contri
 %
 \begin{subequations} \label{eq:qu2eb_radiation_concise}
 \beqry 
-\left[E + iB\right] &=& -\Delta \Omega  \sum_{q=1}^{N_{\rm pix}} \Big[ {}_{+2}X(\hat{n}_{q}) e^{-i2\alpha_{q e}} \Big]  {{}_{\mm}f}(\beta_{q e}) \,, \\
+\left[E + iB\right](\hat{n}_e) &=& -\Delta \Omega  \sum_{q=1}^{N_{\rm pix}} \Big[ {}_{+2}X(\hat{n}_{q}) e^{-i2\alpha_{q e}} \Big]  {{}_{\mm}f}(\beta_{q e}) \,, \\
 &=&    \sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace {}_{+2}X(\hat{n}_{q}) \cdot \left[ - \Delta \Omega \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2}(\beta_{qe},\alpha_{qe}) \right] \Bigg\rbrace \,, \\
-&=& \sum_{q=1}^{N_{\rm pix}} {}_{+2}X(\hat{n}_{q}) \cdot  \mathcal{M}_{Green}[\hat{n}_q] \,,
+&=& \sum_{q=1}^{N_{\rm pix}} {}_{+2}X(\hat{n}_{q}) \cdot  \mathcal{M}_{G}[\hat{n}_q] \,,
 \eeqry
 \end{subequations}
 %
-where ``$\cdot$'' denotes a simple scalar multiplication and $\mathcal{M}_{Green}$ is a function that spans the sphere and sourced at $\hat{n}_q$. In fact $\mathcal{M}_{Green}$ can be thought of as the Green's function of the operator since $[E +iB] = \mathcal{M}_{Green}$ generated from the Stokes charge $[Q+iU] = [\delta(\hat{n}-\hat{n}_q) + i 0]$. 
+where ``$\cdot$'' denotes a simple scalar multiplication. $\mathcal{M}_{G}$ is merely the conjugated function $\mm^*$ when expressed as a function of the Euler angle $\alpha_{qe}$ and it can be thought of as the Green's function of the operator, since $[E +iB] = \mathcal{M}_{G}$ is the spin-0 scalar field generated from the Stokes charge $[Q+iU] = [\delta(\hat{n}-\hat{n}_q) + i 0]$. 
 
-We denote the kernel expressed in terms of the Euler angle $\alpha$ as the radiating kernel, since it allows us to evaluate the $E/B$ field contribution across the sphere due to a single Stoke (charge) parameter at a fixed location on the sphere. The total $E/B$ maps can then be thought of as just superposed radiation emerging from Stokes charges across the sphere. In this formulation, one is in effect in the frame of the Stokes charge ${}_{\pm2}X$ and evaluating its contribution to the complex spin-0 scalar field across the sphere. 
+We denote the kernel expressed in terms of the Euler angle $\alpha$ as the radiating kernel, since it allows us to evaluate the $E/B$ field contribution across the sphere due to a single Stoke (charge) parameter at a fixed location on the sphere. The total $E/B$ maps can then be thought of as just superposed radiation emerging from Stokes charges across the sphere. In this formulation, one is effectively in the frame of the Stokes charge ${}_{\pm2}X$ and evaluating its contribution to the complex spin-0 scalar field across the sphere. 
 %
 \begin{figure}[!t]
 \centering
@@ -257,17 +257,17 @@ We denote the kernel expressed in terms of the Euler angle $\alpha$ as the radia
 \beqry 
 [E + iB](\hat{n}_e) &=& - \Delta \Omega \sum_{q=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} P_{\ell}^{2}(\beta_{eq}) \right) {\Bigg( e^{i2 \gamma_{eq}}   {}_{+2}X (\hat{n}_q) \Bigg)} \,, \label{eq:qu2eb_physical}\\
 &=& \Bigg\lbrace \left[ - \Delta \Omega \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2}(\beta_{eq},\gamma_{eq}) \right]  \circ {}_{+2}X \Bigg\rbrace(\hat{n}_e) \,, \\
-&=& \Bigg\lbrace \mathcal{M}_{Beam} \circ {}_{+2}X \Bigg\rbrace(\hat{n}_e)\,, \label{eq:qu2eb_convolution} 
+&=& \Bigg\lbrace \mathcal{M}_{B} \circ {}_{+2}X \Bigg\rbrace(\hat{n}_e) \,, \label{eq:qu2eb_convolution} 
 \eeqry
 \end{subequations}
 %
-where $\circ$ denotes a convolution and $\mathcal{M}_{Beam}$ can be interpreted as some effective instrument beam pointing to the direction $\hat{n}_e$. 
+where $\circ$ denotes a convolution and $\mathcal{M}_{B}$ is merely the conjugated function $\mm^*$ when expressed as a function of the Euler angle $\gamma_{eq}$ it can be thought of as an effective instrument beam pointing to the direction $\hat{n}_e$. 
 %--------------------------------------------------------
 
 
 %--------------------------------------------------------
 \subsection{Evaluating Stokes parameters $Q$ \& $U$ from scalar fields $E$ \& $B$}\label{sec:eb2qu}
-The real space operator which translates $E$ \& $B$ fields to Stokes parameters $Q$ \& $U$ can be derived using a similar procedure. The inverse operator is given by the following expression,
+The real space operator which translates $E$ \& $B$ fields to Stokes parameters $Q$ \& $U$ can be derived using a similar procedure. Expressed in the matrix-vector notation, inverse operator is given by,
 %
 \begin{subequations}
 \beqry
@@ -276,37 +276,29 @@ The real space operator which translates $E$ \& $B$ fields to Stokes parameters 
 \eeqry
 \end{subequations}
 %
-Providing the explicit derivation here will be redundant with that described in the previous sections and hence we avoid that. The inverse operator $\bar{O}^{-1}$ can be derived by realizing that $\mm^{-1}$ is given by the following expression,
+%The inverse operator $\bar{O}^{-1}$ can be derived by realizing that $\mm^{-1}$ is given by the following expression,
+%%
+%\beq
+%\mm^{-1} = \sum_{\ell m}  {{}_{2}}Y_{\ell m}(\hat n_q) {}_{0}Y^*_{\ell m}(\hat n_e) \, 
+%\eeq
+%%
+The inverse operator expressed in terms of the function $\mm$ given in \eq{eq:qu2eb_gen_kernel} is given by the following equation,
 %
 \beq
-\mm^{-1} = \sum_{\ell m}  {{}_{2}}Y_{\ell m}(\hat n_q) {}_{0}Y^*_{\ell m}(\hat n_e) \, 
+{\bar O}^{-1}=-\bmat \mathcal{M}_{r} & -\mathcal{M}_{i} \\  \mathcal{M}_{i}  & \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} =-{{}_{\mm}f}(\beta_{eq},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{qe}) & -\sin(2\alpha_{qe})\\  \sin(2 \alpha_{qe})  & \cos(2 \alpha_{qe}) \emat \,,
 \eeq
 %
-
- The inverse operator is given by the following expression,
+where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}. Note that the kernel in the above equation differs from the one in \eq{eq:op_qu2eb_rad} by a change in sign on the off-diagonals of the block matrix. When expressed in terms of the same set of Euler angles used to define the operator $\bar{O}$, it can be shown that the different forms of the real space operator are given by,
 %
-\beq
-{\bar O}^{-1}=-\bmat \mathcal{M}_{r} & -\mathcal{M}_{i} \\  \mathcal{M}_{i}  & \mathcal{M}_{r} \emat_{2 N_{\rm pix} \times 2 N_{pix}} =-{{}_{\mm}f}(\beta_{eq},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{eq}) & -\sin(2\alpha_{eq})\\  \sin(2 \alpha_{eq})  & \cos(2 \alpha_{eq}) \emat \,.
-\eeq
-%
-where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}. Note that the kernel in the above equation differs from the one in \eq{eq:op_qu2eb} by a change in sign on the off-diagonals of the block matrix and the pixel indexing is reversed $ e \leftrightarrow q$. We can evaluate the Stokes parameters  $Q$ \& $U$ from the scalar fields $E$ \& $B$ by evaluating the following expression,
-%
-\beq \label{eq:eb2qu_convolution_explicit}
-\bmat Q_i \\ U_i  \emat=-\Delta \Omega\sum_{j=1}^{N_{\rm pix}} {{}_{\mm}f}(\beta_{ij},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \alpha_{ij}) & -\sin(2\alpha_{ij})\\  \sin(2 \alpha_{ij})  & \cos(2 \alpha_{ij}) \emat  \bmat E_j \\ B_j  \emat \,,
-\eeq
-%
-where all the symbols have their usual meaning. The above equation can again be expressed more concisely as follows,
-%
-\begin{subequations} \label{eq:eb2qu_simple}
-\beqry 
-{}_{+2}\bar{X}(\hat{n}_0) &=& - \Delta \Omega \sum_{j=1}^{N_{\rm pix}} \left(\sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell+2)!}}  P_{\ell}^{2}(\beta_{0j}) \right)  {\Bigg( e^{i2 \alpha_{0j}}   [E+iB](\hat{n}_j) \Bigg)} \,, \label{eq:eb2qu_physical}\\
-&=& - \Bigg\lbrace \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2} \right]  \circ [E+iB]  \Bigg\rbrace (\hat{n}_0) \,, \\
-&=& - \Bigg\lbrace \mathcal{M} \circ [E + iB] \Bigg\rbrace(\hat{n}_0)\,, 
+\beqry
+{}_{+2}X(\hat{n}_q) &=& \Bigg\lbrace \mathcal{M}^*_{G} \circ [E+iB] \Bigg\rbrace(\hat{n}_q) \hspace{0.8cm} \textrm{\emph {Convolution kernel}}\,, \label{eq:eb2qu_convolution}\\
+{}_{+2}X(\hat{n}_q) &=&  \sum_{e=1}^{N_{\rm pix}} [E+iB](\hat{n}_{e}) \cdot  \mathcal{M}^*_{B}[\hat{n}_e] \hspace{0.8cm} \textrm{\emph{Radiation kernel}}\,,
 \eeqry
-\end{subequations}
 %
-which $\circ$ is to be interpreted as a convolution. The only change in the convolution kernel as compared to that in \eq{eq:qu2eb_simple} is that the $Y_{\ell 2}$ functions are not conjugated. This can again be simply understood as the construction of a spin-2 field by taking a product of a spin-0 field $[E +iB]$ with a spin $+2$ field $e^{+i2\alpha}$. The radial dependence of the operator ${\bar O}^{-1}$  is identical to the that of ${\bar O}$ as one may have expected. From the perspective of the scalar field $[E + iB]$, all the coordinate dependence of the Stokes parameters is encoded in the function $e^{+i2\alpha}$.  The radial functions again have to vanish at $\beta \rightarrow 0,\pi$ for the same reasons that the function $e^{+i2\alpha}$ is ill defined at these locations.
+where all the symbols have the same meaning as defined in \sec{sec:qu2eb}. Note that the conjugated forms of the Green's function and the effective beam for the operator $\bar{O}$ have their roles reversed for the inverse operator $\bar{O}^{-1}$.
 %--------------------------------------------------------
+
+
 %--------------------------------------------------------
 \subsection{Decomposing Stokes parameters $Q$ \& $U$  into those corresponding to $E$ \& $B$ modes respectively}
 We can only measure the total Stokes vector which is a sum of the Stokes vectors corresponding to the respective scalar modes. The $E$ \& $B$ modes are orthogonal to each other, in the sense that their respective operators are orthogonal to each other as seen in \eq{eq:op_eb_ortho}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to $E$ modes and another \vp{\rm B} that purely contribute to the $B$ modes of polarization. In this section we derive the real space operators which operate on the total Stokes vector and yield this decomposition, without ever having to explicitly evaluate the scalar modes. Though the algebra is a little more involved, the derivation is similar to that discussed in \sec{sec:qu2eb}, hence we refrain from presenting the detailed calculations here, but outline the key points. We use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions,
