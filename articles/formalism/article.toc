@@ -2,13 +2,12 @@
 \contentsline {section}{\numberline {2}Polarization primer}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Matrix notation}{3}{subsection.2.1}
 \contentsline {section}{\numberline {3}Real space operators}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Evaluating scalar fields $E$ \& $B$ from Stokes parameters $Q$ \& $U$}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Evaluating Stokes parameters $Q$ \& $U$ from scalar fields $E$ \& $B$}{10}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Decomposing Stokes parameters $Q$ \& $U$ into those corresponding to $E$ \& $B$ modes respectively}{11}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Visualizing the convolution kernels}{13}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Quantifying the non-locality of E \& B modes}{15}{subsection.3.5}
-\contentsline {section}{\numberline {4}Generalized operators}{16}{section.4}
-\contentsline {subsection}{\numberline {4.1}Recovering the default $E$ and $B$ mode spectra}{20}{subsection.4.1}
-\contentsline {section}{\numberline {5}Discussion}{20}{section.5}
-\contentsline {section}{\numberline {6}Appendix}{21}{section.6}
-\contentsline {subsection}{\numberline {6.1}Product of spin spherical harmonics}{21}{subsection.6.1}
+\contentsline {subsection}{\numberline {3.1}A heuristic argument for constructing $E/B$ modes from Stokes parameters $Q/U$ on the sphere}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Evaluating scalar fields $E$ \& $B$ from Stokes parameters $Q$ \& $U$}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Evaluating Stokes parameters $Q$ \& $U$ from scalar fields $E$ \& $B$}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Decomposing Stokes parameters $Q$ \& $U$ into those corresponding to $E$ \& $B$ modes respectively}{11}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Visualizing the convolution kernels}{13}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Quantifying the non-locality of E \& B modes}{15}{subsection.3.6}
+\contentsline {section}{\numberline {4}Generalized operators}{18}{section.4}
+\contentsline {subsection}{\numberline {4.1}Recovering the default $E$ and $B$ mode spectra}{19}{subsection.4.1}
+\contentsline {section}{\numberline {5}Discussion}{21}{section.5}
