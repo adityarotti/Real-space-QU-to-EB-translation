@@ -8,8 +8,7 @@
 \contentsline {subsection}{\numberline {3.4}Decomposing Stokes parameters $Q$ \& $U$ into those corresponding to $E$ \& $B$ modes respectively}{11}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Visualizing the convolution kernels}{13}{subsection.3.5}
 \contentsline {subsection}{\numberline {3.6}Quantifying the non-locality of E \& B modes}{15}{subsection.3.6}
-\contentsline {section}{\numberline {4}Generalized operators}{16}{section.4}
-\contentsline {subsection}{\numberline {4.1}Recovering the default $E$ and $B$ mode spectra}{20}{subsection.4.1}
-\contentsline {section}{\numberline {5}Discussion}{20}{section.5}
-\contentsline {section}{\numberline {6}Appendix}{21}{section.6}
-\contentsline {subsection}{\numberline {6.1}Product of spin spherical harmonics}{21}{subsection.6.1}
+\contentsline {section}{\numberline {4}Generalized operators}{17}{section.4}
+\contentsline {subsection}{\numberline {4.1}Relation to the spin raising$(\eth ^2)$/lowering$(\mathaccentV {bar}016{\eth }^2)$ operations}{20}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Recovering the default $E$ and $B$ mode spectra}{20}{subsection.4.2}
+\contentsline {section}{\numberline {5}Discussion}{21}{section.5}
