@@ -1,3 +1,94 @@
+\section{Real space polarization operators}
+\textit{Alternative for bringing the heuristic argument earlier.}
+
+ CMB polarization is measured in terms of Stokes parameters, averages of the linear polarization of the electric field along cartesian axes perpendicular to the line of sight.  (Throughout we use the conventions of HEALPix \cite{healpix_primer}.) Thus Stokes $Q$ and $U$ depend on the choice of the local coordinate system and a rotation by an angle $\psi$ around the line of sight transforms them as
+%
+\beq \label{eq:qu-rot}
+\fqu' = \begin{bmatrix} \cos{2 \psi} &  \sin{2 \psi} \\ -\sin{2\psi} & \cos{2 \psi} \end{bmatrix} \fqu \,.
+\eeq
+Because the combination $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$, the Stokes parameters are components of a spin-2 field \cite{Zaldarriaga1997}.
+
+The standard construction of $E/B$ fields arise from the desire to have a coordinate independent description of the polarization and follow from operations that raise (or lower) the spin of the $X$ field to construct scalar fields.  But from the transform properties of the Stokes parameters, we can already make a heuristic argument for what these operations must look like in real space.
+
+We consider the contribution from the polarization field (evaluated at $\hat n_q$) to a scalar field (evaluated at $\hat n_e$).  Figure \ref{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a rotation around the local $\hat n_q$ by angle $\alpha$, parallel transport by angle $\beta$, and a rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}.
+%
+\begin{figure}%[!hbt]
+\centering
+\includegraphics[width=0.5\columnwidth]{euler.pdf}
+\caption{This figure depicts the Euler angles in the z-y1-z2 convention. The cartesian coordinates shown in dark green are those that lie in the tangent plane at location $\hat{n}_q = (\theta_q, \phi_q)$ while those shown in dark red are the ones that lie in the tangent plane at location $\hat{n}_e = (\theta_e, \phi_e)$. The blue coordinates at different locations are representative of the parallel transport along the geodesic connection the two locations $\hat{n}_q$ \& $\hat{n}_e$ on the sphere.}
+\label{fig:euler_angles}
+\end{figure}
+%
+
+Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ by an angle $\phi$ about the local $\hat{z}_q$ axis, the Stokes parameters in the new coordinate system relate to those in the original coordinate system as:
+$\mathcal{R}_{\hat{z}_q}(\phi)[{}_{+2}X(\hat{n}_q)] =  {}_{+2}X(\hat{n}_q) e^{-i2\phi} $.
+This same rotation by $\phi$ alters the Euler angle $\alpha_{qe}$ (that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$): $\mathcal{R}_{\hat{z}_q}(\phi)[\alpha_{qe}] = \alpha_{qe} - \phi$.  Therefore one can see that $\mathcal{R}_{\hat{z}_q}(\phi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\phi}$.
+
+Given these transformation properties, the combination ${}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}$ is invariant under rotations and must by definition be spin-0:
+\beq
+\mathcal{R}_{\hat{z}_q}(\phi)[{}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}] = {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}
+\eeq
+Now note that the real part of the function are constructed by product of functions $(Q\cos{2\alpha}, U\sin{2 \alpha})$ having the same parity and hence the real part must have even parity while the imaginary part of the function are constructed by multiplying functions $(Q\sin{2 \alpha}, U\cos{2\alpha})$ of opposite parity and hence must have an odd parity. Therefore we can make the association that contributions to  $(E+iB)(\hat n_e)$ must be proportional to $ {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}$.
+
+
+The same rotation $\mathcal{R}_{\hat{z}_q}(\phi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we can conclude that the form of the real-space operation must be like:
+\beq
+(E+iB)(\hat n_e) = \int d\hat n_q \  {}_{+2}X(\hat{n}_q) f(\beta_{qe})  e^{-i2\alpha_{qe}}
+\eeq
+Note that when the two locations coincide ($\beta_{qe}=0$) then  $\alpha_{qe}=0,2\pi,4\pi,\dots$, implying $E + iB \propto Q+iU$.  This cannot be because $Q+iU$ does not transform as a spin-0 field under local rotations. A similar fallacy arises when the two locations are diametrically opposite, $\beta_{qe} = \pi$.  Therefore we must have function $f(\beta_{qe} = 0 ) = f(\beta_{qe} = \pi ) = 0$.  Hence the $E/B$ fields are necessarily non-local.  Any such function $f$ will give us $E/B$-like scalar fields.  Below we derive the particular one that gives rise to our familiar $E/B$ modes.
+
+The kernel's azimuthal part depends only on the Euler angle $\alpha_{qe}$, and so it's harmonic transform has no multipole $\ell$ dependence.  The azimuthal part is the crucial operation that translates between different spin representation of CMB polarization. Only the radial part of the kernel $f(\beta_{qe})$ depends only on the angular separation between locations and hence must completely incorporate the multipole $\ell$ dependence. 
+
+Note that this type of construction can be generalized to transform fields of arbitrary spin to a field of any other spin, and so we can use it in the opposite sense to transform $E/B$ maps back to the Stokes parameters (i.e. transforming spin-0 fields to spin-2.)
+
+The standard construction of $E/B$ fields depend on the spin-raising and -lowering operators, and is usually carried out in harmonic space.  The spin-raising operator ($\eth$), when operated on a field of spin-s $_{s}f$, results in a fields with spin-$(s+1)$: $(\eth _{s}f)' = e^{-i(s+1)\psi}(\eth _{s}f)$  \cite{goldberg67}.  The complementary spin-lowering operator $(\bar{\eth})$  similarly results with $(\bar{\eth} _{s}f)' = e^{-i(s-1)\psi}(\bar{\eth} _{s}f)$.  The complex spin-0 scalar now arise from  the spin-2 fields ${_{\pm 2}X}$ as follows,
+%
+\begin{subequations}\label{eq:ebdef}
+\beqry
+\mathcal{E}(\hat{n}) + i \mathcal{B}(\hat{n}) &=& -\bar{\eth}^2 _{+ 2}\bar{X}(\hat{n}) \,,\\
+\mathcal{E}(\hat{n}) - i \mathcal{B}(\hat{n}) &=& -{\eth}^2 _{-2}\bar{X}(\hat{n}) \,.
+\eeqry
+\end{subequations}
+%
+%which by the virtue of being scalars are independent of coordinate definitions. %The real part of this complex spin-0 scalar field corresponds to the E-mode while the imaginary part to the B-modes \cite{Kamionkowski1997}. 
+
+The complex field $_{\pm 2}X$ defined on the sphere can be decomposed in spin spherical harmonic functions: ${}_{\pm 2}X(\hat{n}) = \sum_{\ell m} {}_{\pm 2} X_{\ell m} {}_{\pm 2}Y_{\ell m}(\hat{n})$. On applying the spin raising and lowering operators on the spin spherical harmonic functions leads to the following identities \cite{goldberg67},
+%
+\begin{subequations}\label{eq:spinopylm} 
+\beqry
+\eth _s Y_{lm}(\hat{n}) &=& \sqrt{(\ell-s)(\ell+s+1)} _{s+1} Y_{lm}(\hat{n}) \,, \\
+\bar{\eth} _s Y_{lm}(\hat{n}) &=& -\sqrt{(\ell+s)(\ell-s+1)} _{s-1} Y_{lm}(\hat{n}) \,, 
+\eeqry
+\end{subequations}
+%
+where $_s Y_{lm}(\hat{n}) $ denote the spin-s spherical harmonics.
+
+Using the definition of $\mathcal{E/B}$, the spin spherical harmonic decomposition of ${}_{\pm2}X$ and the identities given in \eq{eq:spinopylm} it can be shown that the scalar fields $\mathcal{E}/\mathcal{B}$ are given by the following equations,
+%
+\beq \label{eq:pseudo}
+\mathcal{E}(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} \sqrt{\frac{(\ell+2)!}{(\ell-2)!}} Y_{\ell m} (\hat{n}) ~\,;~ \mathcal{B}(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} \sqrt{\frac{(\ell+2)!}{(\ell-2)!}} Y_{\ell m} (\hat{n}) \,,
+\eeq
+%
+where the harmonic coefficients $a^{E}_{\ell m}$  \& $a^{B}_{\ell m}$ are related to the harmonic coefficients of the spin-2 polarization field via the following equations,
+%
+\beq\label{eq:x2eb}
+a^{E}_{\ell m} = -\frac{1}{2} \Big[ {}_{+2}\tilde{X}_{\ell m} + {}_{-2}\tilde{X}_{\ell m} \Big] ~\,;~a^{B}_{\ell m} = -\frac{1}{2i} \Big[ {}_{+2}\tilde{X}_{\ell m} - {}_{-2}\tilde{X}_{\ell m} \Big] \,.
+\eeq
+%
+In the remainder of this article, we will work with the scalar $E$ and pseudo scalar $B$ fields as defined by the following equations, 
+%
+\beq \label{eq:realeb}
+E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n}) ~\,;~ B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
+\eeq
+%
+Note that these $E/B$ fields are merely filtered versions of $\mathcal{E}/\mathcal{B}$ as their spherical harmonic coefficients of expansion are related by the factor $[{(\ell+2)!}/{(\ell-2)!}]^{1/2}$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
+
+
+
+
+
+
+
 %--------------------------------------------------------
 %--------------------------------------------------------
 %\section{The spin-0 description of CMB polarization} \label{sec:pol-intro}
