@@ -1,8 +1,8 @@
 %--------------------------------------------------------
 %--------------------------------------------------------
 \subsubsection{Generalized operators}
-In this section we present a systematic method to generalize the real space operators that translate been $Q/U$ and $E/B$ description of CMB polarization.
-The azimuthal part of the real space kernels is constrained to be of the form $\sim e^{\pm i2 \alpha}$. The shape of the radial part of the operator is determined by the basis functions and varies as a function of the multipoles included in the summation. It is here that we may potentially choose alternate forms for the radial functions to suit certain kind of analysis.
+In this section we present a systematic method to generalize the real space operators that translate between $Q/U$ and $E/B$ description of CMB polarization.
+The azimuthal part of the real space kernels is constrained to be of the form $\sim e^{\pm i2 \alpha}$. The shape of the radial part of the operator is determined by the basis functions and varies as a function of the band limit. It is here that we may potentially choose alternate forms for the radial functions to suit certain kind of analysis.
 
 We can systematically generalize the real space operator by introducing the following harmonic space operator,
 %
@@ -19,7 +19,7 @@ where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic represe
 \eeqry
 \end{subequations}
 %
-where we have used the primed notation  to distinguish these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. Requiring both the forward and inverse operators to be well defined, constrains the choice of $\tilde{\mathcal{G}}$ to be such that it has a valid  inverse. This is an important criteria to recover the standard CMB spectra. The radial parts of this generalized operator and its inverse are given by the following expressions,
+where we have used the primed notation  to distinguish these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. Requiring both the forward and inverse operators to be well defined constrains the choice of $\tilde{\mathcal{G}}$ to be such that it has a valid  inverse. This is an important criteria to recover the standard CMB spectra. The radial parts of this generalized operator and its inverse are given by the following expressions,
 %
 \begin{subequations}\label{eq:generalized_radial_kernel}
 \beqry 
@@ -52,12 +52,12 @@ In contrast to the radial function $G(\beta)$ an instrumental beam function appr
 \subfigure[\label{fig:bl_gbeta}]{\includegraphics[width=0.48\columnwidth]{Gbeta_for_different_gl_lmax1536.pdf}}
 \subfigure[\label{fig:glbl}]{\includegraphics[width=0.48\columnwidth]{gl_for_different_gbeta_lmax1536.pdf}}
 \subfigure[\label{fig:gl_bbeta}]{\includegraphics[width=0.48\columnwidth]{Bbeta_for_gl_lmax1536.pdf}}
-\caption{\textit{Left:} The vertical dashed gray line depicts the approximate pixel size $\Delta_{\rm pix} = \sqrt{\frac{4 \pi}{N_{\rm pix}}}$ of a Nside=512 Healpix map. The green line depicts the default radial kernel $f(\beta)$ defined in \eq{eq:qu2eb_gen_kernel}. The blue and orange lines depict the modified radial function resulting the beam harmonics $b_{\ell}$ corresponding to Gaussian beams with fwhm=15 \& 12 arcminutes respectively. The red curve depicts an example modified radial function: $G(\beta)=\mathcal{N} \beta^n \exp{\left[ -\left( \frac{\beta-\beta0}{\sqrt{2} \sigma} \right)^s \right]}$ with parameters set to the following values $[n=1;\, \beta_0=0 ;\, \sigma = 2\Delta_{\rm pix} ;\, s=1.5]$. The black dashed curve depicts the band limited reconstruction of the modified radial function $G(\beta)$. We intentionally have plotted $\beta G(\beta)$ to clearly depict the high $\beta$ behavior of these functions. \textit{Middle: } This figure depicts the harmonic representation of the respective radial functions as indicated by the legend. The dashed curves of the corresponding color depict the inverse of the harmonic functions. \textit{Right:} This figure depicts the beam function $B(\beta)$ evaluated from interpreting the respective harmonic functions as those corresponding to an instrument beam.}
+\caption{\textit{Top left:} The green line depicts the default radial kernel $f(\beta)$ defined in \eq{eq:qu2eb_gen_kernel}, multiplied by an apodized step function $\theta(3 \beta_0)$. The blue and orange lines depict the modified radial function resulting the beam harmonics $b_{\ell}$ corresponding to Gaussian beams with fwhm=15 \& 12 arc-minutes respectively. The red curve depicts an example modified radial function: $G(\beta)=\mathcal{A} \beta^{n_o} \exp{\left[ -\left( \frac{\beta-\beta_s}{\sqrt{2} \sigma} \right)^{n_1} \right]}$ with parameters set to the following values $[n_0=1;\, \beta_s=0 ;\, \sigma = 0.004 ;\, n_1=1.5]$. The black dashed curve depicts the band limited reconstruction of the modified radial function. \textit{Top right:} This figure depicts the harmonic representation of the respective radial functions as indicated by the legend. The dashed curves of the corresponding color depict the inverse of the harmonic functions. \textit{Bottom:} This figure depicts the normalized beam function $B(\beta)$ evaluated from interpreting the respective harmonic functions as those corresponding to an effective instrument beam.}
 \label{fig:example_gbeta}
 \end{figure}
 %
 
- Therefore it is possible to interpret the beam harmonic coefficients as those representing some modified radial kernel. \fig{fig:glbl} depicts the harmonic functions $g_{\ell} (b_{\ell})$ for the respective radial kernel and beams.  The modified radial kernel resulting from Gaussian beams with ${\rm fwhm} =15' \,\&\, 12'$ are depicted in \fig{fig:bl_gbeta} as blue and orange curves respectively. Note that instruments  beams tend to increase the non-locality parameter $\beta_0$, indicated by the shifting right of the maxima of the respective kernels, as one may have expected. The red curve depicts a modified radial kernel which by construction has a very small $\beta_0$.  Similarly it is possible to interpret the harmonic representation $g_{\ell}$ of the radial function $G(\beta)$ as those corresponding to some instrument beam function. The beam function corresponding to the default radial kernel ($g_{\ell}=1$) is merely a band limited representation of the delta function depicted by the green curve \fig{fig:gl_bbeta}, while the red curve depicts the same for the modified radial kernel.
+ Therefore it is possible to interpret the beam harmonic coefficients as those representing some modified radial kernel. \fig{fig:glbl} depicts the harmonic functions $g_{\ell}$ for the respective radial kernel and beams.  The modified radial kernel resulting from Gaussian beams with ${\rm fwhm} =15' \,\&\, 12'$ are depicted in \fig{fig:bl_gbeta} as blue and orange curves respectively. Note that instruments  beams tend to increase the non-locality parameter $\beta_0$, indicated by the shifting right of the maxima of the respective kernels, as one may have expected. The red curve depicts a modified radial kernel which by construction has a very small $\beta_0$.  Note that the beam function corresponding to the default radial kernel ($g_{\ell}=1$) is merely a band limited representation of the delta function beam. \fig{fig:gl_bbeta} depicts the radial profile of the  effective beams corresponding to the different radial kernels.
 
 %In \sec{sec:local_conv_eb} we constructed localized convolution kernels by multiplying $R(\beta)$ with an apodized version of the step function $\theta_{\rm apo}(r_{\rm cutoff})$. The oscillation seen in the spectra in \fig{fig:eb-spectra_rad_cutoff} can be explained to be due to this effective beam characterized by $g_{\ell}^2$ operating on the power spectra. The effective beam can be evaluated by computing the multipole function $g_{\ell}$ as follows,
 %%
@@ -77,7 +77,7 @@ In contrast to the radial function $G(\beta)$ an instrumental beam function appr
 %The apodized step function in this case transition from 1 at $\beta < r_{\rm cutoff} -w$ to 0 at $r_{\rm cutoff}$ over a width $w= 3^{\circ}$ with a cosine squared profile .
 
 %--------------------------------------------------------
-\subsection{Recovering the default $E$ and $B$ mode spectra}
+\subsubsection{Recovering the default $E$ and $B$ mode spectra}
 The generalized convolution kernels defined in the previous section, when operated on the Stokes vector returns some scalar $E'$ and $B'$ mode maps,
 %
 \beq
@@ -93,23 +93,23 @@ C_{\ell}^{TE,TB}  &=&  C_{\ell}^{TE',TB'} / g_{\ell}\,,
  \eeqry
  \end{subequations}
  %
- where $C_{\ell}$ denotes the angular power spectra and $T$ refers to the temperature anisotropy map. Therefore the standard CMB spectra can be always recovered as long as the $1/g_{\ell}$ is well behaved, which can be ensured by making a suitable choice for the modified radial function $G(\beta)$. Some examples forms of $G(\beta)$, its harmonic representation $g_{\ell}$ (and its inverse $1/g_{\ell}$ ) and the corresponding beam $B(\beta)$ are depicted in \fig{fig:example_gbeta}.
+ where $C_{\ell}$ denotes the angular power spectra and $T$ refers to the temperature anisotropy map. Therefore the standard CMB spectra can be always recovered as long as the $1/g_{\ell}$ \& $1/g_{\ell}^2$ are well behaved functions, which can be ensured by making a suitable choice for the modified radial function $G(\beta)$. Some examples forms of $G(\beta)$, its harmonic representation $g_{\ell}$ (and its inverse $1/g_{\ell}$ ) and the corresponding beam $B(\beta)$ are depicted in \fig{fig:example_gbeta}.
 %One direct application of this freedom in choosing the radial kernel is that one can mitigate the issue of leakage of power from $E$ to $B$.  By constructing a radial function which tapers to zero at sufficiently small radii one can clearly discard pixels which are affected by masking. 
 %--------------------------------------------------------
 
 %--------------------------------------------------------
-\subsection{Relation to the spin raising $\eth^2$ and lowering $\bar{\eth}^2$ operators}
-Recall that's on operating twice with the spin lowering operator on the Stokes charge ${}_{-2}X$ results in filtered version of the $E$ and $B$ mode maps as in \eq{eq:ebdef}. We can construct a modified real space operator by choosing the harmonic space function to be $g_{\ell} = \sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$, resulting in similarly filtered $E$ and $B$ mode maps as follows,
+\subsubsection{Relation to the spin raising $\eth^2$ and lowering $\bar{\eth}^2$ operators}
+Recall that's on operating twice with the spin lowering operator on the Stokes charge ${}_{-2}X$ results in filtered version of $E/B$ maps as in \eq{eq:ebdef}. We can construct a modified real space operator by choosing the harmonic space function to be $g_{\ell} = \sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$, resulting in similarly filtered $E/B$ maps as follows,
 %
 \beq
 [\mathcal{E} + i \mathcal{B}](\hat{n}_e)=- \Delta \Omega\sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace  \left[  \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}} {}_{+2}X(\hat{n}_{q}) \Bigg\rbrace \,. \label{eq:bl_ebdef_lower}
 \eeq
 %
-Comparing \eq{eq:ebdef_lower} to \eq{eq:bl_ebdef_lower} allows us to map the following mapping,
+Comparing \eq{eq:ebdef_lower} to \eq{eq:bl_ebdef_lower} makes apparent the following mapping,
 %
 \beq
 \bar{\eth}^2 \equiv \Delta \Omega \sum_{q=1}^{N_{\rm pix}} \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}}\,.
 \eeq
 %
-Here it is important to the operator $\bar{\eth}^2$ is composed of derivatives and hence has an implicit bi-positional dependence for all practical purposes which is made explicit in the band limited version of the operator.  The band limited version of the spin raising operator $\eth^2$ is derived by merely taking the conjugate of the above equation.
+The operator $\bar{\eth}^2$ is composed of derivative operations and hence has an implicit bi-positional dependence for all numerical purposes which is made explicit in the band limited version of the operator.  The band limited version of the spin raising operator $\eth^2$ is derived by merely taking the conjugate of the above equation.
 %--------------------------------------------------------

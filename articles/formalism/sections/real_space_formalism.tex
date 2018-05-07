@@ -1,5 +1,6 @@
-%\section{Real space polarization operators}
 \section{Polarization primer}
+\subsection{A heuristic argument for constructing $E/B$ fields on the sphere}
+\comment{Need a better title for the section that gives the heuristic argument}
 %\textit{Alternative for bringing the heuristic argument earlier.}
 
  CMB polarization is measured in terms of Stokes parameters, averages of the linear polarization of the electric field along cartesian axes perpendicular to the line of sight.  (Throughout we use the conventions of HEALPix \cite{healpix_primer}.) Thus Stokes $Q$ and $U$ depend on the choice of the local coordinate system and a rotation by an angle $\psi$ around the line of sight transforms them as
@@ -43,7 +44,7 @@ This type of construction can be generalized to transform a field of any spin to
 The kernel's azimuthal part depends only on the Euler angle $\alpha_{qe}$, and so its harmonic transform has no multipole $\ell$ dependence.  The azimuthal part is the crucial operation that translates between different spin representation of CMB polarization. Only the radial part of the kernel $f(\beta_{qe})$ depends only on the angular separation between locations and hence must completely incorporate all the multipole $\ell$ dependence. 
 
 %--------------------------------------------------------
-\subsection{Standard $E$/$B$ fields and Matrix notation} \label{sec:mat_pol_intro}
+\subsection{Standard $E$/$B$ fields} \label{sec:mat_pol_intro}
 
 
 The standard construction of $E/B$ fields depend on the spin-raising and -lowering operators, and is usually carried out in harmonic space.  The spin-raising operator ($\eth$), applied to a field of spin-s $_{s}g$, results in a fields with spin-$(s+1)$: $(\eth _{s}g)' = e^{-i(s+1)\psi}(\eth _{s}g)$  \cite{goldberg67}.  The complementary spin-lowering operator $(\bar{\eth})$  similarly results with $(\bar{\eth} _{s}g)' = e^{-i(s-1)\psi}(\bar{\eth} _{s}g)$.  The complex spin-0 scalar now arise from  the spin-2 fields ${_{\pm 2}X}$ as follows,
@@ -95,8 +96,8 @@ These $E/B$ fields are merely red-filtered versions of $\mathcal{E}/\mathcal{B}$
 
 
 
-
-
+\section{Real space polarization operators}
+\subsection{Matrix notation} \label{sec:mat_pol_intro}
 Our derivation of real space operators is more transparent in a matrix-vector notation.\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}
 We introduce a matrix that encodes spin spherical harmonic basis vectors,
 %
