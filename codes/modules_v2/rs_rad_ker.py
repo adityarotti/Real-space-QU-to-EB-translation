@@ -125,3 +125,5 @@ def get_beam_form_bl(theta,bl):
 	beam=lgdr.legval(np.cos(theta),((2.*ell+1.)/(4.*np.pi))*bl,tensor=False)
 	return beam
 
+def get_beta0(lmax):
+    return np.min(180.,180.*22./lmax)*np.pi/180.

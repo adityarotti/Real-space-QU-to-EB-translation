@@ -1,8 +1,8 @@
 %--------------------------------------------------------
 %--------------------------------------------------------
-\section{Generalized operators}
+\subsubsection{Generalized operators}
 In this section we present a systematic method to generalize the real space operators that translate been $Q/U$ and $E/B$ description of CMB polarization.
-The azimuthal part of the real space kernels is constrained to be of the form $e^{-i2 \alpha}$. The shape of the radial part of the operator is determined by the basis functions and varies as a function of the multipoles included in the summation. It is here that we may potentially choose alternate forms for the radial functions to suit certain kind of analysis.
+The azimuthal part of the real space kernels is constrained to be of the form $\sim e^{\pm i2 \alpha}$. The shape of the radial part of the operator is determined by the basis functions and varies as a function of the multipoles included in the summation. It is here that we may potentially choose alternate forms for the radial functions to suit certain kind of analysis.
 
 We can systematically generalize the real space operator by introducing the following harmonic space operator,
 %
@@ -10,7 +10,7 @@ We can systematically generalize the real space operator by introducing the foll
 \tilde{\mathcal{G}} = {\begin{bmatrix} g_{\ell}^E & 0  \\  0 & g_{\ell}^B \end{bmatrix}} \,,
 \eeq
 %
-where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic representation of the modified radial functions and can in the most general case be chosen to be different for $E$ and $B$ modes. To simplify the discussion and without loosing generality we proceed by setting $g_{\ell}^E = g_{\ell}^B= g_{\ell}$. Once we have made a choice for this harmonic function, we can define the real space operator $\bar{O}'$ which translates Stokes $Q$ \& $U$ to scalars $E$ \& $B$ and the inverse operator $\bar{O}'^{-1}$ in the following manner,
+where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic representation of the modified radial functions and can in the most general case be chosen to be different for $E$ and $B$ modes. To simplify discussions and without loosing generality we proceed by setting $g_{\ell}^E = g_{\ell}^B= g_{\ell}$. Given this harmonic function $g_{\ell}$, we can define the real space operator $\bar{O}'$ which translates Stokes $Q$ \& $U$ to scalars $E$ \& $B$ and the inverse operator $\bar{O}'^{-1}$ in the following manner,
 %
 \begin{subequations} \label{eq:gen_qu2eb}
 \beqry
@@ -19,33 +19,33 @@ where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic represe
 \eeqry
 \end{subequations}
 %
-where we have used the primed notation  to distinguish these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. If we require both the forward and inverse operators to be well defined, then we are constrained in choosing $\tilde{\mathcal{G}}$ such that it has a valid  inverse. As we will see this will be an important criteria to recover the standard CMB spectra. The radial parts of this generalized operator and its inverse are given by the following expressions,
+where we have used the primed notation  to distinguish these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. Requiring both the forward and inverse operators to be well defined, constrains the choice of $\tilde{\mathcal{G}}$ to be such that it has a valid  inverse. This is an important criteria to recover the standard CMB spectra. The radial parts of this generalized operator and its inverse are given by the following expressions,
 %
-\begin{subequations}
-\beqry
-G_{QU \rightarrow EB}(\beta) &=& G(\beta) = \sum _{\ell=2} ^{\ell_{\rm max}} g_{\ell}\frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell + 2)!}} P_{\ell}^2(\cos{\beta}) \, \label{eq:mod_rad_forward} \\
-G_{EB \rightarrow QU}(\beta) &=& G^{-1}(\beta) = \sum _{\ell=2} ^{\ell_{\rm max}} g_{\ell}^{-1}\frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell + 2)!}} P_{\ell}^2(\cos{\beta}) \,,\label{eq:mod_rad_inverse}
+\begin{subequations}\label{eq:generalized_radial_kernel}
+\beqry 
+G_{QU \rightarrow EB}(\beta) &=& G(\beta) = \sum _{\ell=2} ^{\ell_{\rm max}} g_{\ell}\frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell + 2)!}} P_{\ell}^2(\cos{\beta}) \, \label{eq:mod_rad_forward} \,, \\
+G_{EB \rightarrow QU}(\beta) &=& G^{-1}(\beta) = \sum _{\ell=2} ^{\ell_{\rm max}} g_{\ell}^{-1}\frac{2 \ell+1}{4 \pi} \sqrt{\frac{(\ell-2)!}{(\ell + 2)!}} P_{\ell}^2(\cos{\beta}) \,. \label{eq:mod_rad_inverse}
 \eeqry
 \end{subequations}
 %
-where $g_{\ell}$ is the harmonic space function used in defining $\tilde{\mathcal{G}}$. Given this general definition for the radial function $G(\beta)$, note that the default radial function ${{}_{\mm}f}$ is just a special case resulting from the choice $\tilde{\mathcal{G}}=\mathbb{1}$ ($g_{\ell}=1$). Note that for this choice of $\tilde{\mathcal{G}}$ the inverse is trivial $\tilde{\mathcal{G}}^{-1}=\tilde{\mathcal{G}}$ and therefore $G^{-1}(\beta) = G(\beta)$.
+The default radial function is just a special case resulting from the choice $\tilde{\mathcal{G}}=\mathbb{1}$ ($g_{\ell}=1$), in which case $\tilde{\mathcal{G}}^{-1}=\tilde{\mathcal{G}}$ and therefore $G^{-1}(\beta) = G(\beta)={{}_{\mm}f}$.
 
-While defining these generalized operators, it seems more natural to choose the real space function $G(\beta)$ as compared to choosing the multipole function $g_{\ell}$. Using the orthogonality property of associated Legendre polynomials it can be shown that the harmonic function $g_{\ell}$ is given by the following integral over the radial function $G(\beta)$,
+While defining these generalized operators, it is more natural to choose the real space function $G(\beta)$, bearing in mind the constraint that $G(\beta=0)=G(\beta=\pi)=0$. Employing the orthogonality property of associated Legendre polynomials it can be shown that the harmonic function $g_{\ell}$ is given by the expression,
 %
 \beq
 g_{\ell} = 2 \pi \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} \int _{0}^{\pi} G(\beta) P_{\ell}^{2}(\cos{\beta}) d\cos{\beta} \,. \label{eq:gb2bl}
 \eeq
 %
-Here it is important to note that the radial function $G(\beta)$ has to be necessarily chosen such that it vanishes at $\beta=0$ and $\beta=\pi$ in order to ensure that the resultant field has the required spin properties. 
-%One way to understand this is that the associated Legendre polynomials $P_{\ell}^2 \propto \sin^2{\beta}$ vanish at these values of the abscissa and hence cannot be used to describe functions which don't have this property.  Another way to understand this requirements is that at these locations the coordinate dependence of the Stokes parameters cannot be integrated out, since the azimuthal angle is ill defined and hence the convolution kernel needs to have vanishing contribution from these locations. \revisit{The normalization of these functions is not critically important, since any choice defines a convention. It is important to ensure consistency with the convention once a choice has been made.} \comment{find a better location for this}
 
-An arbirtrary $G(\beta)$ for which $g_{\ell} \neq 1$ can be equivalently thought in terms of the standard E and B mode fields being convolved with some effective circularly symmetric instrument beam. The radial profile of this effective beam is given by,
+
+An arbirtrary $G(\beta)$ for which $g_{\ell} \neq 1$ can be equivalently thought in terms of the standard E and B fields being convolved with some effective circularly symmetric instrument beam whose radial profile is given by the expression,
 %
 \beq
-B(\beta) = \sum_{\ell=0}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} g_{\ell} P_{\ell}^{0} (\cos{\beta})\,.
+B(\beta) = \sum_{\ell=0}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} g_{\ell} P_{\ell}^{0} (\cos{\beta})\,,
 \eeq
 %
-Note that in contrast to the radial function $G(\beta)$ an instrumental beam function appropriately normalized has the property $B(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. Though the real space behavior of these two function $G(\beta)$ and $B(\beta)$ has important differences, in harmonic space they play identical roles.
+where $g_{\ell}$ is the same harmonic function as that appearing in \eq{eq:generalized_radial_kernel}.
+In contrast to the radial function $G(\beta)$ an instrumental beam function appropriately normalized has the property $B(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. Though the real space behavior of these two function $G(\beta)$ and $B(\beta)$ has these differences, in harmonic space they play identical roles.
 %
 \begin{figure}[!t] 
 \centering
@@ -76,20 +76,7 @@ Note that in contrast to the radial function $G(\beta)$ an instrumental beam fun
 %%
 %The apodized step function in this case transition from 1 at $\beta < r_{\rm cutoff} -w$ to 0 at $r_{\rm cutoff}$ over a width $w= 3^{\circ}$ with a cosine squared profile .
 
-\subsection{Relation to the spin raising$(\eth^2)$/lowering$(\bar{\eth}^2)$ operations}
-Recall that's on operating twice with the spin lowering operator on the Stokes charge ${}_{-2}X$ results in filtered version of the E/B mode maps as in \eq{eq:ebdef}. Now note that we can construct similarly filtered $E/B$ mode maps by choosing the harmonic space function to be $g_{\ell} = \sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$. It can be shown that real space operator takes the following form,
-%
-\beq
-[\mathcal{E} + i \mathcal{B}](\hat{n}_e)=- \Delta \Omega\sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace  \left[  \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}} {}_{+2}X(\hat{n}_{q}) \Bigg\rbrace \,.
-\eeq
-%
-Therefore the band limited version of the spin lowering operations is given by,
-%
-\beq
-\bar{\eth}^2 \equiv \Delta \Omega \sum_{q=1}^{N_{\rm pix}} \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}}
-\eeq
-%
-The band limited version of the spin raising operations is given by merely by the conjugate $(\bar{\eth}^2)^*$.
+%--------------------------------------------------------
 \subsection{Recovering the default $E$ and $B$ mode spectra}
 The generalized convolution kernels defined in the previous section, when operated on the Stokes vector returns some scalar $E'$ and $B'$ mode maps,
 %
@@ -97,7 +84,7 @@ The generalized convolution kernels defined in the previous section, when operat
 \bar{S}' = \bar{O}' * \bar{P}
 \eeq
 %
-which as we show are mere filtered version of he standard $E$ and $B$ modes maps. The harmonic representation $g_{\ell}$ of the radial function $G(\beta)$ can be simply interpreted as the harmonic coefficients of some azimuthally symmetric beam $B(\beta) = \sum_{\ell} \frac{2 \ell+1}{4 \pi} g_{\ell} P^0_{\ell}(\cos{\beta})$. The spectra of the scalar fields $E'$ and $B'$ derived using the real space operators constructed using an arbitrary radial function $G(\beta)$ are related to the spectra of the standard $E$ and $B$ fields via the following relation, 
+which are merely filtered version of he standard $E$ and $B$ modes maps. Since the harmonic functions $g_{\ell}$ of the modified radial function $G(\beta)$ can be simply interpreted as the harmonic coefficients of some azimuthally symmetric beam, the spectra of the scalar fields $E'$ and $B'$ are related to the spectra of the standard $E$ and $B$ fields via the following relation, 
  %
  \begin{subequations}
  \beqry
@@ -106,7 +93,23 @@ C_{\ell}^{TE,TB}  &=&  C_{\ell}^{TE',TB'} / g_{\ell}\,,
  \eeqry
  \end{subequations}
  %
- where $C_{\ell}$ denotes the angular power spectra and $T$ refers to the temperature anisotropy map. Therefore the standard $E$ and $B$ mode spectra can be recovered from the modified fields $E'$ and $B'$ and their accurate recovery only relies on the inverse of the harmonic functions $1/g_{\ell}$ being well behaved, which can be ensured by making a suitable choice for the radial function $G(\beta)$. Examples of various forms of $G(\beta)$, its harmonic representation $g_{\ell}$ (and its inverse $1/g_{\ell}$ ) and the corresponding beam $B(\beta)$ are depicted in \fig{fig:example_gbeta}.
+ where $C_{\ell}$ denotes the angular power spectra and $T$ refers to the temperature anisotropy map. Therefore the standard CMB spectra can be always recovered as long as the $1/g_{\ell}$ is well behaved, which can be ensured by making a suitable choice for the modified radial function $G(\beta)$. Some examples forms of $G(\beta)$, its harmonic representation $g_{\ell}$ (and its inverse $1/g_{\ell}$ ) and the corresponding beam $B(\beta)$ are depicted in \fig{fig:example_gbeta}.
 %One direct application of this freedom in choosing the radial kernel is that one can mitigate the issue of leakage of power from $E$ to $B$.  By constructing a radial function which tapers to zero at sufficiently small radii one can clearly discard pixels which are affected by masking. 
 %--------------------------------------------------------
+
+%--------------------------------------------------------
+\subsection{Relation to the spin raising $\eth^2$ and lowering $\bar{\eth}^2$ operators}
+Recall that's on operating twice with the spin lowering operator on the Stokes charge ${}_{-2}X$ results in filtered version of the $E$ and $B$ mode maps as in \eq{eq:ebdef}. We can construct a modified real space operator by choosing the harmonic space function to be $g_{\ell} = \sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$, resulting in similarly filtered $E$ and $B$ mode maps as follows,
+%
+\beq
+[\mathcal{E} + i \mathcal{B}](\hat{n}_e)=- \Delta \Omega\sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace  \left[  \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}} {}_{+2}X(\hat{n}_{q}) \Bigg\rbrace \,. \label{eq:bl_ebdef_lower}
+\eeq
+%
+Comparing \eq{eq:ebdef_lower} to \eq{eq:bl_ebdef_lower} allows us to map the following mapping,
+%
+\beq
+\bar{\eth}^2 \equiv \Delta \Omega \sum_{q=1}^{N_{\rm pix}} \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}}\,.
+\eeq
+%
+Here it is important to the operator $\bar{\eth}^2$ is composed of derivatives and hence has an implicit bi-positional dependence for all practical purposes which is made explicit in the band limited version of the operator.  The band limited version of the spin raising operator $\eth^2$ is derived by merely taking the conjugate of the above equation.
 %--------------------------------------------------------

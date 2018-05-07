@@ -1,16 +1,17 @@
-\section{Real space polarization operators}
-\textit{Alternative for bringing the heuristic argument earlier.}
+%\section{Real space polarization operators}
+\section{Polarization primer}
+%\textit{Alternative for bringing the heuristic argument earlier.}
 
  CMB polarization is measured in terms of Stokes parameters, averages of the linear polarization of the electric field along cartesian axes perpendicular to the line of sight.  (Throughout we use the conventions of HEALPix \cite{healpix_primer}.) Thus Stokes $Q$ and $U$ depend on the choice of the local coordinate system and a rotation by an angle $\psi$ around the line of sight transforms them as
 %
 \beq \label{eq:qu-rot}
 \fqu' = \begin{bmatrix} \cos{2 \psi} &  \sin{2 \psi} \\ -\sin{2\psi} & \cos{2 \psi} \end{bmatrix} \fqu \,.
 \eeq
-Because the combination $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$, the Stokes parameters are components of a spin-2 field \cite{Zaldarriaga1997}.
+Equivalently the object $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$ and hence forms a spin-2 field \cite{Zaldarriaga1997}.
 
-The standard construction of $E/B$ fields arise from the desire to have a coordinate independent description of the polarization and follow from operations that raise (or lower) the spin of the $X$ field to construct scalar fields.  But from the transform properties of the Stokes parameters, we can already make a heuristic argument for what these operations must look like in real space.
+The standard construction of $E$ and $B$ fields arise from the desire to have a coordinate independent description of the polarization. This follows from operations that raise (or lower) the spin of the $X$ field to construct scalar fields.  But from the transform properties of the Stokes parameters, we can already construct a heuristic argument for what these operations must look like in real space.
 
-We consider the contribution from the polarization field (evaluated at $\hat n_q$) to a scalar field (evaluated at $\hat n_e$).  Figure \ref{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a rotation around the local $\hat n_q$ by angle $\alpha$, parallel transport by angle $\beta$, and a rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}.
+We consider the contribution from the polarization field (evaluated at $\hat n_q$) to a scalar field (evaluated at $\hat n_e$). \fig{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a rotation around the local $\hat n_q$ by angle $\alpha$, parallel transport by angle $\beta$, and a rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}.
 %
 \begin{figure}%[!hbt]
 \centering
@@ -120,7 +121,7 @@ The coordinate dependence of Stokes parameters make them inconvenient to work wi
 %
 \begin{subequations}\label{eq:ebdef}
 \beqry
-\mathcal{E}(\hat{n}) + i \mathcal{B}(\hat{n}) &=& -\bar{\eth}^2 _{+ 2}\bar{X}(\hat{n}) \,,\\
+\mathcal{E}(\hat{n}) + i \mathcal{B}(\hat{n}) &=& -\bar{\eth}^2 _{+ 2}\bar{X}(\hat{n}) \,,\label{eq:ebdef_lower}\\
 \mathcal{E}(\hat{n}) - i \mathcal{B}(\hat{n}) &=& -{\eth}^2 _{-2}\bar{X}(\hat{n}) \,.
 \eeqry
 \end{subequations}
