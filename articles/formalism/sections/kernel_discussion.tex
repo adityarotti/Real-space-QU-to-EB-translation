@@ -32,13 +32,13 @@
 \subfigure{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2ebqu_rker_I_lat80_lon30.pdf}}\hspace{-2mm}
 \subfigure{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2ebqu_iker_I_lat80_lon30.pdf}}\hspace{-2mm}
 \subfigure[$ \textrm{Re} \left(\mathcal{M}_{G} \right) $]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2eb_rker_rad_lat0_lon90.pdf}}\hspace{-2mm}
-\subfigure[$\textrm{Img} \left(\mathcal{M}_{G} \right) $]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2eb_iker_rad_lat0_lon90.pdf}}\hspace{-2mm}
-\subfigure[$\textrm{Re}  \left(\mathcal{M}_{B} \right) $]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2eb_rker_con_lat0_lon90.pdf}}\hspace{-2mm}
-\subfigure[$\textrm{Img} \left(\mathcal{M}_{B} \right) $]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2eb_iker_con_lat0_lon90.pdf}}\hspace{-2mm}
+\subfigure[$\textrm{Im} \left(\mathcal{M}_{G} \right) $]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2eb_iker_rad_lat0_lon90.pdf}}\hspace{-2mm}
+\subfigure[$\textrm{Re}  \left(\mathcal{M}_{B}^* \right) $]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2eb_rker_con_lat0_lon90.pdf}}\hspace{-2mm}
+\subfigure[$\textrm{Im} \left(\mathcal{M}_{B}^* \right) $]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2eb_iker_con_lat0_lon90.pdf}}\hspace{-2mm}
 \subfigure[$\textrm{Re} \left(\mathcal{D} \right)$]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2ebqu_rker_D_lat0_lon90.pdf}}\hspace{-2mm}
-\subfigure[$\textrm{Img} \left(\mathcal{D} \right)$]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2ebqu_iker_D_lat0_lon90.pdf}}\hspace{-2mm}
+\subfigure[$\textrm{Im} \left(\mathcal{D} \right)$]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2ebqu_iker_D_lat0_lon90.pdf}}\hspace{-2mm}
 \subfigure[$\textrm{Re} \left(\mathcal{I} \right)$]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2ebqu_rker_I_lat0_lon90.pdf}}\hspace{-2mm}
-\subfigure[$\textrm{Img} \left(\mathcal{I} \right)$]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2ebqu_iker_I_lat0_lon90.pdf}}\hspace{-2mm}
+\subfigure[$\textrm{Im} \left(\mathcal{I} \right)$]{\includegraphics[width=0.125\columnwidth]{new_kernel/qu2ebqu_iker_I_lat0_lon90.pdf}}\hspace{-2mm}
 \caption{This panel of figure depicts the real and imaginary parts of the real space kernels $\mathcal{M}_{G}$, $\mathcal{M}_{B}$, $\mathcal{D}$ \& $\mathcal{I}$ respectively. These kernels have been evaluated with the band limit: $\ell \in [2,192]$ and sampled at the Healpix resolution parameter NSIDE=2048 for visual appeal. The size of each panel is approximately $16^{\circ} \times 16^{\circ}$ and the grid lines are marked at 2 degree separations. The black circles denotes the position of the center around which the kernels have been evaluated while the black star marks the location of the north galactic pole. The four rows depict the kernels at different location on the sphere and the galactic coordinates of the central pixel are specified in each panel.}
 %from top to bottom rows are as follows $[b,\ell] = [0^{\circ},0^{\circ}], [87^{\circ},0^{\circ}], [87^{\circ},30^{\circ}], [80^{\circ},30^{\circ}], [0^{\circ},90^{\circ}]$.}
 \label{fig:vis_kernel}
@@ -60,7 +60,7 @@
 %These rotation operations can be carried out using inbuilt Healpix routine \textit{rotate\_alm}, while the convolution kernels can be synthesized by evaluating the respective spherical harmonic sums using the \textit{alm2map} routine. 
 %\comment{Make parallels with instrument beam analysis here ? Or is it trivial since its obvious that all convolution problems can be cast in this form.}
 
-We compute the Euler angles $(\alpha, \beta, \gamma)$ given the angular coordinates of any two Healpix pixels and use these to evaluate the convolution and the radiating kernels. To provide an intuition for how these kernels vary as a function of position of the central pixel we depict in \fig{fig:vis_kernel} the respective kernels at a few different locations on the sphere.
+We compute the Euler angles $(\alpha, \beta, \gamma)$ given the angular coordinates of any two Healpix pixels and use these to evaluate the convolution and radiation kernels. To provide an intuition for how these kernels vary as a function of position of the central pixel we depict in \fig{fig:vis_kernel} the respective kernels at a few different locations on the sphere.
 While the kernels are evaluated in the band limit $\ell \in [2,192]$, for illustration these functions are sampled at a very high Healpix resolution parameter of NSIDE=2048. All the plots have been rotated such that the central location marked by the black circle are in the centre of the figure. The horizontal and vertical lines that pass through the central black circle mark the local latitude and longitude respectively.
 
 The real and imaginary part of the kernel $\mathcal{M}_G$ are identical irrespective of changes in the galactic latitude and longitude of the central pixel. This is consistent with the Green's function interpretation of these kernels. Note that these functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first three rows of \fig{fig:vis_kernel}. Both these facts can be associated with the fact that this function does not depend on the Euler angle $\gamma$. From \eq{eq:qu2eb_convolution_explicit} and \eq{eq:eb2qu_convolution_explicit} it is clear that $\mathcal{M}_r$ and $\mathcal{M}_i$ can be interpreted in the following ways,
@@ -68,8 +68,8 @@ The real and imaginary part of the kernel $\mathcal{M}_G$ are identical irrespec
 %
 \begin{subequations}
 \beqry
-\bmat E= -\mathcal{M}_r \\ B =+\mathcal{M}_i  \emat  \leftarrow \bmat Q=\delta(\hat{n} - \hat{n}_j)\\ U=0 \emat ~~;~~ \bmat E= -\mathcal{M}_i \\ B = - \mathcal{M}_r  \emat  \leftarrow \bmat Q=0 \\ U=\delta(\hat{n} - \hat{n}_j) \emat \,,  \\
-\bmat Q= -\mathcal{M}_r \\ U = -\mathcal{M}_i  \emat  \leftarrow \bmat E=\delta(\hat{n} - \hat{n}_j)\\ B=0 \emat ~~;~~ \bmat Q= +\mathcal{M}_i \\ U = - \mathcal{M}_r  \emat  \leftarrow \bmat E=0 \\ B=\delta(\hat{n} - \hat{n}_j) \emat \,.
+\bmat E= \textrm{Re}(\mathcal{M}_G) \\ B =\textrm{Im}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=\delta(\hat{n} - \hat{n}_q)\\ U=0 \emat ~;~ \bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\delta(\hat{n} - \hat{n}_q) \emat \,,\\
+\bmat Q= \textrm{Re}(\mathcal{M}^*_B) \\ U = \textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\delta(\hat{n} - \hat{n}_e)\\ B=0 \emat ~;~ \bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = \textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\delta(\hat{n} - \hat{n}_e) \emat \,.
 \eeqry
 \end{subequations}
 %

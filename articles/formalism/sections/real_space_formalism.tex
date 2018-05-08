@@ -369,15 +369,17 @@ Finally the Stokes parameters corresponding to the respective scalar fields can 
 %
 where all the symbols have their usual meaning. The above expression can be cast in the further simplified form,
 %
+\begin{subequations}
 \beqry
 {}_{+2}X_{E/B}(\hat{n}_e) &=&0.5 \Delta \Omega\sum_{q=1}^{N_{\rm pix}}  {{}_{\mi}f}(\beta_{qe}) e^{-i2 (\alpha_{qe} + \gamma_{qe})} {}_{+2}X(\hat{n}_q) \pm {{}_{\md}f}(\beta_{qe}) e^{i2 (\alpha_{qe} - \gamma_{qe})} {}_{+2}X(\hat{n}_q)^* \,, \nonumber \\
-&=& 0.5 \Bigg\lbrace \mathcal{I}^* \circ {}_{+2}X\pm \mathcal{D} \circ {}_{+2}X^* \Bigg\rbrace \,, \label{eq:qu2equbqu_convolution}
+&=& 0.5 \Bigg\lbrace  {}_{+2}X \cdot \mathcal{I}^*_G \pm {}_{+2}X^* \cdot \mathcal{D}_G \Bigg\rbrace \hspace{.5cm }\textrm{\emph{   Radiation kernel}} \,, \\
+&=& 0.5 \Bigg\lbrace \mathcal{I}_B \circ {}_{+2}X\pm \mathcal{D}_B \circ {}_{+2}X^* \Bigg\rbrace   \hspace{.5cm } \textrm{\emph {  Convolution kernel}} \,, \label{eq:qu2equbqu_convolution}
 \eeqry
+\begin{subequations}
 %
-where we have suppressed the explicit multipole dependence of functions ${}_{\mdi}f$ for brevity. \revisit{Comment on the radiating and convolution form of the operators.}
+where all the symbols have their usual meaning and the explicit multipole dependence of the real space operators has been suppressed for brevity. Note that when the operators $\mathcal{I}^*$ \& $\mathcal{D}$ are expressed in terms of the Euler angles $(\alpha_{qe},\beta_{qe},\gamma_{qe})$ they can be interpreted as the Greens functions and  we denote them as $\mathcal{I}^*_G$ \& $\mathcal{D}_G$. When expressed as function of Euler angles $(\alpha_{eq},\beta_{eq},\gamma_{eq})$ corresponding to the inverse rotations they can be interpreted as a some convolving beam and we denote them as $\mathcal{I}_B$ \& $\mathcal{D}_B$. Note that unlike in the case of the operators $\mm_G$ \& $\mm_B$ which have different shapes owing to their dependence on Euler angles $\alpha$ and $\gamma$ respectively, the operators $D_G$ \& $D_B$ are identical since $(\alpha_{qe}-\gamma_{qe}) = (\alpha_{eq}-\gamma_{eq})$, while $\mathcal{I}^*_{G}$ \& $\mathcal{I}_B$ are related by conjugation since  $(\alpha_{qe}+\gamma_{qe}) = -(\alpha_{eq}+\gamma_{eq})$.
 
-\comment{Recheck the math described below}
-The operator $\mathcal{I}$ is a band limited version of the delta function ($\lim_{\ell \rightarrow \infty} \mathcal{I} = \delta(\hat{n}_i - \hat{n}_j)$) for spin-2 fields. When interpreted as a matrix it is a band limited version of the identity matrix. Though it has non-vanishing off diagonal elements ($\mathcal{I} \neq 0 $ when $\hat{n}_i \neq \hat{n}_j$) owing to the band limit, for all practical purposes $\mathcal{I}$ acts like an identity operator as is confirmed by the following set of identities: (i) $\mathcal{I}*\mathcal{I}=\mathcal{I}$ ; (ii) $\mathcal{D}*\mathcal{I}=\mathcal{D}$. Also $\mathcal{D}^*$ is the inverse of $\mathcal{D}$ in this band limited sense: $\mathcal{D}^**\mathcal{D}=\mathcal{I}$. It is useful to note that the operator $\mathcal{D}$ is a complex but symmetric matrix and $\mathcal{I}$ is an Hermitian operator. Using these properties of the operators $\mathcal{I}$ and $\mathcal{D}$, one can verify that the real space operators satisfy the following identities,
+The operator $\mathcal{I}$ is Hermitian and is a band limited version of the delta function owing to the identity $\lim_{\ell \rightarrow \infty} \mathcal{I} = \delta(\hat{n}_i - \hat{n}_j)$. For all practical purposes $\mathcal{I}$ acts like an identity operator as is confirmed by the following set of identities: (i) $\mathcal{I}*\mathcal{I}=\mathcal{I}$ ; (ii) $\mathcal{D}*\mathcal{I}=\mathcal{D}$. $\mathcal{D}$ is a complex but symmetric matrix and $\mathcal{D}^*$ is its inverse in this band limited sense: $\mathcal{D}^**\mathcal{D}=\mathcal{I}$. Using these properties of the operators $\mathcal{I}$ and $\mathcal{D}$, one can verify that the real space operators satisfy the following identities,
 %
 \begin{subequations}
 \beqry
@@ -387,8 +389,6 @@ The operator $\mathcal{I}$ is a band limited version of the delta function ($\li
 \eeqry
 \end{subequations}
 %
-which are the real space analogues of \eq{eq:har_op_prop}. While testing the above stated identities one encounters terms like $\mathcal{D}*\mathcal{I}^*,\mathcal{I}^**\mathcal{I} \textrm{ and }  \mathcal{I}*\mathcal{I}^*$ which cannot be simply interpreted, but they always occur in pairs with opposite signs, hence exactly cancel each other. 
+which are the real space analogues of \eq{eq:har_op_prop}. \footnote{While testing the above stated identities one encounters terms like $\mathcal{D}*\mathcal{I}^*,\mathcal{I}^**\mathcal{I} \textrm{ and }  \mathcal{I}*\mathcal{I}^*$ which cannot be simply interpreted but they always occur in pairs with opposite signs that exactly cancel each other.}
 
-Note that unlike in the harmonic case, the sum of the operators is not exactly an identity matrix. 
-%\comment{Isn't it possible to do some real space operations which doesn't care for the band limit but still returns the required decomposition into the respective scalar modes ?} 
-This non-exactness is representative of the loss of information resulting from making this transformation on the measured data with some imposed band limit. Forcing the sum of the operators to be exactly an identity matrix compromises the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators, which is exact.
+Note that unlike in the harmonic case, the sum of the operators is the band limited identity operator $\mathcal{I}$. This non-exactness is representative of the loss of information resulting from making this transformation on the measured data with some imposed band limit. Forcing the sum of the operators to be exactly an identity matrix compromises the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators which is exact and a more crucial property of the operators.
