@@ -266,7 +266,7 @@ is $-\Delta\Omega \mm^*$ and can be thought of as the Green's function of the op
 \end{figure}
 %
 
-\paragraph{Convolution kernel.} We can also formulate the real space operator as a convolution operation, where the scalar field at $\hat n_e$ gathers contributions from the Stokes fields.  This is based around the inverse rotation (to align the coordinate system at $\hat{n}_e$ with that at $\hat{n}_q$).  The inverse rotation Euler angles relates to the forward rotation Euler angles by the following relations: $\alpha_{eq}=-\gamma_{qe}$, $\beta_{eq} = -\beta_{qe}$ and  $\gamma_{eq} =-\alpha_{qe}$. Since the kernel only depends on the cosine of the Euler angle $\beta$, it is immune to changes in its sign. The operator equation can be expressed as a function of the Euler angle $\gamma_{eq}$ as follows, 
+\paragraph{Convolution kernel.} We can also formulate the real space operator as a convolution operation, where the scalar field at $\hat n_e$ gathers contributions from the Stokes fields.  This is based around the inverse rotation from the previous section (to align the coordinate system at $\hat{n}_e$ with that at $\hat{n}_q$).  The inverse rotation Euler angles relates to the forward rotation Euler angles by the following relations: $\alpha_{eq}=-\gamma_{qe}$, $\beta_{eq} = -\beta_{qe}$ and  $\gamma_{eq} =-\alpha_{qe}$. Since the kernel only depends on the cosine of the Euler angle $\beta$, it is immune to changes in its sign. The operator equation can be expressed as a function of the Euler angle $\gamma_{eq}$ as follows, 
 %
 \beq \label{eq:qu2eb_convolution_explicit}
 \bmat E_e \\ B_e  \emat =- \sum_{q=1}^{N_{\rm pix}}{{}_{\mm}f}(\beta_{eq},\ell_{\rm min},\ell_{\rm max})\bmat \cos(2 \gamma_{eq}) & -\sin(2\gamma_{eq})\\  \sin(2 \gamma_{eq})  & \cos(2 \gamma_{eq}) \emat  \bmat Q_q \\ U_q  \emat \Delta \Omega\,,
@@ -286,15 +286,15 @@ is $-\Delta\Omega \mm^*$ and can be thought of as the Green's function of the op
 where $\star$ denotes a convolution and $\mathcal{M}_{B}$ is merely the conjugated function $\mm^*$ when expressed as a function of the Euler angle $\gamma_{eq}$ it can be thought of as an effective instrument beam pointing to the direction $\hat{n}_e$. 
 %--------------------------------------------------------
 
-
+  
 %--------------------------------------------------------
-\subsection{Evaluating Stokes parameters $Q$ \& $U$ from scalar fields $E$ \& $B$}\label{sec:eb2qu}
+\subsection{Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}\label{sec:eb2qu}
 The real space operator which translates $E$ \& $B$ fields to Stokes parameters $Q$ \& $U$ can be derived using a similar procedure. Expressed in the matrix-vector notation, inverse operator is given by,
 %
 \begin{subequations}
 \beqry
-\bar{P} &=& \bar{T}^{-1} *{{}_2\mathcal{Y}} *\tilde T *{{}_0\mathcal{Y}^{\dagger}}\bar{S} = \frac{1}{2} \bar{T}^{\dagger} *{{}_2\mathcal{Y}} *\tilde T *{{}_0\mathcal{Y}^{\dagger}}\bar{S} \,,  \\
-&=&  \bar O^{-1} *\bar{S}\,.
+\bar{P} &=& \bar{T}^{-1} {{}_2\mathcal{Y}}\, \tilde T {{}_0\mathcal{Y}^{\dagger}}\bar{S} = \frac{1}{2} \bar{T}^{\dagger} {{}_2\mathcal{Y}} \,\tilde T {{}_0\mathcal{Y}^{\dagger}}\bar{S}\,,  \\
+&=&  \bar O^{-1} \bar{S}\,.
 \eeqry
 \end{subequations}
 %
@@ -313,25 +313,25 @@ The inverse operator expressed in terms of the function $\mm$ given in \eq{eq:qu
 where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}. Note that the kernel in the above equation differs from the one in \eq{eq:op_qu2eb_rad} by a change in sign on the off-diagonals of the block matrix. When expressed in terms of the same set of Euler angles used to define the operator $\bar{O}$, it can be shown that the different forms of the real space operator are given by,
 %
 \beqry
-{}_{+2}X(\hat{n}_q) &=& \Bigg\lbrace \mathcal{M}^*_{G} \circ [E+iB] \Bigg\rbrace(\hat{n}_q) \hspace{0.8cm} \textrm{\emph {Convolution kernel}}\,, \label{eq:eb2qu_convolution}\\
-{}_{+2}X(\hat{n}_q) &=&  \sum_{e=1}^{N_{\rm pix}} [E+iB](\hat{n}_{e}) \cdot  \mathcal{M}^*_{B}[\hat{n}_e] \hspace{0.8cm} \textrm{\emph{Radiation kernel}}\,,
+    {}_{+2}X(\hat{n}_q) &=  \sum_{e=1}^{N_{\rm pix}} [E+iB](\hat{n}_{e})\   \mathcal{M}^*_{B}[\hat{n}_e] \hspace{0.8cm} &\textrm{\emph{Radiation kernel}}\,\\
+    {}_{+2}X(\hat{n}_q) &= \Bigg\lbrace \mathcal{M}^*_{G} \star [E+iB] \Bigg\rbrace(\hat{n}_q) \hspace{0.8cm} &\textrm{\emph {Convolution kernel}}\,, \label{eq:eb2qu_convolution}
 \eeqry
 %
 where all the symbols have the same meaning as defined in \sec{sec:qu2eb}. Note that the conjugated forms of the Green's function and the effective beam for the operator $\bar{O}$ have their roles reversed for the inverse operator $\bar{O}^{-1}$.
 %--------------------------------------------------------
 
-
+ 
 %--------------------------------------------------------
-\subsection{Decomposing Stokes parameters $Q$ \& $U$  into those corresponding to $E$ \& $B$ modes respectively}
-We can only measure the total Stokes vector which is a sum of the Stokes vectors corresponding to the respective scalar modes. The $E$ \& $B$ modes are orthogonal to each other, in the sense that their respective operators are orthogonal to each other as seen in \eq{eq:op_eb_ortho}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to $E$ modes and another \vp{\rm B} that purely contribute to the $B$ modes of polarization. In this section we derive the real space operators which operate on the total Stokes vector and yield this decomposition, without ever having to explicitly evaluate the scalar modes. Though the algebra is a little more involved, the derivation is similar to that discussed in \sec{sec:qu2eb}, hence we refrain from presenting the detailed calculations here, but outline the key points. We use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions,
+\subsection{Purifying Stokes parameters $Q$/$U$ from $E$/$B$ modes}
+We can only measure the total Stokes vector, a sum of the part corresponding to scalar $E$ and the part corresponding to $B$.  The $E$/$B$ modes are orthogonal to each other in the sense that their respective operators are orthogonal to each other as seen in \eq{eq:op_eb_ortho}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to $E$ modes and another \vp{\rm B} that purely contribute to the $B$ modes of polarization. In this section we derive the real space operators which operate on the total Stokes vector and yield this decomposition, without ever having to explicitly evaluate the scalar modes. The algebra is more involved, but the derivation is similar to that discussed in \sec{sec:qu2eb}, so we refrain from presenting the detailed calculations here, and outline only the key points. We use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions,
 %
 \beqry
-\bar{P}_E &=&  [\bar T^{-1} * {{}_2\mathcal{Y}} *\tilde T * \tilde O_E* \tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}} *\bar T] *\bar{P}  \,, \\
-&=& [\frac{1}{4} \bar T^{\dagger } * {{}_2\mathcal{Y}} *\tilde T * \tilde O_E* \tilde T^{\dagger} * {{}_2\mathcal{Y}^{\dagger}} *\bar T ]*\bar{P}  \,, \nonumber \\
-&=&  \bar O_{E}*\bar{P} \,,\nonumber \\
-\bar{P}_B &=&  [\bar T^{-1}* {{}_2\mathcal{Y}}* \tilde T* \tilde O_B* \tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}}* \bar T]*\bar{P}  \,, \\
-&=& [\frac{1}{4} \bar T^{\dagger } * {{}_2\mathcal{Y}} *\tilde T * \tilde O_B* \tilde T^{\dagger} *{{}_2\mathcal{Y}^{\dagger}} *\bar T] *\bar{P}   \,, \nonumber\\
-&=&  \bar O_{B}*\bar{P} \,. \nonumber
+\bar{P}_E &=&  [\bar T^{-1}  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_E \tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}}\, \bar T] \bar{P}  \,, \\
+&=& [\frac{1}{4} \bar T^{\dagger }  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_E  \tilde T^{\dagger}  {{}_2\mathcal{Y}^{\dagger}}\, \bar T ]\bar{P}  \,, \nonumber \\
+&=&  \bar O_{E} \bar{P} \,,\nonumber \\
+\bar{P}_B &=&  [\bar T^{-1}  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_B \tilde T^{-1} {{}_2\mathcal{Y}^{\dagger}} \bar T]\bar{P}  \,, \\
+&=& [\frac{1}{4} \bar T^{\dagger }  {{}_2\mathcal{Y}}\, \tilde T  \tilde O_B \tilde T^{\dagger} {{}_2\mathcal{Y}^{\dagger}}\, \bar T] \bar{P}   \,, \nonumber\\
+&=&  \bar O_{B} \bar{P} \,. \nonumber
 \eeqry
 %
 We contract over all the matrix operators to arrive at the the real space operators. On working through the algebra it can be shown that the real space operators have the following form,
@@ -367,7 +367,7 @@ where the radial functions are given by,
 {{}_{\mdi}f}(\beta,\ell_{\rm min},\ell_{\rm max}) = \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2\ell+1}{ 4 \pi}} {{}_{ \mdi}f}_{\ell}(\beta) \label{eq:f2_rad_ker}\,,
 \eeq
 %
-where the functions ${{}_{ \pm 2}f}_{\ell}(\beta)$ are expressed in terms of $P_{\ell}^2$ Legendre polynomials and are given by the following explicit mathematical forms,
+where the functions ${{}_{ \pm 2}f}_{\ell}(\beta)$ \revisit{Is the prescript correct?} are expressed in terms of $P_{\ell}^2$ Legendre polynomials and are given by the following explicit mathematical forms,
  %
  \beqry
  _{\mdi}f_{\ell}(\beta) &=& 2 \frac{(\ell-2)!}{(\ell+2)!}  \sqrt{\frac{2\ell +1 }{4 \pi}} \Bigg[ - P_{\ell}^{2} (\cos  \beta) \left( \frac{\ell-4}{\sin^2 \beta} + \frac{1}{2}\ell(\ell-1) \pm \frac{2 (\ell-1) \cos \beta}{\sin^2 \beta} \right) \nonumber \\ 
@@ -377,31 +377,31 @@ where the functions ${{}_{ \pm 2}f}_{\ell}(\beta)$ are expressed in terms of $P_
 Finally the Stokes parameters corresponding to the respective scalar fields can be computed by evaluating the following expressions, 
  %
 \beqry \label{eq:op_qu2equbqu}
-\bmat Q_e \\ U_e  \emat_{E/B} &=& \sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace {{}_{\mi}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max}) \bmat \cos(2 \alpha_{qe} + 2\gamma_{qe}) & \sin(2\alpha_{qe} +2 \gamma_{qe}) \\  -\sin(2\alpha_{qe} +2 \gamma_{qe})  & \cos(2 \alpha_{qe} + 2 \gamma_{qe}) \emat  \bmat Q_q \\ U_q  \emat  \\ &\pm& {}_{\md}f(\beta_{qe},\ell_{\rm min},\ell_{\rm max}) \bmat \cos(2 \alpha_{qe} - 2\gamma_{qe}) &  \sin(2\alpha_{qe} - 2 \gamma_{qe}) \\  \sin(2\alpha_{qe} - 2 \gamma_{qe})  & - \cos(2 \alpha_{qe} - 2 \gamma_{qe}) \emat  \bmat Q_q \\ U_q  \emat \Bigg\rbrace 0.5 \Delta\Omega  \,, \nonumber 
+\bmat Q_e \\ U_e  \emat_{E/B} &=& \sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace {{}_{\mi}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max}) \bmat \cos(2 \alpha_{qe} + 2\gamma_{qe}) & \sin(2\alpha_{qe} +2 \gamma_{qe}) \\  -\sin(2\alpha_{qe} +2 \gamma_{qe})  & \cos(2 \alpha_{qe} + 2 \gamma_{qe}) \emat  \bmat Q_q \\ U_q  \emat  \\ &\pm& {}_{\md}f(\beta_{qe},\ell_{\rm min},\ell_{\rm max}) \bmat \cos(2 \alpha_{qe} - 2\gamma_{qe}) &  \sin(2\alpha_{qe} - 2 \gamma_{qe}) \\  \sin(2\alpha_{qe} - 2 \gamma_{qe})  & - \cos(2 \alpha_{qe} - 2 \gamma_{qe}) \emat  \bmat Q_q \\ U_q  \emat \Bigg\rbrace  \frac{\Delta\Omega}{2}  \,, \nonumber 
 \eeqry
 %
 where all the symbols have their usual meaning. The above expression can be cast in the further simplified form,
 %
 \begin{subequations}
 \beqry
-{}_{+2}X_{E/B}(\hat{n}_e) &=&0.5 \Delta \Omega\sum_{q=1}^{N_{\rm pix}}  {{}_{\mi}f}(\beta_{qe}) e^{-i2 (\alpha_{qe} + \gamma_{qe})} {}_{+2}X(\hat{n}_q) \pm {{}_{\md}f}(\beta_{qe}) e^{i2 (\alpha_{qe} - \gamma_{qe})} {}_{+2}X(\hat{n}_q)^* \,, \nonumber \\
-&=& 0.5 \Bigg\lbrace  {}_{+2}X \cdot \mathcal{I}^*_G \pm {}_{+2}X^* \cdot \mathcal{D}_G \Bigg\rbrace \hspace{.5cm }\textrm{\emph{   Radiation kernel}} \,, \\
-&=& 0.5 \Bigg\lbrace \mathcal{I}_B \circ {}_{+2}X\pm \mathcal{D}_B \circ {}_{+2}X^* \Bigg\rbrace   \hspace{.5cm } \textrm{\emph {  Convolution kernel}} \,, \label{eq:qu2equbqu_convolution}
+{}_{+2}X_{E/B}(\hat{n}_e) &=& 0.5 \Delta \Omega\sum_{q=1}^{N_{\rm pix}}  {{}_{\mi}f}(\beta_{qe}) e^{-i2 (\alpha_{qe} + \gamma_{qe})} {}_{+2}X(\hat{n}_q)  \pm {{}_{\md}f}(\beta_{qe}) e^{i2 (\alpha_{qe} - \gamma_{qe})} {}_{+2}X(\hat{n}_q)^* \,, \nonumber \\
+&=& 0.5 \Bigg\lbrace  {}_{+2}X  \, \mathcal{I}^*_G \pm {}_{+2}X^* \, \mathcal{D}_G \Bigg\rbrace \hspace{.5cm } \textrm{\emph{   Radiation kernel}} \,, \\
+&=& 0.5 \Bigg\lbrace \mathcal{I}_B \star {}_{+2}X\pm \mathcal{D}_B \star {}_{+2}X^* \Bigg\rbrace   \hspace{.5cm } \textrm{\emph {  Convolution kernel}} \,, \label{eq:qu2equbqu_convolution}
 \eeqry
 \end{subequations}
 %
-where all the symbols have their usual meaning and the explicit multipole dependence of the real space operators has been suppressed for brevity. Note that when the operators $\mathcal{I}^*$ \& $\mathcal{D}$ are expressed in terms of the Euler angles $(\alpha_{qe},\beta_{qe},\gamma_{qe})$ they can be interpreted as the Greens functions and  we denote them as $\mathcal{I}^*_G$ \& $\mathcal{D}_G$. When expressed as function of Euler angles $(\alpha_{eq},\beta_{eq},\gamma_{eq})$ corresponding to the inverse rotations they can be interpreted as a some convolving beam and we denote them as $\mathcal{I}_B$ \& $\mathcal{D}_B$. Note that unlike in the case of the operators $\mm_G$ \& $\mm_B$ which have different shapes owing to their dependence on Euler angles $\alpha$ and $\gamma$ respectively, the operators $D_G$ \& $D_B$ are identical since $(\alpha_{qe}-\gamma_{qe}) = (\alpha_{eq}-\gamma_{eq})$, while $\mathcal{I}^*_{G}$ \& $\mathcal{I}_B$ are related by conjugation since  $(\alpha_{qe}+\gamma_{qe}) = -(\alpha_{eq}+\gamma_{eq})$.
+where all the symbols have their usual meaning and the explicit multipole dependence of the real space operators has been suppressed for brevity. Note that when the operators $\mathcal{I}^*$ and $\mathcal{D}$ are expressed in terms of the Euler angles $(\alpha_{qe},\beta_{qe},\gamma_{qe})$ they can be interpreted as the Greens functions and  we denote them as $\mathcal{I}^*_G$ and $\mathcal{D}_G$. When expressed as function of Euler angles $(\alpha_{eq},\beta_{eq},\gamma_{eq})$ corresponding to the inverse rotations they can be interpreted as a some convolving beam and we denote them as $\mathcal{I}_B$ and $\mathcal{D}_B$. Note that unlike in the case of the operators $\mm_G$ and $\mm_B$ which have different shapes owing to their dependence on Euler angles $\alpha$ and $\gamma$ respectively, the operators $D_G$ and $D_B$ are identical since $(\alpha_{qe}-\gamma_{qe}) = (\alpha_{eq}-\gamma_{eq})$, while $\mathcal{I}^*_{G}$ and $\mathcal{I}_B$ are related by conjugation since  $(\alpha_{qe}+\gamma_{qe}) = -(\alpha_{eq}+\gamma_{eq})$.
 
-The operator $\mathcal{I}$ is Hermitian and is a band limited version of the delta function owing to the identity $\lim_{\ell \rightarrow \infty} \mathcal{I} = \delta(\hat{n}_i - \hat{n}_j)$. For all practical purposes $\mathcal{I}$ acts like an identity operator as is confirmed by the following set of identities: (i) $\mathcal{I}*\mathcal{I}=\mathcal{I}$ ; (ii) $\mathcal{D}*\mathcal{I}=\mathcal{D}$. $\mathcal{D}$ is a complex but symmetric matrix and $\mathcal{D}^*$ is its inverse in this band limited sense: $\mathcal{D}^**\mathcal{D}=\mathcal{I}$. Using these properties of the operators $\mathcal{I}$ and $\mathcal{D}$, one can verify that the real space operators satisfy the following identities,
+The operator $\mathcal{I}$ is Hermitian and is a band limited version of the delta function owing to the identity $\lim_{\ell \rightarrow \infty} \mathcal{I} = \delta(\hat{n}_i - \hat{n}_j)$. For all practical purposes $\mathcal{I}$ acts like an identity operator as is confirmed by the following set of identities: (i) $\mathcal{I} \mathcal{I}=\mathcal{I}$ ; (ii) $\mathcal{D} \mathcal{I}=\mathcal{D}$. $\mathcal{D}$ is a complex but symmetric matrix and $\mathcal{D}^*$ is its inverse in this band limited sense: $\mathcal{D}^* \mathcal{D}=\mathcal{I}$. Using these properties of the operators $\mathcal{I}$ and $\mathcal{D}$, one can verify that the real space operators satisfy the following identities,
 %
 \begin{subequations}
 \beqry
-\bar O_E * \bar O_E &=& \bar O_E ~~;~~ \bar O_B * \bar O_B = \bar O_B \,, \\
-\bar O_E*\bar O_B &=& 0 \,,\\
+\bar O_E  \bar O_E &=& \bar O_E;\qquad \bar O_B * \bar O_B = \bar O_B \,, \\
+\bar O_E \bar O_B &=& 0 \,,\\
 \bar O_E + \bar O_B &=& \mathcal{I} \,,
 \eeqry
 \end{subequations}
 %
-which are the real space analogues of \eq{eq:har_op_prop}. \footnote{While testing the above stated identities one encounters terms like $\mathcal{D}*\mathcal{I}^*,\mathcal{I}^**\mathcal{I} \textrm{ and }  \mathcal{I}*\mathcal{I}^*$ which cannot be simply interpreted but they always occur in pairs with opposite signs that exactly cancel each other.}
+which are the real space analogues of \eq{eq:har_op_prop}.\footnote{While testing the above stated identities one encounters terms like $\mathcal{D} \mathcal{I}^*,\mathcal{I}^*\mathcal{I}$ and $\mathcal{I}\mathcal{I}^*$ which cannot be simply interpreted but they always occur in pairs with opposite signs that exactly cancel each other.}
 
 Note that unlike in the harmonic case, the sum of the operators is the band limited identity operator $\mathcal{I}$. This non-exactness is representative of the loss of information resulting from making this transformation on the measured data with some imposed band limit. Forcing the sum of the operators to be exactly an identity matrix compromises the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators which is exact and a more crucial property of the operators.
