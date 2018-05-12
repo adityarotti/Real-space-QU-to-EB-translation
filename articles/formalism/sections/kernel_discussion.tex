@@ -68,8 +68,10 @@ The real and imaginary part of the kernel $\mathcal{M}_G$ are identical irrespec
 %
 \begin{subequations}
 \beqry
-\bmat E= \textrm{Re}(\mathcal{M}_G) \\ B =\textrm{Im}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=\delta(\hat{n} - \hat{n}_q)\\ U=0 \emat ~;~ \bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\delta(\hat{n} - \hat{n}_q) \emat \,,\\
-\bmat Q= \textrm{Re}(\mathcal{M}^*_B) \\ U = \textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\delta(\hat{n} - \hat{n}_e)\\ B=0 \emat ~;~ \bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = \textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\delta(\hat{n} - \hat{n}_e) \emat \,.
+\bmat E= \textrm{Re}(\mathcal{M}_G) \\ B =\textrm{Im}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=\delta(\hat{n} - \hat{n}_q)\\ U=0 \emat;\qquad
+\bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\delta(\hat{n} - \hat{n}_q) \emat \,,\\
+\bmat Q= \textrm{Re}(\mathcal{M}^*_B) \\ U = \textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\delta(\hat{n} - \hat{n}_e)\\ B=0 \emat; \qquad
+\bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = \textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\delta(\hat{n} - \hat{n}_e) \emat \,.
 \eeqry
 \end{subequations}
 %
@@ -86,7 +88,7 @@ The kernels $\mathcal{D}$ \& $\mathcal{I}$ vary significantly as a function of g
 \label{fig:beta_kernel}
 \end{figure}
 %
-In the previous section we presented a quantitative understanding of the  azimuthal dependence of the real space kernels, providing little insight into their radial dependence. The radial part of these kernels determines the non-locality of the respective operators and encodes all their multipole dependencies. For illustration the radial kernels ${_{\mm}f}, {_{\md}f} ~\&~ {_{\mi}f} $ are evaluated using the respective multipole sums given in \eq{eq:rad_ker_queb} and \eq{eq:f2_rad_ker} in the band limit $\ell \in [2,192]$ and the resultant functions are depicted in \fig{fig:beta_kernel}. 
+In the previous section we presented a quantitative understanding of the  azimuthal dependence of the real space kernels.  Here we probe the radial part that determines the non-locality of the operators and encodes all their multipole dependencies. For illustration the radial kernels ${_{\mm}f}, {_{\md}f},{_{\mi}f}$ are evaluated using the respective multipole sums given in \eq{eq:rad_ker_queb} and \eq{eq:f2_rad_ker} in the band limit $\ell \in [2,192]$ \revisit{not match figure?} and the resultant functions are depicted in \fig{fig:beta_kernel}. 
 %
 \begin{figure}[t]
 \centering
@@ -99,10 +101,13 @@ In the previous section we presented a quantitative understanding of the  azimut
 \end{figure}
 %
 
-${_{\mm}f}$ is the radial part of the kernel that translates the Stokes parameters $Q$ \& $U$ to scalars $E$ \& $B$ and vice versa and it has a vanishing contribution from the regions where ($\beta \rightarrow 0$) and from regions ($\beta \rightarrow \pi$) as seen in \fig{fig:beta_kernel}. This can be understood as arising from the fact that the coordinate dependence of the Stokes parameters cannot uniquely integrated out since the Euler angles $\alpha$ \& $\gamma$ are not uniquely defined at the locations $\beta=0,\pi$. This nature of ${_{\mm}f}$ is critical to ensure that the derived fields have the necessary spin properties.
+${_{\mm}f}$ is the radial part of the kernel that translates the Stokes parameters $Q$/$U$ to scalars $E$/$B$ and vice versa.  It has a vanishing contribution as $\beta \rightarrow 0$ and $\beta \rightarrow \pi$. This can be understood as arising from the fact that the coordinate dependence of the Stokes parameters cannot be uniquely integrated out since the Euler angles $\alpha$, $\gamma$ are not uniquely defined at the locations $\beta=0,\pi$. This nature of ${_{\mm}f}$ is critical to ensure that the derived fields have the necessary spin properties.
 
-\revisit{${_{\mi}f}$ is the radial part of the band limited delta function $\mi$ and expectedly has its maxima at $\beta=0$ and decays with increasing angular separation.  ${_{\md}f}$ has a vanishing value in the region where $\beta \rightarrow 0$ however it does not vanish at $\beta \rightarrow \pi$ as seen in \fig{fig:beta_kernel}. The main take away from these observations of the nature of the radial part of the kernel is that the real space operators which decompose the Stokes parameters into parts that correspond to E and B modes are necessarily non-local.}\\ \linebreak
-\noindent \textit{The band limit dependence:} 
+\revisit{${_{\mi}f}$ is the radial part of the band limited delta function $\mi$ and expectedly has its maxima at $\beta=0$ and decays with increasing angular separation.  ${_{\md}f}$ has a vanishing value in the region where $\beta \rightarrow 0$ however it does not vanish at $\beta \rightarrow \pi$ as seen in \fig{fig:beta_kernel}. The main takeaway from these observations of the nature of the radial part of the kernel is that the real space operators which decompose the Stokes parameters into parts that correspond to E and B modes are necessarily non-local.}\\ \linebreak
+
+
+
+\paragraph{Band limit dependence.} 
 %It is clear from previous discussions that the scalar field $E$ \& $B$ constructed at a location depends on the Stokes field in the surrounding regions. 
 We further quantify this non-locality by studying the radial extent of the kernels and its dependence on the maximum multipole accessible for analysis. To carry out this study we evaluate the radial functions for different values of $\ell_{\rm max}$, while keeping the lowest multipole fixed at $\ell_{\rm min}=2$. 
 
@@ -114,5 +119,3 @@ It is useful to define a characteristic radius of the region from which the eval
 %For $\ell_{\rm max}=24$, the maximum multipole accessible on a Nside=8 Healpix map, the non-locality parameter $\beta_0=180^{\circ}$ as the radial function never falls monotonously below 1\% of its global maxima as seen in \fig{}. Using this fact and the self similar property of the radial functions, we define the following empirical relation: $\beta_o= {\rm min}(180,180 \frac{24}{\ell_{\rm max}})$, as a means of estimating the non-locality parameter given the maximum multipole $\ell_{\rm max}$ accessible for analysis.
 The simple empirical derived relation: $\beta_o= {\rm min}(180,180 \frac{22}{\ell_{\rm max}})$ provides a reasonable estimate of this transition point for  ${}_{\mm}f$. This empirical function also provides a reasonable estimate for the transition point for the function ${}_{\md}f$ particularly for high $\ell_{\rm max}$ and it systematically over-predicts the transition point for the function ${}_{\mi}f$ as seen in \fig{fig:rad_ker_decay}.
 
-
-\input{sections/kernel_paintbrush.tex}
