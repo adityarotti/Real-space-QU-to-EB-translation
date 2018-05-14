@@ -88,34 +88,44 @@ The kernels $\mathcal{D}$ \& $\mathcal{I}$ vary significantly as a function of g
 \label{fig:beta_kernel}
 \end{figure}
 %
-In the previous section we presented a quantitative understanding of the  azimuthal dependence of the real space kernels.  Here we probe the radial part that determines the non-locality of the operators and encodes all their multipole dependencies. For illustration the radial kernels ${_{\mm}f}, {_{\md}f},{_{\mi}f}$ are evaluated using the respective multipole sums given in \eq{eq:rad_ker_queb} and \eq{eq:f2_rad_ker} in the band limit $\ell \in [2,192]$ \revisit{not match figure?} and the resultant functions are depicted in \fig{fig:beta_kernel}. 
+In the previous section we presented a quantitative understanding of the  azimuthal dependence of the real space kernels.  Here we probe the radial part, which both  determines the non-locality of the operators and encodes all their multipole dependencies. For illustration, \fig{fig:beta_kernel} shows the radial kernels ${_{\mm}f}, {_{\md}f},{_{\mi}f}$, evaluated using the respective multipole sums given in \eq{eq:rad_ker_queb} and \eq{eq:f2_rad_ker} in the band limit $\ell \in [2,192]$ \revisit{not match figure caption?}. 
 %
 \begin{figure}[t]
-\centering
-\subfigure{\includegraphics[width=0.96\columnwidth]{rad_ker_fn_of_ellmax.pdf}}
-\subfigure{\includegraphics[width=0.48\columnwidth]{rad_ker_i_fn_of_ellmax.pdf}}
-\subfigure{\includegraphics[width=0.48\columnwidth]{rad_ker_d_fn_of_ellmax.pdf}}
+%\subfigure{\includegraphics[width=0.96\columnwidth]{rad_ker_fn_of_ellmax.pdf}}
+%\subfigure{\includegraphics[width=0.48\columnwidth]{rad_ker_i_fn_of_ellmax.pdf}}
+%\subfigure{\includegraphics[width=0.48\columnwidth]{rad_ker_d_fn_of_ellmax.pdf}}
+\includegraphics[width=0.325\columnwidth]{rad_ker_fn_of_ellmax.pdf}\hfill
+\includegraphics[width=0.325\columnwidth]{rad_ker_i_fn_of_ellmax.pdf}\hfill
+\includegraphics[width=0.325\columnwidth]{rad_ker_d_fn_of_ellmax.pdf}
 \caption{The top panel depicts the radial function  ${_{\mm}f}(\beta,\ell_{\rm min},\ell_{\rm max})$ while the bottom left and right panels show the radial functions ${}_{\mi}f(\beta,\ell_{\rm min},\ell_{\rm max}) ~\&~ {}_{\md}f(\beta,\ell_{\rm min},\ell_{\rm max})$ respectively, for fixed $\ell_{\rm min}=2$ and varying $\ell_{\rm max}$ as indicated by their legends. All the curves are normalized such that their maxima is set to unity. The horizontal solid black line marks the location where the amplitude of the respective kernels fall below 1\% of its maximum. The thin slanted dashed gray lines indicate a power law fit (by eye) to the envelope of the radial functions. The thick black short vertical dashed lines indicate the transition points as predicted by the empirically derived relation for the non-locality parameter $\beta_0=min(180,180 \frac{22}{\ell_{\rm max}})$.}
 %While the envelopes for function ${_{\mm}f}(\beta)~\&~ {}_{\mi}f(\beta)$ are fit well by the power law $\propto \beta^{-1.5}$, the envelope for the function ${}_{\md}f(\beta)$ is seen to have a slightly steeper slope $\propto \beta^{-1.65}$.}
 \label{fig:rad_ker_decay}
 \end{figure}
 %
 
-${_{\mm}f}$ is the radial part of the kernel that translates the Stokes parameters $Q$/$U$ to scalars $E$/$B$ and vice versa.  It has a vanishing contribution as $\beta \rightarrow 0$ and $\beta \rightarrow \pi$. This can be understood as arising from the fact that the coordinate dependence of the Stokes parameters cannot be uniquely integrated out since the Euler angles $\alpha$, $\gamma$ are not uniquely defined at the locations $\beta=0,\pi$. This nature of ${_{\mm}f}$ is critical to ensure that the derived fields have the necessary spin properties.
+The function ${_{\mm}f}$ is the radial part of the kernel that translates the Stokes parameters $Q$/$U$ to scalars $E$/$B$ and vice versa.  As a consequence of the spin-2 symmetry, tt vanishes as $\beta \rightarrow 0$ and $\beta \rightarrow \pi$, since the Euler angles $\alpha$, $\gamma$ are not uniquely defined at separations $\beta=0,\pi$.
+%This nature of ${_{\mm}f}$ is critical to ensure that the derived fields have the necessary spin properties.
 
-\revisit{${_{\mi}f}$ is the radial part of the band limited delta function $\mi$ and expectedly has its maxima at $\beta=0$ and decays with increasing angular separation.  ${_{\md}f}$ has a vanishing value in the region where $\beta \rightarrow 0$ however it does not vanish at $\beta \rightarrow \pi$ as seen in \fig{fig:beta_kernel}. The main takeaway from these observations of the nature of the radial part of the kernel is that the real space operators which decompose the Stokes parameters into parts that correspond to E and B modes are necessarily non-local.}\\ \linebreak
+The radial part of the kernel that decomposes the  Stokes parameters into parts that correspond to E and B modes  are also  necessarily non-local.  The function \revisit{${_{\mi}f}$ is the radial part of the band limited delta function $\mi$.  It expectedly has its maxima at $\beta=0$ and decays with increasing angular separation.  ${_{\md}f}$ has a vanishing value in the region where $\beta \rightarrow 0$ however it does not vanish at $\beta \rightarrow \pi$ as seen in \fig{fig:beta_kernel}.}
+\revisit{why?}
 
 
 
 \paragraph{Band limit dependence.} 
 %It is clear from previous discussions that the scalar field $E$ \& $B$ constructed at a location depends on the Stokes field in the surrounding regions. 
-We further quantify this non-locality by studying the radial extent of the kernels and its dependence on the maximum multipole accessible for analysis. To carry out this study we evaluate the radial functions for different values of $\ell_{\rm max}$, while keeping the lowest multipole fixed at $\ell_{\rm min}=2$. 
+To quantify this non-locality, we study the radial extent of the kernels and its dependence on the maximum multipole accessible. We evaluate the radial functions for different values of $\ell_{\rm max}$, while keeping the lowest multipole fixed at $\ell_{\rm min}=2$. 
 
 The resultant set of radial function are depicted in \fig{fig:rad_ker_decay}, where all the function have been normalized such that their global maxima is set to unity. The amplitude of these radial function scales up as $\propto \ell_{\rm max}^2$. Note that on increasing $\ell_{\rm max}$ the radial kernels shift left, attaining their global maxima at progressively small angular distances $\beta$.  At intermediate values of $\beta$, the envelope of the radial functions is fit well by a power law $ \propto \beta^{-n}$ as seen in \fig{fig:rad_ker_decay}.
-In fact these finding are neatly summarized in the observation that the radial functions computed by evaluating the multipole sums to different maximum multipoles are self similar and follow this interesting telescoping and scaling property, $${}_rf(\beta,2,\ell_{\rm max}) \approx \Big[\frac{\ell_{\rm max}}{\ell'_{\rm max}}\Big]^2{}_rf(\beta'=\frac{\ell'_{\rm max}}{\ell_{\rm max}} \beta ,2,\ell'_{\rm max}) \,,$$ where ${}_rf$ denotes all the different radial functions. 
+In fact these finding are neatly summarized in the observation that the radial functions computed by evaluating the multipole sums to different maximum multipoles are self similar and follow this interesting telescoping and scaling property, $${}_rf(\beta,2,\ell_{\rm max}) \approx \Big[\frac{\ell_{\rm max}}{\ell'_{\rm max}}\Big]^2{}_rf(\beta'=\frac{\ell'_{\rm max}}{\ell_{\rm max}} \beta ,2,\ell'_{\rm max}) \,,$$ where ${}_rf$ denotes all the different radial functions.
+\revisit{Holds for small beta and moderately high ell?}
+
 %We can understand the shifting left of the radial kernels on increasing the maximum multipole using this property. Lets say the function ${}_rf(\beta, \ell'_{\rm max})$ transition to being monotonously below some fraction of the global maxima at an angular distance of $\beta_0$.  The function ${}_rf(\beta', \ell_{\rm max})$, given $\ell_{\rm max} > \ell'_{\rm max}$, reaches the same transition point $\beta'=\beta_0$ at a smaller value of $\beta$ owing to the fact that $\ell_{\rm max}/\ell'_{\rm max}$ is greater than unity. The amplitude scaling of the functions is irrelevant since the transition point is always described in terms of the fraction of the global maxima of the function.
 
-It is useful to define a characteristic radius of the region from which the evaluated resultant fields get most of their contribution.  Our primary interest is in quantifying the non-locality of the scalar modes $E$ \& $B$, therefore we define the abscissa at which the function ${_{\mm}f}(\beta,\ell_{\rm min}=2,\ell_{\rm max})$ transits to being monotonously below 1\% of the maxima of the function as the non-locality parameter: $\beta_{o}$.
+To quantify the non-locality of the scalar modes $E/B$, we can define a characteristic angular radius of the region from which the kernels get most of their contribution.   We define a non-locality parameter $\beta_{o}$ as the angle beyond which the function ${_{\mm}f}(\beta,\ell_{\rm min}=2,\ell_{\rm max})$ consistently falls below 1\% of its maximum.  \revisit{Why $\beta_o$ rather than $\beta_0$?}
 %For $\ell_{\rm max}=24$, the maximum multipole accessible on a Nside=8 Healpix map, the non-locality parameter $\beta_0=180^{\circ}$ as the radial function never falls monotonously below 1\% of its global maxima as seen in \fig{}. Using this fact and the self similar property of the radial functions, we define the following empirical relation: $\beta_o= {\rm min}(180,180 \frac{24}{\ell_{\rm max}})$, as a means of estimating the non-locality parameter given the maximum multipole $\ell_{\rm max}$ accessible for analysis.
-The simple empirical derived relation: $\beta_o= {\rm min}(180,180 \frac{22}{\ell_{\rm max}})$ provides a reasonable estimate of this transition point for  ${}_{\mm}f$. This empirical function also provides a reasonable estimate for the transition point for the function ${}_{\md}f$ particularly for high $\ell_{\rm max}$ and it systematically over-predicts the transition point for the function ${}_{\mi}f$ as seen in \fig{fig:rad_ker_decay}.
+The empirical relation
+\beq
+\beta_o= {\rm min}\left(180,180 \frac{22}{\ell_{\rm max}} \right)
+\eeq
+provides a reasonable estimate of this transition point for  ${}_{\mm}f$. This empirical function also provides a reasonable estimate for the transition point for the function ${}_{\md}f$ particularly for high $\ell_{\rm max}$ and it systematically over-predicts the transition point for the function ${}_{\mi}f$ as seen in \fig{fig:rad_ker_decay}.
 
