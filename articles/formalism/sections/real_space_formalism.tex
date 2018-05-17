@@ -26,11 +26,11 @@ Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ 
 $\mathcal{R}_{\hat{z}_q}(\phi)[{}_{+2}X(\hat{n}_q)] =  {}_{+2}X(\hat{n}_q) e^{-i2\phi} $.
 This same rotation by $\phi$ alters the Euler angle $\alpha_{qe}$ (that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$): $\mathcal{R}_{\hat{z}_q}(\phi)[\alpha_{qe}] = \alpha_{qe} - \phi$.  Therefore one can see that $\mathcal{R}_{\hat{z}_q}(\phi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\phi}$.
 
-Given these transformation properties, the combination ${}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}$ is invariant under rotations and must be spin-0 by definition:
+Given these transformation properties, the combination ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ is invariant under rotations and must be spin-0 by definition:
 \beq
 \mathcal{R}_{\hat{z}_q}(\phi)[{}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}] = {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}
 \eeq
-The real part of the function is constructed by product of functions $(Q\cos{2\alpha}, U\sin{2 \alpha})$ having the same parity and hence the real part must have even parity.  At the same time, the imaginary part of the function is constructed by multiplying functions $(Q\sin{2 \alpha}, U\cos{2\alpha})$ of opposite parity and hence must have an odd parity. Therefore we can make the association that contributions to  $(E+iB)(\hat n_e)$ must be proportional to $ {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}$.
+\revisit{I'm having some trouble understanding the next 2 sentences.} The real part of the function is constructed by product of functions $(Q\cos{2\alpha}, U\sin{2 \alpha})$ having the same parity and hence the real part must have even parity.  At the same time, the imaginary part of the function is constructed by multiplying functions $(Q\sin{2 \alpha}, U\cos{2\alpha})$ of opposite parity and hence must have an odd parity. Therefore we can make the association that contributions to  $(E+iB)(\hat n_e)$ must be proportional to $ {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}$.
 
 
 The same rotation $\mathcal{R}_{\hat{z}_q}(\phi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we can conclude that the contribution to $(E+iB)(\hat n_e)$ from the position $n_q$ must have the form 
@@ -39,7 +39,7 @@ The same rotation $\mathcal{R}_{\hat{z}_q}(\phi)$ leaves the Euler angle $|\beta
 \eeq
 for some real function $f$.  Note that when the two locations coincide ($\beta_{qe}=0$) then  $\alpha_{qe}=0,2\pi,4\pi,\dots$, implying $E + iB \propto Q+iU$.  This is a contradiction because $Q+iU$ does not transform as a spin-0 field under local rotations, and so we must have $f(\beta_{qe} = 0 ) = 0$.   Hence the $E/B$ fields are necessarily non-local.  A similar contradiction arises when the two locations are diametrically opposite, $\beta_{qe} = \pi$, and so $f(\beta_{qe} = \pi ) = 0$.  Any such function $f$ will let us construct $E/B$-like scalar fields.  Below we derive the particular one that gives rise to our familiar $E/B$ modes.
 
-This type of construction can be generalized to transform a field of any spin to a field of any other spin, not just two and zero, and so we can use a similar construction (in the opposite direction) to transform $E/B$ maps back to the Stokes parameters (i.e. transforming spin-0 fields to spin-2).
+This type of real-space construction can be generalized to transform a field of any spin to a field of any other spin, not just two and zero, and so we can use a similar construction (in the opposite direction) to transform $E/B$ maps back to the Stokes parameters (i.e. transforming spin-0 fields to spin-2).
 
 %--------------------------------------------------------
 \subsection{Standard $E$/$B$ fields}
@@ -283,7 +283,7 @@ is $-\Delta\Omega \mm^*$ and can be thought of as the Green's function of the op
 \eeqry
 \end{subequations}
 %
-where $\star$ denotes a convolution and $\mathcal{M}_{B}$ is merely the conjugated function $\mm^*$ when expressed as a function of the Euler angle $\gamma_{eq}$ it can be thought of as an effective instrument beam pointing to the direction $\hat{n}_e$. 
+where $\star$ denotes a convolution and $\mathcal{M}_{B}$ is merely the conjugated function $\mm^*$.  When expressed as a function of the Euler angle $\gamma_{eq}$ it can be thought of as an effective instrument beam pointing to the direction $\hat{n}_e$. 
 %--------------------------------------------------------
 
   
@@ -402,6 +402,6 @@ The operator $\mathcal{I}$ is Hermitian and is a band limited version of the del
 \eeqry
 \end{subequations}
 %
-which are the real space analogues of \eq{eq:har_op_prop}.\footnote{While testing the above stated identities one encounters terms like $\mathcal{D} \mathcal{I}^*,\mathcal{I}^*\mathcal{I}$ and $\mathcal{I}\mathcal{I}^*$ which cannot be simply interpreted but they always occur in pairs with opposite signs that exactly cancel each other.}
+which are the real space analogues of \eq{eq:har_op_prop}.\footnote{While testing the above stated identities one encounters terms like $\mathcal{D} \mathcal{I}^*,\mathcal{I}^*\mathcal{I}$ and $\mathcal{I}\mathcal{I}^*$ which cannot be simply interpreted but they always occur in pairs with opposite signs that exactly cancel each other.}  Thus they are orthogonal and idempotent in a band-limited sense.
 
 Note that unlike in the harmonic case, the sum of the operators is the band limited identity operator $\mathcal{I}$. This non-exactness is representative of the loss of information resulting from making this transformation on the measured data with some imposed band limit. Forcing the sum of the operators to be exactly an identity matrix compromises the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators which is exact and a more crucial property of the operators.
