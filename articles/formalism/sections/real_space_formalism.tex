@@ -245,17 +245,17 @@ The total map can be simply evaluated by summing over the contribution from the 
 \beqry 
 \left[E + iB\right](\hat{n}_e) &=& -\Delta \Omega  \sum_{q=1}^{N_{\rm pix}} \Big[ {}_{+2}X(\hat{n}_{q}) e^{-i2\alpha_{q e}} \Big]  {{}_{\mm}f}(\beta_{q e}) \,, \\
 %&=&    \sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace {}_{+2}X(\hat{n}_{q}) \left[ - \Delta \Omega \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2}(\beta_{qe},\alpha_{qe}) \right] \Bigg\rbrace \,, \\
-&=& \sum_{q=1}^{N_{\rm pix}} {}_{+2}X(\hat{n}_{q}) \,  \mathcal{M}_{G}(\hat{n}_q) \,,
+&=& \sum_{q=1}^{N_{\rm pix}} {}_{+2}X(\hat{n}_{q}) \,  \mathcal{M}_{G}(\hat n_e,\hat{n}_q) \,,
 \eeqry
 \end{subequations}
 %
 where the last line is a simple scalar multiplication between complex numbers.  The radiating kernel is then:
 \beq
- \mathcal{M}_{G}(\hat{n}_e) =  - \Delta \Omega {{}_{\mm}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max}) e^{-i2\alpha_{q e}}
+ \mathcal{M}_{G}(\hat{n}_e,\hat n_q) =  - \Delta \Omega {{}_{\mm}f}(\beta_{qe},\ell_{\rm min},\ell_{\rm max}) e^{-i2\alpha_{q e}}
 \eeq
 %. $\mathcal{M}_{G}$ is merely the conjugated function $\mm^*$ when expressed as a function of the Euler angle $\alpha_{qe}$ and it
-is $-\Delta\Omega \mm^*$ and can be thought of as the Green's function of the operator.  That is, $[E +iB](\hat n_e) = \mathcal{M}_{G}$ is the spin-0 scalar field generated from the delta-function Stokes field $[Q+iU](\hat n) = [\delta(\hat{n}-\hat{n}_q) + i0]$. 
-
+is $-\Delta\Omega \mm^*$ and can be thought of as the Green's function of the operator.  That is, $[E +iB](\hat n_e) = \mathcal{M}_{G}(\hat n_e,\hat n_q)$ is the spin-0 scalar field generated from the delta-function Stokes field $[Q+iU](\hat n) = [\delta(\hat{n}-\hat{n}_q) + i0]$. We display the kernel later in \fig{fig:vis_kernel}.
+ 
 
 %
 \begin{figure}[!t]
@@ -283,7 +283,7 @@ is $-\Delta\Omega \mm^*$ and can be thought of as the Green's function of the op
 \eeqry
 \end{subequations}
 %
-where $\star$ denotes a convolution and $\mathcal{M}_{B}$ is merely the conjugated function $\mm^*$.  When expressed as a function of the Euler angle $\gamma_{eq}$ it can be thought of as an effective instrument beam pointing to the direction $\hat{n}_e$. 
+where $\star$ denotes a convolution and $\mathcal{M}_{B}$ is merely the conjugated function $\mm^*$.  When expressed as a function of the Euler angle $\gamma_{eq}$ it can be thought of as an effective instrument beam pointing to the direction $\hat{n}_e$.  We display the kernel in \fig{fig:vis_kernel}.
 %--------------------------------------------------------
 
   

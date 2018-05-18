@@ -17,3 +17,5 @@
 \contentsline {subsubsection}{\numberline {3.7.2}Relation to the spin raising $\eth ^2$ and lowering $\mathaccentV {bar}016{\eth }^2$ operators}{18}{subsubsection.3.7.2}
 \contentsline {section}{\numberline {4}Discussion}{19}{section.4}
 \contentsline {paragraph}{Polarization signature of magnetized filaments}{19}{section*.11}
+\contentsline {section}{\numberline {A}Appendix}{20}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Product of spin spherical harmonics}{20}{subsection.A.1}
