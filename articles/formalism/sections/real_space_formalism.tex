@@ -6,9 +6,9 @@
  CMB polarization is measured in terms of Stokes parameters, time averages of the linear polarization of the electric field along cartesian axes perpendicular to the line of sight.\footnote{Throughout we use the conventions of HEALPix \cite{healpix_primer}, measuring the polarization angle East of South.} Thus Stokes $Q$ and $U$ depend on the choice of the local coordinate system, and a rotation by an angle $\psi$ around the line of sight transforms them as
 %
 \beq \label{eq:qu-rot}
-\fqu' = \begin{bmatrix} \cos{2 \phi} &  \sin{2 \phi} \\ -\sin{2\phi} & \cos{2 \phi} \end{bmatrix} \fqu \,.
+\fqu' = \begin{bmatrix} \cos{2 \psi} &  \sin{2 \psi} \\ -\sin{2\psi} & \cos{2 \psi} \end{bmatrix} \fqu \,.
 \eeq
-Equivalently the object $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\phi} {}_{s}f$ and hence forms a spin-2 field \cite{Zaldarriaga1997}.
+Equivalently the object $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$ and hence forms a spin-2 field \cite{Zaldarriaga1997}.
 
 The standard construction of $E$ and $B$ fields arise from the desire to have a coordinate independent description of the polarization. This follows from operations that raise (or lower) the spin of the $X$ field to construct scalar fields.  But from the transform properties of the Stokes parameters, we can already construct a heuristic argument for what these operations must look like in real space.
 
@@ -22,18 +22,18 @@ We consider the contribution to a scalar field at $\hat n_e$ from the polarizati
 \end{figure}
 %
  
-Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ by an angle $\phi$ about the local $\hat{z}_q$ axis, the Stokes parameters in the new coordinate system relate to those in the original coordinate system as:
-$\mathcal{R}_{\hat{z}_q}(\phi)[{}_{+2}X(\hat{n}_q)] =  {}_{+2}X(\hat{n}_q) e^{-i2\phi} $.
-This same rotation by $\phi$ alters the Euler angle $\alpha_{qe}$ (that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$): $\mathcal{R}_{\hat{z}_q}(\phi)[\alpha_{qe}] = \alpha_{qe} - \phi$.  Therefore one can see that $\mathcal{R}_{\hat{z}_q}(\phi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\phi}$.
+Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ by an angle $\psi$ about the local $\hat{z}_q$ axis, the Stokes parameters in the new coordinate system relate to those in the original coordinate system as:
+$\mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)] =  {}_{+2}X(\hat{n}_q) e^{-i2\psi} $.
+This same rotation by $\psi$ alters the Euler angle $\alpha_{qe}$ (that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$): $\mathcal{R}_{\hat{z}_q}(\psi)[\alpha_{qe}] = \alpha_{qe} - \psi$.  Therefore one can see that $\mathcal{R}_{\hat{z}_q}(\psi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\psi}$.
 
 Given these transformation properties, the combination ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ is invariant under rotations and must be spin-0 by definition:
 \beq
-\mathcal{R}_{\hat{z}_q}(\phi)[{}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}] = {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}
+\mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}] = {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}
 \eeq
 \revisit{I'm having some trouble understanding the next 2 sentences.} The real part of the function is constructed by product of functions $(Q\cos{2\alpha}, U\sin{2 \alpha})$ having the same parity and hence the real part must have even parity.  At the same time, the imaginary part of the function is constructed by multiplying functions $(Q\sin{2 \alpha}, U\cos{2\alpha})$ of opposite parity and hence must have an odd parity. Therefore we can make the association that contributions to  $(E+iB)(\hat n_e)$ must be proportional to $ {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}$.
 
 
-The same rotation $\mathcal{R}_{\hat{z}_q}(\phi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we can conclude that the contribution to $(E+iB)(\hat n_e)$ from the position $n_q$ must have the form 
+The same rotation $\mathcal{R}_{\hat{z}_q}(\psi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we can conclude that the contribution to $(E+iB)(\hat n_e)$ from the position $n_q$ must have the form 
 \beq
 {}_{+2}X(\hat{n}_q) f(\beta_{qe})  e^{-i2\alpha_{qe}}
 \eeq
@@ -45,7 +45,7 @@ This type of real-space construction can be generalized to transform a field of 
 \subsection{Standard $E$/$B$ fields}
 
 
-The standard construction of $E/B$ fields depend on the spin-raising and -lowering operators, and is usually carried out in harmonic space.  The spin-raising operator ($\eth$), applied to a field of spin-s $_{s}g$, results in a fields with spin-$(s+1)$: $(\eth _{s}g)' = e^{-i(s+1)\phi}(\eth _{s}g)$  \cite{goldberg67}.  The complementary spin-lowering operator $(\bar{\eth})$  similarly results with $(\bar{\eth} _{s}g)' = e^{-i(s-1)\phi}(\bar{\eth} _{s}g)$.  The complex spin-0 scalar now arise from  the spin-2 fields ${_{\pm 2}X}$ as follows,
+The standard construction of $E/B$ fields depend on the spin-raising and -lowering operators, and is usually carried out in harmonic space.  The spin-raising operator ($\eth$), applied to a field of spin-s $_{s}g$, results in a fields with spin-$(s+1)$: $(\eth _{s}g)' = e^{-i(s+1)\psi}(\eth _{s}g)$  \cite{goldberg67}.  The complementary spin-lowering operator $(\bar{\eth})$  similarly results with $(\bar{\eth} _{s}g)' = e^{-i(s-1)\psi}(\bar{\eth} _{s}g)$.  The complex spin-0 scalar now arise from  the spin-2 fields ${_{\pm 2}X}$ as follows,
 %
 \begin{subequations}\label{eq:ebdef}
 \beqry
@@ -110,8 +110,8 @@ We will be working with cases $s \in [0,2]$. Each column maps to a specific harm
 We now define the different polarization data vectors and their representation in real  space as and harmonic as follows,\footnote{We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.}
 %
 \beqrys
-\bar{S} &=& \bmat E \\ B  \emat_{2 \rm N_{\rm pix} \times 1} ~~~~;~~ \bar{X} = \bmat _{+2}X \\ _{-2}X \emat_{2 \rm N_{\rm pix} \times 1} ~~;~~\bar{P} =\fqu_{\tiny {2 \rm N_{\rm pix} \times 1}} \,, \\
-\tilde{S} &=& \bmat a^{E} \\ a^{B} \emat _{2 \rm N_{\rm alms} \times 1}  ~~; ~~ \tilde{X} = \bmat _{+2} \tilde{X} \\ _{-2} \tilde{X} \emat_{2 \rm N_{\rm alms} \times 1} \,.
+\bar{S} &=& \bmat E \\ B  \emat_{2 \rm N_{\rm pix} \times 1};\qquad \bar{X} = \bmat _{+2}X \\ _{-2}X \emat_{2 \rm N_{\rm pix} \times 1};\qquad \bar{P} =\fqu_{\tiny {2 \rm N_{\rm pix} \times 1}} \,, \\
+\tilde{S} &=& \bmat a^{E} \\ a^{B} \emat _{2 \rm N_{\rm alms} \times 1};\qquad \tilde{X} = \bmat _{+2} \tilde{X} \\ _{-2} \tilde{X} \emat_{2 \rm N_{\rm alms} \times 1} \,.
 \eeqrys
 %
 The different symbols have the same meaning as that discussed in \sec{sec:pol-primer}, except that the subscript ${\ell m}$ for the spherical harmonic coefficients is suppressed for cleaner notation.
@@ -119,8 +119,8 @@ The different symbols have the same meaning as that discussed in \sec{sec:pol-pr
 We define transformations between different representations of the polarization field (i.e. from $Q,U$ to $_{\pm2} X$):
 %
 \beqrys
-\bar T &=& \qutox_{2 \rm N_{\rm pix} \times 2 \rm N_{\rm pix}} ~~;~~ \bar T^{-1} = \frac{1}{2} \bar T^{\dagger} \,, \\
-\tilde T &=& -\qutox_{2 \rm N_{\rm alms} \times 2 \rm N_{\rm alms}} ~~;~~ \tilde T^{-1} = \frac{1}{2} \tilde T^{\dagger} \,,
+\bar T &=& \qutox_{2 \rm N_{\rm pix} \times 2 \rm N_{\rm pix}} ;\qquad \bar T^{-1} = \frac{1}{2} \bar T^{\dagger} \,, \\
+\tilde T &=& -\qutox_{2 \rm N_{\rm alms} \times 2 \rm N_{\rm alms}};\qquad \tilde T^{-1} = \frac{1}{2} \tilde T^{\dagger} \,,
 \eeqrys
 %
 The sign conventions we have chosen match HEALPix.
@@ -261,7 +261,7 @@ is $-\Delta\Omega \mm^*$ and can be thought of as the Green's function of the op
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.5\columnwidth]{radiation_convolution.pdf}
-\caption{The local cartesian coordinate are only drawn on the red circle, representative of the coordinate dependence of the Stokes parameters. The value of the scalar field at location `e' can be evaluated by summing over the contribution from all the Stokes parameters on the red circle (sphere). The convolutions are performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$. Alternatively, one can compute the contribution from the Stokes parameter at location `q' to all the point on the blue circle(sphere) and this is a function of the Euler angle $\alpha_{eq}$. In the flat sky limit, since $\gamma=-\alpha$ there is no difference between the radiating and convolving kernels.}
+\caption{The local cartesian coordinate are only drawn on the red circle, representative of the coordinate dependence of the Stokes parameters. The value of the scalar field at location `e' can be evaluated by summing over the contribution from all the Stokes parameters on the red circle (sphere). The convolutions are performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$. Alternatively, one can compute the contribution from the Stokes parameter at location `q' to all the point on the blue circle(sphere) and this is a function of the Euler angle $\alpha_{eq}$. In the flat sky limit, since $\gamma=-\alpha$ there is no difference between the radiation and convolution kernels.}
 \label{fig:planar_euler_angles}
 \end{figure}
 %
@@ -286,7 +286,9 @@ is $-\Delta\Omega \mm^*$ and can be thought of as the Green's function of the op
 where $\star$ denotes a convolution and $\mathcal{M}_{B}$ is merely the conjugated function $\mm^*$.  When expressed as a function of the Euler angle $\gamma_{eq}$ it can be thought of as an effective instrument beam pointing to the direction $\hat{n}_e$.  We display the kernel in \fig{fig:vis_kernel}.
 %--------------------------------------------------------
 
-  
+
+
+
 %--------------------------------------------------------
 \subsection{Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}\label{sec:eb2qu}
 The real space operator which translates $E$ \& $B$ fields to Stokes parameters $Q$ \& $U$ can be derived using a similar procedure. Expressed in the matrix-vector notation, inverse operator is given by,
@@ -314,11 +316,83 @@ where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}. Not
 %
 \beqry
     {}_{+2}X(\hat{n}_q) &=  \sum_{e=1}^{N_{\rm pix}} [E+iB](\hat{n}_{e})\   \mathcal{M}^*_{B}[\hat{n}_e] \hspace{0.8cm} &\textrm{\emph{Radiation kernel}}\,\\
-    {}_{+2}X(\hat{n}_q) &= \Bigg\lbrace \mathcal{M}^*_{G} \star [E+iB] \Bigg\rbrace(\hat{n}_q) \hspace{0.8cm} &\textrm{\emph {Convolution kernel}}\,, \label{eq:eb2qu_convolution}
+    {}_{+2}X(\hat{n}_q) &= \Bigg\lbrace \mathcal{M}^*_{G} \star [E+iB] \Bigg\rbrace(\hat{n}_q) \hspace{0.8cm} &\textrm{\emph {Convolution kernel}}\,, \label{eq:eb2qu_convolution_explicit}
 \eeqry
 %
 where all the symbols have the same meaning as defined in \sec{sec:qu2eb}. Note that the conjugated forms of the Green's function and the effective beam for the operator $\bar{O}$ have their roles reversed for the inverse operator $\bar{O}^{-1}$.
 %--------------------------------------------------------
+
+
+ 
+
+
+
+\subsection{Visualizing the real space kernels} \label{sec:visualize_operator}
+%
+\newlength{\kernelfigwidth}
+\setlength{\kernelfigwidth}{0.2\columnwidth}
+\newlength{\kernelfigspace}
+\setlength{\kernelfigspace}{-1.8mm}
+
+
+\begin{figure}[t] 
+
+  %%%% NEW MG/MB
+  \begin{center}
+    \begin{tabular}{m{8ex}m{\kernelfigwidth}m{\kernelfigwidth}|m{\kernelfigwidth}m{\kernelfigwidth}}
+%      & \multicolumn{2}{c}{$E+iB$} & \multicolumn{2}{c}{$Q+iU$} \\
+    $b=90^\circ$ &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_rad_lat90_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_rad_lat90_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_con_lat90_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_con_lat90_lon45.pdf} \\
+$b=87^\circ$&
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_rad_lat87_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_rad_lat87_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_con_lat87_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_con_lat87_lon45.pdf} \\
+$b=80^\circ$&
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_rad_lat80_lon30.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_rad_lat80_lon30.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_con_lat80_lon30.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_con_lat80_lon30.pdf} \\
+$b=0^\circ$&
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_rad_lat0_lon90.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_rad_lat0_lon90.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_con_lat0_lon90.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_con_lat0_lon90.pdf} \\
+&
+\centering $ \textrm{Re} \left(\mathcal{M}_{G} \right) $ &
+\centering $\textrm{Im} \left(\mathcal{M}_{G} \right) $ &
+\centering $\textrm{Re}  \left(\mathcal{M}_{B}^* \right) $ &
+\centering $\textrm{Im} \left(\mathcal{M}_{B}^* \right) $
+\end{tabular}
+\end{center}
+  \caption{Real and imaginary parts of real space kernels for $Q/U$ to $E/B$ translation (and vice versa).  The function $\mathcal{M}_{G}$ is the Green's function (radiation kernel) that gives $E+iB$ for a delta function Stokes input $_{+2}X = Q+iU$ at the center.  On the other hand, $\mathcal{M}^*_{B}$ is the Green's function (radiation kernel) that gives $_{+2}X$ for a delta function scalar input $E+iB$ at the center.  The black circles denotes the position of the center around which the kernels have been evaluated while the black star marks the location of the North Pole. The four rows depict the kernels at different latitudes on the sphere.   The kernels are unchanged for center points at constant latitude.  $\mathcal{M}_G$ is invariant over the sphere because $E/B$ fields are coordinate independent.  In the convolution kernels, $\mathcal{M}_G$ and $\mathcal{M}_B$ switch roles.  The kernels have been evaluated with the band limit $\ell \in [2,192]$ and sampled at the HEALPix resolution parameter NSIDE=2048. Each panel is approximately $16^{\circ} \times 16^{\circ}$ in size with grid lines every 2 degrees. } \label{fig:vis_kernel} 
+\end{figure}
+
+
+We compute the Euler angles $(\alpha, \beta, \gamma)$ given the angular coordinates of any two Healpix pixels and use these to evaluate the convolution and radiation kernels. To provide an intuition for how these kernels vary as a function of position of the central pixel we depict in \fig{fig:vis_kernel} the respective kernels at a few different locations on the sphere.
+While the kernels are evaluated in the band limit $\ell \in [2,192]$, for illustration these functions are sampled at a very high Healpix resolution parameter of NSIDE=2048. All the plots have been rotated such that the central location marked by the black circle are in the centre of the figure. The horizontal and vertical lines that pass through the central black circle mark the local latitude and longitude respectively.
+
+The real and imaginary part of the kernel $\mathcal{M}_G$ are identical irrespective of changes in the galactic latitude and longitude of the central pixel. This is consistent with the Green's function interpretation of these kernels. Note that these functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first three rows of \fig{fig:vis_kernel}. Both these facts can be associated with the fact that this function does not depend on the Euler angle $\gamma$. From \eq{eq:qu2eb_convolution_explicit} and \eq{eq:eb2qu_convolution_explicit} it is clear that $\mathcal{M}_G$ and $\mathcal{M}_B$ can be interpreted in the following ways,
+%\revisit{Recall that the angle $\gamma$ defines the rotation about the final z-axis which co-alligns the planar axes. Since the function $\mathcal{M}$ does not depend of this final orientation, it implies a rotational invariance of the fields constructed by convolving with this kernel.}
+%
+\begin{subequations}
+\beqry
+\bmat E= \textrm{Re}(\mathcal{M}_G) \\ B =\textrm{Im}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=\delta(\hat{n} - \hat{n}_q)\\ U=0 \emat;\qquad
+\bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\delta(\hat{n} - \hat{n}_q) \emat \,,\\
+\bmat Q= \textrm{Re}(\mathcal{M}^*_B) \\ U = \textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\delta(\hat{n} - \hat{n}_e)\\ B=0 \emat; \qquad
+\bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = \textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\delta(\hat{n} - \hat{n}_e) \emat \,.
+\eeqry
+\end{subequations}
+
+
+
+
+
+
+
 
  
 %--------------------------------------------------------
