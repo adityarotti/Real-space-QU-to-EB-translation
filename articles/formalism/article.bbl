@@ -15,15 +15,23 @@ M.~Zaldarriaga and U.~Seljak, \emph{{All-sky analysis of polarization in the
   [\href{https://arxiv.org/abs/astro-ph/9609170}{{\ttfamily
   astro-ph/9609170}}].
 
+\bibitem{varshalovich}
+D.~A. Varshalovich, A.~N. Moskalev and V.~K. Khersonskii, \emph{{Quantum Theory
+  of Angular Momentum (World Scientific)}}.
+\newblock World Scientific, 1988.
+
 \bibitem{goldberg67}
 J.~N. Goldberg, A.~J. Macfarlane, E.~T. Newman, F.~Rohrlich and E.~C.~G.
   Sudarshan, \emph{{Spin-s Spherical Harmonics and $\eth$}},
   \href{https://doi.org/10.1063/1.1705135}{\emph{J. Math. Phys.} {\bfseries 8}
   (nov, 1967) 2155--2161}.
 
-\bibitem{varshalovich}
-D.~A. Varshalovich, A.~N. Moskalev and V.~K. Khersonskii, \emph{{Quantum Theory
-  of Angular Momentum (World Scientific)}}.
-\newblock World Scientific, 1988.
+\bibitem{2016A&A...586A.141P}
+{Planck Collaboration}, P.~A.~R. {Ade}, N.~{Aghanim}, M.~{Arnaud},
+  M.~{Ashdown}, J.~{Aumont} et~al., \emph{{Planck intermediate results.
+  XXXVIII. E- and B-modes of dust polarization from the magnetized filamentary
+  structure of the interstellar medium}},
+  \href{https://doi.org/10.1051/0004-6361/201526506}{\emph{\aap} {\bfseries
+  586} (Feb., 2016) A141}.
 
 \end{thebibliography}\endgroup
