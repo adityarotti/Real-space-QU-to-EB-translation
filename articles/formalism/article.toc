@@ -1,21 +1,21 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {section}{\numberline {2}Polarization primer}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Constructing $E/B$ fields without harmonic space}{2}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Standard $E$/$B$ fields}{3}{subsection.2.2}
-\contentsline {section}{\numberline {3}Real space polarization operators}{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}Matrix notation}{4}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Evaluating scalar $E/B$ from Stokes $Q/U$}{6}{subsection.3.2}
+\contentsline {subsection}{\numberline {2.1}A heuristic argument for real space construction of E/B fields on the sphere}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Standard $E$/$B$ fields}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Matrix notation}{4}{subsection.2.3}
+\contentsline {section}{\numberline {3}Real space polarization operators}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Evaluating scalar $E/B$ from Stokes $Q/U$}{6}{subsection.3.1}
 \contentsline {paragraph}{Radiation kernel.}{7}{section*.3}
 \contentsline {paragraph}{Convolution kernel.}{8}{section*.5}
-\contentsline {subsection}{\numberline {3.3}Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}{9}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Visualizing the real space kernels}{9}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes}{11}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}The non-locality of the real space operators}{15}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.2}Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Visualizing the real space kernels}{9}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes}{11}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}The non-locality of the real space operators}{14}{subsection.3.5}
 \contentsline {paragraph}{Band limit dependence.}{15}{section*.10}
-\contentsline {subsection}{\numberline {3.7}Generalized polarization operators}{16}{subsection.3.7}
-\contentsline {subsubsection}{\numberline {3.7.1}Recovering the standard $E$ and $B$ mode spectra}{19}{subsubsection.3.7.1}
-\contentsline {subsubsection}{\numberline {3.7.2}Relation to the spin raising $\eth ^2$ and lowering $\mathaccentV {bar}016{\eth }^2$ operators}{19}{subsubsection.3.7.2}
+\contentsline {subsection}{\numberline {3.6}Generalized polarization operators}{17}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Recovering the standard $E$ and $B$ mode spectra}{19}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Relation to the spin raising $\eth ^2$ and lowering $\mathaccentV {bar}016{\eth }^2$ operators}{19}{subsubsection.3.6.2}
 \contentsline {section}{\numberline {4}Discussion}{20}{section.4}
 \contentsline {paragraph}{Polarization signature of magnetized filaments}{21}{section*.12}
-\contentsline {section}{\numberline {A}Appendix}{21}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Product of spin spherical harmonics}{21}{subsection.A.1}
+\contentsline {section}{\numberline {A}Appendix}{22}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Product of spin spherical harmonics}{22}{subsection.A.1}
