@@ -1,5 +1,81 @@
 
-\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}
+
+\bibitem{1997NewA....2..323H}
+W.~{Hu} and M.~{White}, \emph{{A CMB polarization primer}},
+  \href{https://doi.org/10.1016/S1384-1076(97)00022-5}{\emph{\na} {\bfseries 2}
+  (Oct., 1997) 323--344},
+  [\href{https://arxiv.org/abs/astro-ph/9706147}{{\ttfamily
+  astro-ph/9706147}}].
+
+\bibitem{1997PhRvD..56..596H}
+W.~{Hu} and M.~{White}, \emph{{CMB anisotropies: Total angular momentum
+  method}}, \href{https://doi.org/10.1103/PhysRevD.56.596}{\emph{\prd}
+  {\bfseries 56} (July, 1997) 596--615},
+  [\href{https://arxiv.org/abs/astro-ph/9702170}{{\ttfamily
+  astro-ph/9702170}}].
+
+\bibitem{1997PhRvL..78.2054S}
+U.~{Seljak} and M.~{Zaldarriaga}, \emph{{Signature of Gravity Waves in the
+  Polarization of the Microwave Background}},
+  \href{https://doi.org/10.1103/PhysRevLett.78.2054}{\emph{Physical Review
+  Letters} {\bfseries 78} (Mar., 1997) 2054--2057},
+  [\href{https://arxiv.org/abs/astro-ph/9609169}{{\ttfamily
+  astro-ph/9609169}}].
+
+\bibitem{2016A&A...586A.133P}
+{Planck Collaboration}, R.~{Adam}, P.~A.~R. {Ade}, N.~{Aghanim}, M.~{Arnaud},
+  J.~{Aumont} et~al., \emph{{Planck intermediate results. XXX. The angular
+  power spectrum of polarized dust emission at intermediate and high Galactic
+  latitudes}}, \href{https://doi.org/10.1051/0004-6361/201425034}{\emph{\aap}
+  {\bfseries 586} (Feb., 2016) A133},
+  [\href{https://arxiv.org/abs/1409.5738}{{\ttfamily 1409.5738}}].
+
+\bibitem{1996ApJ...469....1K}
+A.~{Kosowsky} and A.~{Loeb}, \emph{{Faraday Rotation of Microwave Background
+  Polarization by a Primordial Magnetic Field}},
+  \href{https://doi.org/10.1086/177751}{\emph{\apj} {\bfseries 469} (Sept.,
+  1996) 1}, [\href{https://arxiv.org/abs/astro-ph/9601055}{{\ttfamily
+  astro-ph/9601055}}].
+
+\bibitem{1999PhRvL..83.1506L}
+A.~{Lue}, L.~{Wang} and M.~{Kamionkowski}, \emph{{Cosmological Signature of New
+  Parity-Violating Interactions}},
+  \href{https://doi.org/10.1103/PhysRevLett.83.1506}{\emph{Physical Review
+  Letters} {\bfseries 83} (Aug., 1999) 1506--1509},
+  [\href{https://arxiv.org/abs/astro-ph/9812088}{{\ttfamily
+  astro-ph/9812088}}].
+
+\bibitem{2004ApJ...616....1C}
+L.~{Campanelli}, A.~D. {Dolgov}, M.~{Giannotti} and F.~L. {Villante},
+  \emph{{Faraday Rotation of the Cosmic Microwave Background Polarization and
+  Primordial Magnetic Field Properties}},
+  \href{https://doi.org/10.1086/424840}{\emph{\apj} {\bfseries 616} (Nov.,
+  2004) 1--7}, [\href{https://arxiv.org/abs/astro-ph/0405420}{{\ttfamily
+  astro-ph/0405420}}].
+
+\bibitem{2014MNRAS.438.2508P}
+L.~{Pogosian}, \emph{{Searching for primordial magnetism with multifrequency
+  cosmic microwave background experiments}},
+  \href{https://doi.org/10.1093/mnras/stt2378}{\emph{\mnras} {\bfseries 438}
+  (Mar., 2014) 2508--2512}, [\href{https://arxiv.org/abs/1311.2926}{{\ttfamily
+  1311.2926}}].
+
+\bibitem{1997PhRvD..55.7368K}
+M.~{Kamionkowski}, A.~{Kosowsky} and A.~{Stebbins}, \emph{{Statistics of cosmic
+  microwave background polarization}},
+  \href{https://doi.org/10.1103/PhysRevD.55.7368}{\emph{\prd} {\bfseries 55}
+  (June, 1997) 7368--7388},
+  [\href{https://arxiv.org/abs/astro-ph/9611125}{{\ttfamily
+  astro-ph/9611125}}].
+
+\bibitem{1997PhRvD..55.1830Z}
+M.~{Zaldarriaga} and U.~{Seljak}, \emph{{All-sky analysis of polarization in
+  the microwave background}},
+  \href{https://doi.org/10.1103/PhysRevD.55.1830}{\emph{\prd} {\bfseries 55}
+  (Feb., 1997) 1830--1840},
+  [\href{https://arxiv.org/abs/astro-ph/9609170}{{\ttfamily
+  astro-ph/9609170}}].
 
 \bibitem{Zaldarriaga2001a}
 M.~Zaldarriaga, \emph{{The nature of the E-B decomposition of CMB
