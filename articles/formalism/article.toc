@@ -16,4 +16,4 @@
 \contentsline {subsubsection}{\numberline {3.6.1}Recovering the standard $E$ and $B$ mode spectra}{18}{subsubsection.3.6.1}
 \contentsline {subsubsection}{\numberline {3.6.2}Relation to the spin raising $\eth ^2$ and lowering $\mathaccentV {bar}016{\eth }^2$ operators}{20}{subsubsection.3.6.2}
 \contentsline {section}{\numberline {4}Discussion}{20}{section.4}
-\contentsline {paragraph}{Polarization signature of magnetized filaments}{21}{section*.12}
+\contentsline {paragraph}{Polarization signature of magnetized filaments}{21}{figure.caption.13}
