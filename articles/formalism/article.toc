@@ -14,6 +14,5 @@
 \contentsline {paragraph}{Band limit dependence.}{16}{section*.10}
 \contentsline {subsection}{\numberline {3.6}Generalized polarization operators}{17}{subsection.3.6}
 \contentsline {subsubsection}{\numberline {3.6.1}Recovering the standard $E$ and $B$ mode spectra}{18}{subsubsection.3.6.1}
-\contentsline {subsubsection}{\numberline {3.6.2}Relation to the spin raising $\eth ^2$ and lowering $\mathaccentV {bar}016{\eth }^2$ operators}{20}{subsubsection.3.6.2}
-\contentsline {section}{\numberline {4}Discussion}{20}{section.4}
-\contentsline {paragraph}{Polarization signature of magnetized filaments}{21}{figure.caption.13}
+\contentsline {section}{\numberline {4}Understanding polarization signatures of magnetized filaments}{20}{section.4}
+\contentsline {section}{\numberline {5}Discussion}{22}{section.5}
