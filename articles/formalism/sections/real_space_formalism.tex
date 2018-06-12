@@ -62,7 +62,7 @@ The spin-raising operator ($\eth$), applied to a field of spin-s $_{s}g$, result
 %which by the virtue of being scalars are independent of coordinate definitions. %The real part of this complex spin-0 scalar field corresponds to the E-mode while the imaginary part to the B-modes \cite{Kamionkowski1997}. 
 The $\cal E/B$ fields are defined locally at point $\hat n$ in terms of the operators $\eth$ and $\bar \eth$.
 
-It is possible to decompose the complex field $_{\pm 2}\bar{X}$ into spin spherical harmonic functions: ${}_{\pm 2}\bar{X}(\hat{n}) = \sum_{\ell m} {}_{\pm 2} X_{\ell m} {}_{\pm 2}Y_{\ell m}(\hat{n})$. Applying the spin raising and lowering operators on the spin spherical harmonic functions leads to the following identities \cite{goldberg67}:
+It is possible to decompose the complex field $_{\pm 2}\bar{X}$ into spin spherical harmonic functions: ${}_{\pm 2}\bar{X}(\hat{n}) = \sum_{\ell m} {}_{\pm 2} \tilde X_{\ell m} {}_{\pm 2}Y_{\ell m}(\hat{n})$. Applying the spin raising and lowering operators on the spin spherical harmonic functions leads to the following identities \cite{goldberg67}:
 %
 \begin{subequations}\label{eq:spinopylm} 
 \beqry
@@ -92,17 +92,17 @@ In the remainder of this article, we will work with the scalar $E$ and pseudo sc
 E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n})\qquad;\qquad B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-These $E/B$ fields are merely \revisit{red-filtered} \comment{Is this unabbiguously understood as down weighing the high multipoles ? } versions of $\mathcal{E}/\mathcal{B}$ (their spherical harmonic coefficients of expansion are related by the factor $[{(\ell+2)!}/{(\ell-2)!}]^{1/2}$) and are not local functions of Stokes $Q/U$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
+These $E/B$ fields are merely versions of $\mathcal{E}/\mathcal{B}$ that downweight higher-$\ell$ modes  (their spherical harmonic coefficients of expansion are reduced by the factor $[{(\ell+2)!}/{(\ell-2)!}]^{1/2}$).  They are not local functions of Stokes $Q/U$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
 
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
 Our derivation of real space operators is more transparent in a matrix-vector notation.\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}
 We introduce a matrix that encodes spin spherical harmonic basis vectors:
 %
 \beq
-{}_{|s|}\mathcal{Y}= \bmat _{+s}Y & 0 \\ 0 & _{-s}Y \emat _{2 \rm N_{\rm pix} \times 2 \rm N_{\rm alms}} ;\qquad  {}_{|s|}\mathcal{Y}^{\dagger}= \Delta \Omega \bmat _{+s}Y^{\dagger} & 0 \\ 0 & _{-s}Y^{\dagger} \emat _{2 \rm N_{\rm alms} \times 2 \rm N_{\rm pix}} \,,
+{}_{|s|}\mathcal{Y}= \bmat _{+s}Y & 0 \\ 0 & _{-s}Y \emat _{2 \rm N_{\rm pix} \times 2 \rm N_{\rm alms}} ;\qquad  {}_{|s|}\mathcal{Y}^{\ddagger}= \Delta \Omega \bmat _{+s}Y^{\dagger} & 0 \\ 0 & _{-s}Y^{\dagger} \emat _{2 \rm N_{\rm alms} \times 2 \rm N_{\rm pix}} \,,
 \eeq
 %
-\revisit{where $s$ denotes the spin of the basis functions and our definition of ${}_{|s|}\mathcal{Y}^{\dagger}$ differs from the conventional dagger operation by the factor $\Delta \Omega$ which is introduced to ensures the ortho-\textit{normality} of the basis functions: ${}_{|s|}\mathcal{Y}^{\dagger} {}_{|s|}\mathcal{Y} = I_{2 \rm N_{\rm alms} \times2 \rm N_{\rm alms}}$ on the discretized sphere.}
+where $s$ denotes the spin of the basis functions and our definition of ${}_{|s|}\mathcal{Y}^{\ddagger}$ differs from the conventional conjugate transpose operation by the factor $\Delta \Omega$.  We introduce this to ensures the ortho-\textit{normality} of these operations, so that ${}_{|s|}\mathcal{Y}^{\ddagger} {}_{|s|}\mathcal{Y} = I_{2 \rm N_{\rm alms} \times2 \rm N_{\rm alms}}$ on the discretized sphere, and maintain the standard definition of spherical harmonics.
 
 We will be working with cases $s \in [0,2]$. Each column of ${}_{|s|}\mathcal{Y}$ maps to a specific harmonic basis function (i.e. indexed by $\ell m$) and each row maps to a pixel on the sphere. This matrix is not square in general: the number of rows is determined by the pixelization and the number of columns is set by the number of basis functions (e.g. determined by the band limit).
 
@@ -134,8 +134,8 @@ Using the data vectors and the matrix operators defined above we can now express
   \eeqry
   Meanwhile the spherical harmonic transforms are written as:
   \beqry
-  \bar X &=  {{}_2\mathcal{Y}}  \tilde X; &\qquad \tilde X ={{}_2\mathcal{Y}}^{\dagger}  \bar X  ; \\
-  \bar S &=  {{}_0\mathcal{Y}} \tilde S; &\qquad  \tilde S =  {{}_0\mathcal{Y}}^{\dagger} \bar S \,.
+  \bar X &=  {{}_2\mathcal{Y}}  \tilde X; &\qquad \tilde X ={{}_2\mathcal{Y}}^{\ddagger}  \bar X  ; \\
+  \bar S &=  {{}_0\mathcal{Y}} \tilde S; &\qquad  \tilde S =  {{}_0\mathcal{Y}}^{\ddagger} \bar S \,.
   \eeqry
 % Aditya's version
 %\beqry
@@ -179,15 +179,15 @@ In \sec{sec:pol-primer} we described the conventional procedure of computing the
 In this section we derive the real space convolution kernels on the sphere which can be used to directly evaluate the scalar fields $E$ \& $B$ on the sphere.  We use the vector-matrix notation introduced in \sec{sec:mat_pol_intro} to write down an operator equation relating the real space vector of scalars \vs to the Stokes polarization vector \vp{}:
 %
 \beqrys
-\bar{S} &=& {{}_0\mathcal{Y}} \, \tilde T^{-1}  \, {{}_2\mathcal{Y}^{\dagger}} \, \bar T  \bar{P}
-= \frac{1}{2} {{}_0\mathcal{Y}} \, \tilde T^{\dagger} {{}_2\mathcal{Y}^{\dagger}} \, \bar T \bar{P} \,,   \\
+\bar{S} &=& {{}_0\mathcal{Y}} \, \tilde T^{-1}  \, {{}_2\mathcal{Y}^{\ddagger}} \, \bar T  \bar{P}
+= \frac{1}{2} {{}_0\mathcal{Y}} \, \tilde T^{\dagger} {{}_2\mathcal{Y}^{\ddagger}} \, \bar T \bar{P} \,,   \\
 &=&  \bar O \bar{P}. \label{eq:qu2eb_op}
 \eeqrys
 %
 The explicit form of the real space operator $\bar O$ can be derived by contracting over all the matrix operators. This procedure is explicitly worked out in the following set of equations:
 %
 \beqrys
-\bar{O} &=& \frac{1}{2} {{}_0\mathcal{Y}}\, \tilde T^{\dagger} {{}_2\mathcal{Y}^{\dagger}} \, \bar T \,, \\
+\bar{O} &=& \frac{1}{2} {{}_0\mathcal{Y}}\, \tilde T^{\dagger} {{}_2\mathcal{Y}^{\ddagger}} \, \bar T \,, \\
 &=& -0.5 \Delta \Omega \yzmat{e} \qutoxd \ymatc{q} \qutox   \,, \\
 &=& -0.5 \Delta \Omega \begin{bmatrix} \sum ({}_{0}Y_e ~{}_{2}Y^{\dag}_q  +  {}_{0}Y_e~ {}_{-2}Y^{\dag}_q) & {\rm i}  \sum ({}_{0}Y_e ~ {}_{2}Y^{\dag}_q - {}_{0}Y_e ~{}_{-2}Y^{\dag}_q)  \\  - {\rm i} \sum  ({}_{0}Y_e ~ {}_{2}Y^{\dag}_q - {}_{0}Y_e~ {}_{-2}Y^{\dag}_q) & \sum ({}_{0}Y_e~ {}_{2}Y^{\dag}_q + {}_{0}Y_e ~{}_{-2}Y^{\dag}_q)  \end{bmatrix} \,, \label{eq:qu2eb_ker_1}
 \eeqrys
@@ -287,7 +287,7 @@ The real space operator which translates $E$ \& $B$ fields to Stokes parameters 
 %
 \begin{subequations}
 \beqry
-\bar{P} &=& \bar{T}^{-1} {{}_2\mathcal{Y}}\, \tilde T {{}_0\mathcal{Y}^{\dagger}}\bar{S} = \frac{1}{2} \bar{T}^{\dagger} {{}_2\mathcal{Y}} \,\tilde T {{}_0\mathcal{Y}^{\dagger}}\bar{S}\,,  \\
+\bar{P} &=& \bar{T}^{-1} {{}_2\mathcal{Y}}\, \tilde T {{}_0\mathcal{Y}^{\ddagger}}\bar{S} = \frac{1}{2} \bar{T}^{\dagger} {{}_2\mathcal{Y}} \,\tilde T {{}_0\mathcal{Y}^{\ddagger}}\bar{S}\,,  \\
 &=&  \bar O^{-1} \bar{S}\,.
 \eeqry
 \end{subequations}
@@ -389,11 +389,11 @@ $\mathcal{M}^*_B$ is the Greens function of the operator that transforms E/B to 
 We can only measure the total Stokes vector, a sum of the part corresponding to scalar $E$ and the part corresponding to $B$.  The $E$/$B$ modes are orthogonal to each other in the sense that their respective operators are orthogonal to each other as discussed in \sec{sec:mat_pol_intro}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to $E$ modes and another \vp{\rm B} that purely contribute to the $B$ modes of polarization. In this section we derive the real space operators which operate on the total Stokes vector and yield this decomposition, without ever having to explicitly evaluate the scalar modes. The algebra is more involved, but the derivation is similar to that discussed in \sec{sec:qu2eb}, so we refrain from presenting the detailed calculations here, and outline only the key points. We use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions:
 %
 \beqry
-\bar{P}_E &=&  [\bar T^{-1}  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_E \tilde T^{-1}* {{}_2\mathcal{Y}^{\dagger}}\, \bar T] \bar{P}  \,, \\
-&=& [\frac{1}{4} \bar T^{\dagger }  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_E  \tilde T^{\dagger}  {{}_2\mathcal{Y}^{\dagger}}\, \bar T ]\bar{P}  \,, \nonumber \\
+\bar{P}_E &=&  [\bar T^{-1}  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_E \tilde T^{-1} {{}_2\mathcal{Y}^{\ddagger}}\, \bar T] \bar{P}  \,, \\
+&=& [\frac{1}{4} \bar T^{\dagger }  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_E  \tilde T^{\dagger}  {{}_2\mathcal{Y}^{\ddagger}}\, \bar T ]\bar{P}  \,, \nonumber \\
 &=&  \bar O_{E} \bar{P} \,,\nonumber \\
-\bar{P}_B &=&  [\bar T^{-1}  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_B \tilde T^{-1} {{}_2\mathcal{Y}^{\dagger}} \bar T]\bar{P}  \,, \\
-&=& [\frac{1}{4} \bar T^{\dagger }  {{}_2\mathcal{Y}}\, \tilde T  \tilde O_B \tilde T^{\dagger} {{}_2\mathcal{Y}^{\dagger}}\, \bar T] \bar{P}   \,, \nonumber\\
+\bar{P}_B &=&  [\bar T^{-1}  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_B \tilde T^{-1} {{}_2\mathcal{Y}^{\ddagger}} \bar T]\bar{P}  \,, \\
+&=& [\frac{1}{4} \bar T^{\dagger }  {{}_2\mathcal{Y}}\, \tilde T  \tilde O_B \tilde T^{\dagger} {{}_2\mathcal{Y}^{\ddagger}}\, \bar T] \bar{P}   \,, \nonumber\\
 &=&  \bar O_{B} \bar{P} \,. \nonumber
 \eeqry
 %
