@@ -254,7 +254,7 @@ where $\Delta \Omega$ denotes the pixel area and the last line is a simple scala
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.5\columnwidth]{radiation_convolution.pdf}
-\caption{\revisit{The local cartesian coordinates $(\hat{x},\hat{y})$ are drawn on the red circle(sphere), representative of the coordinate dependence of the Stokes parameters. The two sets of dotted lines drawn at representative points denote great circles, one which passes through the central point labelled `e' and the other chosen such that the two have locally orthogonal tangent vectors $(\hat{r},\hat{\phi})$. The angle $\alpha_{qe}$ defines a rotation operator that aligns the local $\hat{x}$ with $\hat{r}$.   \textit{Convolution kernel:} The resultant scalar field at `e' can be evaluated by summing over the contribution from all the Stokes parameters on the red circle. This convolution is performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$. \textit{Radiation kernel:} It is also possible to compute the contribution from the Stokes parameter at `q' to all the point on the blue circle and this is a function of the Euler angle $\alpha_{qe}$. On the flat sky $\gamma_{eq}=-\alpha_{qe}$ and consequently there is no difference between the radiation and convolution kernels.}}
+\caption{\revisit{The local cartesian coordinates $(\hat{x},\hat{y})$ are drawn on the red circle(sphere), representative of the coordinate dependence of the Stokes parameters. The two sets of dotted lines drawn at representative points denote great circles, one which passes through the central point labelled `e' and the other chosen such that the two have locally orthogonal tangent vectors $(\hat{r},\hat{\phi})$. The angle $\alpha_{qe}$ defines a rotation operator that aligns the local $\hat{x}$ with $\hat{r}$.   \textit{Convolution kernel:} The resultant scalar field at `$e$' can be evaluated by summing over the contribution from all the Stokes parameters on the red circle. This convolution is performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$. \textit{Radiation kernel:} It is also possible to compute the contribution from the Stokes parameter at `$q$' to all the point on the blue circle and this is a function of the Euler angle $\alpha_{qe}$. On the flat sky $\gamma_{eq}=-\alpha_{qe}$ and consequently there is no difference between the radiation and convolution kernels.}}
 \label{fig:planar_euler_angles}
 \end{figure}
 %
@@ -283,7 +283,7 @@ where $\star$ denotes a convolution and $\mathcal{M}_{B} = - \Delta \Omega\mm(\b
 
 %--------------------------------------------------------
 \subsection{Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}\label{sec:eb2qu}
-The real space operator which translates $E$ \& $B$ fields to Stokes parameters $Q$ \& $U$ can be derived using a similar procedure. Expressed in the matrix-vector notation, inverse operator is given by the following equation:
+The real space operator which translates $E$/$B$ fields to Stokes parameters $Q$/$U$ can be derived using a similar procedure. Expressed in the matrix-vector notation, inverse operator is given by the following equation:
 %
 \begin{subequations}
 \beqry
@@ -311,7 +311,7 @@ where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}. Not
     {}_{+2}X(\hat{n}_q) &&= \Bigg\lbrace \mathcal{M}^*_{G} \star [E+iB] \Bigg\rbrace(\hat{n}_q) \hspace{0.8cm}\textrm{\emph {Convolution kernel}}\,, \label{eq:eb2qu_convolution}
 \eeqry
 %
-where all the symbols have the same meaning as defined in \sec{sec:qu2eb}. Note that the conjugated forms of the Green's function and the effective beam for the operator $\bar{O}$ have their roles reversed for the inverse operator $\bar{O}^{-1}$.
+where all the symbols have the same meaning as defined in \sec{sec:qu2eb}. Note that the conjugated forms of the radiation kernel (Green's function) and the convolution kernel (effective beam) for the operator $\bar{O}$ have their roles reversed for the inverse operator $\bar{O}^{-1}$.
 %--------------------------------------------------------
 
 \subsection{Visualizing the real space kernels} \label{sec:visualize_operator}
@@ -360,17 +360,17 @@ $b=0^\circ$&
 We compute the Euler angles $(\alpha, \beta, \gamma)$ given the angular coordinates of any two Healpix pixels and use these to evaluate the convolution and radiation kernels. To provide an intuition for how these kernels vary as a function of position of the central pixel we depict in \fig{fig:vis_kernel} the respective kernels at a few different locations on the sphere.
 While the kernels are evaluated in the band limit $\ell \in [2,192]$, for illustration these functions are sampled at a very high Healpix resolution parameter of NSIDE=2048. All the plots have been rotated such that the central location marked by the black circle are in the centre of the figure. The horizontal and vertical lines that pass through the central black circle mark the local latitude and longitude respectively.
 
-The real and imaginary part of the kernel $\mathcal{M}_G$ are identical irrespective of changes in the galactic latitude and longitude of the central pixel. These functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first two rows of \fig{fig:vis_kernel}. These observations are consistent with the Green's function interpretation of the kernel $\mathcal{M}_{G}$ which yield coordinate independent scalars E/B.  From \eq{eq:qu2eb_radiation_concise} it is clear that $\mathcal{M}_G$ can be interpreted in the following ways:
+The kernel $\mathcal{M}_G$ is the Green's function of the operator that transforms Stoke parameters to coordinate independent $E/B$.  The coordinate independence implies that the real and imaginary parts of the kernel do not vary with changes in the galactic latitude and longitude of the central pixel. In particular these functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first two rows of \fig{fig:vis_kernel}. From \eq{eq:qu2eb_radiation_concise}, we can see the $E/B$ patterns that $\delta$-functions in the Stokes parameters produce:
 %
 \beq
-\bmat E= \textrm{Re}(\mathcal{M}_G) \\ B =\textrm{Im}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=\delta(\hat{n} - \hat{n}_q)\\ U=0 \emat \hspace{5 mm};\hspace{5 mm}
-\bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\delta(\hat{n} - \hat{n}_q) \emat\,,
+\bmat E= \textrm{Re}(\mathcal{M}_G) \\ B =\textrm{Im}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=\delta(\hat{n} - \hat{n}_q)\\ U=0 \emat ;\qquad
+\bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\delta(\hat{n} - \hat{n}_q) \emat.
 \eeq
 %
-$\mathcal{M}^*_B$ is the Greens function of the operator that transforms E/B to Stokes parameters Q/U. The real and imaginary parts of $\mathcal{M}^*_B$ are identical irrespective of the galactic longitude, however they vary as a function of galactic latitude. This latitude dependent shape is necessary as the coordinate dependence of the Stokes parameters derived from the scalar E/B is built in via this Greens function. From \eq{eq:eb2qu_radiation} it is clear that $\mathcal{M}^*_B$ can be interpreted in the following manner:
+On the other hand, $\mathcal{M}^*_B$ is the Green's function of the operator that transforms E/B to coordinate-dependent Stokes parameters Q/U. The kernel $\mathcal{M}^*_B$ does not change with the central longitude, but varies as a function of galactic latitude. This latitude-dependent shape carries the  coordinate dependence of the Stokes parameters. From \eq{eq:eb2qu_radiation}, we $\mathcal{M}^*_B$ arises from $\delta$-functions in $E/B$:
 %
 \beq
-\bmat Q= \textrm{Re}(\mathcal{M}^*_B) \\ U = \textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\delta(\hat{n} - \hat{n}_e)\\ B=0 \emat \hspace{5 mm};\hspace{5 mm}
+\bmat Q= \textrm{Re}(\mathcal{M}^*_B) \\ U = \textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\delta(\hat{n} - \hat{n}_e)\\ B=0 \emat;\qquad
 \bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = \textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\delta(\hat{n} - \hat{n}_e) \emat\,.
 \eeq
 %
