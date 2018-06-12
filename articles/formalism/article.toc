@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {section}{\numberline {2}Polarization primer}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}A heuristic argument for real space construction of E/B fields on the sphere}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.1}Heuristic, real-space construction of E/B fields on the sphere}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Standard $E$/$B$ fields}{4}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Matrix notation}{5}{subsection.2.3}
 \contentsline {section}{\numberline {3}Real space polarization operators}{6}{section.3}
@@ -9,9 +9,9 @@
 \contentsline {paragraph}{Convolution kernel.}{8}{section*.5}
 \contentsline {subsection}{\numberline {3.2}Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}{9}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Visualizing the real space kernels}{10}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes}{10}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}The non-locality of the real space operators}{15}{subsection.3.5}
-\contentsline {paragraph}{Band limit dependence.}{16}{section*.10}
+\contentsline {subsection}{\numberline {3.4}Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes}{11}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}The non-locality of the real space operators}{14}{subsection.3.5}
+\contentsline {paragraph}{Band limit dependence.}{15}{section*.10}
 \contentsline {subsection}{\numberline {3.6}Generalized polarization operators}{17}{subsection.3.6}
 \contentsline {subsubsection}{\numberline {3.6.1}Recovering the standard $E$ and $B$ mode spectra}{18}{subsubsection.3.6.1}
 \contentsline {section}{\numberline {4}Understanding polarization signatures of magnetized filaments}{20}{section.4}

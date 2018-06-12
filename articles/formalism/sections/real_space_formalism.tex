@@ -1,37 +1,39 @@
 \section{Polarization primer} \label{sec:pol-primer}
 %\subsection{Constructing $E/B$ fields without harmonic space}
-\subsection{A heuristic argument for real space construction of E/B fields on the sphere} \label{sec:qu2eb_heuristic}
+\subsection{Heuristic, real-space construction of E/B fields on the sphere} \label{sec:qu2eb_heuristic}
 %\comment{Need a better title for the section that gives the heuristic argument}
 %\textit{Alternative for bringing the heuristic argument earlier.}
 
- CMB polarization is measured in terms of Stokes parameters, time averages of the linear polarization of the electric field along cartesian axes perpendicular to the line of sight.\footnote{Throughout we use the conventions of HEALPix \cite{healpix_primer}, measuring the polarization angle East of South.} Thus Stokes $Q$ and $U$ depend on the choice of the local coordinate system and a rotation by an angle $\psi$ around the line of sight transforms them as:
+ CMB polarization is measured in terms of Stokes parameters, time averages of the linear polarization of the electric field along cartesian axes perpendicular to the line of sight.\footnote{Throughout we use the conventions of HEALPix \cite{healpix_primer}, measuring the polarization angle East of South.} Thus Stokes $Q$ and $U$ depend on the choice of the local coordinate system, and a rotation by an angle $\psi$ around the line of sight transforms them as:
 %
 \beq \label{eq:qu-rot}
 \fqu' = \begin{bmatrix} \cos{2 \psi} &  \sin{2 \psi} \\ -\sin{2\psi} & \cos{2 \psi} \end{bmatrix} \fqu \,.
 \eeq
-Equivalently the object $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$ and hence forms a spin-2 field \cite{Zaldarriaga1997}.
+Equivalently, the object $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$ and hence forms a spin $\pm$2 field \cite{Zaldarriaga1997}.
 
 The standard construction of $E$ and $B$ fields arise from the desire to have a coordinate independent description of the polarization. This follows from operations that raise (or lower) the spin of the $X$ field to construct scalar fields.  But from the transform properties of the Stokes parameters, we can already construct a heuristic argument for what these operations must look like in real space.
 
-We consider the contribution to a scalar field at $\hat n_e$ from the polarization field at $\hat n_q$. \fig{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a \revisit{counter-clockwise rotation around the local $\hat n_q$ (unit outward pointing radial vector at $(\theta_q,\phi_q)$) by angle $\alpha$, parallel transport by angle $\beta$ along the shorter geodesic and a counter-clockwise rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention.\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}}
+We consider the contribution to a scalar field at $\hat n_e$ from the polarization field at $\hat n_q$. \fig{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a \revisit{counter-clockwise rotation around the local $\hat n_q$ (unit radial vector at $(\theta_q,\phi_q)$ pointing outward) by angle $\alpha$, parallel transport by angle $\beta$ along the shorter geodesic and a counter-clockwise rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention.\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}}
 %
 \begin{figure}%[!hbt]
 \centering
 \includegraphics[width=0.5\columnwidth]{euler.pdf}
-\caption{This figure depicts the Euler angles in the z-y1-z2 convention. The cartesian coordinates shown in \revisit{dark solid green} are those that lie in the tangent plane at location $\hat{n}_q = (\theta_q, \phi_q)$ while those shown in \revisit{dark solid red} are the ones that lie in the tangent plane at location $\hat{n}_e = (\theta_e, \phi_e)$. The blue coordinates at different locations are representative of the parallel transport along the geodesic connection the two locations $\hat{n}_q$ \& $\hat{n}_e$ on the sphere.}
+\caption{This figure depicts the Euler angles in the z-y1-z2 convention. The cartesian coordinates shown in \revisit{dark solid green} are those that lie in the tangent plane at location $\hat{n}_q = (\theta_q, \phi_q)$ while those shown in \revisit{dark solid red} are the ones that lie in the tangent plane at location $\hat{n}_e = (\theta_e, \phi_e)$. The blue coordinates at different locations are representative of the parallel transport along the geodesic connection between the two locations $\hat{n}_q$ and $\hat{n}_e$ on the sphere.}
 \label{fig:euler_angles}
 \end{figure}
 %
 
+We consider the impact of local rotations on these Euler angles.
 Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ by an angle $\psi$ about the local $\hat{z}_q$ axis, the Stokes parameters in the new coordinate system relate to those in the original coordinate system as:
 $\mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)] =  {}_{+2}X(\hat{n}_q) e^{-i2\psi} $.
-This same rotation by $\psi$ alters the Euler angle $\alpha_{qe}$ (that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$): $\mathcal{R}_{\hat{z}_q}(\psi)[\alpha_{qe}] = \alpha_{qe} - \psi$.  Therefore one can see that $\mathcal{R}_{\hat{z}_q}(\psi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\psi}$.
+This same rotation by $\psi$ alters the Euler angle $\alpha_{qe}$, the angle that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$, so that $\mathcal{R}_{\hat{z}_q}(\psi)[\alpha_{qe}] = \alpha_{qe} - \psi$.  Therefore one can see that $\mathcal{R}_{\hat{z}_q}(\psi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\psi}$.
 
 Given these transformation properties, the combination ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ is invariant under rotations and must be spin-0 by definition:
 \beq
 \mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}] = {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}} \,. \label{eq:invariant}
 \eeq
-Further note that $Q~ \& \cos2 \alpha$ have even parity since they do not change sign when $\hat{x} \rightarrow -\hat{x}$ (or $\hat{y} \rightarrow -\hat{y}$  ) while $U~ \& \sin 2 \alpha$ change sign under this transformation and hence have odd parity. The real part of the function  ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ is composed of $Q\cos{2\alpha} ~ \& ~ U\sin{2 \alpha}$ which are product of functions having the same parity and hence the real part must have even parity. Similarly the imaginary part of the function is composed of $Q\sin{2 \alpha}~\&~ U\cos{2\alpha}$ which are product of functions having opposite parity and hence the imaginary part must have an odd parity. Therefore we can make the association that contributions to  $(E+iB)(\hat n_e)$ must be proportional to $ {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}$.
+Thus we can build a scalar polarization quantity out of such combinations.
+Further note that both $Q$ and $\cos2 \alpha$ have even parity since they do not change sign when $\hat{x} \rightarrow -\hat{x}$ (or $\hat{y} \rightarrow -\hat{y}$).  Meanwhile $U$ and $\sin 2 \alpha$ change sign under this transformation and hence have odd parity. The real part of the function  ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ must have even parity, because it is composed of terms containing $Q\cos{2\alpha}$ and  $U\sin{2 \alpha}$ which are product of functions with the same parity. Similarly, the imaginary part of the function must have odd parity, because it is composed of $Q\sin{2 \alpha}$ and $U\cos{2\alpha}$ which are product of functions with opposite parity.  Therefore we can make the association that contributions to  $(E+iB)(\hat n_e)$ must be proportional to $ {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}$.
 
 
 The same rotation $\mathcal{R}_{\hat{z}_q}(\psi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we can conclude that the contribution to $(E+iB)(\hat n_e)$ from the position $n_q$ must have the form:
