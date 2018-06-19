@@ -1,8 +1,8 @@
 %--------------------------------------------------------
 %--------------------------------------------------------
-\subsection{Generalized polarization operators}\label{sec:generalized_operators}
+\subsection{Generalized polarization operators and recovering standard power spectra}\label{sec:generalized_operators}  
 With our better understanding of the radial part of the kernel for CMB polarization, we can write down generalized $E/B$-like fields that depend on a different radial function, even one that we specify to have compact support.
-The spin symmetry constrains the the azimuthal part of the real space kernels to be of the form $\sim e^{\pm i2 \alpha}$.  The shape of the radial part of the operator is determined by the basis functions and varies as a function of the band limit. It is here that we may potentially choose alternate forms for the radial functions to suit certain kind of analysis.
+The spin symmetry constrains the the azimuthal part of the real space kernels to be of the form $\sim e^{\pm i2 \alpha}$.  The radial parts of the stardard operators are determined by the sum over spherical harmonics and varies as a function of the band limit. It is here that we may potentially choose alternate forms for the radial functions to suit certain kind of analysis.
 
 We can systematically generalize the real space operator by introducing the following harmonic space filter function:
 %
@@ -10,7 +10,7 @@ We can systematically generalize the real space operator by introducing the foll
 \tilde{\mathcal{G}} = {\begin{bmatrix} g_{\ell}^E & 0  \\  0 & g_{\ell}^B \end{bmatrix}} \,,
 \eeq
 %
-where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic representation of the modified radial functions and can in the most general case be chosen to be different for $E$ and $B$ modes. To simplify discussions, we proceed by setting $g_{\ell}^E = g_{\ell}^B= g_{\ell}$. Given this harmonic function $g_{\ell}$, we can define the real space operator $\bar{O}'$ which translates Stokes $Q/U$ to scalars $E/B$ and the inverse operator $\bar{O}'^{-1}$ in the following manner,
+where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic representation of the modified radial functions and can in the most general case be chosen to be different for $E$ and $B$ modes. To simplify discussions, we proceed by setting $g_{\ell}^E = g_{\ell}^B= g_{\ell}$. Given this harmonic function $g_{\ell}$, we can define the real space operator $\bar{O}'$ which translates Stokes $Q/U$ to $E/B$-like scalars (and the inverse operator $\bar{O}'^{-1}$) in the following manner,
 %
 \begin{subequations} \label{eq:gen_qu2eb}
 \beqry
@@ -45,7 +45,7 @@ b(\beta) = \sum_{\ell=0}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} g_{\ell} P_{\el
 \eeq
 %
 where $g_{\ell}$ is the same harmonic function as that appearing in \eq{eq:generalized_radial_kernel}.
-In contrast to the radial function $G(\beta)$ an instrumental beam function appropriately normalized has the property $b(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. Though the real space behavior of these two function $G(\beta)$ and $b(\beta)$ has these differences, in harmonic space they play identical roles.
+In contrast to the radial function $G(\beta)$ an instrumental beam function appropriately normalized has the property $b(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. Though the real space functions $G(\beta)$ (operating on Stokes parameters) and $b(\beta)$ (operating on scalar $E/B$) are different, in harmonic space they play identical roles.
 %
 \begin{figure}[!t] 
 \centering
@@ -56,6 +56,8 @@ In contrast to the radial function $G(\beta)$ an instrumental beam function appr
 \label{fig:example_gbeta}
 \end{figure}
 %
+
+\comment{It is weird the order that the subplots are referenced.}
 
 % Therefore it is possible to interpret the beam harmonic coefficients as those representing some modified radial kernel.
 In \fig{fig:example_gbeta}, we examine in more detail the relationship between the modified radial kernels and these beam harmonic coefficients.  
@@ -81,7 +83,8 @@ Finally, the beam that the modified radial kernels appies to the $E/B$ fields we
 %The apodized step function in this case transition from 1 at $\beta < r_{\rm cutoff} -w$ to 0 at $r_{\rm cutoff}$ over a width $w= 3^{\circ}$ with a cosine squared profile .
 
 %--------------------------------------------------------
-\subsubsection{Recovering the standard $E$ and $B$ mode spectra}
+%\subsubsection{Recovering the standard $E$ and $B$ mode spectra}
+
 The generalized convolution kernels defined in the previous section, when operated on the Stokes vector returns some scalar $E'$ and $B'$ mode maps,
 %
 \beq
@@ -102,8 +105,8 @@ C_{\ell}^{TE,TB}  &=&  C_{\ell}^{TE',TB'} / g_{\ell}\,,
 %--------------------------------------------------------
 
 %--------------------------------------------------------
-\subsubsection{Relation to the spin raising $\eth^2$ and lowering $\bar{\eth}^2$ operators}
-Recall that on operating twice with the spin lowering operator on the Stokes charge ${}_{+2}X$ results in filtered version of $E/B$ maps as in \eq{eq:ebdef}. Now note that it is possible to construct a modified real space operator by choosing the harmonic space function to be $g_{\ell} = \sqrt{\frac{(\ell+2)!}{(\ell-2)!}}$, resulting in similarly filtered $E/B$ maps as follows:
+\paragraph{Relation to the spin raising $\eth^2$ and lowering $\bar{\eth}^2$ operators.}
+Recall that on operating twice with the spin lowering operator on the Stokes charge ${}_{+2}X$ results in filtered version of $E/B$ maps as in \eq{eq:ebdef}. Now note that it is possible to construct a modified real space operator by choosing the harmonic space function to be $g_{\ell} = ({(\ell+2)!/(\ell-2)!})^{1/2}$, resulting in similarly filtered $E/B$ maps as follows:
 %
 \beq 
 [\mathcal{E} + i \mathcal{B}](\hat{n}_e)=- \Delta \Omega\sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace  \left[  \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}} {}_{+2}X(\hat{n}_{q}) \Bigg\rbrace \,.\label{eq:bl_ebdef_lower} 
@@ -115,5 +118,5 @@ Comparing \eq{eq:ebdef_lower} to \eq{eq:bl_ebdef_lower} makes apparent the follo
 \bar{\eth}^2 \equiv \Delta \Omega \sum_{q=1}^{N_{\rm pix}} \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}}\,.
 \eeq
 %
-The operator $\bar{\eth}^2$ is composed of derivative operations and hence has an implicit bi-positional dependence for all numerical purposes which is made explicit in the band limited version of the operator.  The band limited version of the spin raising operator $\eth^2$ is derived by merely taking the conjugate of the above equation.
+The operator $\bar{\eth}^2$ is composed of derivative operations and hence has an implicit positional dependence for all numerical purposes which is made explicit in the band limited version of the operator.  The band limited version of the spin raising operator $\eth^2$ is derived by simply taking the conjugate of the above equation.
 %--------------------------------------------------------
