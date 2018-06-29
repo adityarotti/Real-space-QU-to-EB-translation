@@ -113,13 +113,14 @@ The kernels $\mathcal{D}$ and $\mathcal{I}$ vary significantly as a function of 
 Above, we have explored in detail the  azimuthal dependence of the real space kernels.  Here we probe the radial dependence, which both  determines the non-locality of the operators and encodes all their multipole dependencies. For illustration, \fig{fig:beta_kernel} shows the radial kernels ${_{\mm}f}, {_{\md}f},{_{\mi}f}$, evaluated using the respective multipole sums given in \eq{eq:rad_ker_queb} and \eq{eq:f2_rad_ker} in the band limit $\ell \in [2,24]$. We choose a low band limit to evaluate these radial kernels to highlight some key features of their radial profile.
 %
 \begin{figure}[t]
-%\subfigure{\includegraphics[width=0.96\columnwidth]{rad_ker_fn_of_ellmax.pdf}}
-%\subfigure{\includegraphics[width=0.48\columnwidth]{rad_ker_i_fn_of_ellmax.pdf}}
-%\subfigure{\includegraphics[width=0.48\columnwidth]{rad_ker_d_fn_of_ellmax.pdf}}
-\includegraphics[width=0.325\columnwidth]{rad_ker_fn_of_ellmax.pdf}\hfill
-\includegraphics[width=0.325\columnwidth]{rad_ker_i_fn_of_ellmax.pdf}\hfill
-\includegraphics[width=0.325\columnwidth]{rad_ker_d_fn_of_ellmax.pdf}
-\caption{This figures depicts the radial functions for the different kernels and varying band limit set by fixed $\ell_{\rm min}=2$ and varying $\ell_{\rm max}$ as indicated by their legends. The left panel depicts ${_{\mm}f}(\beta,\ell_{\rm min},\ell_{\rm max})$, the middle panels depicts ${}_{\mi}f(\beta,\ell_{\rm min},\ell_{\rm max})$ and the right panel depicts ${}_{\md}f(\beta,\ell_{\rm min},\ell_{\rm max})$ respectively. All the curves are normalized such that their maxima is set to unity. The horizontal solid black line marks the location where the amplitude of the respective kernels fall below 1\% of its maximum. The thin slanted dashed gray lines indicate a power law fit (by eye) to the envelope of the radial functions. The thick black short vertical dashed lines indicate the transition points as predicted by the empirically derived relation for the non-locality parameter $\beta_0={\rm min}(180^\circ,180^\circ \times 22/\ell_{\rm max})$.}
+\subfigure[]{\includegraphics[width=0.325\columnwidth]{rad_ker_fn_of_ellmax.pdf}}\hfill
+\subfigure[]{\includegraphics[width=0.325\columnwidth]{rad_ker_d_fn_of_ellmax.pdf}}\hfill
+\subfigure[]{\includegraphics[width=0.325\columnwidth]{rad_ker_i_fn_of_ellmax.pdf}}\hfill
+\centering
+\subfigure[]{\includegraphics[width=0.325\columnwidth]{rad_ker_fn_of_ellmax_zaldariagga_scaling.pdf}}
+\subfigure[]{\includegraphics[width=0.325\columnwidth]{rad_ker_i_fn_of_ellmax_zaldariagga_scaling.pdf}}
+
+\caption{This figures depicts the radial functions for the different kernels and varying band limit set by fixed $\ell_{\rm min}=2$ and varying $\ell_{\rm max}$ as indicated by their legends. The left panel depicts ${_{\mm}f}(\beta,\ell_{\rm min},\ell_{\rm max})$, the middle panels depicts ${}_{\md}f(\beta,\ell_{\rm min},\ell_{\rm max})$ and the right panel depicts ${}_{\mi}f(\beta,\ell_{\rm min},\ell_{\rm max})$ respectively. All the curves are normalized such that their maxima is set to unity. The horizontal solid black line marks the location where the amplitude of the respective kernels fall below 1\% of its maximum. The thin slanted dashed gray lines indicate a power law fit (by eye) to the envelope of the radial functions. The thick black short vertical dashed lines indicate the transition points as predicted by the empirically derived relation for the non-locality parameter $\beta_0={\rm min}(180^\circ,180^\circ \times 22/\ell_{\rm max})$.}
 %While the envelopes for function ${_{\mm}f}(\beta)~\&~ {}_{\mi}f(\beta)$ are fit well by the power law $\propto \beta^{-1.5}$, the envelope for the function ${}_{\md}f(\beta)$ is seen to have a slightly steeper slope $\propto \beta^{-1.65}$.}
 \label{fig:rad_ker_decay}
 \end{figure}
@@ -145,6 +146,6 @@ The empirical relation:
 \eeq
 with $\ell_{0}=22$ provides a reasonable estimate of this transition point for ${}_{\mm}f$ as seen in \fig{fig:rad_ker_decay}. Setting $\ell_{0}=10$ and $\ell_{0}=32$ predicts the transition points for the functions ${}_{\mi}f$ and  ${}_{\md}f$ respectively.%\comment{How sensitive is this transition point to $\ell{\rm min}$?} 
 
-In the flat sky limit it has been argued that form of the radial function has to be ${}_\mm f(\beta)\simeq\beta^{-2}$ so as to ensures that the Fourier modes for Stokes parameters $Q/U$ are related  to those of $E/B$ modes merely by rotations and with no scale dependent factor \cite{Zaldarriaga2001a}. Here we numerically studied the formally derived radially function ${}_\mm f(\beta)$ which reveals an oscillatory nature whose amplitude decays on increasing angular distance. We find that the the positive envelope of the function scales as $\beta^{-1.55}$.
+In the flat sky limit it has been argued that form of the radial function has to be ${}_\mm f(\beta)\simeq\beta^{-2}$ so as to ensures that the Fourier modes for Stokes parameters $Q/U$ are related  to those of $E/B$ modes merely by rotations and with no scale dependent factor \cite{Zaldarriaga2001a}. Here we numerically studied the formally derived radially function ${}_\mm f(\beta)$ which reveals an oscillatory nature whose amplitude decays on increasing angular distance. \revisit{While we find that the the positive envelope of the function scales as $\beta^{-1.55}$, the radial function resulting from taking a moving average of the radial function does show a scaling of $\beta^{-2}$ at intermediate angular separations. Hence we conclude that the form of the radial function argued in \cite{Zaldarriaga2001a} corresponds to the sliding averaged full sky radial function.}
 \comment{K: What do we get in a rolling window of size $\beta_0/5$ or something to average over a few oscillations?}
 
