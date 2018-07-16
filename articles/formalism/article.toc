@@ -3,16 +3,15 @@
 \contentsline {subsection}{\numberline {2.1}Heuristic, real-space construction of E/B fields on the sphere}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Standard $E$/$B$ fields}{4}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Matrix notation}{5}{subsection.2.3}
-\contentsline {section}{\numberline {3}Real space polarization operators}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Evaluating scalar $E/B$ from Stokes $Q/U$}{6}{subsection.3.1}
+\contentsline {section}{\numberline {3}Real space polarization operators}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Evaluating scalar $E/B$ from Stokes $Q/U$}{7}{subsection.3.1}
 \contentsline {paragraph}{Radiation kernel.}{8}{section*.3}
-\contentsline {paragraph}{Convolution kernel.}{8}{section*.5}
-\contentsline {subsection}{\numberline {3.2}Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}{9}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Visualizing the real space kernels}{10}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes}{11}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}The non-locality of the real space operators}{15}{subsection.3.5}
-\contentsline {paragraph}{Band limit dependence.}{17}{section*.10}
+\contentsline {paragraph}{Convolution kernel.}{9}{section*.5}
+\contentsline {subsection}{\numberline {3.2}Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}{10}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Visualizing the real space kernels}{11}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes}{12}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}The non-locality of the real space operators}{16}{subsection.3.5}
+\contentsline {paragraph}{Band limit dependence.}{16}{section*.10}
 \contentsline {section}{\numberline {4}Generalized polarization operators and recovering standard power spectra}{18}{section.4}
-\contentsline {paragraph}{Relation to the spin raising $\eth ^2$ and lowering $\mathaccentV {bar}016{\eth }^2$ operators.}{20}{section*.12}
 \contentsline {section}{\numberline {5}Understanding polarization signatures of magnetized filaments}{21}{section.5}
 \contentsline {section}{\numberline {6}Discussion}{23}{section.6}
