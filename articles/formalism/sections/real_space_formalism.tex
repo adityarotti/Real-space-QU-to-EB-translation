@@ -106,8 +106,8 @@ where $s$ denotes the spin of the basis functions and our definition of ${}_{|s|
 
 We will be working with cases $s \in [0,2]$. Each column of ${}_{|s|}\mathcal{Y}$ maps to a specific harmonic basis function (i.e. indexed by $\ell m$) and each row maps to a pixel on the sphere. This matrix is not square in general: the number of rows is determined by the pixelization and the number of columns is set by the number of basis functions (e.g. determined by the band limit).
 
-We now define the different polarization data vectors and their representation in real and harmonic space as follows\footnote{We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables, as in \citep{Zaldarriaga2001a}. 
-}:
+We now define the different polarization data vectors and their representation in real and harmonic space as follows\footnote{We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables. 
+}:%as in \citep{Zaldarriaga2001a}
 %
 \beqrys
 \bar{S} &=& \bmat E \\ B  \emat_{2 \rm N_{\rm pix} \times 1};\qquad \bar{X} = \bmat _{+2}X \\ _{-2}X \emat_{2 \rm N_{\rm pix} \times 1};\qquad \bar{P} =\fqu_{\tiny {2 \rm N_{\rm pix} \times 1}} \,, \\
@@ -173,7 +173,7 @@ The above relations for these harmonic space operators are exactly valid.  In th
 
 
 \section{Real space polarization operators} \label{sec:real_space_operators}
-\subsection{Evaluating scalar $E/B$ from Stokes $Q/U$}\label{sec:qu2eb}
+\subsection{Evaluating scalars $E/B$ from Stokes $Q/U$}\label{sec:qu2eb}
 In \sec{sec:pol-primer} we described the conventional procedure of computing the scalar fields $E/B$ from the Stokes parameters $Q/U$. 
 %To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 fields ${}_{\pm2} \bar X$, forming specific linear combinations of the resultant coefficients of expansion ${}_{\pm 2} \tilde X_{\ell m}$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. 
 In this section we derive the real space kernels which we can use to directly evaluate the scalar fields $E$ and $B$ on the sphere.  We use the vector-matrix notation introduced in \sec{sec:mat_pol_intro} to write down an operator equation relating the real space vector of scalars \vs to the Stokes polarization vector \vp{}:

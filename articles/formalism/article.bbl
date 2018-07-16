@@ -83,6 +83,11 @@ M.~Zaldarriaga, \emph{{The nature of the E-B decomposition of CMB
   Rev. D} {\bfseries 64} (jun, 2001) 103001},
   [\href{https://arxiv.org/abs/0106174}{{\ttfamily 0106174}}].
 
+\bibitem{healpix_primer}
+K.~M. Gorski, B.~D. Wandelt, F.~K. Hansen, E.~Hivon and A.~J. Banday,
+  \emph{{The HEALPix Primer}},  \href{https://arxiv.org/abs/9905275}{{\ttfamily
+  9905275}}.
+
 \bibitem{Zaldarriaga1997}
 M.~Zaldarriaga and U.~Seljak, \emph{{All-sky analysis of polarization in the
   microwave background}},
@@ -98,7 +103,7 @@ D.~A. Varshalovich, A.~N. Moskalev and V.~K. Khersonskii, \emph{{Quantum Theory
 
 \bibitem{goldberg67}
 J.~N. Goldberg, A.~J. Macfarlane, E.~T. Newman, F.~Rohrlich and E.~C.~G.
-  Sudarshan, \emph{{Spin-s Spherical Harmonics and $\eth$}},
+  Sudarshan, \emph{Spin-s spherical harmonics and $\eth$},
   \href{https://doi.org/10.1063/1.1705135}{\emph{J. Math. Phys.} {\bfseries 8}
   (nov, 1967) 2155--2161}.
 

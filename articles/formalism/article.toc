@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {2.2}Standard $E$/$B$ fields}{4}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Matrix notation}{5}{subsection.2.3}
 \contentsline {section}{\numberline {3}Real space polarization operators}{7}{section.3}
-\contentsline {subsection}{\numberline {3.1}Evaluating scalar $E/B$ from Stokes $Q/U$}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.1}Evaluating scalars $E/B$ from Stokes $Q/U$}{7}{subsection.3.1}
 \contentsline {paragraph}{Radiation kernel.}{8}{section*.3}
 \contentsline {paragraph}{Convolution kernel.}{9}{section*.5}
 \contentsline {subsection}{\numberline {3.2}Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}{10}{subsection.3.2}
