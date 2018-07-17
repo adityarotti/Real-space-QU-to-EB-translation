@@ -31,6 +31,21 @@ U.~{Seljak} and M.~{Zaldarriaga}, \emph{{Signature of Gravity Waves in the
   {\bfseries 586} (Feb., 2016) A133},
   [\href{https://arxiv.org/abs/1409.5738}{{\ttfamily 1409.5738}}].
 
+\bibitem{2003PhRvD..67d3004H}
+W.~{Hu}, M.~M. {Hedman} and M.~{Zaldarriaga}, \emph{{Benchmark parameters for
+  CMB polarization experiments}},
+  \href{https://doi.org/10.1103/PhysRevD.67.043004}{\emph{\prd} {\bfseries 67}
+  (Feb., 2003) 043004},
+  [\href{https://arxiv.org/abs/astro-ph/0210096}{{\ttfamily
+  astro-ph/0210096}}].
+
+\bibitem{2008PhRvD..77h3003S}
+M.~{Shimon}, B.~{Keating}, N.~{Ponthieu} and E.~{Hivon}, \emph{{CMB
+  polarization systematics due to beam asymmetry: Impact on inflationary
+  science}}, \href{https://doi.org/10.1103/PhysRevD.77.083003}{\emph{\prd}
+  {\bfseries 77} (Apr., 2008) 083003},
+  [\href{https://arxiv.org/abs/0709.1513}{{\ttfamily 0709.1513}}].
+
 \bibitem{1996ApJ...469....1K}
 A.~{Kosowsky} and A.~{Loeb}, \emph{{Faraday Rotation of Microwave Background
   Polarization by a Primordial Magnetic Field}},
@@ -60,6 +75,12 @@ L.~{Pogosian}, \emph{{Searching for primordial magnetism with multifrequency
   \href{https://doi.org/10.1093/mnras/stt2378}{\emph{\mnras} {\bfseries 438}
   (Mar., 2014) 2508--2512}, [\href{https://arxiv.org/abs/1311.2926}{{\ttfamily
   1311.2926}}].
+
+\bibitem{2018RPPh...81d4901S}
+S.~{Staggs}, J.~{Dunkley} and L.~{Page}, \emph{{Recent discoveries from the
+  cosmic microwave background: a review of recent progress}},
+  \href{https://doi.org/10.1088/1361-6633/aa94d5}{\emph{Reports on Progress in
+  Physics} {\bfseries 81} (Apr., 2018) 044901}.
 
 \bibitem{1997PhRvD..55.7368K}
 M.~{Kamionkowski}, A.~{Kosowsky} and A.~{Stebbins}, \emph{{Statistics of cosmic
@@ -114,6 +135,14 @@ J.~N. Goldberg, A.~J. Macfarlane, E.~T. Newman, F.~Rohrlich and E.~C.~G.
   structure of the interstellar medium}},
   \href{https://doi.org/10.1051/0004-6361/201526506}{\emph{\aap} {\bfseries
   586} (Feb., 2016) A141}.
+
+\bibitem{2010ApJS..187..212C}
+C.~M. {Cantalupo}, J.~D. {Borrill}, A.~H. {Jaffe}, T.~S. {Kisner} and
+  R.~{Stompor}, \emph{{MADmap: A Massively Parallel Maximum Likelihood Cosmic
+  Microwave Background Map-maker}},
+  \href{https://doi.org/10.1088/0067-0049/187/1/212}{\emph{\apjs} {\bfseries
+  187} (Mar., 2010) 212--227},
+  [\href{https://arxiv.org/abs/0906.1775}{{\ttfamily 0906.1775}}].
 
 \bibitem{2018JCAP...05..059L}
 H.~{Liu}, J.~{Creswell} and P.~{Naselsky}, \emph{{E and B families of the
