@@ -92,7 +92,7 @@ In the remainder of this article, we will work with the scalar $E$ and pseudo sc
 E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n})\qquad;\qquad B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-These $E/B$ fields are merely versions of $\mathcal{E}/\mathcal{B}$ that downweight higher-$\ell$ modes  (their spherical harmonic coefficients of expansion are reduced by the factor $[{(\ell+2)!}/{(\ell-2)!}]^{1/2}$).  They are not local functions of Stokes $Q/U$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
+These $E/B$ fields are merely versions of $\mathcal{E}/\mathcal{B}$ that downweight higher-$\ell$ modes  (their spherical harmonic coefficients of expansion are reduced by the factor $[{(\ell-2)!}/{(\ell+2)!}]^{1/2}$).  %They are not local functions of Stokes $Q/U$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
 
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
 Our derivation of real space operators is more transparent in a matrix-vector notation.\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}
@@ -123,7 +123,7 @@ We define transformations between different representations of the polarization 
 \tilde T &=& -\qutox_{2 \rm N_{\rm alms} \times 2 \rm N_{\rm alms}};\qquad \tilde T^{-1} = \frac{1}{2} \tilde T^{\dagger} \,,
 \eeqrys
 %
-The sign conventions we have chosen match HEALPix.
+The sign conventions we have chosen matches that of HEALPix.
 Using the data vectors and the matrix operators defined above we can now express, in compact notation, the forward and inverse relations between different representations of the polarization data vectors via the following equations:
 %
 \begin{subequations} \label{eq:pol_data_relns}
@@ -217,7 +217,7 @@ where $(\alpha_{ij}, ~\beta_{ij}, \gamma_{ij})$ denote the Euler angles that spe
 \eeqry
 \end{subequations}
 %
-where we have used the identity in \eq{eq:sum_spin_shf} to simplify the product of the spherical harmonic functions. Note that the function depends only on two out of the three Euler angles.  The azimuthal part depends only on the Euler angle $\alpha_{qe}$, and so its harmonic transform has no multipole $\ell$ dependence.  The azimuthal part is the crucial operation that translates between different spin representation of CMB polarization. Only the radial part $f(\beta_{qe})$ depends only on the angular separation between locations and hence  completely incorporates all the multipole $\ell$ dependence. Recall that we had guessed the general form of the kernel using simple heuristic arguments in \sec{sec:qu2eb_heuristic}. Here we have rigorously derived the exact form of the function $f(\beta)$. Studying the $P_{\ell}^2$ functions in the limits $\beta \rightarrow 0,\pi$ it is easy to show that $f(\beta)$ vanishes at $\beta=0,\pi$, which we argued to be a necessary property to yield a field of correct spin.
+where we have used the identity in \eq{eq:sum_spin_shf} to simplify the product of the spherical harmonic functions. Note that the function depends only on two out of the three Euler angles.  The azimuthal part depends only on the Euler angle $\alpha_{qe}$ and its harmonic transform has no multipole $\ell$ dependence.  The azimuthal part is the crucial operation that translates between different spin representation of CMB polarization. The radial part $f(\beta_{qe})$ depends only on the angular separation between locations and completely incorporates all the multipole $\ell$ dependence. Recall that we had guessed the general form of the kernel using simple heuristic arguments in \sec{sec:qu2eb_heuristic}. Here we have rigorously derived the exact form of the function $f(\beta)$. Studying the $P_{\ell}^2$ functions in the limits $\beta \rightarrow 0,\pi$ it is easy to show that $f(\beta)$ vanishes at $\beta=0,\pi$, which we had argued is a necessary property to yield a field of correct spin.
 
 Employing \eq{eq:qu2eb_gen_kernel} to simplify the product of spherical harmonic functions in \eq{eq:qu2eb_ker_1}, the real space operator $\bar{O}$ can now be cast in this more useful form:
 %
