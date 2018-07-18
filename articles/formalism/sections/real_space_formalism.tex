@@ -11,24 +11,23 @@
 \eeq
 Equivalently, the object $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$ and hence forms a spin $\pm$2 field \cite{Zaldarriaga1997}.
 
-The standard construction of $E$ and $B$ fields arise from the desire to have a coordinate independent description of the polarization. This follows from operations that raise (or lower) the spin of the $X$ field to construct scalar fields.  But from the transform properties of the Stokes parameters, we can already construct a heuristic argument for what these operations must look like in real space.
+The standard construction of $E$ and $B$ fields arise from the desire to have a coordinate independent description of the polarization. This follows from operations that raise (or lower) the spin of the field ${}_{\pm2}X$ to construct scalar fields.  By understanding the transform properties of the Stokes parameters and those of the Euler angles on the sphere, we can already construct a heuristic argument for what these operations must look like in real space. We consider the contribution to a scalar field at $\hat n_e$ from the polarization field at $\hat n_q$. 
 
-We consider the contribution to a scalar field at $\hat n_e$ from the polarization field at $\hat n_q$. \fig{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a counter-clockwise rotation around the local $\hat n_q$ (unit radial vector at $(\theta_q,\phi_q)$ pointing outward) by angle $\alpha$, parallel transport by angle $\beta$ along the shorter geodesic and a counter-clockwise rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention.\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}
+\fig{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a counter-clockwise rotation around the local $\hat n_q$ (unit radial vector at $(\theta_q,\phi_q)$ pointing outward) by angle $\alpha$, parallel transport by angle $\beta$ along the shorter geodesic and a counter-clockwise rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention.\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}
 %
 \begin{figure}%[!hbt]
 \centering
 \includegraphics[width=0.5\columnwidth]{euler.pdf}
-\caption{This figure depicts the Euler angles in the z-y1-z2 convention. The cartesian coordinates shown in dark solid green are those that lie in the tangent plane at location $\hat{n}_q = (\theta_q, \phi_q)$ while those shown in dark solid red are the ones that lie in the tangent plane at location $\hat{n}_e = (\theta_e, \phi_e)$. The blue coordinates at different locations are representative of the parallel transport along the geodesic connection between the two locations $\hat{n}_q$ and $\hat{n}_e$ on the sphere.}
+\caption{This figure depicts the Euler angles in the $z-y1-z2$ convention. The cartesian coordinates shown in dark solid green are those that lie in the tangent plane at location $\hat{n}_q = (\theta_q, \phi_q)$ while those shown in dark solid red are the ones that lie in the tangent plane at location $\hat{n}_e = (\theta_e, \phi_e)$. The blue coordinates at different locations are representative of the parallel transport along the geodesic connection between the two locations $\hat{n}_q$ and $\hat{n}_e$ on the sphere.}
 \label{fig:euler_angles}
 \end{figure}
 %
 
-We consider the impact of local rotations on these Euler angles.
-Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ by an angle $\psi$ about the local $\hat{z}_q$ axis, the Stokes parameters in the new coordinate system relate to those in the original coordinate system as:
+We consider the impact of local rotations  the Stokes parameters and on these Euler angles. Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ by an angle $\psi$ about the local $\hat{z}_q$ axis, the Stokes parameters in the new coordinate system relate to those in the original coordinate system as:
 $\mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)] =  {}_{+2}X(\hat{n}_q) e^{-i2\psi} $.
-This same rotation by $\psi$ alters the Euler angle $\alpha_{qe}$, the angle that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$, so that $\mathcal{R}_{\hat{z}_q}(\psi)[\alpha_{qe}] = \alpha_{qe} - \psi$.  Therefore one can see that $\mathcal{R}_{\hat{z}_q}(\psi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\psi}$.
+This same rotation by $\psi$ alters the Euler angle $\alpha_{qe}$, the angle that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$, so that: $\mathcal{R}_{\hat{z}_q}(\psi)[\alpha_{qe}] = \alpha_{qe} - \psi$.  Therefore one can see that: $\mathcal{R}_{\hat{z}_q}(\psi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\psi}$.
 
-Given these transformation properties, the combination ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ is invariant under rotations and must be spin-0 by definition:
+Given these transformation properties, the combination ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ is invariant under rotations and hence must be spin-0 or scalar quantity by definition:
 \beq
 \mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}] = {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}} \,. \label{eq:invariant}
 \eeq
@@ -36,21 +35,19 @@ Thus we can build a scalar polarization quantity out of such combinations.
 Further note that both $Q$ and $\cos2 \alpha$ have even parity since they do not change sign when $\hat{x} \rightarrow -\hat{x}$ (or $\hat{y} \rightarrow -\hat{y}$).  Meanwhile $U$ and $\sin 2 \alpha$ change sign under this transformation and hence have odd parity. The real part of the function  ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ must have even parity, because it is composed of terms containing $Q\cos{2\alpha}$ and  $U\sin{2 \alpha}$ which are product of functions with the same parity. Similarly, the imaginary part of the function must have odd parity, because it is composed of $Q\sin{2 \alpha}$ and $U\cos{2\alpha}$ which are product of functions with opposite parity.  Therefore we can make the association that contributions to  $(E+iB)(\hat n_e)$ must be proportional to $ {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}$.
 
 
-The same rotation $\mathcal{R}_{\hat{z}_q}(\psi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we can conclude that the contribution to $(E+iB)(\hat n_e)$ from the position $n_q$ must have the form:
+The same rotation $\mathcal{R}_{\hat{z}_q}(\psi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we further conclude that the contribution to $(E+iB)(\hat n_e)$ from the position $n_q$ must have the generic form:
 \beq
 {}_{+2}X(\hat{n}_q) f(\beta_{qe})  e^{-i2\alpha_{qe}}
 \eeq
-for some real function $f$.  Note that when the two locations coincide ($\beta_{qe}=0$) then  $\alpha_{qe}=0,2\pi,4\pi,\dots$, implying $E + iB \propto Q+iU$.  This is a contradiction because $Q+iU$ does not transform as a spin-0 field under local rotations, and so we must have $f(\beta_{qe} = 0 ) = 0$.   Hence the $E/B$ fields are necessarily non-local.  A similar contradiction arises when the two locations are diametrically opposite, $\beta_{qe} = \pi$, and so $f(\beta_{qe} = \pi ) = 0$.  Any such function $f$ will let us construct $E/B$-like scalar fields.  Below we derive the particular one that gives rise to our familiar $E/B$ modes.
+for some real function $f$.  Note that when the two locations coincide ($\beta_{qe}=0$) then  $\alpha_{qe}=0,2\pi,4\pi,\dots$, implying $E + iB \propto Q+iU$.  This is a contradiction because $Q+iU$ does not transform as a spin-0 field under local rotations, hence we must have $f(\beta_{qe} = 0 ) = 0$. This immediately implies that the $E/B$ fields are necessarily defined non-locally.  A similar contradiction arises when the two locations are diametrically opposite, $\beta_{qe} = \pi$ and therefore we also require that $f(\beta_{qe} = \pi ) = 0$.  Any such function $f$ will let us construct $E/B$-like scalar fields.  Below we derive the particular one that gives rise to our familiar $E/B$ modes.
 
-This type of real-space construction can be generalized to transform a field of any spin to a field of any other spin, not just two and zero, and so we can use a similar construction (in the opposite direction) to transform $E/B$ maps back to the Stokes parameters (i.e. transforming spin-0 fields to spin-2).
+Note that this type of real-space construction can be generalized to transform a field of any spin to a field of any other spin, not just two and zero, and so we can use a similar construction (in the opposite direction) to transform $E/B$ maps back to the Stokes parameters (i.e. transforming spin-0 fields to spin-2).
 
 %--------------------------------------------------------
 \subsection{Standard $E$/$B$ fields}
 
 
-The standard construction of $E/B$ fields depend on the spin-raising and -lowering operators, and is usually carried out in harmonic space.
-%
-The spin-raising operator ($\eth$), applied to a field of spin-s $_{s}g$, results in a field with spin-$(s+1)$: $(\eth _{s}g)' = e^{-i(s+1)\psi}(\eth _{s}g)$  \cite{goldberg67}.  The complementary spin-lowering operator $(\bar{\eth})$  similarly results in a field with spin-$(s-1)$: $(\bar{\eth} _{s}g)' = e^{-i(s-1)\psi}(\bar{\eth} _{s}g)$.  The complex spin-0 scalar now arise from  the spin-2 fields ${_{\pm 2}X}$ as follows,
+The standard construction of $E/B$ fields is expressed in terms of the spin-raising and spin-lowering operators and this operation is usually carried out in harmonic space. The spin-raising operator ($\eth$) applied to a field of spin-s $_{s}g$, results in a field with spin-$(s+1)$: $(\eth _{s}g)' = e^{-i(s+1)\psi}(\eth _{s}g)$  \cite{goldberg67}.  The complementary spin-lowering operator $(\bar{\eth})$  similarly results in a field with spin-$(s-1)$: $(\bar{\eth} _{s}g)' = e^{-i(s-1)\psi}(\bar{\eth} _{s}g)$.  The complex spin-0 scalar now arise from these spin lowering/raising operations of the spin-2 fields ${_{\pm 2}X}$ as follows:
 %
 \begin{subequations}\label{eq:ebdef}
 \beqry
@@ -60,9 +57,7 @@ The spin-raising operator ($\eth$), applied to a field of spin-s $_{s}g$, result
 \end{subequations}
 %
 %which by the virtue of being scalars are independent of coordinate definitions. %The real part of this complex spin-0 scalar field corresponds to the E-mode while the imaginary part to the B-modes \cite{Kamionkowski1997}. 
-The $\cal E/B$ fields are defined locally at point $\hat n$ in terms of the operators $\eth$ and $\bar \eth$.
-
-It is possible to decompose the complex field $_{\pm 2}\bar{X}$ into spin spherical harmonic functions: ${}_{\pm 2}\bar{X}(\hat{n}) = \sum_{\ell m} {}_{\pm 2} \tilde X_{\ell m} {}_{\pm 2}Y_{\ell m}(\hat{n})$. Applying the spin raising and lowering operators on the spin spherical harmonic functions leads to the following identities \cite{goldberg67}:
+The $\cal E/B$ fields are defined locally at point $\hat n$ in terms of the operators $\eth$ and $\bar \eth$. It is possible to decompose the complex field $_{\pm 2}\bar{X}$ into spin spherical harmonic functions: ${}_{\pm 2}\bar{X}(\hat{n}) = \sum_{\ell m} {}_{\pm 2} \tilde X_{\ell m} {}_{\pm 2}Y_{\ell m}(\hat{n})$. Applying the spin raising and lowering operators on the spin spherical harmonic functions leads to the following identities \cite{goldberg67}:
 %
 \begin{subequations}\label{eq:spinopylm} 
 \beqry
@@ -92,10 +87,10 @@ In the remainder of this article, we will work with the scalar $E$ and pseudo sc
 E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n})\qquad;\qquad B(\hat{n})  =\sum_{\ell m} a^{B}_{\ell m} Y_{\ell m} (\hat{n}) \,.
 \eeq
 %
-These $E/B$ fields are merely versions of $\mathcal{E}/\mathcal{B}$ that downweight higher-$\ell$ modes  (their spherical harmonic coefficients of expansion are reduced by the factor $[{(\ell-2)!}/{(\ell+2)!}]^{1/2}$).  %They are not local functions of Stokes $Q/U$. %We make this choice since the CMB spectra are more closely related to the fields E \& B.
+These $E/B$ fields are merely versions of $\mathcal{E}/\mathcal{B}$ that downweight higher-$\ell$ modes  (i.e. their spherical harmonic coefficients of expansion are reduced by the factor $[{(\ell-2)!}/{(\ell+2)!}]^{1/2}$).
 
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
-Our derivation of real space operators is more transparent in a matrix-vector notation.\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}
+Our derivations of the real space operators are more transparent in a matrix-vector notation.\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}
 We introduce a matrix that encodes spin spherical harmonic basis vectors:
 %
 \beq
@@ -116,7 +111,7 @@ We now define the different polarization data vectors and their representation i
 %
 The symbols have the same meaning as in \sec{sec:pol-primer}, except that the subscript ${\ell m}$ for the spherical harmonic coefficients is suppressed for cleaner notation.
 
-We define transformations between different representations of the polarization field (i.e. from $Q,U$ to $_{\pm2}\bar{X}$ and back):
+We define an operator that transforms between different representations of the polarization field (i.e. from $Q,U$ to $_{\pm2}\bar{X}$ and back):
 %
 \beqrys
 \bar T &=& \qutox_{2 \rm N_{\rm pix} \times 2 \rm N_{\rm pix}} ;\qquad \bar T^{-1} = \frac{1}{2} \bar T^{\dagger} \,, \\
@@ -159,7 +154,7 @@ Finally we introduce the operators that project harmonic space data vector to th
 \eeqry
 \end{subequations}
 %
-Note that these harmonic space matrices are idempotent ($\tilde O_E  \tilde O_E = \tilde O_E;  \tilde O_B  \tilde O_B= \tilde O_B$), orthogonal ($\tilde O_E  \tilde O_B = \mathbb{0}$), and sum to the identity matrix ($\tilde O_E + \tilde O_B = \mathbb{1}$).
+Note that these harmonic space matrices are idempotent ($\tilde O_E  \tilde O_E = \tilde O_E;  \tilde O_B  \tilde O_B= \tilde O_B$), orthogonal ($\tilde O_E  \tilde O_B = \mathbb{0}$) and sum to the identity matrix ($\tilde O_E + \tilde O_B = \mathbb{1}$).
 %
 %\begin{subequations} \label{eq:har_op_prop}
 %\beqry
