@@ -171,7 +171,7 @@ The above relations for these harmonic space operators are exactly valid.  In th
 \subsection{Evaluating scalars $E/B$ from Stokes $Q/U$}\label{sec:qu2eb}
 In \sec{sec:pol-primer} we described the conventional procedure of computing the scalar fields $E/B$ from the Stokes parameters $Q/U$. 
 %To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 fields ${}_{\pm2} \bar X$, forming specific linear combinations of the resultant coefficients of expansion ${}_{\pm 2} \tilde X_{\ell m}$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. 
-In this section we derive the real space kernels which we can use to directly evaluate the scalar fields $E$ and $B$ on the sphere.  We use the vector-matrix notation introduced in \sec{sec:mat_pol_intro} to write down an operator equation relating the real space vector of scalars \vs to the Stokes polarization vector \vp{}:
+In this section we derive the real space operators which can be used to directly evaluate the scalar fields $E$/$B$ on the sphere.  We use the vector-matrix notation introduced in \sec{sec:mat_pol_intro} to write down an operator equation relating the real space vector of scalars \vs to the Stokes polarization vector \vp{}:
 %
 \beqrys
 \bar{S} &=& {{}_0\mathcal{Y}} \, \tilde T^{-1}  \, {{}_2\mathcal{Y}^{\ddagger}} \, \bar T  \bar{P}
@@ -212,7 +212,7 @@ where $(\alpha_{ij}, ~\beta_{ij}, \gamma_{ij})$ denote the Euler angles that spe
 \eeqry
 \end{subequations}
 %
-where we have used the identity in \eq{eq:sum_spin_shf} to simplify the product of the spherical harmonic functions. Note that the function depends only on two out of the three Euler angles.  The azimuthal part depends only on the Euler angle $\alpha_{qe}$ and its harmonic transform has no multipole $\ell$ dependence.  The azimuthal part is the crucial operation that translates between different spin representation of CMB polarization. The radial part $f(\beta_{qe})$ depends only on the angular separation between locations and completely incorporates all the multipole $\ell$ dependence. Recall that we had guessed the general form of the kernel using simple heuristic arguments in \sec{sec:qu2eb_heuristic}. Here we have rigorously derived the exact form of the function $f(\beta)$. Studying the $P_{\ell}^2$ functions in the limits $\beta \rightarrow 0,\pi$ it is easy to show that $f(\beta)$ vanishes at $\beta=0,\pi$, which we had argued is a necessary property to yield a field of correct spin.
+where we have used the identity in \eq{eq:sum_spin_shf} to simplify the product of the spherical harmonic functions. Note that the function depends only on two out of the three Euler angles.  The azimuthal part depends only on the Euler angle $\alpha_{qe}$ and its harmonic transform has no multipole $\ell$ dependence.  The azimuthal part is the crucial operation that translates between different spin representation of CMB polarization. The radial part $f(\beta_{qe})$ depends only on the angular separation between locations and completely incorporates all the multipole $\ell$ dependence. Recall that we had guessed the general form of the kernel using simple heuristic arguments in \sec{sec:qu2eb_heuristic}. Here we have rigorously derived the exact form of the function $f(\beta)$. Studying the $P_{\ell}^2$ functions in the limits $\beta \rightarrow 0,\pi$ it can be shown that $f(\beta)$ vanishes at $\beta=0,\pi$, which we had argued is a crucial property to yield a field of correct spin.
 
 Employing \eq{eq:qu2eb_gen_kernel} to simplify the product of spherical harmonic functions in \eq{eq:qu2eb_ker_1}, the real space operator $\bar{O}$ can now be cast in this more useful form:
 %
@@ -224,7 +224,7 @@ where $(\alpha_{qe}, ~\beta_{qe}, \gamma_{qe})$ denote the Euler angles which ro
 
 
 
-\paragraph{Radiation kernel.} The expression that we call the \textit{radiation kernel}  allows us, like a Green's function, to evaluate the $E/B$ field contribution due to a single Stoke parameter ``charge'' at a fixed location. The total $E/B$ maps can then be thought of as the superposed radiation emerging from Stokes charges across the sphere. In this picture, we are effectively in the frame of the Stokes charge ${}_{\pm2}X$ and evaluating its contribution to the complex spin-0 scalar field $E+iB$ across the sphere. This one-to-many mapping from a point in the spin-2 Stokes field to the complex spin-0 (scalar) field across the sphere is graphically represented in \fig{fig:planar_euler_angles}.
+\paragraph{Radiation kernel.} The expression that we call the \textit{radiation kernel}  allows us, like a Green's function, to evaluate the $E/B$ field contribution due to a single Stoke parameter ``charge'' at a fixed location. The total $E/B$ maps can then be thought of as the superposed radiation emerging from Stokes charges across the sphere. In this picture, we are effectively in the frame of the Stokes charge ${}_{\pm2}X$ and evaluating its contribution to the complex spin-0 scalar field $E+iB$ across the sphere. This one-to-many mapping from a point in the spin-2 Stokes field to the complex spin-0 (scalar) field across the sphere is graphically represented by the blue circle in \fig{fig:planar_euler_angles}.
 
 The $E$/$B$ contribution from the Stokes parameters at some location $\hat{n}_q$ is given by the following expression (\eq{eq:op_qu2eb_rad} and \eq{eq:qu2eb_op}):
 %
@@ -249,7 +249,7 @@ where $\Delta \Omega$ denotes the pixel area and the last line is a simple scala
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.5\columnwidth]{radiation_convolution.pdf}
-\caption{The local cartesian coordinates $(\hat{x},\hat{y})$ are drawn on the red circle(sphere), representative of the coordinate dependence of the Stokes parameters. The two sets of dotted lines drawn at representative points denote great circles, one which passes through the central point labelled `e' and the other chosen such that the two have locally orthogonal tangent vectors $(\hat{r},\hat{\phi})$. The angle $\alpha_{qe}$ defines a rotation operator that aligns the local $\hat{x}$ with $\hat{r}$.   \textit{Convolution kernel:} The resultant scalar field at `$e$' can be evaluated by summing over the contribution from all the Stokes parameters on the red circle. This convolution is performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$. \textit{Radiation kernel:} It is also possible to compute the contribution from the Stokes parameter at `$q$' to all the point on the blue circle and this is a function of the Euler angle $\alpha_{qe}$. On the flat sky $\gamma_{eq}=-\alpha_{qe}$ and consequently there is no difference between the radiation and convolution kernels.}
+\caption{The local cartesian coordinates $(\hat{x},\hat{y})$ are drawn on the red circle(sphere), representative of the coordinate dependence of the Stokes parameters. The two sets of dotted lines drawn at representative points denote great circles, one which passes through the central point labelled `e' and the other chosen such that the two have locally orthogonal tangent vectors $(\hat{r},\hat{\phi})$. The angle $\alpha_{qe}$ defines a rotation operator that aligns the local $\hat{x}$ with $\hat{r}$.   \textit{Convolution kernel:} The resultant scalar field at `$e$' can be evaluated by summing over the contribution from all the Stokes parameters on the red circle. This convolution is performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$. \textit{Radiation kernel:} It is also possible to compute the contribution from the Stokes parameter at `$q$' to all the point on the blue circle and this is a function of the Euler angle $\alpha_{qe}$.}
 \label{fig:planar_euler_angles}
 \end{figure}
 %
@@ -369,9 +369,7 @@ On the other hand, $\mathcal{M}^*_B$ is the Green's function of the operator tha
 \bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = +\textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\frac{\delta(\hat{n} - \hat{n}_e)}{\Delta \Omega} \emat\,.
 \eeq
 %
-%Both these facts can be associated with the fact that this function does not depend on the Euler angle $\gamma$. 
-%\comment{Add discussion here on the inverse greens function and why it changes as a function of position.}
-
+\revisit{It is also interesting to note that the radiation kernel ($\mm_{G}$) and the convolution kernel ($\mm_{B}$) become progressively identical as one approaches the equator, which is a consequence of $\gamma \simeq -\alpha$ in the vicinity of the equator. This result can also be understood as the flat sky case where the radiation and convolution kernels are expected to be identical.}
 
 
 
