@@ -13,6 +13,5 @@
 \contentsline {subsection}{\numberline {3.5}The non-locality of the real space operators}{16}{subsection.3.5}
 \contentsline {paragraph}{Band limit dependence.}{17}{section*.10}
 \contentsline {section}{\numberline {4}Generalized polarization operators and recovering standard power spectra}{19}{section.4}
-\contentsline {paragraph}{Relation to the spin raising $\eth ^2$ and lowering $\mathaccentV {bar}016{\eth }^2$ operators.}{20}{section*.12}
 \contentsline {section}{\numberline {5}Understanding polarization signatures of magnetized filaments}{22}{section.5}
 \contentsline {section}{\numberline {6}Discussion}{24}{section.6}

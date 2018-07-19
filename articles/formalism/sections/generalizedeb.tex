@@ -2,7 +2,7 @@
 %--------------------------------------------------------
 \section{Generalized polarization operators and recovering standard power spectra}\label{sec:generalized_operators}  
 With our better understanding of the radial part of the kernel for CMB polarization, we can write down generalized $E/B$-like fields that depend on a different radial function, even one that we specify to have compact support.
-The spin symmetry constrains the the azimuthal part of the real space kernels to be of the form $\sim e^{\pm i2 \alpha}$.  The radial parts of the stardard operators are determined by the sum over spherical harmonics and varies as a function of the band limit. It is here that we may potentially choose alternate forms for the radial functions to suit certain kind of analysis.
+The spin symmetry constrains the the azimuthal part of the real space kernels to be of the form $\sim e^{\pm i2 \alpha}$.  The radial parts of the standard operators are determined by the sum over spherical harmonics and varies as a function of the band limit. It is here that we may potentially choose alternate forms for the radial functions to suit certain kind of analysis.
 
 We can systematically generalize the real space operator by introducing the following harmonic space filter function:
 %
@@ -19,7 +19,7 @@ where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic represe
 \eeqry
 \end{subequations}
 %
-The primed notation distinguishes these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. We require both the forward and inverse operators to be well defined.   This constrains the choice of $\tilde{\mathcal{G}}$ to have a valid  inverse and is important to recover the standard CMB power spectra. The radial parts of this generalized operator and its inverse are given by the following expressions,
+The primed notation distinguishes these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. We require both the forward and inverse operators to be well defined.   This constrains the choice of $\tilde{\mathcal{G}}$ to have a valid  inverse and is important to recover the standard CMB power spectra. The radial parts of this generalized operator and it's inverse are given by the following expressions,
 %
 \begin{subequations}\label{eq:generalized_radial_kernel}
 \beqry 
@@ -29,23 +29,6 @@ G_{EB \rightarrow QU}(\beta) &=& G^{-1}(\beta) = \sum _{\ell=2} ^{\ell_{\rm max}
 \end{subequations}
 %
 The default radial function is just a special case resulting from the choice $\tilde{\mathcal{G}}=\mathbb{1}$ ($g_{\ell}=1$), in which case $\tilde{\mathcal{G}}^{-1}=\tilde{\mathcal{G}}$ and therefore $G^{-1}(\beta) = G(\beta)={{}_{\mm}f}$.
-
-While defining these generalized operators, it is more natural to choose the real space function $G(\beta)$ rather than the harmonic space $g_l$, bearing in mind the constraint that $G(\beta=0)=G(\beta=\pi)=0$. Employing the orthogonality property of associated Legendre polynomials it can be shown that the harmonic function $g_{\ell}$ is given by the expression,
-%
-\beq
-g_{\ell} = 2 \pi \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} \int _{0}^{\pi} G(\beta) P_{\ell}^{2}(\cos{\beta}) d\cos{\beta} \,. \label{eq:gb2bl}
-\eeq
-%
-
-
-An arbirtrary $G(\beta)$ for which $g_{\ell} \neq 1$ can be equivalently thought in terms of the standard $E/B$ fields being convolved with some effective circularly symmetric beam whose radial profile is given by the expression,
-%
-\beq
-b(\beta) = \sum_{\ell=0}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} g_{\ell} P_{\ell}^{0} (\cos{\beta})\,,
-\eeq
-%
-where $g_{\ell}$ is the same harmonic function as that appearing in \eq{eq:generalized_radial_kernel}.
-In contrast to the radial function $G(\beta)$ an instrumental beam function appropriately normalized has the property $b(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. Though the real space functions $G(\beta)$ (operating on Stokes parameters) and $b(\beta)$ (operating on scalar $E/B$) are different, in harmonic space they play identical roles.
 %
 \begin{figure}[!t] 
 \centering
@@ -57,31 +40,27 @@ In contrast to the radial function $G(\beta)$ an instrumental beam function appr
 \end{figure}
 %
 
+While defining these generalized operators, it is more natural to choose the real space function $G(\beta)$ rather than the harmonic space $g_l$, bearing in mind the constraint that $G(\beta=0)=G(\beta=\pi)=0$. Employing the orthogonality property of associated Legendre polynomials it can be shown that the harmonic function $g_{\ell}$ is given by the expression,
+%
+\beq
+g_{\ell} = 2 \pi \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} \int _{0}^{\pi} G(\beta) P_{\ell}^{2}(\cos{\beta}) d\cos{\beta} \,. \label{eq:gb2bl}
+\eeq
+%
+An arbirtrary $G(\beta)$ for which $g_{\ell} \neq 1$ can be equivalently thought in terms of the standard $E/B$ fields being convolved with some effective circularly symmetric beam whose radial profile is given by the expression,
+%
+\beq
+b(\beta) = \sum_{\ell=0}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} g_{\ell} P_{\ell}^{0} (\cos{\beta})\,,
+\eeq
+%
+where $g_{\ell}$ is the same harmonic function as that appearing in \eq{eq:generalized_radial_kernel}.
+In contrast to the radial function $G(\beta)$ an instrumental beam function appropriately normalized has the property $b(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. Though the real space functions $G(\beta)$ (operating on Stokes parameters) and $b(\beta)$ (operating on scalar $E/B$) are different, in harmonic space they play identical roles.
+
 % Therefore it is possible to interpret the beam harmonic coefficients as those representing some modified radial kernel.
 In \fig{fig:example_gbeta}, we examine in more detail the relationship between the modified radial kernels and these beam harmonic coefficients.  
- \fig{fig:gl_gbeta} depicts the radial profile of the  effective beams corresponding to different radial kernels: the standard kernel with a radial cutoff, kernels corresponding to Gaussian smoothings of the $E/B$ fields, an radial function without oscillations and an exponential cutoff.  Note that the smoothing tend to increase the non-locality, indicated by the shifting right of the maxima of the respective kernels, as one may have expected.  The exponential cutoff (red curve) by construction has a very small non-locality (parameterized by $\beta_0$).
+ \fig{fig:gl_gbeta} depicts the radial profile of the  effective beams corresponding to different radial kernels: the standard kernel with a radial cutoff, kernels corresponding to Gaussian smoothings of the $E/B$ fields, a radial function without oscillations and an exponential cutoff.  Note that the smoothing tend to increase the non-locality, indicated by the shifting right of the maxima of the respective kernels, as one may have expected.  The exponential cutoff (red curve) by construction has a very small non-locality (parameterized by $\beta_0$).
 
 \fig{fig:glbl} depicts the harmonic description $g_{\ell}$ for these respective radial kernels and beams.
-Finally, the beam that the modified radial kernels appies to the $E/B$ fields we show in \fig{fig:gl_bbeta}.  Note that the beam function corresponding to the default radial kernel ($g_{\ell}=1$) is merely a band limited representation of a delta-function beam.
-%In \sec{sec:local_conv_eb} we constructed localized convolution kernels by multiplying $R(\beta)$ with an apodized version of the step function $\theta_{\rm apo}(r_{\rm cutoff})$. The oscillation seen in the spectra in \fig{fig:eb-spectra_rad_cutoff} can be explained to be due to this effective beam characterized by $g_{\ell}^2$ operating on the power spectra. The effective beam can be evaluated by computing the multipole function $g_{\ell}$ as follows,
-%%
-%\beq
-%g_{\ell} = 2 \pi \sqrt{\frac{(\ell-2)!}{(\ell+2)!}} \int _{0}^{r_{\rm cutoff}} R(\beta) \theta_{\rm apo}(r_{\rm cutoff})  P_{\ell}^{2}(\cos{\beta}) d\cos{\beta} \,, \label{eq:gb2bl} \,,
-%\eeq
-%%
-%where the upper limit of the integration is set to $r_{\rm cutoff}$ since the function $\theta_{\rm apo}(r_{\rm cutoff})$ vanishes for $\beta>r_{\rm cutoff}$. The function $b^2_{\ell}-1$ matches the oscillation seen in \fig{fig:eb-spectra_rad_cutoff} as  seen in \fig{fig:match_cl_oscillations} where the two results have been over plotted.
-%%
-%\begin{figure}[!t] 
-%\centering
-%\subfigure[]{\includegraphics[width=0.98\columnwidth]{analytical_cl_oscillations_vs_data.pdf}}
-%\caption{The thin lines depicts the same spectral differences as those seen in \fig{fig:eb-spectra_rad_cutoff}, while the thick lines of the corresponding color depict the function $g_{\ell}^2 -1$ as derived from evaluating \eq{eq:gb2bl} for different $r_{\rm cutoff}$}.
-%\label{fig:match_cl_oscillations}
-%\end{figure}
-%%
-%The apodized step function in this case transition from 1 at $\beta < r_{\rm cutoff} -w$ to 0 at $r_{\rm cutoff}$ over a width $w= 3^{\circ}$ with a cosine squared profile .
-
-%--------------------------------------------------------
-%\subsubsection{Recovering the standard $E$ and $B$ mode spectra}
+Finally, the beam that the modified radial kernels effectively apply to the $E/B$ fields are shown in \fig{fig:gl_bbeta}.  Note that the beam function corresponding to the default radial kernel ($g_{\ell}=1$) is merely a band limited representation of a delta-function beam.
 
 The generalized convolution kernels defined in the previous section, when operated on the Stokes vector returns some scalar $E'$ and $B'$ mode maps,
 %
@@ -89,7 +68,7 @@ The generalized convolution kernels defined in the previous section, when operat
 \bar{S}' = \bar{O}' \bar{P}
 \eeq
 %
-which are merely filtered versions of the standard $E/B$ modes maps. Since the filter function is simply $g_{\ell}$, easily obtained from the modified radial function $G(\beta)$, and it can be simply interpreted as the harmonic coefficients of some azimuthally symmetric beam, the power spectra of the modified scalar fields $E'$ and $B'$ are related to the spectra of the standard $E$ and $B$ fields via the following relation, 
+which are merely filtered versions of the standard $E/B$ modes maps. The filter function is simply $g_{\ell}$, easily obtained from the modified radial function $G(\beta)$ and it can be simply interpreted as the harmonic coefficients of some azimuthally symmetric beam. The power spectra of the modified scalar fields $E'$ and $B'$ are related to the spectra of the standard $E$ and $B$ fields via the following relation, 
  %
  \begin{subequations}
  \beqry
@@ -98,8 +77,7 @@ C_{\ell}^{TE,TB}  &=&  C_{\ell}^{TE',TB'} / g_{\ell}\,,
  \eeqry
  \end{subequations}
  %
- where $C_{\ell}$ denotes the angular power spectra and $T$ refers to the temperature anisotropy map. Therefore the standard CMB spectra can always be recovered as long as the $1/g_{\ell}$ and $1/g_{\ell}^2$ are well behaved functions, which can be ensured by making a suitable choice for the modified radial function $G(\beta)$. %Some examples forms of $G(\beta)$, its harmonic representation $g_{\ell}$ (and its inverse $1/g_{\ell}$ ) and the corresponding beam $B(\beta)$ are depicted in \fig{fig:example_gbeta}.
-%One direct application of this freedom in choosing the radial kernel is that one can mitigate the issue of leakage of power from $E$ to $B$.  By constructing a radial function which tapers to zero at sufficiently small radii one can clearly discard pixels which are affected by masking. 
+ where $C_{\ell}$ denotes the angular power spectra and $T$ refers to the temperature anisotropy map. Therefore the standard CMB spectra can always be recovered as long as the $1/g_{\ell}$ and $1/g_{\ell}^2$ are well behaved functions, which can be ensured by making a suitable choice for the modified radial function $G(\beta)$. 
 %--------------------------------------------------------
 
 %--------------------------------------------------------
@@ -110,8 +88,7 @@ Recall that on operating twice with the spin lowering operator on the Stokes cha
 [\mathcal{E} + i \mathcal{B}](\hat{n}_e)=- \Delta \Omega\sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace  \left[  \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}} {}_{+2}X(\hat{n}_{q}) \Bigg\rbrace \,. \label{eq:bl_ebdef_lower} 
 \eeq
 %
-Comparing to \eq{eq:ebdef_lower} %to \eq{eq:bl_ebdef_lower}
-makes apparent the following mapping:
+Comparing to \eq{eq:ebdef_lower} makes apparent the following mapping:
 %
 \beq
 \bar{\eth}^2 \equiv \Delta \Omega \sum_{q=1}^{N_{\rm pix}} \left[ \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} P_{\ell}^2(\beta_{qe}) \right] e^{-i2\alpha_{eq}}\,.
