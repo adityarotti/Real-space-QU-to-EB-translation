@@ -369,7 +369,7 @@ On the other hand, $\mathcal{M}^*_B$ is the Green's function of the operator tha
 \bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = +\textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\frac{\delta(\hat{n} - \hat{n}_e)}{\Delta \Omega} \emat\,.
 \eeq
 %
-\revisit{It is also interesting to note that the radiation kernel ($\mm_{G}$) and the convolution kernel ($\mm_{B}$) become progressively identical as one approaches the equator, which is a consequence of $\gamma \simeq -\alpha$ in the vicinity of the equator. This result can also be understood as the flat sky case where the radiation and convolution kernels are expected to be identical.}
+\revisit{It is also interesting to note that the radiation kernel ($\mm_{G}$) and the convolution kernel ($\mm_{B}$) become progressively identical as one approaches the equator as seen in  \fig{fig:vis_kernel}, which is a consequence of $\gamma \simeq -\alpha$ in the vicinity of the equator. This result can also be understood as the flat sky case where the radiation and convolution kernels are expected to be identical.}
 
 
 
@@ -379,7 +379,7 @@ On the other hand, $\mathcal{M}^*_B$ is the Green's function of the operator tha
  
 %--------------------------------------------------------
 \subsection{Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes} \label{sec:purify_stokes_qu}
-We can only measure the total Stokes vector, a sum of the part that corresponds to scalar $E$ and the part that corresponds to $B$.  The $E$/$B$ modes are orthogonal to each other in the sense that their respective operators are orthogonal to each other as discussed in \sec{sec:mat_pol_intro}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to $E$ modes and another \vp{\rm B} that purely contribute to the $B$ modes of polarization. In this section we derive the real space operators which operate on the total Stokes vector and yield this decomposition, without ever having to explicitly evaluate the scalar modes. The algebra is more involved, but the derivation is similar to that discussed in \sec{sec:qu2eb}, so we refrain from presenting the detailed calculations here, and outline only the key points. We use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions:
+We can only measure the total Stokes vector, a sum of the part that corresponds to scalar $E$ and the part that corresponds to $B$.  The $E$/$B$ modes are orthogonal to each other in the sense that their respective operators are orthogonal to each other as discussed in \sec{sec:mat_pol_intro}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to $E$ modes and another \vp{\rm B} that purely contribute to the $B$ modes of polarization. In this section we derive the real space operators which operate on the total Stokes vector and yield this decomposition, without ever having to explicitly evaluate the scalar $E/B$ modes. The algebra is more involved, but the derivation is similar to that discussed in \sec{sec:qu2eb}, so we refrain from presenting the detailed calculations here and outline only the key points. We use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions:
 %
 \beqry
 \bar{P}_E &=&  [\bar T^{-1}  {{}_2\mathcal{Y}} \, \tilde T  \tilde O_E \tilde T^{-1} {{}_2\mathcal{Y}^{\ddagger}}\, \bar T] \bar{P}  \,, \\
@@ -453,9 +453,9 @@ The operator $\mathcal{I}$ is Hermitian and is a band limited version of the del
 \begin{subequations}
 \beqry
 \bar O_E \, \bar O_E &=& \bar O_E;\qquad \bar O_B \, \bar O_B = \bar O_B \,, \\
-\bar O_E \, \bar O_B &=& 0 \,,\\
+\bar O_E \, \bar O_B &=& 0 \,,\label{eq:real_ortho}\\
 \bar O_E + \bar O_B &=& \mathcal{I} \,,
 \eeqry
 \end{subequations}
 %
-which are the real space analogues of their harmonic space counterparts discussed in \sec{sec:mat_pol_intro}. Thus they are exactly orthogonal and idempotent. Note that unlike in the harmonic case, the sum of the operators is the band limited identity operator $\mathcal{I}$. This non-exactness is representative of the loss of information resulting from making this transformation on measured data with some imposed band limit. Forcing the sum of the operators to be exactly an identity matrix compromises the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators which is exact and a more crucial property of the operators.
+which are the real space analogues of their harmonic space counterparts discussed in \sec{sec:mat_pol_intro}. Thus they are exactly orthogonal and idempotent. Note that unlike in the harmonic case, the sum of the operators is the band limited identity operator $\mathcal{I}$. This non-exactness is representative of the loss of information resulting from making this transformation on measured data with some imposed band limit. Forcing the sum of the operators to be exactly an identity matrix compromises the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators which is exact (\eq{eq:real_ortho}) and a more crucial property of the operators.
