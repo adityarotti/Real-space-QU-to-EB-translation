@@ -11,7 +11,7 @@
 \usepackage{aas_macros}
 
 \renewcommand{\thesubfigure}{(\roman{subfigure})}
-%\renewcommand{\thesubfigure}{}
+
    
 \newcommand{\na}{New Astronomy}
 %\newcommand{\aap}{Astronomy and Astrophysics}
@@ -61,9 +61,6 @@
 \graphicspath{ {"./figures/"//} }
 
 \begin{document}
-%\title{Quantifying the locality of operators that translate Stokes $Q$ \& $U$ to scalars $E$ \& $B$}
-%\title{Real space operators for Stokes $Q$ \& $U$ to scalars $E$ \& $B$ translation}
-%\title{Real-space computation of $E$/$B$-mode maps I: Formalism and Compact Kernels}
 \title{Real-space computation of $E$/$B$-mode maps I: Formalism, Compact Kernels, and Polarized Filaments}
 
 
@@ -75,14 +72,8 @@
 \emailAdd{khuffenberger@fsu.edu}
 
 \abstract{
-\noindent 
-    {We derive full-sky, real-space operators that convert between polarization Stokes $Q/U$ parameters and the coordinate-independent scalar $E$/$B$ modes that are widely used in Cosmic Microwave Background (CMB) and cosmic shear analysis. We also derive real space operators that decompose the measured Stokes parameters into those corresponding to $E$-modes and $B$-modes respectively, without ever evaluating the scalar fields themselves. We cast the standard CMB polarization analysis operators in a matrix-vector notation which elucidates these derivations.  For all these real space operators we show that the kernels split naturally into angular and radial parts and we show explicitly how the radial extent of these kernels depends on the targeted band-limit. We show that the kernels can be interpreted either as a complex convolving beam or a Green's function when they are expressed as functions of the forward or inverse rotation Euler angles respectively. We show that an arbitrary radial function can produce $E/B$-like maps, provides it vanishes at the origin and the  antipodal point.  These maps are simply filtered versions of the standard $E/B$ maps.  We present a scheme to derive this window function for any radial dependence.  For this reason we can compute $E/B$ maps in real space with a compactly-supported kernel, an approach that can guarantee the avoidance of known foreground regions and could be employed in a massively-parallel scheme at high-resolution.  We show that the spin raising $\eth^2$ and lowering $\bar{\eth}^2$ operators are another special case of these generalized radial functions, and present their band limited versions. We can recover the standard power spectrum of the polarized CMB sky by correcting the power spectra of these maps with a simple window function. The spatial structure of the real space operators provides great intuition for the $E/B$ structure of polarized, filamentary galactic foregrounds.  We predict a non-zero $B$-mode signature that is expected from finite filaments in the sky. This paper is the first part in a series of papers that explore real-space computation of polarization modes and their applications.
-  } 
-  \\
-  \\
-%  We derive fully sky real space operators to translate Stokes Q \& U parameters to scalars $E$ \& $B$ and vice versa. We explicitly show that these local real space operator are fully characterized by the spin-0 $Y_{\ell 2}$ spherical harmonic functions. These real space operators make transparent the association of radial and tangential patterns of polarization with the E modes and that of  the clockwise and anti-clockwise pinwheel patterns of polarization with B-modes. We cast the standard CMB polarization analysis operators in a matrix-vector notation which elucidate these derivations. Using this new notation also allows us to derive real space operators which decompose the measured Stokes parameters into those corresponding to E-modes and B-modes respectively, without ever evaluating the scalar fields themselves. We use these analytical derivations us to quantify the non-local nature of the relation between the two representations of the polarization field. We present a prescription for generalizing these operators, which allow the non-local behavior of these operators to be a tunable parameter. We derive constraints on these generalized operators to ensure reliable recovery of the standard $E$ and $B$ fields and the corresponding power spectra. \revisit{This is part 1 of a series of papers where we have derived the real space operators. In the following papers we will explore some of their applications.} \comment{Needs better blending.}
+\noindent {We derive full-sky, real-space operators that convert between polarization Stokes $Q/U$ parameters and the coordinate-independent scalar $E$/$B$ modes that are widely used in Cosmic Microwave Background (CMB) and cosmic shear analysis. We also derive real space operators that decompose the measured Stokes parameters into those corresponding to $E$-modes and $B$-modes respectively, without ever evaluating the scalar fields themselves. We cast the standard CMB polarization analysis operators in a matrix-vector notation which elucidates these derivations.  For all these real space operators we show that the kernels split naturally into angular and radial parts and we show explicitly how the radial extent of these kernels depends on the targeted band-limit. We show that the kernels can be interpreted either as a complex convolving beam or a Green's function when they are expressed as functions of the forward or inverse rotation Euler angles respectively. We show that an arbitrary radial function can produce $E/B$-like maps, provides it vanishes at the origin and the  antipodal point.  These maps are simply filtered versions of the standard $E/B$ maps.  We present a scheme to derive this window function for any radial dependence.  For this reason we can compute $E/B$ maps in real space with a compactly-supported kernel, an approach that can guarantee the avoidance of known foreground regions and could be employed in a massively-parallel scheme at high-resolution.  We show that the spin raising $\eth^2$ and lowering $\bar{\eth}^2$ operators are another special case of these generalized radial functions, and present their band limited versions. We can recover the standard power spectrum of the polarized CMB sky by correcting the power spectra of these maps with a simple window function. The spatial structure of the real space operators provides great intuition for the $E/B$ structure of polarized, filamentary galactic foregrounds.  We predict a non-zero $B$-mode signature that is expected from finite filaments in the sky. This paper is the first part in a series of papers that explore real-space computation of polarization modes and their applications.} 
 }
-
 \maketitle
 \begingroup
 \let\clearpage\relax

@@ -1,10 +1,7 @@
 \section{Polarization primer} \label{sec:pol-primer}
-%\subsection{Constructing $E/B$ fields without harmonic space}
 \subsection{Heuristic, real-space construction of E/B fields on the sphere} \label{sec:qu2eb_heuristic}
-%\comment{Need a better title for the section that gives the heuristic argument}
-%\textit{Alternative for bringing the heuristic argument earlier.}
 
- CMB polarization is measured in terms of Stokes parameters, time averages of the linear polarization of the electric field along cartesian axes perpendicular to the line of sight.\footnote{Throughout we use the conventions of HEALPix \cite{healpix_primer}, measuring the polarization angle East of South.} Thus Stokes $Q$ and $U$ depend on the choice of the local coordinate system, and a rotation by an angle $\psi$ around the line of sight transforms them as:
+CMB polarization is measured in terms of Stokes parameters, time averages of the linear polarization of the electric field along cartesian axes perpendicular to the line of sight.\footnote{Throughout we use the conventions of HEALPix \cite{healpix_primer}, measuring the polarization angle East of South.} Thus Stokes $Q$ and $U$ depend on the choice of the local coordinate system, and a rotation by an angle $\psi$ around the line of sight transforms them as:
 %
 \beq \label{eq:qu-rot}
 \fqu' = \begin{bmatrix} \cos{2 \psi} &  \sin{2 \psi} \\ -\sin{2\psi} & \cos{2 \psi} \end{bmatrix} \fqu \,.
@@ -56,7 +53,6 @@ The standard construction of $E/B$ fields is expressed in terms of the spin-rais
 \eeqry
 \end{subequations}
 %
-%which by the virtue of being scalars are independent of coordinate definitions. %The real part of this complex spin-0 scalar field corresponds to the E-mode while the imaginary part to the B-modes \cite{Kamionkowski1997}. 
 The $\cal E/B$ fields are defined locally at point $\hat n$ in terms of the operators $\eth$ and $\bar \eth$. It is possible to decompose the complex field $_{\pm 2}\bar{X}$ into spin spherical harmonic functions: ${}_{\pm 2}\bar{X}(\hat{n}) = \sum_{\ell m} {}_{\pm 2} \tilde X_{\ell m} {}_{\pm 2}Y_{\ell m}(\hat{n})$. Applying the spin raising and lowering operators on the spin spherical harmonic functions leads to the following identities \cite{goldberg67}:
 %
 \begin{subequations}\label{eq:spinopylm} 
@@ -101,8 +97,7 @@ where $s$ denotes the spin of the basis functions and our definition of ${}_{|s|
 
 We will be working with cases $s \in [0,2]$. Each column of ${}_{|s|}\mathcal{Y}$ maps to a specific harmonic basis function (i.e. indexed by $\ell m$) and each row maps to a pixel on the sphere. This matrix is not square in general: the number of rows is determined by the pixelization and the number of columns is set by the number of basis functions (e.g. determined by the band limit).
 
-We now define the different polarization data vectors and their representation in real and harmonic space as follows\footnote{We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables. 
-}:%as in \citep{Zaldarriaga2001a}
+We now define the different polarization data vectors and their representation in real and harmonic space as follows\footnote{We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.}
 %
 \beqrys
 \bar{S} &=& \bmat E \\ B  \emat_{2 \rm N_{\rm pix} \times 1};\qquad \bar{X} = \bmat _{+2}X \\ _{-2}X \emat_{2 \rm N_{\rm pix} \times 1};\qquad \bar{P} =\fqu_{\tiny {2 \rm N_{\rm pix} \times 1}} \,, \\
@@ -122,7 +117,6 @@ The sign conventions we have chosen matches that of HEALPix.
 Using the data vectors and the matrix operators defined above we can now express, in compact notation, the forward and inverse relations between different representations of the polarization data vectors via the following equations:
 %
 \begin{subequations} \label{eq:pol_data_relns}
-  %Kevin's version
   \beqry
   \bar{X} &= \bar T  \bar{P} \qquad; &\qquad \bar{P} = \frac{1}{2} \bar T^{\dagger}  \bar{X} \,, \\
   \tilde{X} &= \tilde T \tilde{S} \qquad; &\qquad \tilde{S} = \frac{1}{2}\tilde T^{\dagger} \tilde{X} \,.
@@ -132,17 +126,6 @@ Using the data vectors and the matrix operators defined above we can now express
   \bar X &=  {{}_2\mathcal{Y}}  \tilde X; &\qquad \tilde X ={{}_2\mathcal{Y}}^{\ddagger}  \bar X  ; \\
   \bar S &=  {{}_0\mathcal{Y}} \tilde S; &\qquad  \tilde S =  {{}_0\mathcal{Y}}^{\ddagger} \bar S \,.
   \eeqry
-% Aditya's version
-%\beqry
-%\bar{X} &=& \bar T * \bar{P} ~~;~~\bar{P} = \frac{1}{2} \bar T^{\dagger} * \bar{X} \,, \\
-%\bar X &=&  {{}_2\mathcal{Y}} * \tilde X  ~~;~~ \tilde X ={{}_2\mathcal{Y}}^{\dagger} * \bar X  \,, \\
-%\tilde{X} &=& \tilde T * \tilde{S} ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,.\\ 
-%\bar S &=&  {{}_0\mathcal{Y}} * \tilde S ~~;~~  \tilde S =  {{}_0\mathcal{Y}}^{\dagger} * \bar S \,.
-%\tilde X &=&  {{}_2\mathcal{Y}}^{\dagger} * \bar X ~~;~~ \tilde{X} = \tilde T * \tilde{S} \,, \\
-%\bar{S} &=& {{}_0\mathcal{Y}}*\tilde S ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,.\\
-%\bar{X} &=& \bar T * \bar{P} ~~;~~ \tilde{X} = \tilde T * \tilde{S} \,, \\
-%\bar{P} &=& \frac{1}{2} \bar T^{\dagger} * \bar{X} ~~;~~ \tilde{S} = \frac{1}{2}\tilde T^{\dagger} * \tilde{X} \,. \\
-%\eeqry
 \end{subequations}
 %
 Finally we introduce the operators that project harmonic space data vector to the $E$ or $B$ subspace:
@@ -155,22 +138,13 @@ Finally we introduce the operators that project harmonic space data vector to th
 \end{subequations}
 %
 Note that these harmonic space matrices are idempotent ($\tilde O_E  \tilde O_E = \tilde O_E;  \tilde O_B  \tilde O_B= \tilde O_B$), orthogonal ($\tilde O_E  \tilde O_B = \mathbb{0}$) and sum to the identity matrix ($\tilde O_E + \tilde O_B = \mathbb{1}$).
-%
-%\begin{subequations} \label{eq:har_op_prop}
-%\beqry
-%\tilde O_E  \tilde O_E&=& \tilde O_E ~~;~~  \tilde O_B  \tilde O_B= \tilde O_B \,,\\
-% \tilde O_E  \tilde O_B&=& \mathbb{0} \,, \label{eq:op_eb_ortho}\\ 
-% \tilde O_E + \tilde O_B&=& \mathbb{1} \,.
-%\eeqry
-%\end{subequations}
-%
-The above relations for these harmonic space operators are exactly valid.  In the following sections we derive the real space analogues ($O_E,O_B$) of these harmonic space operators.
 
+The above relations for these harmonic space operators are exactly valid.  In the following sections we derive the real space analogues ($O_E,O_B$) of these harmonic space operators.
 
 \section{Real space polarization operators} \label{sec:real_space_operators}
 \subsection{Evaluating scalars $E/B$ from Stokes $Q/U$}\label{sec:qu2eb}
 In \sec{sec:pol-primer} we described the conventional procedure of computing the scalar fields $E/B$ from the Stokes parameters $Q/U$. 
-%To reiterate, this process involved taking the spin harmonic transform of the complex spin-2 fields ${}_{\pm2} \bar X$, forming specific linear combinations of the resultant coefficients of expansion ${}_{\pm 2} \tilde X_{\ell m}$ and evaluating the forward spin-0 transform to derive the scalar E \& B fields. 
+
 In this section we derive the real space operators which can be used to directly evaluate the scalar fields $E$/$B$ on the sphere.  We use the vector-matrix notation introduced in \sec{sec:mat_pol_intro} to write down an operator equation relating the real space vector of scalars \vs to the Stokes polarization vector \vp{}:
 %
 \beqrys
@@ -237,7 +211,6 @@ The total map can be simply evaluated by summing over the contribution from the 
 \begin{subequations} \label{eq:qu2eb_radiation_concise}
 \beqry 
 \left[E + iB\right](\hat{n}_e) &=& -\Delta \Omega  \sum_{q=1}^{N_{\rm pix}} \Big[ {}_{+2}X(\hat{n}_{q}) e^{-i2\alpha_{q e}} \Big]  {{}_{\mm}f}(\beta_{q e}) \,, \\
-%&=&    \sum_{q=1}^{N_{\rm pix}} \Bigg\lbrace {}_{+2}X(\hat{n}_{q}) \left[ - \Delta \Omega \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y^*_{\ell 2}(\beta_{qe},\alpha_{qe}) \right] \Bigg\rbrace \,, \\
 &=& \Delta \Omega \sum_{q=1}^{N_{\rm pix}} {}_{+2}X(\hat{n}_{q}) \,  \mathcal{M}_{G}(\hat n_q) \,,
 \eeqry
 \end{subequations}
@@ -265,7 +238,6 @@ This formulation of the real space operator can be interpreted as integrating at
 \begin{subequations} \label{q:qu2eb_convolution_concise}
 \beqry 
 [E + iB](\hat{n}_e) &=& - \Delta \Omega \sum_{q=1}^{N_{\rm pix}}{{}_{\mm}f}(\beta_{eq},\ell_{\rm min},\ell_{\rm max}) {\Bigg( e^{i2 \gamma_{eq}}   {}_{+2}X (\hat{n}_q) \Bigg)}, \label{eq:qu2eb_physical}\\
-%&=& \Bigg\lbrace \left[ - \Delta \Omega \sum_{\ell=\ell_{\rm min}}^{\ell_{\rm max}} \sqrt{\frac{2 \ell+1}{4 \pi}}Y_{\ell 2}(\beta_{eq},\gamma_{eq}) \right]  \star {}_{+2}X \Bigg\rbrace(\hat{n}_e) \,, \\
 &=& \Bigg\lbrace \mathcal{M}_{B} \star {}_{+2}X \Bigg\rbrace(\hat{n}_e) \,, \label{eq:qu2eb_convolution} 
 \eeqry
 \end{subequations}
@@ -287,12 +259,7 @@ The real space operator which translates $E$/$B$ fields to Stokes parameters $Q$
 \eeqry
 \end{subequations}
 %
-%The inverse operator $\bar{O}^{-1}$ can be derived by realizing that $\mm^{-1}$ is given by the following expression,
-%%
-%\beq
-%\mm^{-1} = \sum_{\ell m}  {{}_{2}}Y_{\ell m}(\hat n_q) {}_{0}Y^*_{\ell m}(\hat n_e) \, 
-%\eeq
-%%
+
 The inverse operator expressed in terms of the function $\mm$ given in \eq{eq:qu2eb_gen_kernel} is given by the following equation:
 %
 \beq
@@ -318,11 +285,10 @@ where all the symbols have the same meaning as defined in \sec{sec:qu2eb}. Note 
 
 
 \begin{figure}[t] 
-  %%%% NEW MG/MB
-  \begin{center}
-    \begin{tabular}{m{8ex}m{\kernelfigwidth}m{\kernelfigwidth}|m{\kernelfigwidth}m{\kernelfigwidth}}
-%      & \multicolumn{2}{c}{$E+iB$} & \multicolumn{2}{c}{$Q+iU$} \\
-    $b=90^\circ$ &
+%%%% NEW MG/MB
+\begin{center}
+\begin{tabular}{m{8ex}m{\kernelfigwidth}m{\kernelfigwidth}|m{\kernelfigwidth}m{\kernelfigwidth}}
+$b=90^\circ$ &
 \hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_rad_lat90_lon45.pdf} &
 \hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_iker_rad_lat90_lon45.pdf} &
 \hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2eb_rker_con_lat90_lon45.pdf} &
@@ -371,12 +337,6 @@ On the other hand, $\mathcal{M}^*_B$ is the Green's function of the operator tha
 %
 \revisit{It is also interesting to note that the radiation kernel ($\mm_{G}$) and the convolution kernel ($\mm_{B}$) become progressively identical as one approaches the equator as seen in  \fig{fig:vis_kernel}, which is a consequence of $\gamma \simeq -\alpha$ in the vicinity of the equator. This result can also be understood as the flat sky case where the radiation and convolution kernels are expected to be identical.}
 
-
-
-
-
-
- 
 %--------------------------------------------------------
 \subsection{Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes} \label{sec:purify_stokes_qu}
 We can only measure the total Stokes vector, a sum of the part that corresponds to scalar $E$ and the part that corresponds to $B$.  The $E$/$B$ modes are orthogonal to each other in the sense that their respective operators are orthogonal to each other as discussed in \sec{sec:mat_pol_intro}. It is possible to decompose the Stokes vector \vp{} into one \vp{\rm E} that purely contributes to $E$ modes and another \vp{\rm B} that purely contribute to the $B$ modes of polarization. In this section we derive the real space operators which operate on the total Stokes vector and yield this decomposition, without ever having to explicitly evaluate the scalar $E/B$ modes. The algebra is more involved, but the derivation is similar to that discussed in \sec{sec:qu2eb}, so we refrain from presenting the detailed calculations here and outline only the key points. We use the harmonic space projection operators $\tilde O_{E/B}$, defined in \eq{eq:har_eb_op}, to derive the respective real space operators. The Stokes parameters corresponding to each scalar mode are given by the following expressions:
@@ -459,3 +419,39 @@ The operator $\mathcal{I}$ is Hermitian and is a band limited version of the del
 \end{subequations}
 %
 which are the real space analogues of their harmonic space counterparts discussed in \sec{sec:mat_pol_intro}. Thus they are exactly orthogonal and idempotent. Note that unlike in the harmonic case, the sum of the operators is the band limited identity operator $\mathcal{I}$. This non-exactness is representative of the loss of information resulting from making this transformation on measured data with some imposed band limit. Forcing the sum of the operators to be exactly an identity matrix compromises the orthogonality property of the $\bar{O}_E$ \& $\bar{O}_B$ operators which is exact (\eq{eq:real_ortho}) and a more crucial property of the operators.
+%
+\begin{figure}[!t]
+  \begin{center}
+  \begin{tabular}{m{8ex}m{\kernelfigwidth}m{\kernelfigwidth}|m{\kernelfigwidth}m{\kernelfigwidth}}
+$b=90^\circ$&
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_rker_D_lat90_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_iker_D_lat90_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_rker_I_lat90_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_iker_I_lat90_lon45.pdf} \\
+$b=87^\circ$&
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_rker_D_lat87_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_iker_D_lat87_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_rker_I_lat87_lon45.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_iker_I_lat87_lon45.pdf} \\
+$b=80^\circ$&
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_rker_D_lat80_lon30.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_iker_D_lat80_lon30.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_rker_I_lat80_lon30.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_iker_I_lat80_lon30.pdf} \\
+$b=0^\circ$&
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_rker_D_lat0_lon90.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_iker_D_lat0_lon90.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_rker_I_lat0_lon90.pdf} &
+\hspace{\kernelfigspace}\includegraphics[width=\kernelfigwidth]{new_kernel/qu2ebqu_iker_I_lat0_lon90.pdf} \\
+&
+\centering $\textrm{Re} \left(\mathcal{D} \right)$ &
+\centering $\textrm{Im} \left(\mathcal{D} \right)$ &
+\centering $\textrm{Re} \left(\mathcal{I} \right)$ &
+\centering $\textrm{Im} \left(\mathcal{I} \right)$
+  \end{tabular}
+  \end{center}
+  \caption{Like Figure \ref{fig:vis_kernel}, but for the kernels that purify Stokes parameter into their $E/B$ parts.} \label{fig:vis_kernel_DI}
+\end{figure}
+%
+
+The kernels $\mathcal{D}$ and $\mathcal{I}$ vary significantly as a function of galactic latitude of the central pixel, as seen in \fig{fig:vis_kernel_DI}. These kernels show a two fold symmetry in the vicinity of the poles.  Here the Euler angle $\gamma \approx 0$ here and therefore $e^{i2(\alpha \pm \gamma)} \approx e^{i2\alpha}$. Note that in this region, the azimuthal profile of the real and imaginary part of these kernels is identical to $-\mathcal{M}_G$.  The imaginary part of the band limited delta function $\mathcal{I}$ contributes just as much as the real part in these regions. On transiting to lower latitudes, however, $\mathcal{D}$ quickly transitions to having a four fold symmetry while $\mathcal{I}$ transitions to being dominated by the real part and behaves more like the conventional delta function. This transition can be most easily understood in the flat sky limit where $\gamma \approx -\alpha$ which leads to the resultant 4 fold symmetry seen for $\mathcal{D}$ owing to $e^{i2(\alpha - \gamma)} \approx e^{i4\alpha}$ and $\mathcal{I}$ being dominated by the real part owing to $e^{-i2(\alpha + \gamma)} \approx 1 + i0$. Since the flat sky approximation has most validity in the proximity of the equator these limiting tendencies of the respective kernels are seen in the bottom row of \fig{fig:vis_kernel_DI} which depict the kernels evaluated at the equator $b=0^{\circ}$. The middle two row depict the kernels evaluated at intermediate latitudes: $b=87^{\circ}$ and $b=80^{\circ}$ and serve to indicate the rate of this transition. As before, these kernels are invariant under changes in longitude of the central pixel with the latitude fixed.
