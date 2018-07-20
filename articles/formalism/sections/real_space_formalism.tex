@@ -6,9 +6,9 @@ CMB polarization is measured in terms of Stokes parameters, time averages of the
 \beq \label{eq:qu-rot}
 \fqu' = \begin{bmatrix} \cos{2 \psi} &  \sin{2 \psi} \\ -\sin{2\psi} & \cos{2 \psi} \end{bmatrix} \fqu \,.
 \eeq
-Equivalently, the object $_{\pm 2}\bar{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$ and hence forms a spin $\pm$2 field \cite{Zaldarriaga1997}.
+Equivalently, the object $_{\pm 2}{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ transforms as ${}_{\pm 2}f' = e^{\mp 2i\psi} {}_{s}f$ and hence forms a spin $\pm$2 field \cite{Zaldarriaga1997}.
 
-The standard construction of $E$ and $B$ fields arise from the desire to have a coordinate independent description of the polarization. This follows from operations that raise (or lower) the spin of the field ${}_{\pm2}X$ to construct scalar fields.  By understanding the transform properties of the Stokes parameters and those of the Euler angles on the sphere, we can already construct a heuristic argument for what these operations must look like in real space. We consider the contribution to a scalar field at $\hat n_e$ from the polarization field at $\hat n_q$. 
+The standard construction of $E$ and $B$ fields arise from the desire to have a coordinate independent description of the polarization. This follows from operations that raise (or lower) the spin of the field ${}_{\pm2}{X}$ to construct scalar fields.  By understanding the transformation properties of the Stokes parameters and those of the Euler angles on the sphere, we can already construct a heuristic argument for what these operations must look like in real space. We consider the contribution to a scalar field at $\hat n_e$ from the polarization field at $\hat n_q$. 
 
 \fig{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a counter-clockwise rotation around the local $\hat n_q$ (unit radial vector at $(\theta_q,\phi_q)$ pointing outward) by angle $\alpha$, parallel transport by angle $\beta$ along the shorter geodesic and a counter-clockwise rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention.\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}
 %
@@ -118,8 +118,8 @@ Using the data vectors and the matrix operators defined above we can now express
 %
 \begin{subequations} \label{eq:pol_data_relns}
   \beqry
-  \bar{X} &= \bar T  \bar{P} \qquad; &\qquad \bar{P} = \frac{1}{2} \bar T^{\dagger}  \bar{X} \,, \\
-  \tilde{X} &= \tilde T \tilde{S} \qquad; &\qquad \tilde{S} = \frac{1}{2}\tilde T^{\dagger} \tilde{X} \,.
+  \bar{X} &= \bar T  \bar{P} ; &\qquad \bar{P} = \frac{1}{2} \bar T^{\dagger}  \bar{X} \,, \\
+  \tilde{X} &= \tilde T \tilde{S}; &\qquad \tilde{S} = \frac{1}{2}\tilde T^{\dagger} \tilde{X} \,.
   \eeqry
   Meanwhile the spherical harmonic transforms are written as:
   \beqry
@@ -144,7 +144,6 @@ The above relations for these harmonic space operators are exactly valid.  In th
 \section{Real space polarization operators} \label{sec:real_space_operators}
 \subsection{Evaluating scalars $E/B$ from Stokes $Q/U$}\label{sec:qu2eb}
 In \sec{sec:pol-primer} we described the conventional procedure of computing the scalar fields $E/B$ from the Stokes parameters $Q/U$. 
-
 In this section we derive the real space operators which can be used to directly evaluate the scalar fields $E$/$B$ on the sphere.  We use the vector-matrix notation introduced in \sec{sec:mat_pol_intro} to write down an operator equation relating the real space vector of scalars \vs to the Stokes polarization vector \vp{}:
 %
 \beqrys
@@ -175,7 +174,7 @@ where the terms on either side of the equation are those that appear in \eq{eq:q
  \sum_{m}{{}_{s_1}Y}^*_{\ell m}(\hat{n}_i)\,{{}_{s_2}Y}_{\ell m}(\hat{n}_j) = \sqrt{\frac{2\ell+1}{4 \pi}} {{}_{s_2}}Y_{\ell \,-s_1}(\beta_{ij},\alpha_{ij}) e^{- i s_2 \gamma_{ij}} \,,
 \eeq
 %
-where $(\alpha_{ij}, ~\beta_{ij}, \gamma_{ij})$ denote the Euler angles that specifically transform $(i \rightarrow j)$ so that the coordinate system at $\hat{n}_i$ aligns with the coordinate system at $\hat{n}_j$\footnote{The sense of the rotation becomes more obvious when this equation is written in terms of the Wigner-D functions.}. Using this identity, the different parts of the real space operator $\bar{O}$  (from eq.~\ref{eq:qu2eb_ker_1}) are completely specified by the following complex function:
+where $(\alpha_{ij}, ~\beta_{ij}, \gamma_{ij})$ denote the Euler angles that specifically transform $(i \rightarrow j)$ so that the coordinate system at $\hat{n}_i$ aligns with the coordinate system at $\hat{n}_j$\footnote{The sense of the rotation becomes more obvious when this equation is written in terms of the Wigner-$D$ functions.}. Using this identity, the different parts of the real space operator $\bar{O}$  (from eq.~\ref{eq:qu2eb_ker_1}) are completely specified by the following complex function:
 %
 \begin{subequations}\label{eq:qu2eb_gen_kernel}
 \beqry
@@ -250,7 +249,7 @@ where $\star$ denotes a convolution and $\mathcal{M}_{B} = -\mm(\beta_{eq},\gamm
 
 %--------------------------------------------------------
 \subsection{Evaluating Stokes $Q$/$U$ from scalar $E$/$B$}\label{sec:eb2qu}
-The real space operator which translates $E$/$B$ fields to Stokes parameters $Q$/$U$ can be derived using a similar procedure. Expressed in the matrix-vector notation, inverse operator is given by the following equation:
+The real space operator which translates $E$/$B$ fields to Stokes parameters $Q$/$U$ can be derived using a similar procedure. Expressed in the matrix-vector notation, the inverse operator is given by the following equation:
 %
 \begin{subequations}
 \beqry
@@ -269,8 +268,8 @@ The inverse operator expressed in terms of the function $\mm$ given in \eq{eq:qu
 where all the symbols have the same meaning as discussed in \sec{sec:qu2eb}. Note that the kernel in the above equation differs from the one in \eq{eq:op_qu2eb_rad} by a change in sign on the off-diagonals of the block matrix. When expressed in terms of the same set of Euler angles used to define the operator $\bar{O}$, it can be shown that the different forms of the real space operator are given by the following equations:
 %
 \beqry
-    {}_{+2}X(\hat{n}_q) &&=  \Delta \Omega \sum_{e=1}^{N_{\rm pix}} [E+iB](\hat{n}_{e})\   \mathcal{M}^*_{B}(\hat{n}_e) \hspace{0.8cm}\textrm{\emph{Radiation kernel}}\,,\label{eq:eb2qu_radiation} \\
-    {}_{+2}X(\hat{n}_q) &&= \Bigg\lbrace \mathcal{M}^*_{G} \star [E+iB] \Bigg\rbrace(\hat{n}_q) \hspace{1.4cm}\textrm{\emph {Convolution kernel}}\,, \label{eq:eb2qu_convolution}
+    {}_{+2}X(\hat{n}_q) &&=  \Delta \Omega \sum_{e=1}^{N_{\rm pix}} [E+iB](\hat{n}_{e})\   \mathcal{M}^*_{B}(\hat{n}_e) \hspace{0.8cm}\textrm{\emph{Radiation kernel}},\label{eq:eb2qu_radiation} \\
+    {}_{+2}X(\hat{n}_q) &&= \Bigg\lbrace \mathcal{M}^*_{G} \star [E+iB] \Bigg\rbrace(\hat{n}_q) \hspace{1.4cm}\textrm{\emph {Convolution kernel}}, \label{eq:eb2qu_convolution}
 \eeqry
 %
 where all the symbols have the same meaning as defined in \sec{sec:qu2eb}. Note that the conjugated forms of the radiation kernel (Green's function) and the convolution kernel (effective beam) for the operator $\bar{O}$ have their roles reversed for the inverse operator $\bar{O}^{-1}$.
