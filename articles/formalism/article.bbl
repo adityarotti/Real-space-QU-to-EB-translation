@@ -118,6 +118,32 @@ S.~{Staggs}, J.~{Dunkley} and L.~{Page}, \emph{{Recent discoveries from the
   \href{https://doi.org/10.1088/1361-6633/aa94d5}{\emph{Reports on Progress in
   Physics} {\bfseries 81} (Apr., 2018) 044901}.
 
+\bibitem{Spider}
+R.~Gualtieri, J.~P. Filippini, P.~A.~R. Ade, M.~Amiri, S.~J. Benton, A.~S.
+  Bergman et~al., \emph{{SPIDER: CMB polarimetry from the edge of space}},
+  \href{https://arxiv.org/abs/1711.10596}{{\ttfamily 1711.10596}}.
+
+\bibitem{CLASS}
+T.~Essinger-Hileman, A.~Ali, M.~Amiri, J.~W. Appel, D.~Araujo, C.~L. Bennett
+  et~al., \emph{{CLASS: the cosmology large angular scale surveyor}},
+  p.~91531I, jul, 2014, \href{https://arxiv.org/abs/1408.4788}{{\ttfamily
+  1408.4788}}, \href{https://doi.org/10.1117/12.2056701}{DOI}.
+
+\bibitem{Litebird}
+T.~Matsumura, Y.~Akiba, J.~Borrill, Y.~Chinone, M.~Dobbs, H.~Fuke et~al.,
+  \emph{{Mission Design of LiteBIRD}},
+  \href{https://doi.org/10.1007/s10909-013-0996-1}{\emph{J. Low Temp. Phys.}
+  {\bfseries 176} (sep, 2014) 733--740},
+  [\href{https://arxiv.org/abs/1311.2847}{{\ttfamily 1311.2847}}].
+
+\bibitem{BICEP22015}
+P.~A.~R. Ade, R.~W. Aikin, D.~Barkats, S.~J. Benton, C.~A. Bischoff, J.~J. Bock
+  et~al., \emph{{bicep2/ KECK ARRAY . IV. OPTICAL CHARACTERIZATION AND
+  PERFORMANCE OF THE bicep2 AND KECK ARRAY EXPERIMENTS}},
+  \href{https://doi.org/10.1088/0004-637X/806/2/206}{\emph{Astrophys. J.}
+  {\bfseries 806} (jun, 2015) 206},
+  [\href{https://arxiv.org/abs/1502.00596}{{\ttfamily 1502.00596}}].
+
 \bibitem{1997PhRvD..55.7368K}
 M.~{Kamionkowski}, A.~{Kosowsky} and A.~{Stebbins}, \emph{{Statistics of cosmic
   microwave background polarization}},
