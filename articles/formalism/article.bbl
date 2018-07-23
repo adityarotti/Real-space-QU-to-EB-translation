@@ -202,6 +202,14 @@ J.~N. Goldberg, A.~J. Macfarlane, E.~T. Newman, F.~Rohrlich and E.~C.~G.
   \href{https://doi.org/10.1063/1.1705135}{\emph{J. Math. Phys.} {\bfseries 8}
   (nov, 1967) 2155--2161}.
 
+\bibitem{2018JCAP...05..059L}
+H.~{Liu}, J.~{Creswell} and P.~{Naselsky}, \emph{{E and B families of the
+  Stokes parameters in the polarized synchrotron and thermal dust
+  foregrounds}},
+  \href{https://doi.org/10.1088/1475-7516/2018/05/059}{\emph{\jcap} {\bfseries
+  5} (May, 2018) 059}, [\href{https://arxiv.org/abs/1804.10382}{{\ttfamily
+  1804.10382}}].
+
 \bibitem{2016A&A...586A.141P}
 {Planck Collaboration}, P.~A.~R. {Ade}, N.~{Aghanim}, M.~{Arnaud},
   M.~{Ashdown}, J.~{Aumont} et~al., \emph{{Planck intermediate results.
@@ -210,6 +218,15 @@ J.~N. Goldberg, A.~J. Macfarlane, E.~T. Newman, F.~Rohrlich and E.~C.~G.
   \href{https://doi.org/10.1051/0004-6361/201526506}{\emph{\aap} {\bfseries
   586} (Feb., 2016) A141}.
 
+\bibitem{2011ApJS..193....5M}
+S.~{Mitra}, G.~{Rocha}, K.~M. {G{\'o}rski}, K.~M. {Huffenberger}, H.~K.
+  {Eriksen}, M.~A.~J. {Ashdown} et~al., \emph{{Fast Pixel Space Convolution for
+  Cosmic Microwave Background Surveys with Asymmetric Beams and Complex Scan
+  Strategies: FEBeCoP}},
+  \href{https://doi.org/10.1088/0067-0049/193/1/5}{\emph{\apjs} {\bfseries 193}
+  (Mar., 2011) 5}, [\href{https://arxiv.org/abs/1005.1929}{{\ttfamily
+  1005.1929}}].
+
 \bibitem{2010ApJS..187..212C}
 C.~M. {Cantalupo}, J.~D. {Borrill}, A.~H. {Jaffe}, T.~S. {Kisner} and
   R.~{Stompor}, \emph{{MADmap: A Massively Parallel Maximum Likelihood Cosmic
@@ -217,13 +234,5 @@ C.~M. {Cantalupo}, J.~D. {Borrill}, A.~H. {Jaffe}, T.~S. {Kisner} and
   \href{https://doi.org/10.1088/0067-0049/187/1/212}{\emph{\apjs} {\bfseries
   187} (Mar., 2010) 212--227},
   [\href{https://arxiv.org/abs/0906.1775}{{\ttfamily 0906.1775}}].
-
-\bibitem{2018JCAP...05..059L}
-H.~{Liu}, J.~{Creswell} and P.~{Naselsky}, \emph{{E and B families of the
-  Stokes parameters in the polarized synchrotron and thermal dust
-  foregrounds}},
-  \href{https://doi.org/10.1088/1475-7516/2018/05/059}{\emph{\jcap} {\bfseries
-  5} (May, 2018) 059}, [\href{https://arxiv.org/abs/1804.10382}{{\ttfamily
-  1804.10382}}].
 
 \end{thebibliography}\endgroup
