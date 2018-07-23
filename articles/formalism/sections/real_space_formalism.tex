@@ -15,7 +15,7 @@ The standard construction of $E$ and $B$ fields arise from the desire to have a 
 \begin{figure}%[!hbt]
 \centering
 \includegraphics[width=0.5\columnwidth]{euler.pdf}
-\caption{This figure depicts the Euler angles in the $z-y1-z2$ convention. The cartesian coordinates shown in dark solid green are those that lie in the tangent plane at location $\hat{n}_q = (\theta_q, \phi_q)$ while those shown in dark solid red are the ones that lie in the tangent plane at location $\hat{n}_e = (\theta_e, \phi_e)$. The blue coordinates at different locations are representative of the parallel transport along the geodesic connection between the two locations $\hat{n}_q$ and $\hat{n}_e$ on the sphere.}
+\caption{This figure depicts the Euler angles in the $z-y_1-z_2$ convention. The cartesian coordinate axes shown in dark solid green are those that lie in the tangent plane at location $\hat{n}_q = (\theta_q, \phi_q)$ while those shown in dark solid red are the ones that lie in the tangent plane at location $\hat{n}_e = (\theta_e, \phi_e)$. The blue axes represent the parallel transport along the geodesic connection between the two locations $\hat{n}_q$ and $\hat{n}_e$ on the sphere.}
 \label{fig:euler_angles}
 \end{figure}
 %
@@ -152,7 +152,7 @@ In this section we derive the real space operators which can be used to directly
 &=&  \bar O \bar{P}. \label{eq:qu2eb_op}
 \eeqrys
 %
-The explicit form of the real space operator $\bar O$ can be derived by contracting over all the matrix operators.\footnote{While this manuscript was in preparation, work appeared in \cite{2018JCAP...05..059L} that implements the similar idea of real-space transformation of Stokes $Q/U$ parameters to their $E/B$ counterparts, but we treat it here in much more detail.}
+The explicit form of the real space operator $\bar O$ can be derived by contracting over all the matrix operators.\footnote{While this manuscript was in preparation, work appeared in \cite{2018JCAP...05..059L} that implements the similar idea of real-space transformation of Stokes $Q/U$ parameters to their $E/B$ counterparts in real space, but we treat it here in much more detail.}
 This procedure is explicitly worked out in the following set of equations:
 %
 \beqrys
@@ -224,7 +224,7 @@ where $\Delta \Omega$ denotes the pixel area and the last line is a simple scala
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.5\columnwidth]{radiation_convolution.pdf}
-\caption{The local cartesian coordinates $(\hat{x},\hat{y})$ are drawn on the red circle(sphere), representative of the coordinate dependence of the Stokes parameters. The two sets of dotted lines drawn at representative points denote great circles, one which passes through the central point labelled `e' and the other chosen such that the two have locally orthogonal tangent vectors $(\hat{r},\hat{\phi})$. The angle $\alpha_{qe}$ defines a rotation operator that aligns the local $\hat{x}$ with $\hat{r}$.   \textit{Convolution kernel:} The resultant scalar field at `$e$' can be evaluated by summing over the contribution from all the Stokes parameters on the red circle. This convolution is performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$. \textit{Radiation kernel:} It is also possible to compute the contribution from the Stokes parameter at `$q$' to all the point on the blue circle and this is a function of the Euler angle $\alpha_{qe}$.}
+\caption{The local cartesian coordinates $(\hat{x},\hat{y})$ are drawn on the red circle(sphere), representative of the coordinate dependence of the Stokes parameters. The two sets of dotted lines drawn at representative points denote great circles, one which passes through the central point labelled `$e$' and the other chosen such that the two have locally orthogonal tangent vectors $(\hat{r},\hat{\phi})$. The angle $\alpha_{qe}$ defines a rotation operator that aligns the local $\hat{x}$ with $\hat{r}$.   \textit{Radiation kernel:} We can compute the contribution from the Stokes parameter at `$q$' to all the points on the blue circle and this is a function of the Euler angle $\alpha_{qe}$. \textit{Convolution kernel:} The resultant scalar field at `$e$' can also be evaluated by summing over the contribution from all the Stokes parameters on the red circle. This convolution is performed with kernels which are defined in term of the Euler angle $\gamma_{eq}$.}
 \label{fig:planar_euler_angles}
 \end{figure}
 %
