@@ -14,12 +14,12 @@ where the functions $g_{\ell}^E$ and $g_{\ell}^B$ represent the harmonic represe
 % 
 \begin{subequations} \label{eq:gen_qu2eb}
 \beqry
-{\bar O}' &=& {{}_0\mathcal{Y}} \, \tilde T^{-1} \tilde{\mathcal{G}} {{}_2\mathcal{Y}^{\dagger}} \, \bar T \,,\\
-{\bar O}'^{-1}&=& \bar{T}^{-1} {{}_2\mathcal{Y}}\, \tilde{\mathcal{G}}^{-1} \tilde T {{}_0\mathcal{Y}^{\dagger}}.
+{\bar O}' &=& {{}_0\mathcal{Y}} \, \tilde T^{-1} \tilde{\mathcal{G}} {{}_2\mathcal{Y}^{\ddag}} \, \bar T \,,\\
+{\bar O}'^{-1}&=& \bar{T}^{-1} {{}_2\mathcal{Y}}\, \tilde{\mathcal{G}}^{-1} \tilde T {{}_0\mathcal{Y}^{\ddag}}.
 \eeqry
 \end{subequations}
 %
-The primed notation distinguishes these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. We require both the forward and inverse operators to be well defined.   This constrains the choice of $\tilde{\mathcal{G}}$ to have a valid  inverse and is important to recover the standard CMB power spectra. The radial parts of this generalized operator and it's inverse are given by the following expressions,
+The primed notation distinguishes these generalized operators from the default operators defined in \sec{sec:qu2eb} and \sec{sec:eb2qu}. We require both the forward and inverse operators to be well defined.   This constrains the choice of $\tilde{\mathcal{G}}$ to have a valid  inverse, which is important when recovering the standard CMB power spectra. The radial parts of this generalized operator and it's inverse are given by the following expressions,
 %
 \begin{subequations}\label{eq:generalized_radial_kernel}
 \beqry 
@@ -53,11 +53,11 @@ b(\beta) = \sum_{\ell=0}^{\ell_{\rm max}} \frac{2 \ell+1}{4 \pi} g_{\ell} P_{\el
 \eeq
 %
 where $g_{\ell}$ is the same harmonic function as that appearing in \eq{eq:generalized_radial_kernel}.
-In contrast to the radial function $G(\beta)$ an instrumental beam function appropriately normalized has the property $b(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. Though the real space functions $G(\beta)$ (operating on Stokes parameters) and $b(\beta)$ (operating on scalar $E/B$) are different, in harmonic space they play identical roles.
+In contrast to the radial function $G(\beta)$, a beam function when appropriately normalized has the property $b(\beta) \rightarrow 1$ as $\beta \rightarrow 0$. Though the real space functions $G(\beta)$ (operating on Stokes parameters) and $b(\beta)$ (operating on scalar $E/B$) are different, in harmonic space they play identical roles.
 
 % Therefore it is possible to interpret the beam harmonic coefficients as those representing some modified radial kernel.
 In \fig{fig:example_gbeta}, we examine in more detail the relationship between the modified radial kernels and these beam harmonic coefficients.  
- \fig{fig:gl_gbeta} depicts the radial profile of the  effective beams corresponding to different radial kernels: the standard kernel with a radial cutoff, kernels corresponding to Gaussian smoothings of the $E/B$ fields, a radial function without oscillations and an exponential cutoff.  Note that the smoothing tend to increase the non-locality, indicated by the shifting right of the maxima of the respective kernels, as one may have expected.  The exponential cutoff (red curve) by construction has a very small non-locality (parameterized by $\beta_0$).
+ \fig{fig:gl_gbeta} depicts the radial profile of the  effective beams corresponding to different radial kernels: the standard kernel modified by a radial cutoff, kernels corresponding to Gaussian smoothings of the $E/B$ fields, and a radial function without oscillations and an exponential cutoff.  Note that the smoothing tend to increase the non-locality, indicated by the shifting right of the maxima of the respective kernels, as one may have expected.  The exponential cutoff (red curve) by construction has a very small non-locality (parameterized by $\beta_0$).
 
 \fig{fig:glbl} depicts the harmonic description $g_{\ell}$ for these respective radial kernels and beams.
 Finally, the beam that the modified radial kernels effectively apply to the $E/B$ fields are shown in \fig{fig:gl_bbeta}.  Note that the beam function corresponding to the default radial kernel ($g_{\ell}=1$) is merely a band limited representation of a delta-function beam.
@@ -68,7 +68,7 @@ The generalized convolution kernels defined in the previous section, when operat
 \bar{S}' = \bar{O}' \bar{P}
 \eeq
 %
-which are merely filtered versions of the standard $E/B$ modes maps. The filter function is simply $g_{\ell}$, easily obtained from the modified radial function $G(\beta)$ and it can be simply interpreted as the harmonic coefficients of some azimuthally symmetric beam. The power spectra of the modified scalar fields $E'$ and $B'$ are related to the spectra of the standard $E$ and $B$ fields via the following relation, 
+which are merely filtered versions of the standard $E/B$ modes maps. The filter function is simply $g_{\ell}$, which is easily obtained from the modified radial function $G(\beta)$.  It can be simply interpreted as the set of harmonic coefficients for some azimuthally symmetric beam. The power spectra of the modified scalar fields $E'$ and $B'$ are thus related to the spectra of the standard $E$ and $B$ fields via the following relation, 
  %
  \begin{subequations}
  \beqry
