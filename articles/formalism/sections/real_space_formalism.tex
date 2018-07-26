@@ -10,7 +10,7 @@ Equivalently, the object $_{\pm 2}{X}(\hat{n}) = Q(\hat{n}) \pm i U (\hat{n})$ t
 
 The standard construction of $E$ and $B$ fields arise from the desire to have a coordinate independent description of the polarization. This follows from operations that raise (or lower) the spin of the field ${}_{\pm2}{X}$ to construct scalar fields.  By understanding the transformation properties of the Stokes parameters and those of the Euler angles on the sphere, we can already construct a heuristic argument for what these operations must look like in real space. We consider the contribution to a scalar field at $\hat n_e$ from the polarization field at $\hat n_q$. 
 
-\fig{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a counter-clockwise rotation around the local $\hat n_q$ (unit radial vector at $(\theta_q,\phi_q)$ pointing outward) by angle $\alpha$, parallel transport by angle $\beta$ along the shorter geodesic and a counter-clockwise rotation around $\hat n_q$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention.\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}
+\fig{fig:euler_angles} shows that the transformation of the local coordinate system between the two positions can be described by a counter-clockwise rotation around the local $\hat n_q$ (unit radial vector at $(\theta_q,\phi_q)$ pointing outward) by angle $\alpha$, parallel transport by angle $\beta$ along the shorter geodesic and a counter-clockwise rotation around $\hat n_e$ by $-\gamma$.  This corresponds to a rotation by Euler angles $(\alpha,\beta,-\gamma)$ in the $z-y_1-z_2$ convention.\footnote{The Euler angles in the more standard $z-y-z$ convention are related to those in the $z-y_1-z_2$ convection by the following rule: $(\alpha,\beta,\gamma)_{z-y-z} =(\gamma,\beta,\alpha)_{z-y_1-z_2}$ \cite{varshalovich}.}
 %
 \begin{figure}%[!hbt]
 \centering
@@ -36,7 +36,7 @@ The same rotation $\mathcal{R}_{\hat{z}_q}(\psi)$ leaves the Euler angle $|\beta
 \beq
 {}_{+2}X(\hat{n}_q) f(\beta_{qe})  e^{-i2\alpha_{qe}}
 \eeq
-for some real function $f$.  Note that when the two locations coincide ($\beta_{qe}=0$) then  $\alpha_{qe}=0,2\pi,4\pi,\dots$, implying $E + iB \propto Q+iU$.  This is a contradiction because $Q+iU$ does not transform as a spin-0 field under local rotations, hence we must have $f(\beta_{qe} = 0 ) = 0$. This immediately implies that the $E/B$ fields are necessarily defined non-locally.  A similar contradiction arises when the two locations are diametrically opposite, $\beta_{qe} = \pi$ and therefore we also require that $f(\beta_{qe} = \pi ) = 0$.  Any such function $f$ will let us construct $E/B$-like scalar fields.  Below we derive the particular one that gives rise to our familiar $E/B$ modes.
+for some real function $f$.  Note that when the two locations coincide ($\beta_{qe}=0$) then  $\alpha_{qe}=0,2\pi,4\pi,\dots$, implying $E + iB \propto Q+iU$.  This is a contradiction because $Q+iU$ does not transform as a spin-0 field under local rotations, hence we must have $f(\beta_{qe} = 0 ) = 0$. This immediately implies that the $E/B$ fields are necessarily defined non-locally.  A similar contradiction arises when the two locations are diametrically opposite, $\beta_{qe} = \pi$ and therefore we also require that $f(\beta_{qe} = \pi ) = 0$.  Any such function $f$ will let us construct $E/B$-like scalar fields. \revisit{Finally the total $(E+iB)$ field results from summing over the contributions from all the Stokes charges ${}_{+2}X(\hat{n}_q)$ across the sphere.}  Below we derive the particular one that gives rise to our familiar $E/B$ modes.
 
 Note that this type of real-space construction can be generalized to transform a field of any spin to a field of any other spin, not just two and zero, and so we can use a similar construction (in the opposite direction) to transform $E/B$ maps back to the Stokes parameters (i.e. transforming spin-0 fields to spin-2).
 
@@ -325,15 +325,15 @@ While the kernels are evaluated in the band limit $\ell \in [2,192]$, for illust
 The kernel $\mathcal{M}_G$ is the Green's function of the operator that transforms Stoke parameters to coordinate independent $E/B$.  The coordinate independence implies that the real and imaginary parts of the kernel do not vary with changes in the galactic latitude and longitude of the central pixel. In particular these functions are not distorted when a part of the domain overlaps with the poles, as can be seen in the first two rows of \fig{fig:vis_kernel}. From \eq{eq:qu2eb_radiation_concise}, we can see the $E/B$ patterns that Kronecker $\delta$-functions in the Stokes parameter pixels produce:
 %
 \beq
-\bmat E= \textrm{Re}(\mathcal{M}_G) \\ B =\textrm{Im}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=\frac{\delta(\hat{n} - \hat{n}_q)}{\Delta \Omega}\\ U=0 \emat ;\qquad
-\bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\frac{\delta(\hat{n} - \hat{n}_q)}{\Delta \Omega} \emat.
+\bmat E= +\textrm{Re}(\mathcal{M}_G) \\ B =+\textrm{Im}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=\frac{\delta_{\hat{n},\hat{n}_q}}{\Delta \Omega}\\ U=0 \emat ;\qquad
+\bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\frac{\delta_{\hat{n},\hat{n}_q}}{\Delta \Omega} \emat.
 \eeq
 %
 On the other hand, $\mathcal{M}^*_B$ is the Green's function of the operator that transforms $E/B$ to coordinate-dependent Stokes parameters $Q/U$.   The kernel $\mathcal{M}^*_B$ does not change with the central longitude, but varies as a function of galactic latitude. This latitude-dependent shape carries the  coordinate dependence of the Stokes parameters. From \eq{eq:eb2qu_radiation}, we $\mathcal{M}^*_B$ arises from $\delta$-functions in $E/B$:
 %
 \beq
-\bmat Q= \textrm{Re}(\mathcal{M}^*_B) \\ U = \textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\frac{\delta(\hat{n} - \hat{n}_e)}{\Delta \Omega}\\ B=0 \emat;\qquad
-\bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = +\textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\frac{\delta(\hat{n} - \hat{n}_e)}{\Delta \Omega} \emat\,.
+\bmat Q= +\textrm{Re}(\mathcal{M}^*_B) \\ U = +\textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\frac{\delta_{\hat{n},\hat{n}_e}}{\Delta \Omega}\\ B=0 \emat;\qquad
+\bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = +\textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\frac{\delta_{\hat{n},\hat{n}_e}}{\Delta \Omega} \emat\,.
 \eeq
 %
 Recall that the complex conjugates of these functions switch roles to form the convolution kernels. (For example, $\mathcal{M}_G^*$ is the convolution kernel for $E/B \rightarrow Q/U$.)  It is also interesting to note that the radiation kernel ($\mm_{G}$) and the convolution kernel ($\mm_{B}$) become progressively identical as one approaches the equator as seen in  \fig{fig:vis_kernel}, which is a consequence of $\gamma \simeq -\alpha$ in the vicinity of the equator. The equator is the place on the sphere most akin to the flat sky case, where the radiation and convolution kernels are expected to be identical.
