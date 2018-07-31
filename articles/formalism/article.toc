@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {3.3}Visualizing the real space kernels}{11}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes}{11}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}The non-locality of the real space operators}{16}{subsection.3.5}
-\contentsline {paragraph}{Band limit dependence.}{17}{section*.10}
+\contentsline {paragraph}{Band limit dependence.}{18}{section*.10}
 \contentsline {section}{\numberline {4}Generalized polarization operators and recovering standard power spectra}{19}{section.4}
 \contentsline {section}{\numberline {5}Understanding polarization signatures of magnetized filaments}{22}{section.5}
 \contentsline {section}{\numberline {6}Discussion}{24}{section.6}
