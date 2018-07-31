@@ -20,27 +20,27 @@ The standard construction of $E$ and $B$ fields arise from the desire to have a 
 \end{figure}
 %
 
-We consider the impact of local rotations  the Stokes parameters and on these Euler angles. Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ by an angle $\psi$ about the local $\hat{z}_q$ axis, the Stokes parameters in the new coordinate system relate to those in the original coordinate system as:
+We consider the impact of local rotations on the Stokes parameters and on these Euler angles. Rotating the cartesian coordinates in the tangent plane at location $\hat{n}_q$ by an angle $\psi$ about the local $\hat{z}_q$ axis, the Stokes parameters in the new coordinate system relate to those in the original coordinate system as:
 $\mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)] =  {}_{+2}X(\hat{n}_q) e^{-i2\psi} $.
 This same rotation by $\psi$ alters the Euler angle $\alpha_{qe}$, the angle that aligns the $x$-axis at $\hat{n}_q$ along the geodesic to the location $\hat{n}_e$, so that: $\mathcal{R}_{\hat{z}_q}(\psi)[\alpha_{qe}] = \alpha_{qe} - \psi$.  Therefore one can see that: $\mathcal{R}_{\hat{z}_q}(\psi)[e^{-i2\alpha_{qe}}] =  e^{-i2\alpha_{qe}} e^{i2\psi}$.
 
 Given these transformation properties, the combination ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ is invariant under rotations and hence must be spin-0 or scalar quantity by definition:
 \beq
-\mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)e^{-i2\alpha'_{qe}}] = {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}} \,. \label{eq:invariant}
+\mathcal{R}_{\hat{z}_q}(\psi)[{}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}] = {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}} \,. \label{eq:invariant}
 \eeq
 Thus we can build a scalar polarization quantity out of such combinations.
 Further note that both $Q$ and $\cos2 \alpha$ have even parity since they do not change sign when $\hat{x} \rightarrow -\hat{x}$ (or $\hat{y} \rightarrow -\hat{y}$).  Meanwhile $U$ and $\sin 2 \alpha$ change sign under this transformation and hence have odd parity. The real part of the function  ${}_{+2}X(\hat{n}_q)e^{-i2\alpha_{qe}}$ must have even parity, because it is composed of terms containing $Q\cos{2\alpha}$ and  $U\sin{2 \alpha}$ which are product of functions with the same parity. Similarly, the imaginary part of the function must have odd parity, because it is composed of $Q\sin{2 \alpha}$ and $U\cos{2\alpha}$ which are product of functions with opposite parity.  Therefore we can make the association that contributions to  $(E+iB)(\hat n_e)$ must be proportional to $ {}_{+2}X(\hat{n}_q) e^{-i2\alpha_{qe}}$.
 
 
-The same rotation $\mathcal{R}_{\hat{z}_q}(\psi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we further conclude that the contribution to $(E+iB)(\hat n_e)$ from the position $n_q$ must have the generic form:
+The same rotation $\mathcal{R}_{\hat{z}_q}(\psi)$ leaves the Euler angle $|\beta_{qe}|$ unaltered (it measures the angular distance between the points).  Thus we further conclude that the contribution to $(E+iB)(\hat n_e)$ from the position $\hat{n}_q$ must have the generic form:
 \beq
 {}_{+2}X(\hat{n}_q) f(\beta_{qe})  e^{-i2\alpha_{qe}}
 \eeq
 for some real function $f$. The total $(E+iB)$ field results from summing over all  contributions  from Stokes parameters ${}_{+2}X(\hat{n}_q)$ across the sphere.
 
-Geometry places immediate constraints on function $f$.  When the two locations coincide ($\beta_{qe}=0$) then  $\alpha_{qe}=0,2\pi,4\pi,\dots$, implying $E + iB \propto Q+iU$.  This is a contradiction because $Q+iU$ does not transform as a spin-0 field under local rotations, hence we must have $f(\beta_{qe} = 0 ) = 0$. This immediately implies that the $E/B$ fields are necessarily defined non-locally.  A similar contradiction arises when the two locations are diametrically opposite, $\beta_{qe} = \pi$, and therefore we also require that $f(\beta_{qe} = \pi ) = 0$.  Any such function with these constraints will let us construct $E/B$-like scalar fields.   Below we derive the particular $f$ that gives rise to our familiar $E/B$ modes.
+Geometry places immediate constraints on function $f$.  When the two locations coincide ($\beta_{qe}=0$) then  $\alpha_{qe}=0,2\pi,4\pi,\dots$, implying $E + iB \propto Q+iU$.  This is a contradiction because $Q+iU$ does not transform as a spin-0 field under local rotations, hence we must have $f(\beta_{qe} = 0 ) = 0$. This implies that the $E/B$ fields are necessarily defined non-locally.  A similar contradiction arises when the two locations are diametrically opposite, $\beta_{qe} = \pi$, and therefore we also require that $f(\beta_{qe} = \pi ) = 0$.  Any function that satisfies these constraints will let us construct $E/B$-like scalar fields.   Below we derive the particular $f$ that gives rise to our familiar $E/B$ modes.
 
-This type of real-space construction can be generalized to transform a field of any spin to a field of any other spin, not just two and zero, and so we can use a similar construction (in the opposite direction) to transform $E/B$ maps back to the Stokes parameters (i.e. transforming spin-0 fields to spin-2).
+Note that this type of real-space construction can be generalized to transform a field of any spin to a field of any other spin, not just two and zero, and so we can use a similar construction (in the opposite direction) to transform $E/B$ maps back to the Stokes parameters (i.e. transforming spin-0 fields to spin-2).
 
 %--------------------------------------------------------
 \subsection{Standard $E$/$B$ fields}
@@ -88,8 +88,7 @@ E(\hat{n}) = \sum_{\ell m} a^{E}_{\ell m} Y_{\ell m} (\hat{n})\qquad;\qquad B(\h
 These $E/B$ fields are merely versions of $\mathcal{E}/\mathcal{B}$ that downweight higher-$\ell$ modes  (i.e. their spherical harmonic coefficients of expansion are reduced by the factor $[{(\ell-2)!}/{(\ell+2)!}]^{1/2}$).
 
 \subsection{Matrix notation} \label{sec:mat_pol_intro}
-Our derivations of the real space operators are more transparent in a matrix-vector notation.\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}
-We introduce a matrix that encodes spin spherical harmonic basis vectors:
+Our derivations of the real space operators are more transparent in a matrix-vector notation\footnote{While we work with the matrix and vector sizes given in terms of some pixelization parameter $\rm N_{\rm pix}$, all the relations are equally valid in the continuum limit attained by allowing $\rm N_{\rm pix}\rightarrow \infty$}. We introduce a matrix that encodes spin spherical harmonic basis vectors:
 %
 \beq
 {}_{|s|}\mathcal{Y}= \bmat _{+s}Y & 0 \\ 0 & _{-s}Y \emat _{2 \rm N_{\rm pix} \times 2 \rm N_{\rm alms}} ;\qquad  {}_{|s|}\mathcal{Y}^{\ddagger}= \Delta \Omega \bmat _{+s}Y^{\dagger} & 0 \\ 0 & _{-s}Y^{\dagger} \emat _{2 \rm N_{\rm alms} \times 2 \rm N_{\rm pix}} \,,
@@ -99,7 +98,7 @@ where $s$ denotes the spin of the basis functions and our definition of ${}_{|s|
 
 We will be working with cases $s \in [0,2]$. Each column of ${}_{|s|}\mathcal{Y}$ maps to a specific harmonic basis function (i.e. indexed by $\ell m$) and each row maps to a pixel on the sphere. This matrix is not square in general: the number of rows is determined by the pixelization and the number of columns is set by the number of basis functions (e.g. determined by the band limit).
 
-We now define the different polarization data vectors and their representation in real and harmonic space as follows\footnote{We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.}
+We now define the different polarization data vectors and their representation in real and harmonic space as follows\footnote{We adopt a convention in which real space quantities are denoted by bar-ed variable while those in harmonic space are denoted by tilde-ed variables.}:
 %
 \beqrys
 \bar{S} &=& \bmat E \\ B  \emat_{2 \rm N_{\rm pix} \times 1};\qquad \bar{X} = \bmat _{+2}X \\ _{-2}X \emat_{2 \rm N_{\rm pix} \times 1};\qquad \bar{P} =\fqu_{\tiny {2 \rm N_{\rm pix} \times 1}} \,, \\
@@ -154,7 +153,7 @@ In this section we derive the real space operators which can be used to directly
 &=&  \bar O \bar{P}. \label{eq:qu2eb_op}
 \eeqrys
 %
-The explicit form of the real space operator $\bar O$ can be derived by contracting over all the matrix operators.\footnote{While this manuscript was in preparation, work appeared in \cite{2018JCAP...05..059L} that implements the similar idea of real-space transformation of Stokes $Q/U$ parameters to their $E/B$ counterparts in real space, but we treat it here in much more detail.}
+The explicit form of the real space operator $\bar O$ can be derived by contracting over all the matrix operators \footnote{While this manuscript was in preparation, work appeared in \cite{2018JCAP...05..059L} that implements the similar idea of real-space transformation of Stokes $Q/U$ parameters to their $E/B$ counterparts in real space, but we treat it here in much more detail.}.
 This procedure is explicitly worked out in the following set of equations:
 %
 \beqrys
@@ -198,7 +197,7 @@ Employing \eq{eq:qu2eb_gen_kernel} to simplify the product of spherical harmonic
 %
 where $(\alpha_{qe}, ~\beta_{qe}, \gamma_{qe})$ denote the Euler angles which rotate the local cartesian system at $\hat{n}_q$ (location where Stokes parameters are accessed) to the cartesian system at  $\hat{n}_e$ (location where the scalar fields are evaluated).
 
-It turns out that the real space operations can \emph{also} be expressed in terms of the inverse rotation.  These two expressions lead to two sets of kernels that are conceptually different, although they both ultimately yield the same mathematical result. The first set act like Green's functions, where, for example, a pixel of the Stokes parameters broadcasts or radiates an $E$/$B$ field.  The second set act like a convolving beams, gathering Stokes contributions to the $E/B$ fields at a point. On the equator, or in the flat sky approximation, these kernels are identical and this distinction is immaterial.  On the curved sky it matters, and the kernels are especially different near the poles.
+It turns out that the real space operations can \emph{also} be expressed in terms of the inverse rotation.  These two expressions lead to two sets of kernels that are conceptually different, although they both ultimately yield the same mathematical result. The first set act like Green's functions, where, for example, a pixel of the Stokes parameters broadcasts or radiates an $E$/$B$ field.  The second set act like convolving beams, gathering Stokes contributions to the $E/B$ fields at a point. On the equator, or in the flat sky approximation, these kernels are identical and this distinction is immaterial.  On the curved sky this distinction is important, and the kernels are especially different near the poles.
 
 
 \paragraph{Radiation kernel.} The expression above, based on the $\hat n_q \rightarrow \hat n_e$ rotation,  we call the \textit{radiation kernel}.  It allows us, like a Green's function, to evaluate the $E/B$ field contribution due to a single Stoke parameter ``charge'' at a fixed location. The total $E/B$ maps can then be thought of as the superposed radiation emerging from Stokes charges across the sphere. In this picture, we are effectively in the frame of the Stokes charge ${}_{\pm2}X$ and evaluating its contribution to the complex spin-0 scalar field $E+iB$ across the sphere. This one-to-many mapping from a point in the spin-2 Stokes field to the complex spin-0 (scalar) field across the sphere is graphically represented by the blue circle in \fig{fig:planar_euler_angles}.
@@ -218,7 +217,7 @@ The total map can be simply evaluated by summing over the contribution from the 
 \eeqry
 \end{subequations}
 %
-where $\Delta \Omega$ denotes the pixel area and the last line is a simple scalar multiplication between complex numbers.  The radiation kernel is then: $ \mathcal{M}_{G} =- \mm(\beta_{qe},\alpha_{qe})^*$ which can be thought of as the Green's function of the operator, since $[E +iB]= \mathcal{M}_{G}$ is the spin-0 scalar field generated from the delta-function Stokes field $[Q+iU] = [\delta(\hat{n},\hat{n}_q)/{\Delta \Omega} + i0]$. We display the kernel later in \fig{fig:vis_kernel}.
+where $\Delta \Omega$ denotes the pixel area and the last line is a simple scalar multiplication between complex numbers.  The radiation kernel is then: $ \mathcal{M}_{G} =- \mm(\beta_{qe},\alpha_{qe})^*$ which can be thought of as the Green's function of the operator, since $[E +iB]= \mathcal{M}_{G}$ is the spin-0 scalar field generated from the delta-function Stokes field $[Q+iU] = [\delta_{\hat{n},\hat{n}_q}/{\Delta \Omega} + i0]$. We display the kernel later in \fig{fig:vis_kernel}.
  
 
 %
@@ -332,14 +331,14 @@ The kernel $\mathcal{M}_G$ is the Green's function of the operator that transfor
 \bmat E= -\textrm{Im}(\mathcal{M}_G) \\ B = + \textrm{Re}(\mathcal{M}_G)  \emat  \leftarrow \bmat Q=0 \\ U=\frac{\delta_{\hat{n},\hat{n}_q}}{\Delta \Omega} \emat.
 \eeq
 %
-On the other hand, $\mathcal{M}^*_B$ is the Green's function of the operator that transforms $E/B$ to coordinate-dependent Stokes parameters $Q/U$.   The kernel $\mathcal{M}^*_B$ does not change with the central longitude, but varies as a function of galactic latitude. This latitude-dependent shape carries the  coordinate dependence of the Stokes parameters. From \eq{eq:eb2qu_radiation}, we $\mathcal{M}^*_B$ arises from $\delta$-functions in $E/B$:
+On the other hand, $\mathcal{M}^*_B$ is the Green's function of the operator that transforms $E/B$ to coordinate-dependent Stokes parameters $Q/U$.   The kernel $\mathcal{M}^*_B$ does not change with the central longitude, but varies as a function of galactic latitude. This latitude-dependent shape carries the  coordinate dependence of the Stokes parameters. From \eq{eq:eb2qu_radiation}, we can see the Q/U patterns that arise from $\delta$-functions in $E/B$:
 %
 \beq
 \bmat Q= +\textrm{Re}(\mathcal{M}^*_B) \\ U = +\textrm{Im}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=\frac{\delta_{\hat{n},\hat{n}_e}}{\Delta \Omega}\\ B=0 \emat;\qquad
 \bmat Q= -\textrm{Im}(\mathcal{M}^*_B) \\ U = +\textrm{Re}(\mathcal{M}^*_B)  \emat  \leftarrow \bmat E=0 \\ B=\frac{\delta_{\hat{n},\hat{n}_e}}{\Delta \Omega} \emat\,.
 \eeq
 %
-Recall that the complex conjugates of these functions switch roles to form the convolution kernels. (For example, $\mathcal{M}_G^*$ is the convolution kernel for $E/B \rightarrow Q/U$.)  It is also interesting to note that the radiation kernel ($\mm_{G}$) and the convolution kernel ($\mm_{B}$) become progressively identical as one approaches the equator, which is a consequence of $\gamma \simeq -\alpha$ in the vicinity of the equator.  This is visible in \fig{fig:vis_kernel} (although it displays $M_B^*$ not $M_B$). The equator is the place on the sphere most akin to the flat sky case, where the radiation and convolution kernels are expected to be identical.
+Recall that the complex conjugates of these functions switch roles to form the convolution kernels (e.g., $\mathcal{M}_G^*$ is the convolution kernel for $E/B \rightarrow Q/U$.)  It is also interesting to note that the radiation kernel ($\mm_{G}$) and the convolution kernel ($\mm_{B}$) become progressively identical as one approaches the equator, which is a consequence of $\gamma \simeq -\alpha$ in the vicinity of the equator.  This is visible in \fig{fig:vis_kernel} (although it displays $\mm_B^*$ and not $\mm_B$). The equator is the place on the sphere most akin to the flat sky case, where the radiation and convolution kernels are expected to be identical.
 
 %--------------------------------------------------------
 \subsection{Purifying Stokes parameters $Q$/$U$ for $E$/$B$ modes} \label{sec:purify_stokes_qu}
@@ -368,7 +367,7 @@ where $\mathcal{I}_{r}, \mathcal{D}_{r}$ and $\mathcal{I}_{i}, \mathcal{D}_{i}$ 
 \eeqry
 \end{subequations}
 %
-These functions can be further simplified using the identity of spin spherical harmonics given in \eq{eq:sum_spin_shf}. Specifically it can be shown that these functions reduce to the following mathematical forms:
+These functions can be further simplified using the identity of spin spherical harmonics given in \eq{eq:sum_spin_shf}. Specifically, it can be shown that these functions reduce to the following mathematical forms:
 %
 \beqrys \label{eq:fn_i}
 \mathcal{I}(\hat{n}_e, \hat{n}_q) &=& \sum_{\ell} \sqrt{\frac{2\ell+1}{ 4 \pi}}{_{-2}Y}_{\ell2}(\beta_{qe}, \alpha_{qe}) ~ \rm{e}^{i2 \gamma_{qe}} \label{eq:healpix-compatible-i} = \mathcal{I}_r + i \mathcal{I}_i \,, \\
@@ -412,7 +411,7 @@ where all the symbols have their usual meaning. The above expression can be cast
 %
 where all the symbols have their usual meaning and the explicit multipole dependence of the real space operators has been suppressed for brevity. Note that when the operators are expressed in terms of the Euler angles $(\alpha_{qe},\beta_{qe},\gamma_{qe})$ they can be interpreted as the Greens functions and  we denote them by $\mathcal{I}_G=\mathcal{I}^*$ and $\mathcal{D}_G=\mathcal{D}$. When expressed as function of Euler angles $(\alpha_{eq},\beta_{eq},\gamma_{eq})$ corresponding to the inverse rotations they can be interpreted as some convolving beam and we denote them by $\mathcal{I}_B=\mathcal{I}$ and $\mathcal{D}_B=\mathcal{D}$. Note that unlike in the case of the operators $\mm_G$ and $\mm_B$ which have different shapes owing to their dependence on Euler angles $\alpha$ and $\gamma$ respectively, the operators $D_G$ and $D_B$ are identical since $(\alpha_{qe}-\gamma_{qe}) = (\alpha_{eq}-\gamma_{eq})$, while $\mathcal{I}_{G}$ and $\mathcal{I}_B$ are related by conjugation since  $(\alpha_{qe}+\gamma_{qe}) = -(\alpha_{eq}+\gamma_{eq})$.
 
-The operator $\mathcal{I}$ is Hermitian and is a band limited version of the delta function owing to the identity: $\lim_{\ell_{\rm max} \rightarrow \infty} \mathcal{I} = \delta(\hat{n}_i - \hat{n}_j)$. For all practical purposes $\mathcal{I}$ acts like an identity operator as ascertained by the following set of identities: (i) $\mathcal{I} \mathcal{I}=\mathcal{I}$ ; (ii) $\mathcal{D} \mathcal{I}=\mathcal{D}$. $\mathcal{D}$ is a complex but symmetric matrix and $\mathcal{D}^*$ is its inverse in this band limited sense: $\mathcal{D}^* \mathcal{D}=\mathcal{I}$. Using these properties\footnote{While testing the real space operator identities one encounters terms like $\mathcal{D} \mathcal{I}^*,\mathcal{I}^*\mathcal{I}$ and $\mathcal{I}\mathcal{I}^*$ which cannot be simply interpreted but they always occur in pairs with opposite signs that exactly cancel each other.} of the operators $\mathcal{I}$ and $\mathcal{D}$ , one can verify that the real space operators satisfy the following identities:
+The operator $\mathcal{I}$ is Hermitian and is a band limited version of the delta function owing to the identity: $\lim_{\ell_{\rm max} \rightarrow \infty} \mathcal{I} = \delta_{\hat{n}_i, \hat{n}_j}$. For all practical purposes $\mathcal{I}$ acts like an identity operator as ascertained by the following set of identities: (i) $\mathcal{I} \mathcal{I}=\mathcal{I}$ ; (ii) $\mathcal{D} \mathcal{I}=\mathcal{D}$. $\mathcal{D}$ is a complex but symmetric matrix and $\mathcal{D}^*$ is its inverse in this band limited sense: $\mathcal{D}^* \mathcal{D}=\mathcal{I}$. Using these properties\footnote{While testing the real space operator identities one encounters terms like $\mathcal{D} \mathcal{I}^*,\mathcal{I}^*\mathcal{I}$ and $\mathcal{I}\mathcal{I}^*$ which cannot be simply interpreted but they always occur in pairs with opposite signs that exactly cancel each other.} of the operators $\mathcal{I}$ and $\mathcal{D}$ , one can verify that the real space operators satisfy the following identities:
 %
 \begin{subequations}
 \beqry
@@ -458,4 +457,4 @@ $b=0^\circ$&
 \end{figure}
 %
 
-The kernels $\mathcal{D}$ and $\mathcal{I}$ vary significantly as a function of galactic latitude of the central pixel, as seen in \fig{fig:vis_kernel_DI}. These kernels show a two fold symmetry in the vicinity of the poles.  Here the Euler angle $\gamma \approx 0$ here and therefore $e^{i2(\alpha \pm \gamma)} \approx e^{i2\alpha}$. Note that in this region, the azimuthal profile of the real and imaginary part of these kernels is identical to $-\mathcal{M}_G$.  The imaginary part of the band limited delta function $\mathcal{I}$ contributes just as much as the real part in these regions. On transiting to lower latitudes, however, $\mathcal{D}$ quickly transitions to having a four fold symmetry while $\mathcal{I}$ transitions to being dominated by the real part and behaves more like the conventional delta function. This transition can be most easily understood in the flat sky limit where $\gamma \approx -\alpha$ which leads to the resultant 4 fold symmetry seen for $\mathcal{D}$ owing to $e^{i2(\alpha - \gamma)} \approx e^{i4\alpha}$ and $\mathcal{I}$ being dominated by the real part owing to $e^{-i2(\alpha + \gamma)} \approx 1 + i0$. Since the flat sky approximation has most validity in the proximity of the equator these limiting tendencies of the respective kernels are seen in the bottom row of \fig{fig:vis_kernel_DI} which depict the kernels evaluated at the equator $b=0^{\circ}$. The middle two row depict the kernels evaluated at intermediate latitudes: $b=87^{\circ}$ and $b=80^{\circ}$ and serve to indicate the rate of this transition. As before, these kernels are invariant under changes in longitude of the central pixel with the latitude fixed.
+The kernels $\mathcal{D}$ and $\mathcal{I}$ vary significantly as a function of galactic latitude of the central pixel, as seen in \fig{fig:vis_kernel_DI}. These kernels show a two fold symmetry in the vicinity of the poles, which can be understood as a consequence of the Euler angle $\gamma \approx 0$ here and therefore $e^{i2(\alpha \pm \gamma)} \approx e^{i2\alpha}$. Note that in this region, the azimuthal profile of the real and imaginary part of these kernels is identical to $-\mathcal{M}^*_G$.  The imaginary part of the band limited delta function $\mathcal{I}$ contributes just as much as the real part in these regions. On transiting to lower latitudes, however, $\mathcal{D}$ quickly transitions to having a four fold symmetry while $\mathcal{I}$ transitions to being dominated by the real part and behaves more like the conventional delta function. This transition can be most easily understood in the flat sky limit where $\gamma \approx -\alpha$ which leads to the resultant 4 fold symmetry seen for $\mathcal{D}$ owing to $e^{i2(\alpha - \gamma)} \approx e^{i4\alpha}$ and $\mathcal{I}$ being dominated by the real part owing to $e^{-i2(\alpha + \gamma)} \approx 1 + i0$. Since the flat sky approximation has most validity in the proximity of the equator these limiting tendencies of the respective kernels are seen in the bottom row of \fig{fig:vis_kernel_DI} which depict the kernels evaluated at the equator $b=0^{\circ}$. The middle two row depict the kernels evaluated at intermediate latitudes: $b=87^{\circ}$ and $b=80^{\circ}$ and serve to indicate the rate of this transition. As before, these kernels are invariant under changes in longitude of the central pixel with the latitude fixed.
