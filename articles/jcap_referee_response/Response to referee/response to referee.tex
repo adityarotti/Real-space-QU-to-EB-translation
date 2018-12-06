@@ -42,7 +42,7 @@ Maybe this is still related to the first question.
 
 \item[{Referee comment:}] What is the time complexity of the real space transformation? Eq. (3.26) seems to indicate it is actually $O(N_{\rm pix}^2 )$ which is not as efficient as the conventional approaches. If possible, the authors could briefly discuss it.
 
-\item[{Authors response:}] Yes, naively the real space implementation which is perfectly equivalent to conventional methods would scale as $O(N_{\rm pix}^2 )$. However we have noted that this scaling could be significantly improved by reconstructing some filtered versions $E/B$ fields, which will have a better scaling. We are in process of quantifying this relative efficiency and plan to report our finding in a subsequent publication.
+\item[{Authors response:}] Yes the real space implementation which is perfectly equivalent to conventional methods would scale as $O(N_{\rm pix}^2 )$. However we have noted that the computation time can be significantly improved by reconstructing a filtered versions $E/B$ fields which would scale as $O(\epsilon N_{\rm pix}^2 )$, where $\epsilon$ is a very small number and is determined by the radial cutoff. We are in process of quantifying this relative efficiency and plan to report our finding in a subsequent publication.
 
 \item[{Referee comment: }]It looks like the real part (E) and imaginary part (B) can be easily calculated from Eq. (3.8). It is unclear why the purifying procedure ? Eq. (3.25) is needed. The authors should explain it at the beginning of section 3.4. Also, the maps $\bar P_E$ and $\bar P_B$ in Eqs. (3.17) and (3.18) should be explicitly written down using E and B modes like Eq. (2.8).
 
@@ -102,7 +102,9 @@ The details of how this would be implemented on real data and assessing the qual
 \section*{Supplementary}
 We note that, many of the questions raised by the referee, are relevant, but beyond the scope of the work presented in the article. Many of these questions form the topic of our follow up work, where we discuss the implementation details of the real space operator, their comparison to conventional approaches, E/B mixing on masked skies using these real space kernels, etc. 
 
-However, here we present preliminary results of the exercise of evaluating the $E/B$ maps using the real space kernels and their corresponding power spectra. 
+\textit{In this supplementary section we present some preliminary results which basically demonstrates that the real space E/B separation works.} 
+
+We evaluate the $E/B$ maps from simulated Stokes Q/U maps using the real space kernels and finally evaluate the corresponding power spectra. 
 %
 \begin{figure}[h]
 \centering
@@ -112,29 +114,30 @@ However, here we present preliminary results of the exercise of evaluating the $
 %\label{fig:rad_ker_decay}
 \end{figure}
 %
-We work at a Healpix resolution of ${\textrm Nside}=256$. We simulate CMB polarization map using power spectra computed with CAMB with fiducial cosmological parameters and B-modes corresponding to $r=0.001$. We evaluate the $E/B$ maps using real space kernels on a patch of $10 ^{\circ} \times 25^{\circ}$, centered at a latitude of zero and the long axis of the patch aligned with the equator. 
+For this exercise, we work at a Healpix resolution of ${\textrm Nside}=256$. We simulate CMB polarization map using power spectra computed with CAMB with fiducial cosmological parameters and B-modes corresponding to $r=0.001$. We evaluate the $E/B$ maps using real space kernels on a patch of $10 ^{\circ} \times 25^{\circ}$, centered at zero galactic latitude and the long axis of the patch aligned with the equator. 
 %
 \begin{figure}[h]
 \centering
-\subfigure{\includegraphics[width=0.45\columnwidth]{real_space_B.pdf}}
-\subfigure{\includegraphics[width=0.45\columnwidth]{true_B.pdf}}
-\caption{}
+\subfigure[Real space B]{\includegraphics[width=0.45\columnwidth]{real_space_B.pdf}}
+\subfigure[True B]{\includegraphics[width=0.45\columnwidth]{true_B.pdf}}
+\caption{The figure on the left depicts the B-mode maps evaluated using the modified real space kernel while that on the right depicts the true B-mode map.}
 \label{fig:compare_B}
 \end{figure}
 %
-We evaluate the E/B maps using the real space operator, in which we modify the radial kernel by imposing a radial cut-off of $\sim 22^{\circ}$.  The radial kernel used for constructing the real space operator is shown in Fig. \ref{fig:fbeta} while the effective beam corresponding to it is depicted in Fig.~\ref{fig:gl}. 
-The resultant $B$ mode maps evaluated using the real space method and true B-mode map is shown in Fig~\ref{fig:compare_B}. 
+We evaluate the E/B maps using the real space operator, in which we modify the radial kernel by imposing a radial cut-off of $\sim 22^{\circ}$.  The radial kernel used for constructing the real space operator is shown in Fig. \ref{fig:fbeta} while the effective harmonic space filter corresponding to this radial filter is depicted in Fig.~\ref{fig:gl}. 
+
+The resultant $B$ mode maps evaluated using the real space method and true B-mode map evaluated using the conventional method is shown in Fig~\ref{fig:compare_B}. 
 %
 \begin{figure}[!h]
 \centering
-\subfigure{\includegraphics[width=0.45\columnwidth]{real_space_ee_spectra.pdf}}
-\subfigure{\includegraphics[width=0.45\columnwidth]{real_space_bb_spectra.pdf}}
-\caption{}
+\subfigure[E-mode power spectra]{\includegraphics[width=0.45\columnwidth]{real_space_ee_spectra.pdf}}
+\subfigure[B-mode power spectra]{\includegraphics[width=0.45\columnwidth]{real_space_bb_spectra.pdf}}
+\caption{In these plots, the black line depicts the theory power spectrum, the blue line depict the power spectrum evaluated from the true E/B maps while the red dashed lines depict the power spectrum evaluted from real space evaluated E/B maps.}
 \label{fig:compare_spectra}
 \end{figure}
 %
 Finally the power spectra estimated from $E/B$ maps evaluated using these real space operators and their comparison to the true power spectrum is depicted in Fig.~\ref{fig:compare_spectra}. 
 
-Note that in the results presented here, while we compute the $E/B$ maps on the square patch, we use Stokes parameters outside the mask boundary. We do not claim to address any issue relating to masking related E/B mixing via these results.
+Note that in the results presented here, we compute the $E/B$ maps on the square patch for which we have used Stokes parameters outside the mask boundary. Hence via the results presented here, we do not claim to address any issues relating to masking induced E/B mixing.
 
 \end{document}
